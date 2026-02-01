@@ -134,7 +134,7 @@ export function Proof() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.3 + index * 0.1 }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 p-4 bg-card rounded-lg border border-border"
+                  className="flex items-center gap-3 p-4 bg-card rounded-lg border border-border"
                 >
                   <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-gold-dark" />
@@ -145,12 +145,12 @@ export function Proof() {
             </div>
           </div>
 
-          <div className="bg-sand rounded-xl p-8 border border-border">
+          <div className="bg-sand rounded-xl p-10 border border-border">
             <div className="flex items-center gap-3 mb-6">
               <TestTube className="w-6 h-6 text-gold-dark" />
               <h3 className="text-lg font-medium text-warm-gray">Evidence from your reality</h3>
             </div>
-            <p className="text-warm-gray-light leading-relaxed mb-6">
+            <p className="text-md text-warm-gray-dark leading-relaxed mb-6">
               Proof does not come from our demos. It comes from your calls, your workflows, your edge cases.
             </p>
             <div className="p-4 bg-card rounded-lg border border-border">

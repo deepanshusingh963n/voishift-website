@@ -14,7 +14,7 @@ export function VoiShiftIntro() {
   return (
     <section className="py-24 lg:py-32 bg-cream">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left - Main message */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -47,7 +47,7 @@ export function VoiShiftIntro() {
               </div>
 
               <div className="border-l-4 border-primary pl-6 py-2">
-                <p className="text-lg text-foreground font-medium">
+                <p className="text-md text-foreground font-medium">
                   We walk the workflow end to end with the people inside it.
                 </p>
               </div>
@@ -61,11 +61,11 @@ export function VoiShiftIntro() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true, amount: 0.3 }}
           >
-            <div className="bg-card rounded-xl border border-border p-8 shadow-sm">
-              <h3 className="text-lg font-medium text-warm-gray mb-2">
+            <div className="bg-card rounded-xl border border-border p-10 shadow-sm">
+              <h3 className="text-2xl font-medium text-warm-gray mb-2">
                 We walk the workflow end to end
               </h3>
-              <p className="text-warm-gray-light mb-6">
+              <p className="text-xl text-warm-gray-light mb-6">
                 With the people inside it.
               </p>
 
@@ -82,12 +82,12 @@ export function VoiShiftIntro() {
                     <div className="w-8 h-8 rounded bg-gold/10 flex items-center justify-center flex-shrink-0">
                       <point.icon className="w-4 h-4 text-gold-dark" />
                     </div>
-                    <span className="text-warm-gray">{point.text}</span>
+                    <span className="text-xl text-warm-gray">{point.text}</span>
                   </motion.div>
                 ))}
               </div>
 
-              <p className="mt-6 text-warm-gray-light italic text-sm">
+              <p className="mt-6 text-xl text-warm-gray-light italic text-sm">
                 Those are the moments voice AI will copy, at speed.
               </p>
             </div>
@@ -102,7 +102,7 @@ export function VoiShiftIntro() {
           viewport={{ once: true, amount: 0.5 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-6 bg-sand rounded-xl border border-border">
+          <div className="inline-block p-6 bg-gold rounded-xl border border-border">
             <p className="text-xl md:text-2xl text-warm-gray font-serif italic">
               If someone asks why it said that, will your answer be clear, or a guess?
             </p>

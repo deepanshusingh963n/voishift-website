@@ -40,7 +40,7 @@ export function Threat() {
           className="text-center mb-16"
         >
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-gray leading-tight mb-6 text-balance">
-            Why this threat exists
+            Why things go wrong
           </h2>
           <p className="text-xl text-warm-gray-light max-w-2xl mx-auto">
             Because surface fixes get rewarded.
@@ -148,12 +148,12 @@ export function Threat() {
               <div className="flex items-center gap-4 mb-4">
                 <Copy className="w-5 h-5 text-gold-dark" />
                 <h3 className="text-xl font-medium text-warm-gray-light uppercase tracking-wider">
-                  What the bot will copy
+                  The BOT faulters becuase it copies
                 </h3>
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-md text-warm-gray-light mb-2">Copies</p>
+                  <p className="text-md text-warm-gray-light mb-2"></p>
                   {botCopies.map((item, index) => (
                     <p key={index} className="text-warm-gray py-1">{item}</p>
                   ))}
@@ -177,9 +177,9 @@ export function Threat() {
           viewport={{ once: true, amount: 0.5 }}
           className="mt-16 text-center"
         >
-          <div className="inline-block p-6 bg-gold/5 border border-gold/20 rounded-xl max-w-2xl">
+          <div className="inline-block p-6 bg-gold border border-gold/20 rounded-xl max-w-2xl">
             <p className="text-xl text-warm-gray leading-relaxed">
-              That is why this problem is <span className="text-gold-dark font-medium">structural</span>.
+              That is why this problem is <span className="text-white font-medium">structural</span>.
             </p>
             <p className="text-warm-gray-light mt-2">
               And why it only shows up once the bot starts sounding good.

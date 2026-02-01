@@ -22,10 +22,10 @@ export function BuiltForTeams() {
           className="text-center mb-16"
         >
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-gray leading-tight mb-6 text-balance">
-            Built for real-world teams
+            We build for real-world teams
           </h2>
           <p className="text-xl text-warm-gray-light max-w-3xl mx-auto leading-relaxed">
-            Built for teams where wrong actions cost more than slow answers. Used inside environments where voice AI touches live workflows, changing rules, and real consequences.
+            We build for teams where wrong actions cost more than slow answers. Used inside environments where voice AI touches live workflows, changing rules, and real consequences.
           </p>
         </motion.div>
 
@@ -79,14 +79,14 @@ export function BuiltForTeams() {
                 <p className="text-sm text-warm-gray-light">Built-in from day one</p>
               </div>
             </div>
-            
+
             <p className="text-warm-gray-light leading-relaxed mb-6">
               Security, data handling, and audit expectations are treated as constraints from day one, not patches added later.
             </p>
 
             <Button
               variant="outline"
-              className="border-gold/40 text-warm-gray hover:bg-gold/5 rounded-lg transition-all duration-300 bg-transparent"
+              className="border-gold/40 text-warm-gray hover:bg-gold rounded-lg transition-all duration-300 bg-transparent"
               asChild
             >
               <a href="#trust">

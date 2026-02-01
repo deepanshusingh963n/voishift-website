@@ -79,7 +79,7 @@ export function Differentiation() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 + index * 0.1 }}
                 viewport={{ once: true }}
-                className="bg-card rounded-full border border-border p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
+                className="bg-card rounded-xl border border-border p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center text-center"
               >
                 <div className="w-12 h-12 rounded-full bg-gold/10 flex items-center justify-center mb-4">
                   <discipline.icon className="w-6 h-6 text-gold-dark" />
@@ -201,7 +201,8 @@ export function Differentiation() {
               <div className="absolute top-0 bottom-0 left-1/2 w-px bg-white/10 -translate-x-1/2 hidden md:block" />
 
               <div className="pr-0 md:pr-12">
-                <h3 className="text-xl font-serif text-white/90 mb-6">Rent (SaaS Wrappers)</h3>
+                <h3 className="text-xl font-serif text-white/90">Rent</h3>
+                <h4 className="text-white/60 mb-6">(SaaS Wrappers)</h4>
                 <ul className="space-y-4 text-white/60">
                   <li className="flex gap-3"><span className="text-red-400">×</span> Fast to start, impossible to scale.</li>
                   <li className="flex gap-3"><span className="text-red-400">×</span> You don't own the data or the model.</li>
@@ -210,7 +211,8 @@ export function Differentiation() {
               </div>
 
               <div className="pl-0 md:pl-12">
-                <h3 className="text-xl font-serif text-primary mb-6">Build (VoiShift System)</h3>
+                <h3 className="text-xl font-serif text-primary">Build</h3>
+                <h4 className="text-primary/60 mb-6">(Self-Hosted)</h4>
                 <ul className="space-y-4 text-white/80">
                   <li className="flex gap-3"><span className="text-primary">✓</span> Modular components you control.</li>
                   <li className="flex gap-3"><span className="text-primary">✓</span> Observability into every decision node.</li>

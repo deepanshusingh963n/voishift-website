@@ -143,9 +143,9 @@ export function RentVsBuild() {
           viewport={{ once: true, amount: 0.5 }}
           className="mt-12 text-center"
         >
-          <div className="inline-block p-6 bg-card rounded-xl border border-border">
-            <p className="text-warm-gray-light mb-2">The question is not &quot;Should we build or buy?&quot;</p>
-            <p className="text-xl text-warm-gray font-medium">
+          <div className="inline-block p-6 bg-gold rounded-xl border border-border">
+            <p className="text-warm-gray mb-2">The question is not &quot;Should we build or buy?&quot;</p>
+            <p className="text-xl text-warm-gray-dark font-medium">
               It is &quot;When this goes wrong, who actually knows why?&quot;
             </p>
           </div>

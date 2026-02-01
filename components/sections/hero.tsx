@@ -18,12 +18,12 @@ export function Hero() {
           poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80"
         >
           <source
-            src="https://cdn.coverr.co/videos/coverr-office-meeting-discussion-3159/1080p.mp4"
+            src="/hero_background.mp4"
             type="video/mp4"
           />
         </video>
         {/* Warm cream/gold overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-cream/90 via-cream/85 to-cream/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-cream/80 via-cream/75 to-cream/85" />
       </div>
 
       <div className="relative z-10 section-container py-32 lg:py-40">
@@ -34,7 +34,7 @@ export function Hero() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             {/* Main headline */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-8">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight mb-8">
               If you are copying the world with a voice bot,{" "}
               <span className="text-primary">
                 you may be copying the world's blind spots too.
@@ -48,12 +48,14 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
             className="space-y-4 text-lg md:text-xl text-charcoal-light mb-8"
           >
-            <p>
-              Everyone is just following everyone else, installing a voice bot
-              like a widget.
-            </p>
-            <p>A quick win. A clean demo. A bot that sounds ready.</p>
-            <p>That is how it starts.</p>
+            <div className="border border-gold rounded-xl p-4 bg-cream/60">
+              <p>
+                Everyone is just following everyone else, installing a voice bot
+                like a widget.
+              </p>
+              <p>A quick win. A clean demo. A bot that sounds ready.</p>
+              <p>That is how it starts.</p>
+            </div>
           </motion.div>
 
           <motion.p
@@ -76,7 +78,7 @@ export function Hero() {
               I need a system, not a bot
               <ArrowRight className="ml-2" />
             </Button>
-            <Button variant="heroSecondary" size="xl" className="rounded-full text-black">
+            <Button variant="heroSecondary" size="xl" className="rounded-full bg-gold text-black">
               <Shield className="mr-2" />
               Stress Test My Current Build
             </Button>

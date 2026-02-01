@@ -1,19 +1,29 @@
 import React from "react"
 import type { Metadata, Viewport } from 'next'
-import { Inter, Libre_Baskerville } from 'next/font/google'
+import localFont from 'next/font/local'
 import './globals.css'
 
-const inter = Inter({
-  subsets: ["latin"],
+const inter = localFont({
+  src: '../public/fonts/inter.woff2',
   variable: '--font-inter',
-  display: 'swap'
+  display: 'swap',
 });
 
-const libreBaskerville = Libre_Baskerville({
-  subsets: ["latin"],
-  weight: ['400', '700'],
+const libreBaskerville = localFont({
+  src: [
+    {
+      path: '../public/fonts/libre_baskerville_400.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/libre_baskerville_700.ttf',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
   variable: '--font-libre-baskerville',
-  display: 'swap'
+  display: 'swap',
 });
 
 export const metadata: Metadata = {

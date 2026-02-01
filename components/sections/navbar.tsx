@@ -41,11 +41,11 @@ export const Navbar = () => {
           {/* Logo */}
           <a href="#" className="flex items-center gap-3">
             <Image
-              src="/images/image.png"
+              src="/images/logo.png"
               alt="VoiShift"
               width={120}
               height={40}
-              className="h-10 w-auto"
+              className="h-15 w-auto"
               priority
             />
           </a>

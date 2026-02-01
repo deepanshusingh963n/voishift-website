@@ -278,45 +278,44 @@ export function SubHero() {
                   viewport={{ once: false, amount: 0.5 }}
                   className="max-w-xl"
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
+                  <div className="flex items-start gap-4 mb-6">
+                    {/* Icon */}
+                    <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
                       <block.icon className="w-5 h-5 text-gold-dark" />
                     </div>
-                    <span className="text-xs font-medium text-warm-gray-light uppercase tracking-wider">
-                      Part {index + 1} of 3
-                    </span>
+
+                    {/* Content column */}
+                    <div className="flex-1">
+                      {typeof block.title === "string" ? (
+                        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-warm-gray leading-tight mb-6 text-balance">
+                          {block.title}
+                        </h2>
+                      ) : (
+                        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.05] tracking-tight text-warm-gray mb-6">
+                          <span className="block">{block.title.line1}</span>
+                          <span className="block italic text-gold/80 font-normal mt-1">
+                            {block.title.line2}
+                          </span>
+                        </h2>
+                      )}
+
+                      {/* Bullets */}
+                      <ul className="space-y-4 list-disc list-inside text-lg text-warm-gray-light leading-relaxed">
+                        {block.content.map((line, i) => (
+                          <motion.li
+                            key={i}
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.4, delay: i * 0.1 }}
+                            viewport={{ once: false, amount: 0.8 }}
+                          >
+                            {line}
+                          </motion.li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
 
-                  {typeof block.title === "string" ? (
-                    <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-warm-gray leading-tight mb-8 text-balance">
-                      {block.title}
-                    </h2>
-                  ) : (
-                    <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.05] tracking-tight text-warm-gray mb-8">
-                      <span className="block">
-                        {block.title.line1}
-                      </span>
-                      <span className="block italic text-gold/80 font-normal mt-1">
-                        {block.title.line2}
-                      </span>
-                    </h2>
-                  )}
-
-
-                  <div className="space-y-4">
-                    {block.content.map((line, i) => (
-                      <motion.p
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.4, delay: i * 0.1 }}
-                        viewport={{ once: false, amount: 0.8 }}
-                        className="text-lg text-warm-gray-light leading-relaxed"
-                      >
-                        {line}
-                      </motion.p>
-                    ))}
-                  </div>
 
                   {index === 2 && (
                     <motion.div
