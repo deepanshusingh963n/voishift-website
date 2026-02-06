@@ -21,22 +21,23 @@ export default function Home() {
 
       {/* Section 1: Hero + Sub-hero */}
       <Hero />
+
+      {/* Section 2: Who this hits */}
+      <WhoThisHits />
+
       <SubHero />
 
-      {/* Section 2: Built for real-world teams */}
+      {/* Section 3: Built for real-world teams */}
       <BuiltForTeams />
 
       {/* Logo Strip */}
       <LogoStrip />
 
-      {/* Section 3: VoiShift intro */}
+      {/* Section 4: VoiShift intro */}
       <VoiShiftIntro />
 
-      {/* Section 4: Why this threat exists */}
+      {/* Section 5: Why this threat exists */}
       <Threat />
-
-      {/* Section 5: Who this hits */}
-      <WhoThisHits />
 
       {/* Section 6: What makes VoiShift different */}
       <section id="differentiation">

@@ -5,16 +5,21 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { useModal } from "@/context/modal-context";
 
 const navLinks = [
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "Who It's For", href: "#who-its-for" },
-  { label: "What's Different", href: "#whats-different" },
-  { label: "Proof", href: "#proof" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Who It's For", href: "/#who-its-for" },
+  { label: "What's Different", href: "/#whats-different" },
+  { label: "Proof", href: "/#proof" },
+  //{ label: "FAQ", href: "/#faq" },
 ];
 
 export const Navbar = () => {
+  const { openModal } = useModal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -36,10 +41,10 @@ export const Navbar = () => {
         : "bg-transparent"
         }`}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-1">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
+          <a href="/" className="flex items-center gap-3">
             <Image
               src="/images/logo.png"
               alt="VoiShift"
@@ -65,10 +70,11 @@ export const Navbar = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-4">
-            <Button variant="secondary" size="sm" className="bg-transparent border-gold/40 text-warm-gray hover:bg-gold/5">
-              Trust Center
-            </Button>
-            <Button variant="hero" size="sm">
+            <Button
+              variant="hero"
+              size="sm"
+              onClick={openModal}
+            >
               Book Strategy Session
             </Button>
           </div>
@@ -107,7 +113,14 @@ export const Navbar = () => {
                 <Button variant="heroSecondary" className="w-full">
                   Trust Center
                 </Button>
-                <Button variant="hero" className="w-full">
+                <Button
+                  variant="hero"
+                  className="w-full"
+                  onClick={() => {
+                    openModal();
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
                   Book Strategy Session
                 </Button>
               </div>

@@ -31,6 +31,10 @@ export const metadata: Metadata = {
   description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean. Build voice AI that behaves safely when things break.',
   keywords: ['voice AI', 'voice automation', 'AI system', 'voice bot', 'enterprise AI', 'AI safety'],
   authors: [{ name: 'VoiShift' }],
+  metadataBase: new URL('https://voishift.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
     description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.',
@@ -50,6 +54,10 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+import { ModalProvider } from "@/context/modal-context"
+import { CTAFormModal } from "@/components/cta/form"
+import { ScrollTrigger } from "@/components/cta/scroll-trigger"
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,7 +66,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${libreBaskerville.variable}`}>
       <body className="font-sans antialiased bg-background text-foreground">
-        {children}
+        <ModalProvider>
+          {children}
+          <CTAFormModal />
+          <ScrollTrigger />
+        </ModalProvider>
       </body>
     </html>
   )

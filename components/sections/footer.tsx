@@ -5,9 +5,9 @@ import Image from "next/image"
 import { Shield, Lock, Mail } from "lucide-react"
 
 const links = [
-  { label: "Trust Center", href: "#trust", icon: Shield },
-  { label: "Privacy", href: "#privacy", icon: Lock },
-  { label: "Contact", href: "#contact", icon: Mail },
+  { label: "Trust Center", href: "/#trust", icon: Shield },
+  { label: "Privacy", href: "/#privacy", icon: Lock },
+  { label: "Contact", href: "/#contact", icon: Mail },
 ]
 
 export function Footer() {
