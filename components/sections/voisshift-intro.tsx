@@ -73,7 +73,7 @@ export function VoiShiftIntro() {
             >
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full">
                 <Shield className="w-3.5 h-3.5 text-gold" />
-                <span className="text-[9px] font-black tracking-widest text-gold-dark uppercase">Logic Infrastructure</span>
+                <span className="text-[9px] font-black tracking-widest text-gold uppercase">Logic Infrastructure</span>
               </div>
 
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-gray leading-[1.1] text-balance">
@@ -167,7 +167,7 @@ export function VoiShiftIntro() {
                           transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
                           className="absolute inset-0 bg-[conic-gradient(from_0deg,transparent,gold/20)]"
                         />
-                        <Zap className="w-5 h-5 text-gold-dark relative z-10" />
+                        <Zap className="w-5 h-5 text-gold relative z-10" />
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Logic Node 01</span>
@@ -292,7 +292,7 @@ export function VoiShiftIntro() {
                     className="bg-white p-5 rounded-2xl border border-sand shadow-sm hover:shadow-md hover:border-gold/30 transition-all group"
                   >
                     <div className="w-10 h-10 rounded-xl bg-gold/5 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
-                      <point.icon className="w-5 h-5 text-gold-dark" />
+                      <point.icon className="w-5 h-5 text-gold" />
                     </div>
                     <p className="text-sm font-bold text-warm-gray uppercase tracking-tighter leading-tight">{point.text}</p>
                   </motion.div>

@@ -61,7 +61,7 @@ export const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-warm-gray hover:text-gold-dark transition-colors duration-200"
+                className="text-sm font-medium text-warm-gray hover:text-gold transition-colors duration-200"
               >
                 {link.label}
               </a>
@@ -82,7 +82,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-warm-gray hover:text-gold-dark transition-colors"
+            className="lg:hidden p-2 text-warm-gray hover:text-gold transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -104,7 +104,7 @@ export const Navbar = () => {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-2 text-base font-medium text-warm-gray hover:text-gold-dark transition-colors"
+                  className="block py-2 text-base font-medium text-warm-gray hover:text-gold transition-colors"
                 >
                   {link.label}
                 </a>

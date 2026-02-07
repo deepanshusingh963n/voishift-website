@@ -94,7 +94,7 @@ const SolidFoundationVisual = () => (
               transition={{ duration: 2, repeat: Infinity }}
               className="absolute inset-0 bg-gold/20 blur-xl rounded-full"
             />
-            <Shield className="w-12 h-12 text-gold-dark relative z-10" />
+            <Shield className="w-12 h-12 text-gold relative z-10" />
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ const SolidFoundationVisual = () => (
 
     <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/80 backdrop-blur px-3 py-1 rounded-full border border-gold/20 shadow-sm">
       <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-      <span className="text-[9px] font-black text-gold-dark uppercase tracking-widest">Architected_System</span>
+      <span className="text-[9px] font-black text-gold uppercase tracking-widest">Architected_System</span>
     </div>
   </div>
 )
@@ -145,7 +145,7 @@ export function RentVsBuild() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
             <Box className="w-3.5 h-3.5 text-gold" />
-            <span className="text-[10px] font-black tracking-widest text-gold-dark uppercase">System Architecture</span>
+            <span className="text-[10px] font-black tracking-widest text-gold uppercase">System Architecture</span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-4xl mx-auto">
             Rent vs build is not the real decision
@@ -235,7 +235,7 @@ export function RentVsBuild() {
                   {minimumOwnership.map((item, index) => (
                     <div key={index} className="p-5 bg-sand/30 rounded-2xl border border-sand group hover:border-gold/40 transition-all shadow-sm">
                       <div className="w-8 h-8 rounded-lg bg-white border border-sand flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
-                        <item.icon className="w-4 h-4 text-gold-dark" />
+                        <item.icon className="w-4 h-4 text-gold" />
                       </div>
                       <p className="text-[11px] font-black text-warm-gray uppercase tracking-widest leading-tight">{item.text}</p>
                     </div>
@@ -258,7 +258,7 @@ export function RentVsBuild() {
                     <div className="w-8 h-8 rounded-lg bg-gold shadow-[0_0_15px_rgba(212,175,55,0.3)] flex items-center justify-center">
                       <Zap className="w-5 h-5 text-white" />
                     </div>
-                    <p className="text-md text-gold-dark font-serif italic">The question is not "Should we build or buy?"</p>
+                    <p className="text-md text-gold font-serif italic">The question is not "Should we build or buy?"</p>
                   </div>
                   <h4 className="text-2xl md:text-3xl font-serif font-black text-warm-gray leading-tight text-center md:text-left text-balance">
                     "When this goes wrong, <br className="hidden md:block" /> who actually knows why?"

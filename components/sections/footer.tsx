@@ -5,85 +5,90 @@ import Image from "next/image"
 import { Shield, Lock, Mail } from "lucide-react"
 
 const links = [
-  { label: "Trust Center", href: "/#trust", icon: Shield },
-  { label: "Privacy", href: "/#privacy", icon: Lock },
-  { label: "Contact", href: "/#contact", icon: Mail },
+  { label: "Case Studies", href: "/case-studies", icon: Shield },
+  { label: "Privacy Policy", href: "/privacy-policy", icon: Lock },
+  { label: "Contact", href: "/contact", icon: Mail },
 ]
 
 export function Footer() {
   return (
-    <footer className="py-16 lg:py-24 bg-sand border-t border-border">
+    <footer className="py-12 lg:py-16 bg-[#faf9f6] border-t border-sand">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-12">
-          {/* Left - Message */}
+        <div className="flex flex-col md:flex-row justify-between gap-12 lg:gap-24 mb-12">
+          {/* Left - Brand & Narrative */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.3 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex-1 max-w-lg"
           >
             <div className="mb-6">
               <Image
                 src="/images/image.png"
                 alt="VoiShift Logo"
-                width={140}
-                height={50}
-                className="h-12 w-auto"
+                width={120}
+                height={40}
+                className="h-10 w-auto opacity-80"
               />
             </div>
-            <p className="text-warm-gray leading-relaxed mb-4">
+            <p className="text-sm md:text-md text-warm-gray leading-relaxed mb-4">
               VoiShift turns voice AI from a speaking layer into a business system that holds up when reality gets messy.
             </p>
-            <p className="text-gold-dark font-medium mb-6">
+            <p className="text-xs font-black text-gold uppercase tracking-[0.2em]">
               You can rent a voice. You cannot rent ownership of what is true.
-            </p>
-            <p className="text-warm-gray-light italic">
-              So before you scale fluency, ask yourself: When it speaks with confidence, will you know why?
             </p>
           </motion.div>
 
-          {/* Right - Links */}
+          {/* Right - Resources & Callout */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            viewport={{ once: true, amount: 0.3 }}
-            className="flex flex-col justify-center"
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="flex flex-col sm:flex-row gap-12 lg:gap-16 shrink-0"
           >
-            <h3 className="text-sm font-medium text-warm-gray-light uppercase tracking-wider mb-6">
-              Resources
-            </h3>
-            <div className="space-y-4">
-              {links.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.href}
-                  className="flex items-center gap-3 text-warm-gray hover:text-gold-dark transition-colors duration-200 group"
-                >
-                  <div className="w-8 h-8 rounded bg-muted group-hover:bg-gold/10 flex items-center justify-center transition-colors duration-200">
-                    <link.icon className="w-4 h-4 text-warm-gray-light group-hover:text-gold-dark transition-colors duration-200" />
-                  </div>
-                  <span>{link.label}</span>
-                </a>
-              ))}
+            <div>
+              <h3 className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.3em] mb-6">
+                Resources
+              </h3>
+              <div className="flex flex-col gap-3">
+                {links.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.href}
+                    className="text-sm text-warm-gray hover:text-gold transition-colors duration-200 flex items-center gap-2 group"
+                  >
+                    <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" />
+                    <span>{link.label}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            <div className="max-w-[220px]">
+              <p className="text-sm text-warm-gray-light leading-relaxed italic font-serif opacity-80">
+                "So before you scale fluency, ask yourself: When it speaks with confidence, will you know why?"
+              </p>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom */}
+        {/* Bottom Bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
+          transition={{ duration: 1, delay: 0.2 }}
           viewport={{ once: true }}
-          className="pt-8 border-t border-border flex flex-col sm:flex-row justify-between items-center gap-4"
+          className="pt-8 border-t border-sand/50 flex flex-col sm:flex-row justify-between items-center gap-4"
         >
-          <p className="text-sm text-warm-gray-light">
+          <p className="text-[10px] font-bold text-warm-gray/30 uppercase tracking-widest">
             © {new Date().getFullYear()} VoiShift. All rights reserved.
           </p>
-          <p className="text-sm text-warm-gray-light">
-            Built for teams who build for trust.
-          </p>
+          <div className="flex items-center gap-2 opacity-40">
+            <Shield className="w-3 h-3 text-warm-gray" />
+            <span className="text-[9px] font-black text-warm-gray uppercase tracking-[0.2em]">Built for Trust</span>
+          </div>
         </motion.div>
       </div>
     </footer>

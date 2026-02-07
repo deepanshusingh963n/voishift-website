@@ -728,7 +728,7 @@ export function WhoThisHits() {
                     {/* Left Column: Context & Industry Pills */}
                     <div className="space-y-10">
                       <div className="space-y-4">
-                        <span className="text-gold-dark font-bold text-sm uppercase tracking-wider">
+                        <span className="text-gold font-bold text-sm uppercase tracking-wider">
                           {currentCategory.role}
                         </span>
                         <h3 className="text-4xl md:text-5xl font-serif text-warm-gray max-w-md leading-tight">
@@ -747,7 +747,7 @@ export function WhoThisHits() {
                             className={cn(
                               "px-4 py-3 rounded-xl text-[10px] font-bold transition-all border uppercase tracking-widest text-center",
                               activeIndustry === ind.id
-                                ? "bg-gold/5 text-gold-dark border-gold/40 shadow-sm"
+                                ? "bg-gold/5 text-gold border-gold/40 shadow-sm"
                                 : "bg-sand/10 text-warm-gray-light border-transparent hover:bg-sand/20"
                             )}
                           >
@@ -774,7 +774,7 @@ export function WhoThisHits() {
                             <div className="space-y-4">
                               {currentIndustryData.bullets.map((bullet: string, i: number) => (
                                 <div key={i} className="flex gap-3 text-warm-gray/90 leading-relaxed">
-                                  <AlertTriangle className="w-5 h-5 text-gold-dark shrink-0 mt-0.5" />
+                                  <AlertTriangle className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                                   <span className="text-[15px]">{bullet}</span>
                                 </div>
                               ))}

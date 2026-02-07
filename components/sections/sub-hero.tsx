@@ -274,7 +274,7 @@ const VisualPanel = ({ activeBlock }: { activeBlock: number }) => {
                   </div>
                   <div className="text-center">
                     <p className="text-[12px] font-black text-white uppercase tracking-[0.3em] mb-1">Business System</p>
-                    <p className="text-[9px] text-gold-dark font-medium uppercase tracking-widest opacity-80 italic">Verified Reality Layer</p>
+                    <p className="text-[9px] text-gold font-medium uppercase tracking-widest opacity-80 italic">Verified Reality Layer</p>
                   </div>
 
                   {/* Glowing core effect */}
@@ -438,10 +438,10 @@ export function SubHero() {
 
   return (
     <section id="sub-hero" ref={containerRef} className="relative bg-cream-dark">
-      <div className="sticky top-0 min-h-screen flex">
+      <div className="sticky min-h-screen flex">
         {/* Left side - Scrollable narrative */}
         <div className="w-full lg:w-3/5 overflow-auto">
-          <div className="py-24 lg:py-32">
+          <div className="py-2 lg:py-4">
             {narrativeBlocks.map((block, index) => (
               <div
                 key={block.id}
@@ -457,7 +457,7 @@ export function SubHero() {
                   <div className="flex items-start gap-4 mb-6">
                     {/* Icon */}
                     <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                      <block.icon className="w-5 h-5 text-gold-dark" />
+                      <block.icon className="w-5 h-5 text-gold" />
                     </div>
 
                     {/* Content column */}

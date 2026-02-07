@@ -39,9 +39,6 @@ const LogicEngineVisual = () => {
           <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
           <span className="text-[9px] font-black text-warm-gray uppercase tracking-widest">System_Live: VERIFIED</span>
         </div>
-        <div className="px-3 py-1 bg-white/40 backdrop-blur-sm rounded-full border border-sand/50 text-[8px] font-mono text-warm-gray/40">
-          ID: VOI_CORE_8.2
-        </div>
       </div>
 
       <div className="absolute bottom-10 right-10 flex flex-col items-end gap-2">
@@ -162,10 +159,10 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-black text-warm-gray leading-[0.9] mb-10 tracking-tighter">
+              <h1 className="text-3xl md:text-5xl lg:text-5xl font-serif font-black text-warm-gray leading-[0.9] mb-12 tracking-tighter">
                 If you are copying the <br />
                 world with a voice bot,{" "}<br />
-                <span className="text-gold uppercase text-[0.8em] tracking-tighter block mt-4">
+                <span className="text-gold uppercase text-[0.8em] tracking-tighter block mt-8">
                   you may be copying the <br /> world's blind spots too.
                 </span>
               </h1>
@@ -186,7 +183,7 @@ export function Hero() {
                 </p>
               </div>
 
-              <p className="text-xl md:text-2xl font-serif text-warm-gray leading-tight max-w-xl">
+              <p className="text-xl md:text-2xl font-serif text-warm-gray leading-tight max-w-xl mt-6">
                 Most teams set rules. <span className="text-gold font-black underline decoration-gold/20">Very few know</span> when the bot quietly stopped following the right one.
               </p>
             </motion.div>
@@ -198,8 +195,8 @@ export function Hero() {
               className="flex flex-col sm:flex-row items-center gap-6"
             >
               <Button
-                size="xl"
-                className="w-full sm:w-auto py-10 px-10 text-xl font-serif bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] rounded-[2.5rem] transition-all duration-500 shadow-2xl group/btn active:scale-95 border-2 border-[#1a1a1a]"
+                size="sm"
+                className="w-full sm:w-auto py-10 px-10 text-sm font-serif bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] rounded-full transition-all duration-500 shadow-2xl group/btn active:scale-95 border-2 border-[#1a1a1a]"
                 onClick={openModal}
               >
                 I need a system, not a bot
@@ -207,8 +204,8 @@ export function Hero() {
               </Button>
               <Button
                 variant="outline"
-                size="xl"
-                className="w-full sm:w-auto py-10 px-10 text-xl font-serif border-2 border-gold text-warm-gray hover:bg-gold/5 rounded-[2.5rem] transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/50"
+                size="sm"
+                className="w-full sm:w-auto py-10 px-10 text-sm font-serif border-2 border-gold text-warm-gray hover:bg-gold/5 rounded-full transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/50"
                 onClick={openModal}
               >
                 <Shield className="mr-3 h-7 w-7 text-gold" />
@@ -247,7 +244,7 @@ export function Hero() {
 
             <div className="absolute -bottom-12 -left-8 p-6 bg-white/80 backdrop-blur-sm rounded-3xl border border-sand shadow-lg flex items-center gap-4">
               <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
-                <Layers className="w-5 h-5 text-gold-dark" />
+                <Layers className="w-5 h-5 text-gold" />
               </div>
               <div>
                 <span className="text-[10px] font-black text-warm-gray/40 uppercase tracking-widest block">Structural_Health</span>

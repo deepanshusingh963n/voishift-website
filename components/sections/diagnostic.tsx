@@ -57,8 +57,8 @@ const questionTopics = [
     pulseSpeed: 0.5,
     visual: () => (
       <div className="flex items-center gap-1.5 bg-gold/5 px-2 py-0.5 rounded-full border border-gold/10">
-        <Clock className="w-2.5 h-2.5 text-gold-dark" />
-        <span className="text-[8px] font-black text-gold-dark">742ms</span>
+        <Clock className="w-2.5 h-2.5 text-gold" />
+        <span className="text-[8px] font-black text-gold">742ms</span>
       </div>
     )
   },
@@ -96,7 +96,7 @@ const questionTopics = [
           transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           className="w-3 h-3 border border-gold/30 rounded-sm"
         />
-        <span className="text-[7px] font-black text-gold-dark uppercase tracking-tighter">HOT_RELOAD</span>
+        <span className="text-[7px] font-black text-gold uppercase tracking-tighter">HOT_RELOAD</span>
       </div>
     )
   },
@@ -157,7 +157,7 @@ const SystemPulseAnalysis = ({ speed = 1 }: { speed?: number }) => (
     </div>
 
     <div className="absolute top-6 right-8">
-      <span className="text-[8px] font-black text-gold-dark uppercase tracking-widest bg-gold/5 border border-gold/10 px-2 py-0.5 rounded-md">
+      <span className="text-[8px] font-black text-gold uppercase tracking-widest bg-gold/5 border border-gold/10 px-2 py-0.5 rounded-md">
         Active_Mode: {speed === 1 ? "STABLE" : "PROBE_DETECTION"}
       </span>
     </div>
@@ -171,7 +171,7 @@ const EngineeringReport = () => (
       initial={{ scale: 3, opacity: 0, rotate: -45 }}
       whileInView={{ scale: 1, opacity: 0.1, rotate: -15 }}
       transition={{ duration: 0.8, type: "spring", damping: 10 }}
-      className="absolute -top-4 -right-4 text-gold-dark font-black border-8 border-gold-dark p-6 rounded-2xl text-7xl pointer-events-none select-none"
+      className="absolute -top-4 -right-4 text-gold font-black border-8 border-gold-dark p-6 rounded-2xl text-7xl pointer-events-none select-none"
     >
       VERIFIED
     </motion.div>
@@ -179,7 +179,7 @@ const EngineeringReport = () => (
     <div className="flex items-center justify-between mb-12 relative z-10">
       <div className="flex items-center gap-4">
         <div className="w-12 h-12 rounded-[1.25rem] bg-white border-2 border-gold/20 flex items-center justify-center shadow-sm group-hover:bg-gold transition-colors duration-500">
-          <Activity className="w-6 h-6 text-gold-dark group-hover:text-white transition-colors" />
+          <Activity className="w-6 h-6 text-gold group-hover:text-white transition-colors" />
         </div>
         <div>
           <p className="text-[10px] font-black text-warm-gray/40 uppercase tracking-widest">Report_Classification</p>
@@ -199,10 +199,10 @@ const EngineeringReport = () => (
         >
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-3">
-              <output.icon className="w-4 h-4 text-gold-dark" />
+              <output.icon className="w-4 h-4 text-gold" />
               <span className="text-[12px] font-black text-warm-gray uppercase tracking-widest">{output.text}</span>
             </div>
-            <span className="text-[10px] font-mono text-gold-dark/50">AVAILABLE_ASYNC</span>
+            <span className="text-[10px] font-mono text-gold/50">AVAILABLE_ASYNC</span>
           </div>
           <div className="w-full h-[1px] bg-gradient-to-r from-sand via-gold/10 to-transparent" />
         </motion.div>
@@ -295,7 +295,7 @@ export function Diagnostic() {
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 relative z-10">
                       <div className="flex items-center gap-6">
                         <div className="w-12 h-12 rounded-2xl bg-white border border-sand flex items-center justify-center shadow-sm group-hover:bg-gold transition-colors duration-500">
-                          <topic.icon className="w-6 h-6 text-gold-dark group-hover:text-white transition-colors" />
+                          <topic.icon className="w-6 h-6 text-gold group-hover:text-white transition-colors" />
                         </div>
                         <span className="text-lg font-bold text-warm-gray leading-tight transition-colors group-hover:text-warm-gray-dark max-w-[320px]">{topic.text}</span>
                       </div>

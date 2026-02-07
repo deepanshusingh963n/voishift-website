@@ -57,7 +57,7 @@ const EvidenceFile = ({ item, index }: { item: any, index: number }) => (
 
     <div className="flex items-center gap-4 relative z-10">
       <div className="w-12 h-12 rounded-xl bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:bg-gold/10 transition-colors">
-        <item.icon className="w-6 h-6 text-gold-dark" />
+        <item.icon className="w-6 h-6 text-gold" />
       </div>
       <div className="flex-1">
         <p className="text-sm font-bold text-warm-gray leading-tight">{item.text}</p>
@@ -92,7 +92,7 @@ const IntegrityBoundaryVisual = () => (
         />
         <div className="absolute inset-4 rounded-[2.5rem] border-2 border-gold/30 flex items-center justify-center bg-white/40 backdrop-blur-sm">
           <div className="relative">
-            <Shield className="w-16 h-16 text-gold-dark/40" />
+            <Shield className="w-16 h-16 text-gold/40" />
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
@@ -150,7 +150,7 @@ export function Proof() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
             <Cpu className="w-3.5 h-3.5 text-gold" />
-            <span className="text-[10px] font-black tracking-widest text-gold-dark uppercase">Evidence Phase</span>
+            <span className="text-[10px] font-black tracking-widest text-gold uppercase">Evidence Phase</span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-4xl mx-auto">
             Proof that holds up
@@ -226,7 +226,7 @@ export function Proof() {
                   <div className="w-10 h-10 rounded-xl bg-gold text-[#1a1a1a] flex items-center justify-center shadow-lg shadow-gold/20">
                     <Wrench className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-black text-gold-dark uppercase tracking-widest">Resolution</span>
+                  <span className="text-[10px] font-black text-gold uppercase tracking-widest">Resolution</span>
                 </div>
                 <ul className="space-y-4">
                   {failureDetails.changed.map((item, i) => (
@@ -282,7 +282,7 @@ export function Proof() {
             </div>
 
             <div className="p-8 bg-[#faf9f6] rounded-[2.5rem] border border-sand flex items-start gap-6 group hover:border-gold/30 transition-all">
-              <TestTube className="w-6 h-6 text-gold-dark mt-1 shrink-0" />
+              <TestTube className="w-6 h-6 text-gold mt-1 shrink-0" />
               <div>
                 <h4 className="text-[11px] font-black text-warm-gray/40 uppercase tracking-[0.3em] mb-4">Internal Evidence Context</h4>
                 <p className="text-lg text-warm-gray leading-relaxed font-serif italic">

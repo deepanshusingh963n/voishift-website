@@ -129,7 +129,7 @@ const ScaleOrbit = () => (
   <div className="relative w-full aspect-square max-w-[400px] mx-auto flex items-center justify-center">
     {/* Central Core */}
     <div className="relative z-10 w-24 h-24 rounded-full bg-white border-2 border-gold shadow-[0_0_50px_rgba(212,175,55,0.2)] flex items-center justify-center">
-      <RotateCcw className="w-10 h-10 text-gold-dark animate-spin-slow" />
+      <RotateCcw className="w-10 h-10 text-gold animate-spin-slow" />
     </div>
 
     {/* Orbital Rings */}
@@ -145,7 +145,7 @@ const ScaleOrbit = () => (
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: i * 0.2 }}
-          className="absolute w-12 h-12 bg-white rounded-xl border border-sand shadow-lg flex items-center justify-center text-gold-dark z-20"
+          className="absolute w-12 h-12 bg-white rounded-xl border border-sand shadow-lg flex items-center justify-center text-gold z-20"
           style={{
             left: `calc(50% + ${Math.cos(angle) * 45}% - 24px)`,
             top: `calc(50% + ${Math.sin(angle) * 45}% - 24px)`
@@ -211,7 +211,7 @@ const FixCard = ({ failure, why, fix, result, details }: any) => (
       />
 
       <div className="flex-1 relative z-10">
-        <div className="text-gold-dark font-black text-[10px] uppercase tracking-widest mb-4">VoiShift Fix</div>
+        <div className="text-gold font-black text-[10px] uppercase tracking-widest mb-4">VoiShift Fix</div>
         <p className="text-lg font-bold text-warm-gray">
           {fix}
           {details && <br />}
@@ -426,7 +426,7 @@ export function Differentiation() {
 
             <blockquote className="space-y-10 relative z-10">
               <div className="space-y-2">
-                <p className="text-3xl font-serif font-black text-gold-dark italic">
+                <p className="text-3xl font-serif font-black text-gold italic">
                   "You can rent a voice."
                 </p>
                 <p className="text-3xl font-serif font-black text-warm-gray">

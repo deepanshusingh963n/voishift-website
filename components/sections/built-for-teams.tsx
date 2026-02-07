@@ -49,7 +49,7 @@ const SignalCard = ({ signal, index }: { signal: any, index: number }) => (
 
         <div className="flex items-start justify-between mb-8 relative z-10">
             <div className="w-10 h-10 rounded-xl bg-gold/5 flex items-center justify-center group-hover:bg-gold/10 transition-colors border border-gold/10">
-                <signal.icon className="w-5 h-5 text-gold-dark" />
+                <signal.icon className="w-5 h-5 text-gold" />
             </div>
             <HolographicPillar level={signal.level} delay={index * 0.2} />
         </div>
@@ -77,7 +77,7 @@ const PathOfVeracity = () => (
 
         <div className="relative h-full flex items-center justify-between px-10">
             <div className="w-12 h-12 rounded-xl bg-white border border-sand flex items-center justify-center shadow-sm relative z-10">
-                <Activity className="w-6 h-6 text-gold-dark" />
+                <Activity className="w-6 h-6 text-gold" />
             </div>
 
             <svg className="absolute inset-0 w-full h-full pointer-events-none">
@@ -137,7 +137,7 @@ export function BuiltForTeams() {
                     >
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
                             <Activity className="w-3.5 h-3.5 text-gold" />
-                            <span className="text-[10px] font-black tracking-widest text-gold-dark uppercase">Operations Engineering</span>
+                            <span className="text-[10px] font-black tracking-widest text-gold uppercase">Operations Engineering</span>
                         </div>
                         <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance">
                             We build for real-world teams
@@ -165,7 +165,7 @@ export function BuiltForTeams() {
                         <div className="grid grid-cols-2 gap-4">
                             <div className="p-6 bg-[#faf9f6]/50 rounded-[2rem] border border-sand">
                                 <div className="flex items-center gap-2 mb-4">
-                                    <Database className="w-4 h-4 text-gold-dark" />
+                                    <Database className="w-4 h-4 text-gold" />
                                     <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Audit Logs</span>
                                 </div>
                                 <div className="h-1.5 w-full bg-sand/30 rounded-full overflow-hidden">
@@ -178,7 +178,7 @@ export function BuiltForTeams() {
                             </div>
                             <div className="p-6 bg-[#faf9f6]/50 rounded-[2rem] border border-sand">
                                 <div className="flex items-center gap-2 mb-4">
-                                    <Smartphone className="w-4 h-4 text-gold-dark" />
+                                    <Smartphone className="w-4 h-4 text-gold" />
                                     <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Client Sync</span>
                                 </div>
                                 <div className="flex gap-1">
@@ -199,7 +199,7 @@ export function BuiltForTeams() {
                         </div>
 
                         <div className="flex items-center justify-between mb-12 pb-4 border-b border-sand relative z-10">
-                            <h3 className="text-sm font-black text-gold-dark uppercase tracking-[0.4em]">
+                            <h3 className="text-sm font-black text-gold uppercase tracking-[0.4em]">
                                 Early signals we track
                             </h3>
                             <div className="flex items-center gap-2 text-[10px] font-bold text-green-600">
@@ -258,11 +258,11 @@ export function BuiltForTeams() {
                         <div className="relative z-10">
                             <div className="flex items-center gap-5 mb-10">
                                 <div className="w-16 h-16 rounded-3xl bg-gold/5 flex items-center justify-center border border-gold/20 shadow-[0_0_20px_rgba(212,175,55,0.1)] group-hover:bg-gold/10 transition-colors">
-                                    <Lock className="w-8 h-8 text-gold-dark" />
+                                    <Lock className="w-8 h-8 text-gold" />
                                 </div>
                                 <div>
                                     <h3 className="text-3xl font-serif text-warm-gray">Security First</h3>
-                                    <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-gold/10 text-gold-dark rounded font-black text-[10px] uppercase tracking-widest mt-1">
+                                    <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-gold/10 text-gold rounded font-black text-[10px] uppercase tracking-widest mt-1">
                                         Tier 0 Infrastructure
                                     </div>
                                 </div>
@@ -278,7 +278,7 @@ export function BuiltForTeams() {
                                 <p className="text-warm-gray/40 text-xs font-bold uppercase tracking-widest mb-6">Internal Documentation & Evidence</p>
                                 <Button
                                     variant="outline"
-                                    className="w-full py-8 text-2xl bg-gold text-[#1a1a1a] hover:bg-white hover:text-gold-dark border-2 border-gold hover:border-gold rounded-[2rem] transition-all duration-500 font-serif active:scale-[0.98] shadow-lg shadow-gold/10"
+                                    className="w-full py-8 text-2xl bg-gold text-[#1a1a1a] hover:bg-white hover:text-gold border-2 border-gold hover:border-gold rounded-[2rem] transition-all duration-500 font-serif active:scale-[0.98] shadow-lg shadow-gold/10"
                                     asChild
                                 >
                                     <a href="/case-studies">

@@ -285,7 +285,7 @@ export function Threat() {
               >
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-gold/10 rounded-full border border-gold/20 mb-4">
                   <Zap className="w-4 h-4 text-gold" />
-                  <span className="text-[10px] font-bold text-gold-dark uppercase tracking-widest">The Optical Illusion</span>
+                  <span className="text-[10px] font-bold text-gold uppercase tracking-widest">The Optical Illusion</span>
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-serif text-warm-gray mb-6">What gets rewarded</h3>
 
@@ -298,7 +298,7 @@ export function Threat() {
                       transition={{ delay: index * 0.1 }}
                       className="flex items-center gap-4 p-4 bg-white/40 hover:bg-white/80 rounded-2xl border border-sand transition-all duration-300 shadow-sm"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold-dark shadow-inner">
+                      <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold shadow-inner">
                         <item.icon className="w-5 h-5" />
                       </div>
                       <span className="text-lg text-warm-gray font-medium">{item.text}</span>
@@ -398,7 +398,7 @@ export function Threat() {
               <div className="grid lg:grid-cols-[1.2fr_2fr] gap-12 lg:gap-16 items-center">
                 <div className="space-y-6">
                   <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center">
-                    <Copy className="w-8 h-8 text-gold-dark" />
+                    <Copy className="w-8 h-8 text-gold" />
                   </div>
                   <h3 className="text-3xl lg:text-4xl font-serif text-warm-gray leading-tight">
                     The BOT faulters becuase it copies

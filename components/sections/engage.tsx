@@ -77,7 +77,7 @@ const StructuralAuditVisual = () => (
           className="absolute inset-0 bg-gradient-to-b from-transparent via-gold to-transparent h-20 opacity-30"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <Shield className="w-10 h-10 text-gold-dark/40" />
+          <Shield className="w-10 h-10 text-gold/40" />
         </div>
       </div>
 
@@ -108,7 +108,7 @@ const DossierItem = ({ item, type }: { item: any, type: 'fresh' | 'stress' }) =>
     className="group flex items-center gap-4 p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-sand hover:bg-white hover:border-gold/30 hover:shadow-lg transition-all"
   >
     <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-colors ${type === 'fresh' ? 'bg-gold/5 border-gold/10 group-hover:bg-gold/10' : 'bg-sand/10 border-sand group-hover:bg-sand/20'}`}>
-      <item.icon className={`w-5 h-5 ${type === 'fresh' ? 'text-gold-dark' : 'text-warm-gray'}`} />
+      <item.icon className={`w-5 h-5 ${type === 'fresh' ? 'text-gold' : 'text-warm-gray'}`} />
     </div>
     <div className="flex-1">
       <span className="text-[14px] font-medium text-warm-gray leading-tight block">{item.text}</span>
@@ -138,7 +138,7 @@ export function Engage() {
         >
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
             <Boxes className="w-3.5 h-3.5 text-gold" />
-            <span className="text-[10px] font-black tracking-widest text-gold-dark uppercase">Engagement Pathways</span>
+            <span className="text-[10px] font-black tracking-widest text-gold uppercase">Engagement Pathways</span>
           </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-5xl mx-auto">
             Two ways to engage
@@ -187,7 +187,7 @@ export function Engage() {
 
               <div className="p-8 bg-gold/5 rounded-[2rem] border border-gold/10 mb-10 relative overflow-hidden group/text">
                 <div className="absolute top-0 right-0 p-4 opacity-[0.05]">
-                  <Cpu className="w-12 h-12 text-gold-dark" />
+                  <Cpu className="w-12 h-12 text-gold" />
                 </div>
                 <p className="text-md text-warm-gray-light italic font-serif leading-relaxed relative z-10">
                   "This is for teams <span className="text-warm-gray not-italic font-bold">deciding what to build, and what not to.</span>"

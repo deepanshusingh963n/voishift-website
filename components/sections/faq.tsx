@@ -75,7 +75,7 @@ const NeuralLibraryVisual = ({ activeLayer = 0 }: { activeLayer?: number }) => (
         animate={{ rotate: 360 }}
         transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
       >
-        <Cpu className="w-3.5 h-3.5 text-gold-dark" />
+        <Cpu className="w-3.5 h-3.5 text-gold" />
       </motion.div>
       <span className="text-[10px] font-black text-warm-gray uppercase tracking-[0.3em] whitespace-nowrap">Neural_Index_Active</span>
     </div>
@@ -112,12 +112,12 @@ const ProtocolCard = ({ faq, isOpen, onClick }: { faq: any, isOpen: boolean, onC
         className="w-full px-8 py-7 flex items-center justify-between text-left relative z-10"
       >
         <div className="flex items-center gap-5">
-          <div className={`w-12 h-12 rounded-[1.25rem] flex items-center justify-center border-2 transition-all duration-500 ${isOpen ? 'bg-gold border-gold text-white rotate-12' : 'bg-gold/5 border-gold/10 text-gold-dark group-hover/card:bg-gold/10'}`}>
+          <div className={`w-12 h-12 rounded-[1.25rem] flex items-center justify-center border-2 transition-all duration-500 ${isOpen ? 'bg-gold border-gold text-white rotate-12' : 'bg-gold/5 border-gold/10 text-gold group-hover/card:bg-gold/10'}`}>
             {decoding ? <Loader2 className="w-6 h-6 animate-spin" /> : <Fingerprint className="w-6 h-6" />}
           </div>
           <span className="text-[17px] font-black text-warm-gray leading-tight tracking-tight">{faq.question}</span>
         </div>
-        <ChevronDown className={`w-6 h-6 text-gold-dark transition-transform duration-700 ${isOpen ? 'rotate-180' : ''}`} />
+        <ChevronDown className={`w-6 h-6 text-gold transition-transform duration-700 ${isOpen ? 'rotate-180' : ''}`} />
       </button>
 
       <AnimatePresence>
@@ -133,7 +133,7 @@ const ProtocolCard = ({ faq, isOpen, onClick }: { faq: any, isOpen: boolean, onC
               <div className="mb-6">
                 <div className="flex justify-between items-center text-[8px] font-black text-warm-gray/30 uppercase tracking-[0.2em] mb-1.5">
                   <span>Retrieving_Protocol_0{faq.id[3]}</span>
-                  <span className="text-gold-dark">100%_DECRYPTED</span>
+                  <span className="text-gold">100%_DECRYPTED</span>
                 </div>
                 <div className="h-1 w-full bg-sand rounded-full overflow-hidden">
                   <motion.div
@@ -150,7 +150,7 @@ const ProtocolCard = ({ faq, isOpen, onClick }: { faq: any, isOpen: boolean, onC
                   {faq.answer}
                 </p>
                 <div className="absolute -bottom-4 -right-2 opacity-[0.03] rotate-12 group-hover/text:opacity-[0.06] transition-opacity duration-700">
-                  <ShieldCheck className="w-24 h-24 text-gold-dark" />
+                  <ShieldCheck className="w-24 h-24 text-gold" />
                 </div>
               </div>
 
@@ -159,7 +159,7 @@ const ProtocolCard = ({ faq, isOpen, onClick }: { faq: any, isOpen: boolean, onC
                   <div className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_8px_green]" />
                   <span className="text-[9px] font-black text-warm-gray/30 uppercase tracking-widest whitespace-nowrap">Source: Verified_System_Kernel</span>
                 </div>
-                <span className="text-[9px] font-mono text-gold-dark/40 font-bold">{faq.id}</span>
+                <span className="text-[9px] font-mono text-gold/40 font-bold">{faq.id}</span>
               </div>
             </div>
           </motion.div>
@@ -192,7 +192,7 @@ export function FAQ() {
           >
             <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-white border-2 border-sand rounded-full mb-10 shadow-sm relative group overflow-hidden">
               <div className="absolute inset-0 bg-gold/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <Database className="w-4 h-4 text-gold-dark" />
+              <Database className="w-4 h-4 text-gold" />
               <span className="text-[11px] font-black tracking-[0.3em] text-warm-gray uppercase relative z-10">Protocol_Library</span>
             </div>
 
@@ -210,7 +210,7 @@ export function FAQ() {
               </p>
               <div className="flex gap-4">
                 {[Search, Activity, Layers].map((Icon, i) => (
-                  <Icon key={i} className="w-5 h-5 text-gold-dark/20" />
+                  <Icon key={i} className="w-5 h-5 text-gold/20" />
                 ))}
               </div>
             </div>
@@ -224,7 +224,7 @@ export function FAQ() {
               <div className="absolute inset-x-0 bottom-0 h-1 bg-gold shadow-[0_0_20px_gold] opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="relative z-10 space-y-6">
-                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 rounded-full border border-gold/10 text-[9px] font-black text-gold-dark uppercase tracking-widest">Decision_Integrity_Final</span>
+                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 rounded-full border border-gold/10 text-[9px] font-black text-gold uppercase tracking-widest">Decision_Integrity_Final</span>
                 <p className="text-lg md:text-xl text-warm-gray-light font-serif italic leading-relaxed">No fluff. No long procurement cycles.</p>
                 <p className="text-2xl md:text-3xl font-serif text-warm-gray leading-[0.95] tracking-tighter">
                   Just a <span className="text-[#1a1a1a] font-black not-italic uppercase tracking-tighter underline decoration-gold/40 decoration-wavy">clean way to decide</span> <br className="hidden md:block" />

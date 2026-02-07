@@ -14,10 +14,10 @@ export function AboutContent() {
     return (
         <main>
             <AboutHeroSection />
+            <WhoWeAreSection />
             <WhyWeExistSection />
             <WhatWeSolveSection />
             <HowWeDoDifferentlySection />
-            <WhoWeAreSection />
             <LeadershipSection />
             <HowWeGetPaidSection />
             <AboutClosingSection />

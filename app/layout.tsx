@@ -9,23 +9,6 @@ const inter = localFont({
   display: 'swap',
 });
 
-const libreBaskerville = localFont({
-  src: [
-    {
-      path: '../public/fonts/libre_baskerville_400.ttf',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/libre_baskerville_700.ttf',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-libre-baskerville',
-  display: 'swap',
-});
-
 export const metadata: Metadata = {
   title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
   description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean. Build voice AI that behaves safely when things break.',
@@ -64,8 +47,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${libreBaskerville.variable}`}>
-      <body className="font-sans antialiased bg-background text-foreground">
+    <html lang="en" className={`${inter.variable}`}>
+      <body 
+        className="font-sans antialiased bg-background text-foreground"
+        suppressHydrationWarning
+      >
         <ModalProvider>
           {children}
           <CTAFormModal />
