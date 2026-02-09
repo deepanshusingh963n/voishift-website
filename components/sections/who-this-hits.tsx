@@ -764,7 +764,7 @@ export function WhoThisHits() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="bg-[#FDFCFB] border border-sand/40 rounded-[2rem] p-8 md:p-10 lg:p-12 shadow-inner min-h-[500px] flex flex-col"
+                        className="bg-[#FDFCFB] border border-sand/40 p-8 md:p-10 lg:p-12 shadow-inner min-h-[500px] flex flex-col"
                       >
                         <div className="flex justify-between items-start mb-8">
                           <div className="space-y-6 flex-1">

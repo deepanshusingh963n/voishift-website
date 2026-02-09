@@ -35,7 +35,7 @@ const SignalCard = ({ signal, index }: { signal: any, index: number }) => (
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: index * 0.1 }}
         viewport={{ once: true }}
-        className="group relative bg-white rounded-[2rem] border border-sand p-6 shadow-sm hover:shadow-xl hover:border-gold/30 transition-all duration-500 overflow-hidden"
+        className="group relative bg-white rounded-xl border border-sand p-6 shadow-sm hover:shadow-xl hover:border-gold/30 transition-all duration-500 overflow-hidden"
     >
         {/* Subtle Background Pattern */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
@@ -65,7 +65,7 @@ const SignalCard = ({ signal, index }: { signal: any, index: number }) => (
 )
 
 const PathOfVeracity = () => (
-    <div className="relative w-full h-40 bg-[#faf9f6] rounded-[2rem] border border-sand overflow-hidden p-6 mb-8">
+    <div className="relative w-full h-40 bg-cream border border-sand overflow-hidden p-6 mb-8">
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
             <svg width="100%" height="100%">
                 <pattern id="grid-veracity" width="30" height="30" patternUnits="userSpaceOnUse">
@@ -108,12 +108,6 @@ const PathOfVeracity = () => (
             <div className="w-12 h-12 rounded-xl bg-white border border-sand flex items-center justify-center shadow-sm relative z-10">
                 <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
-        </div>
-
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-4 text-[9px] font-black text-warm-gray/30 uppercase tracking-[0.2em]">
-            <span>Voice_In</span>
-            <span className="text-gold">Safety_Gasket</span>
-            <span>Logic_Out</span>
         </div>
     </div>
 )
@@ -163,7 +157,7 @@ export function BuiltForTeams() {
                     <div className="relative">
                         <PathOfVeracity />
                         <div className="grid grid-cols-2 gap-4">
-                            <div className="p-6 bg-[#faf9f6]/50 rounded-[2rem] border border-sand">
+                            <div className="p-6 bg-[#faf9f6]/50 rounded-xl border border-sand">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Database className="w-4 h-4 text-gold" />
                                     <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Audit Logs</span>
@@ -176,7 +170,7 @@ export function BuiltForTeams() {
                                     />
                                 </div>
                             </div>
-                            <div className="p-6 bg-[#faf9f6]/50 rounded-[2rem] border border-sand">
+                            <div className="p-6 bg-[#faf9f6]/50 rounded-xl border border-sand">
                                 <div className="flex items-center gap-2 mb-4">
                                     <Smartphone className="w-4 h-4 text-gold" />
                                     <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Client Sync</span>
@@ -193,7 +187,7 @@ export function BuiltForTeams() {
 
                 <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-stretch">
                     {/* Dashboard Visual Area */}
-                    <div className="relative bg-[#faf9f6] rounded-[3.5rem] p-10 lg:p-12 border border-sand shadow-inner overflow-hidden">
+                    <div className="relative bg-cream p-10 lg:p-12 border border-sand shadow-inner overflow-hidden">
                         <div className="absolute top-0 right-0 p-10 opacity-[0.03]">
                             <Box className="w-40 h-40 text-warm-gray" />
                         </div>
@@ -202,10 +196,6 @@ export function BuiltForTeams() {
                             <h3 className="text-sm font-black text-gold uppercase tracking-[0.4em]">
                                 Early signals we track
                             </h3>
-                            <div className="flex items-center gap-2 text-[10px] font-bold text-green-600">
-                                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                MONITORING_ACTIVE
-                            </div>
                         </div>
 
                         <div className="grid sm:grid-cols-3 gap-6 relative z-10">
@@ -240,7 +230,7 @@ export function BuiltForTeams() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
-                        className="group relative bg-white p-10 lg:p-14 rounded-[3.5rem] border-2 border-gold/30 shadow-2xl overflow-hidden flex flex-col justify-between"
+                        className="group relative bg-white p-10 lg:p-14 border-2 border-gold/30 shadow-2xl overflow-hidden flex flex-col justify-between"
                     >
                         {/* Crystal Vault SVG Backdrop */}
                         <div className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity pointer-events-none">
@@ -274,11 +264,11 @@ export function BuiltForTeams() {
                         </div>
 
                         <div className="relative z-10">
-                            <div className="p-8 bg-[#faf9f6] border border-sand rounded-[2.5rem] mb-10 group-hover:border-gold/30 transition-all shadow-inner">
+                            <div className="p-8 bg-[#faf9f6] border border-sand rounded-xl mb-10 group-hover:border-gold/30 transition-all shadow-inner">
                                 <p className="text-warm-gray/40 text-xs font-bold uppercase tracking-widest mb-6">Internal Documentation & Evidence</p>
                                 <Button
                                     variant="outline"
-                                    className="w-full py-8 text-2xl bg-gold text-[#1a1a1a] hover:bg-white hover:text-gold border-2 border-gold hover:border-gold rounded-[2rem] transition-all duration-500 font-serif active:scale-[0.98] shadow-lg shadow-gold/10"
+                                    className="w-full py-6 text-2xl bg-gold text-[#1a1a1a] hover:bg-white hover:text-gold rounded-full border-2 border-gold hover:border-gold transition-all duration-500 font-serif active:scale-[0.98] shadow-lg shadow-gold/10"
                                     asChild
                                 >
                                     <a href="/case-studies">

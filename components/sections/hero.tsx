@@ -26,9 +26,9 @@ const LogicEngineVisual = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className="relative w-full aspect-square max-w-[500px] mx-auto group perspective-1000">
+    <div ref={containerRef} className="relative w-full aspect-square max-w-[300px] mx-auto group perspective-1000">
       {/* Background Structural Grid */}
-      <div className="absolute inset-0 bg-[#faf9f6] rounded-[4rem] border-2 border-sand overflow-hidden shadow-2xl">
+      <div className="absolute inset-0 bg-[#faf9f6] border-2 border-sand overflow-hidden shadow-2xl">
         <div className="absolute inset-0 opacity-[0.1] bg-[linear-gradient(to_right,gold_1px,transparent_1px),linear-gradient(to_bottom,gold_1px,transparent_1px)] bg-[size:40px_40px]" />
         <div className="absolute inset-0 bg-gradient-to-tr from-gold/5 via-transparent to-transparent" />
       </div>
@@ -159,10 +159,10 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              <h1 className="text-3xl md:text-5xl lg:text-5xl font-serif font-black text-warm-gray leading-[0.9] mb-12 tracking-tighter">
+              <h1 className="text-3xl md:text-5xl lg:text-5xl font-serif font-bold text-warm-gray leading-[1.3] mb-12">
                 If you are copying the <br />
                 world with a voice bot,{" "}<br />
-                <span className="text-gold uppercase text-[0.8em] tracking-tighter block mt-8">
+                <span className="text-gold uppercase text-[0.8em] block mt-2">
                   you may be copying the <br /> world's blind spots too.
                 </span>
               </h1>
@@ -176,14 +176,14 @@ export function Hero() {
             >
               <div className="absolute -left-10 top-0 bottom-0 w-1 bg-gradient-to-b from-gold via-sand to-transparent opacity-30" />
 
-              <div className="p-8 bg-white/40 backdrop-blur-md rounded-[2.5rem] border border-sand shadow-inner group transition-all hover:bg-white/60">
-                <p className="text-lg md:text-xl text-warm-gray-light leading-relaxed font-serif italic selection:bg-gold/20">
+              <div className="p-2 max-w-xl bg-white/40 backdrop-blur-md border border-sand shadow-inner group transition-all hover:bg-white/60">
+                <p className="text-md md:text-lg text-warm-gray-light font-serif italic selection:bg-gold/20">
                   "Everyone is just following everyone else, installing a voice bot like a widget.
                   A quick win. A clean demo. A bot that sounds ready. <span className="text-warm-gray not-italic font-black">That is how it starts.</span>"
                 </p>
               </div>
 
-              <p className="text-xl md:text-2xl font-serif text-warm-gray leading-tight max-w-xl mt-6">
+              <p className="text-lg md:text-xl font-serif text-warm-gray max-w-xl mt-6">
                 Most teams set rules. <span className="text-gold font-black underline decoration-gold/20">Very few know</span> when the bot quietly stopped following the right one.
               </p>
             </motion.div>
@@ -196,7 +196,7 @@ export function Hero() {
             >
               <Button
                 size="sm"
-                className="w-full sm:w-auto py-10 px-10 text-sm font-serif bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] rounded-full transition-all duration-500 shadow-2xl group/btn active:scale-95 border-2 border-[#1a1a1a]"
+                className="w-full sm:w-auto py-6 px-10 text-sm font-serif bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] transition-all duration-500 shadow-2xl group/btn active:scale-95 border-2 border-[#1a1a1a]"
                 onClick={openModal}
               >
                 I need a system, not a bot
@@ -205,7 +205,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full sm:w-auto py-10 px-10 text-sm font-serif border-2 border-gold text-warm-gray hover:bg-gold/5 rounded-full transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/50"
+                className="w-full sm:w-auto py-6 px-10 text-sm font-serif border-2 border-gold text-warm-gray hover:bg-gold/5 transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/50"
                 onClick={openModal}
               >
                 <Shield className="mr-3 h-7 w-7 text-gold" />

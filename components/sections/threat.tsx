@@ -174,7 +174,7 @@ const FoundationIllustration = () => (
 )
 
 const GlitchedBridge = () => (
-  <div className="relative w-full py-12 px-6 bg-[#2a2a2a] rounded-[2.5rem] overflow-hidden border border-white/5 group">
+  <div className="relative w-full py-12 px-6 bg-[#2a2a2a] rounded-2xl overflow-hidden border border-white/5 group">
     <div className="absolute inset-0 bg-gradient-to-br from-gold/5 via-transparent to-gold/5" />
 
     <div className="relative z-10 flex flex-col items-center">
@@ -183,7 +183,7 @@ const GlitchedBridge = () => (
           <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-white/40 group-hover:text-gold transition-colors duration-500">
             <Users className="w-8 h-8" />
           </div>
-          <span className="text-[10px] font-black tracking-widest text-white/20 uppercase">HUMAN</span>
+          <span className="text-[10px] font-black tracking-widest text-white/70 uppercase">HUMAN</span>
         </div>
 
         {/* The Gap Illustration */}
@@ -195,7 +195,7 @@ const GlitchedBridge = () => (
             {/* Hesitation Marker */}
             <div className="absolute left-1/4 -top-8 -translate-x-1/2 flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-white/40 shadow-[0_0_10px_white]" />
-              <span className="text-[9px] text-white/60 font-bold">HESITATION</span>
+              <span className="text-[9px] text-white/70 font-bold">HESITATION</span>
             </div>
 
             {/* The Improvisation Glitch */}
@@ -210,24 +210,24 @@ const GlitchedBridge = () => (
             </div>
           </div>
 
-          <AlertTriangle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-destructive/30 animate-pulse" />
+          <AlertTriangle className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-8 text-destructive/50 animate-pulse" />
         </div>
 
         <div className="flex flex-col items-center gap-4">
           <div className="w-16 h-16 rounded-2xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold shadow-[0_0_30px_rgba(212,175,55,0.2)]">
             <Cpu className="w-8 h-8" />
           </div>
-          <span className="text-[10px] font-black tracking-widest text-gold/40 uppercase">VOICE AI</span>
+          <span className="text-[10px] font-black tracking-widest text-gold/70 uppercase">VOICE AI</span>
         </div>
       </div>
 
       {/* Side-by-side content labels from original code */}
       <div className="grid md:grid-cols-2 gap-8 w-full max-w-2xl text-center md:text-left">
-        <div className="p-6 rounded-2xl bg-white/5 border border-white/5 border-t-white/10">
+        <div className="p-6 bg-white/5 border border-white/5 border-t-white/50 shadow-lg shadow-white/50">
           <p className="text-md font-bold text-white mb-2 uppercase tracking-tighter">Humans</p>
           <p className="text-white/60 text-[15px] leading-relaxed italic">Hesitate when things do not line up</p>
         </div>
-        <div className="p-6 rounded-2xl bg-gold/5 border border-gold/10 border-t-gold/30">
+        <div className="p-6 bg-gold/5 border border-gold/10 border-t-gold/50 shadow-lg shadow-gold/50">
           <p className="text-md font-bold text-gold mb-2 uppercase tracking-tighter">Voice AI</p>
           <p className="text-white/70 text-[15px] leading-relaxed">
             Does not hesitate. Fills the gap. <span className="text-gold font-bold">Improvises.</span> Sounds sure.
@@ -272,11 +272,11 @@ export function Threat() {
         </motion.div>
 
         {/* Storytelling Zig-Zag Layout */}
-        <div className="space-y-24 lg:space-y-32">
+        <div className="space-y-6">
 
           {/* Step 1: The Facade (Right Visual) */}
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="order-2 lg:order-1 space-y-6">
+            <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -305,32 +305,12 @@ export function Threat() {
                     </motion.div>
                   ))}
                 </div>
+                <div className="mt-6 p-4 border-l-4 border-gold bg-gold/5 rounded-r-2xl">
+                  <h4 className="font-serif italic text-xl text-warm-gray mb-3">Fluency feels like certainty.</h4>
+                  <p className="text-warm-gray-light text-md">So nobody slows down to ask what is actually true.</p>
+                </div>
               </motion.div>
             </div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotateX: -10 }}
-              whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className="order-1 lg:order-2 perspective-1000"
-            >
-              <SurfaceIllustration />
-            </motion.div>
-          </div>
-
-          {/* Step 2: The Messy Truth (Left Visual) */}
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9, rotateX: 10 }}
-              whileInView={{ opacity: 1, scale: 1, rotateX: 0 }}
-              transition={{ duration: 1 }}
-              viewport={{ once: true }}
-              className="perspective-1000"
-            >
-              <FoundationIllustration />
-            </motion.div>
-
             <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
@@ -360,15 +340,9 @@ export function Threat() {
                     </motion.div>
                   ))}
                 </div>
-
-                <div className="mt-8 p-6 border-l-4 border-gold bg-gold/5 rounded-r-2xl">
-                  <h4 className="font-serif italic text-xl text-warm-gray mb-3">Fluency feels like certainty.</h4>
-                  <p className="text-warm-gray-light text-md">So nobody slows down to ask what is actually true.</p>
-                </div>
               </motion.div>
             </div>
           </div>
-
           {/* Step 3: The Critical Difference (Center Integrated) */}
           <div className="space-y-12">
             <div className="text-center max-w-3xl mx-auto">

@@ -11,12 +11,25 @@ const companies = [
   { name: "Google", logo: "/google.png" },
   { name: "Meta", logo: "/Meta.png" },
   { name: "DXC", logo: "/DXC.png" },
+  { name: "Accenture", logo: "/accenture.png" },
+  { name: "Southwest Airlines", logo: "/Southwest_Airlines.png" },
+  { name: "Apache Software Foundation", logo: "/Apache_Software_Foundation.png" },
+  { name: "IBM", logo: "/ibm.png" },
+  { name: "Pitney Bowes", logo: "/pitney_bowes.png" },
+  { name: "Thomson Reuters", logo: "/Thomson-Reuters.png" },
 ]
 
 const tools = [
   { name: "OpenAI", logo: "/openai.png" },
   { name: "Claude", logo: "/claude.png" },
   { name: "Hugging Face", logo: "/huggingface.png" },
+  { name: "LangChain", logo: "/langchain.png" },
+  { name: "CrewAI", logo: "/crewai.png" },
+  { name: "LangGraph", logo: "/langgraph.png" },
+  { name: "LlamaIndex", logo: "/llamaindex.png" },
+  { name: "Mistral", logo: "/mistral.png" },
+  { name: "Groq", logo: "/groq.png" },
+  { name: "Ollama", logo: "/ollama.png" },
 ]
 
 export function LogoStrip() {

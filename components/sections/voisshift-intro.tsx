@@ -57,7 +57,7 @@ export function VoiShiftIntro() {
     <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Structural Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gold/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gold/5 blur-[120px] -translate-y-1/2 translate-x-1/2" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col gap-16 lg:gap-24">
@@ -81,17 +81,15 @@ export function VoiShiftIntro() {
               </h2>
 
               <div className="grid sm:grid-cols-2 gap-4">
-                <div className="p-6 bg-white border border-sand rounded-2xl shadow-sm hover:border-gold/30 transition-colors">
+                <div className="p-2 bg-white border border-sand shadow-sm hover:border-gold/30 transition-colors text-center">
                   <p className="text-lg font-serif text-warm-gray italic mb-1">
                     You can rent a voice.
                   </p>
-                  <div className="h-0.5 w-8 bg-sand mt-4" />
                 </div>
-                <div className="p-6 bg-[#2a2a2a] border border-white/5 rounded-2xl shadow-xl">
+                <div className="p-2 bg-[#2a2a2a] border border-gold shadow-xl text-center">
                   <p className="text-lg font-serif text-gold font-bold">
                     You cannot rent ownership of what is true.
                   </p>
-                  <div className="h-0.5 w-8 bg-gold/50 mt-4" />
                 </div>
               </div>
 
@@ -104,7 +102,7 @@ export function VoiShiftIntro() {
                     className="flex items-center gap-2"
                   >
                     <div className="w-1 h-1 rounded-full bg-warm-gray" />
-                    <span className="text-sm text-warm-gray line-through decoration-gold/40">{text}</span>
+                    <span className="text-md text-gold-dark line-through decoration-gold">{text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -129,11 +127,11 @@ export function VoiShiftIntro() {
                       <div className="w-1.5 h-1.5 rounded-full bg-gold/10" />
                     </div>
                   </div>
-                  <div className="h-1 w-full bg-gold/10 rounded-full overflow-hidden">
+                  <div className="h-1 w-full bg-gold rounded-full overflow-hidden">
                     <motion.div
                       animate={{ x: ["-100%", "100%"] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      className="h-full w-1/3 bg-gold/40"
+                      className="h-full w-1/3 bg-gold"
                     />
                   </div>
                 </div>
@@ -147,7 +145,7 @@ export function VoiShiftIntro() {
                 style={{ zIndex: 30, transformStyle: "preserve-3d" }}
                 className="absolute w-full max-w-sm"
               >
-                <div className="relative bg-white rounded-[2rem] border border-gold shadow-[0_40px_80px_rgba(212,175,55,0.25)] p-8 overflow-hidden group">
+                <div className="relative bg-white border border-gold shadow-[0_40px_80px_rgba(212,175,55,0.25)] p-8 overflow-hidden group">
                   {/* Subtle Tech Pattern Background */}
                   <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
                     <svg width="100%" height="100%">
@@ -161,7 +159,7 @@ export function VoiShiftIntro() {
                   {/* Top Bar */}
                   <div className="flex items-center justify-between mb-10 pb-4 border-b border-sand relative z-10">
                     <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-2xl bg-gold/10 flex items-center justify-center relative overflow-hidden">
+                      <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center relative overflow-hidden">
                         <motion.div
                           animate={{ rotate: 360 }}
                           transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
@@ -171,10 +169,6 @@ export function VoiShiftIntro() {
                       </div>
                       <div className="flex flex-col">
                         <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Logic Node 01</span>
-                        <span className="text-[9px] text-green-600 font-bold flex items-center gap-1">
-                          <span className="w-1 h-1 rounded-full bg-green-600 animate-pulse" />
-                          SYSTEM_LIVE
-                        </span>
                       </div>
                     </div>
                     <div className="flex gap-2">
@@ -272,7 +266,7 @@ export function VoiShiftIntro() {
           <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
 
             {/* Visual: Integrated Circuit Path */}
-            <div className="relative p-8 lg:p-12 bg-[#faf9f6] rounded-[3rem] border border-sand overflow-hidden">
+            <div className="relative p-8 lg:p-12 bg-[#faf9f6] border border-sand overflow-hidden">
               <div className="absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]">
                 <svg width="100%" height="100%" className="text-gold/20">
                   <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -289,9 +283,9 @@ export function VoiShiftIntro() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="bg-white p-5 rounded-2xl border border-sand shadow-sm hover:shadow-md hover:border-gold/30 transition-all group"
+                    className="bg-white p-5 rounded-xl border border-sand shadow-sm hover:shadow-md hover:border-gold/30 transition-all group"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-gold/5 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
+                    <div className="w-10 h-10 rounded-lg bg-gold/5 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
                       <point.icon className="w-5 h-5 text-gold" />
                     </div>
                     <p className="text-sm font-bold text-warm-gray uppercase tracking-tighter leading-tight">{point.text}</p>
@@ -326,7 +320,7 @@ export function VoiShiftIntro() {
                   With the people inside it.
                 </p>
 
-                <div className="p-8 bg-[#2a2a2a] rounded-3xl border border-white/5 shadow-2xl relative overflow-hidden group">
+                <div className="p-8 bg-[#2a2a2a] rounded-xl border border-white/5 shadow-2xl relative overflow-hidden group">
                   <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-gold/20 transition-colors" />
 
                   <p className="text-lg text-white/90 leading-relaxed relative z-10 font-medium pb-6">
