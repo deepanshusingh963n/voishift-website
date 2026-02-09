@@ -10,7 +10,7 @@ const DecisionLattice = () => (
         </pattern>
       </defs>
       <rect width="100%" height="100%" fill="url(#grid)" />
-      
+
       {/* Automated Decision Flows */}
       {[...Array(6)].map((_, i) => (
         <motion.path
@@ -34,8 +34,8 @@ export const AboutHeroSection = () => {
     <section className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-white">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="/about-hero-bg.png" 
+        <img
+          src="/about-hero-bg.png"
           alt="Technical Structure"
           className="w-full h-full object-cover opacity-[0.2] grayscale contrast-100"
         />
@@ -43,10 +43,10 @@ export const AboutHeroSection = () => {
       </div>
 
       <DecisionLattice />
-      
+
       {/* Blueprint Stamps */}
       <div className="absolute bottom-12 right-12 opacity-[0.03] pointer-events-none">
-         <div className="text-sm font-mono font-black tracking-[1em] rotate-90 origin-right uppercase">System_Logic_Integrity</div>
+        <div className="text-sm font-mono font-black tracking-[1em] rotate-90 origin-right uppercase">System_Logic_Integrity</div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -60,7 +60,7 @@ export const AboutHeroSection = () => {
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-8">
               <span className="text-[10px] font-black tracking-[0.4em] text-gold uppercase">What We Stand For</span>
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-serif font-black text-warm-gray leading-[1.05] tracking-tight mb-12">
               System-first voice AI <br />
               <span className="text-gold italic">for teams that cannot afford</span> <br />
@@ -68,7 +68,7 @@ export const AboutHeroSection = () => {
             </h1>
           </motion.div>
 
-          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-end">
+          <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -83,9 +83,9 @@ export const AboutHeroSection = () => {
                   Correct voice AI is not.
                 </p>
               </div>
-              
+
               <p className="text-lg text-warm-gray-light font-serif italic max-w-xl leading-relaxed">
-                VoiShift helps teams design voice automation that behaves reliably when rules collide, 
+                VoiShift helps teams design voice automation that behaves reliably when rules collide,
                 exceptions appear, and clarity disappears.
               </p>
             </motion.div>
@@ -95,26 +95,23 @@ export const AboutHeroSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="grid gap-px bg-sand overflow-hidden border border-sand rounded-3xl shadow-2xl"
+              className="grid gap-px bg-sand overflow-hidden border border-sand rounded-lg shadow-2xl"
             >
               {[
                 {
                   icon: Target,
                   title: "Not optimizing confidence",
                   description: "We don't optimize how confident the agent sounds",
-                  label: "CORE_01"
                 },
                 {
                   icon: Shield,
                   title: "Designed behavior",
                   description: "We design systems that know when to act",
-                  label: "CORE_02"
                 },
                 {
                   icon: CheckCircle,
                   title: "Clear boundaries",
                   description: "When to confirm, and when to stop",
-                  label: "CORE_03"
                 },
               ].map((item, index) => (
                 <div key={item.title} className="bg-white p-6 relative group hover:bg-[#faf9f6] transition-colors">
@@ -127,24 +124,21 @@ export const AboutHeroSection = () => {
                       <p className="text-xs text-warm-gray-light font-serif italic">{item.description}</p>
                     </div>
                   </div>
-                  <div className="absolute top-2 right-4 text-[6px] font-mono text-warm-gray/20 tracking-[0.3em] uppercase">
-                    {item.label}
-                  </div>
                 </div>
               ))}
             </motion.div>
           </div>
         </div>
       </div>
-      
+
       {/* Micro-detail footer */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-24 opacity-10">
-         {[1, 2, 3].map(i => (
-           <div key={i} className="flex items-center gap-2">
-              <div className="w-1 h-1 rounded-full bg-warm-gray" />
-              <div className="text-[7px] font-mono tracking-widest uppercase">System_Verification_Gate_0{i}</div>
-           </div>
-         ))}
+        {[1, 2, 3].map(i => (
+          <div key={i} className="flex items-center gap-2">
+            <div className="w-1 h-1 rounded-full bg-warm-gray" />
+            <div className="text-[7px] font-mono tracking-widest uppercase">System_Verification_Gate_0{i}</div>
+          </div>
+        ))}
       </div>
     </section>
   );

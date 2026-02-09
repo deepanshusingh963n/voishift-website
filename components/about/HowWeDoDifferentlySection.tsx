@@ -82,9 +82,9 @@ export const HowWeDoDifferentlySection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-[#faf9f6]/30 relative overflow-hidden">
+    <section className="py-20 bg-[#faf9f6]/30 relative overflow-hidden">
       <BehavioralAnatomy />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -103,7 +103,7 @@ export const HowWeDoDifferentlySection = () => {
         </motion.div>
 
         {/* Comparison Section */}
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-0 border border-sand rounded-[3rem] overflow-hidden shadow-2xl bg-white mb-24">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-0 border border-sand rounded-[0rem] overflow-hidden shadow-2xl bg-white mb-24">
           {/* Most start with - Left */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -119,18 +119,18 @@ export const HowWeDoDifferentlySection = () => {
               {mostStart.map((item, index) => (
                 <div
                   key={item.label}
-                  className="flex items-center gap-6 p-5 bg-white border border-sand rounded-2xl opacity-50 grayscale hover:grayscale-0 hover:opacity-100 transition-all group"
+                  className="flex items-center gap-6 p-5 bg-cream border border-sand rounded-lg opacity-50 hover:opacity-100 transition-all group"
                 >
-                  <div className="w-12 h-12 bg-[#faf9f6] rounded-xl flex items-center justify-center border border-sand group-hover:bg-warm-gray group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 bg-[#faf9f6] rounded-xl flex items-center justify-center border border-sand group-hover:bg-gold group-hover:text-white transition-colors">
                     <item.icon className="w-5 h-5" />
                   </div>
                   <span className="text-sm font-bold text-warm-gray">{item.label}</span>
-                  
+
                   <div className="ml-auto w-1 h-1 rounded-full bg-warm-gray/20" />
                 </div>
               ))}
             </div>
-            
+
             <p className="mt-12 text-xs font-serif italic text-warm-gray-light">
               Focusing on the interface before the operational logic.
             </p>
@@ -147,7 +147,6 @@ export const HowWeDoDifferentlySection = () => {
             <div className="absolute top-0 right-0 p-8">
               <div className="flex items-center gap-1.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-gold-dark animate-pulse" />
-                <span className="text-[8px] font-black text-gold uppercase tracking-widest">Sys_Trace_Active</span>
               </div>
             </div>
 
@@ -165,7 +164,7 @@ export const HowWeDoDifferentlySection = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="flex flex-col gap-4 p-6 bg-[#faf9f6] border border-sand rounded-[2rem] hover:bg-white hover:border-gold-dark/30 hover:shadow-xl transition-all group"
+                  className="flex flex-col gap-4 p-6 bg-cream border border-sand rounded-lg hover:bg-white hover:border-gold hover:shadow-xl transition-all group"
                 >
                   <div className="w-10 h-10 bg-white border border-sand rounded-xl flex items-center justify-center group-hover:bg-gold-dark group-hover:text-white transition-colors">
                     <item.icon className="w-5 h-5 text-gold group-hover:text-white" />
@@ -176,9 +175,9 @@ export const HowWeDoDifferentlySection = () => {
             </div>
 
             <div className="mt-12 p-6 bg-gold/5 border border-gold/10 rounded-2xl border-dashed">
-               <p className="text-sm font-serif italic text-gold text-center">
-                 "Those moments are what voice AI will copy—<span className="not-italic font-black uppercase tracking-widest ml-2">at speed.</span>"
-               </p>
+              <p className="text-sm font-serif italic text-gold text-center">
+                "Those moments are what voice AI will copy—<span className="not-italic font-black uppercase tracking-widest ml-2">at speed.</span>"
+              </p>
             </div>
           </motion.div>
         </div>
@@ -206,39 +205,35 @@ export const HowWeDoDifferentlySection = () => {
               >
                 {/* CAD vertical line */}
                 <div className="absolute top-[-30px] bottom-[-30px] left-1/2 w-[1px] bg-sand/50 -translate-x-1/2 pointer-events-none" />
-                
+
                 <div className="relative bg-[#faf9f6] p-4 rounded-full border border-sand mb-8 group-hover:border-gold-dark transition-colors z-10 shadow-sm">
-                   <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center border border-sand group-hover:bg-gold-dark group-hover:text-white transition-all duration-500 shadow-inner overflow-hidden">
-                      <motion.div
-                        animate={{ 
-                          scale: hoveredIndex === index ? 1.2 : 1,
-                          rotate: hoveredIndex === index ? (index % 2 === 0 ? 90 : -90) : 0
-                        }}
-                      >
-                        <item.icon className="w-7 h-7 text-gold group-hover:text-white" />
-                      </motion.div>
-                   </div>
+                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center border border-sand group-hover:bg-gold-dark group-hover:text-white transition-all duration-500 shadow-inner overflow-hidden">
+                    <motion.div
+                      animate={{
+                        scale: hoveredIndex === index ? 1.2 : 1,
+                        rotate: hoveredIndex === index ? (index % 2 === 0 ? 90 : -90) : 0
+                      }}
+                    >
+                      <item.icon className="w-7 h-7 text-gold group-hover:text-white" />
+                    </motion.div>
+                  </div>
                 </div>
 
-                <div className="relative z-10 bg-white p-6 rounded-[2rem] border border-sand group-hover:border-gold group-hover:shadow-2xl transition-all duration-500 w-full min-h-[160px] flex flex-col justify-center">
-                   <h4 className="text-xs font-black text-gold uppercase tracking-widest mb-3">
-                     {item.title}
-                   </h4>
-                   <p className="text-sm font-serif italic text-warm-gray-light leading-snug">
-                     {item.description}
-                   </p>
-                   
-                   <div className="mt-4 flex justify-center gap-1 opacity-10">
-                      {[1, 2, 3].map(i => (
-                        <div key={i} className="w-1 h-1 rounded-full bg-warm-gray" />
-                      ))}
-                   </div>
+                <div className="relative z-10 bg-white p-6 rounded-[0rem] border border-sand group-hover:border-gold group-hover:shadow-2xl transition-all duration-500 w-full min-h-[160px] flex flex-col justify-center">
+                  <h4 className="text-xs font-black text-gold uppercase tracking-widest mb-3">
+                    {item.title}
+                  </h4>
+                  <p className="text-sm font-serif italic text-warm-gray-light leading-snug">
+                    {item.description}
+                  </p>
+
+                  <div className="mt-4 flex justify-center gap-1 opacity-10">
+                    {[1, 2, 3].map(i => (
+                      <div key={i} className="w-1 h-1 rounded-full bg-warm-gray" />
+                    ))}
+                  </div>
                 </div>
 
-                {/* Micro marking */}
-                <div className="absolute bottom-[-20px] left-1/2 -translate-x-1/2 text-[7px] font-mono text-warm-gray/20 tracking-[0.4em] uppercase whitespace-nowrap">
-                   Module_Auth_Ref_0{index + 1}
-                </div>
               </motion.div>
             ))}
           </div>
@@ -250,13 +245,13 @@ export const HowWeDoDifferentlySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-32 text-center"
+          className="mt-24 text-center"
         >
           <div className="inline-block p-1 bg-sand/30 rounded-full mb-6">
             <div className="px-6 py-2 bg-white border border-sand rounded-full shadow-sm">
-               <p className="text-sm font-serif italic text-warm-gray-light">
-                 Same tools. Same models. <span className="not-italic font-black text-gold uppercase tracking-widest ml-1">A very different outcome.</span>
-               </p>
+              <p className="text-sm font-serif italic text-warm-gray-light">
+                Same tools. Same models. <span className="not-italic font-black text-gold uppercase tracking-widest ml-1">A very different outcome.</span>
+              </p>
             </div>
           </div>
         </motion.div>

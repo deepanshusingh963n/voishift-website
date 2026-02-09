@@ -32,8 +32,8 @@ const ConfidenceGauge = () => (
       ))}
     </svg>
     <div className="absolute inset-0 flex flex-col items-center justify-center">
-       <div className="w-1.5 h-1.5 rounded-full bg-gold-dark animate-pulse mb-1" />
-       <span className="text-[7px] font-black text-gold uppercase tracking-[0.2em]">Earned</span>
+      <div className="w-1.5 h-1.5 rounded-full bg-gold-dark animate-pulse mb-1" />
+      <span className="text-[7px] font-black text-gold uppercase tracking-[0.2em]">Earned</span>
     </div>
   </div>
 );
@@ -57,16 +57,16 @@ export const AboutClosingSection = () => {
         >
           <div className="max-w-3xl mx-auto">
             <ConfidenceGauge />
-            
+
             <h2 className="text-2xl md:text-4xl font-serif font-black text-warm-gray leading-tight mb-6">
               You can rent a voice. <br />
               <span className="text-gold italic">You cannot rent ownership of what is true.</span>
             </h2>
-            
+
             <div className="flex justify-center mb-8">
-               <div className="w-12 h-[1px] bg-sand" />
+              <div className="w-12 h-[1px] bg-sand" />
             </div>
-            
+
             <p className="text-lg md:text-xl text-warm-gray-light font-serif italic mb-3">
               Voice AI will speak with confidence.
             </p>
@@ -104,21 +104,21 @@ export const AboutClosingSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="group p-8 bg-[#faf9f6]/80 rounded-[2.5rem] border border-sand hover:border-gold-dark/30 hover:bg-white hover:shadow-2xl transition-all duration-700"
+                className="group p-8 bg-white rounded-[0rem] border border-sand hover:border-gold-dark/30 hover:bg-white hover:shadow-2xl transition-all duration-700"
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="w-14 h-14 bg-white rounded-2xl border border-sand flex items-center justify-center mb-6 group-hover:bg-gold-dark group-hover:text-white transition-all duration-500 shadow-sm relative overflow-hidden">
                     <Sparkles className="w-6 h-6 text-gold group-hover:text-white" />
                     <div className="absolute top-1 right-1 text-[5px] font-mono text-warm-gray/20">V_01</div>
                   </div>
-                  
+
                   <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest mb-2">Starting Fresh</span>
                   <h5 className="text-lg font-serif font-black text-warm-gray mb-4">Voice AI Strategy Session</h5>
-                  
+
                   <p className="text-xs font-serif italic text-warm-gray-light leading-snug mb-8 max-w-[220px]">
                     Decide where automation makes sense—and where it does not.
                   </p>
-                  
+
                   <div className="w-full relative group/btn">
                     <Button
                       variant="hero"
@@ -129,10 +129,7 @@ export const AboutClosingSection = () => {
                       Book the session
                       <ArrowRight className="ml-2 w-3.5 h-3.5" />
                     </Button>
-                    
-                    <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 text-[6px] font-mono text-warm-gray/10 uppercase tracking-[0.4em] opacity-0 group-hover/btn:opacity-100 transition-opacity">
-                      SIG_STRATEGY_INIT
-                    </div>
+
                   </div>
                 </div>
               </motion.div>
@@ -143,21 +140,21 @@ export const AboutClosingSection = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="group p-8 bg-[#faf9f6]/80 rounded-[2.5rem] border border-sand hover:border-gold-dark/30 hover:bg-white hover:shadow-2xl transition-all duration-700"
+                className="group p-8 bg-white rounded-[0rem] border border-sand hover:border-gold-dark/30 hover:bg-white hover:shadow-2xl transition-all duration-700"
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="w-14 h-14 bg-white rounded-2xl border border-sand flex items-center justify-center mb-6 group-hover:bg-warm-gray group-hover:text-white transition-all duration-500 shadow-sm relative overflow-hidden">
                     <Shield className="w-6 h-6 text-gold group-hover:text-white" />
                     <div className="absolute top-1 right-1 text-[5px] font-mono text-warm-gray/20">V_02</div>
                   </div>
-                  
+
                   <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest mb-2">Already Live</span>
                   <h5 className="text-lg font-serif font-black text-warm-gray mb-4">Voice AI Stress Test</h5>
-                  
+
                   <p className="text-xs font-serif italic text-warm-gray-light leading-snug mb-8 max-w-[220px]">
                     Find where the system will guess before users feel it.
                   </p>
-                  
+
                   <div className="w-full relative group/btn">
                     <Button
                       variant="heroSecondary"

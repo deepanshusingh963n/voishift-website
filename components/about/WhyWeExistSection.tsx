@@ -59,29 +59,29 @@ const RebuildersVisual = () => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ 
+                animate={{
                   opacity: [0.2, 0.8, 0.2],
                   scale: [1, 1.05, 1],
                   borderWidth: ["1px", "2px", "1px"]
                 }}
-                transition={{ 
-                  duration: 4, 
-                  repeat: Infinity, 
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
                   delay: i * 0.5,
                   ease: "easeInOut"
                 }}
-                className="absolute inset-0 border border-warm-gray rounded-3xl"
-                style={{ 
+                className="absolute inset-0 border border-warm-gray rounded-lg"
+                style={{
                   transform: `rotate(${i * 15}deg)`,
                   opacity: 0.4
                 }}
               />
             ))}
-            
+
             {/* Active Lock-in Visual */}
             <div className="absolute inset-0 flex items-center justify-center">
               <motion.div
-                animate={{ 
+                animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.5, 1, 0.5]
                 }}
@@ -105,17 +105,17 @@ const RebuildersVisual = () => (
             ].map((point, i) => (
               <motion.div
                 key={`point-${i}`}
-                animate={{ 
+                animate={{
                   y: [0, -10, 0],
                   opacity: [0.3, 1, 0.3]
                 }}
-                transition={{ 
-                  duration: point.d, 
+                transition={{
+                  duration: point.d,
                   repeat: Infinity,
                   delay: i * 0.3
                 }}
                 className="absolute w-1.5 h-1.5 bg-gold rounded-full"
-                style={{ 
+                style={{
                   top: point.t,
                   left: point.l
                 }}
@@ -125,7 +125,7 @@ const RebuildersVisual = () => (
         </div>
       </div>
     </div>
-    
+
     {/* Technical Labels */}
     <div className="absolute top-0 right-0 p-4">
       <span className="text-[8px] font-mono text-warm-gray opacity-40 uppercase tracking-[0.2em]">State: Recursive_Refinement</span>
@@ -142,18 +142,18 @@ const WaitersVisual = () => (
       <div className="relative w-64 h-64">
         {/* Rigid Grid */}
         <div className="absolute inset-0 border border-warm-gray/20 rounded-2xl bg-[#faf9f6] overflow-hidden">
-          <div className="absolute inset-0 opacity-[0.2]" 
-               style={{ 
-                 backgroundImage: `radial-gradient(circle at center, #303030 1px, transparent 1px)`,
-                 backgroundSize: '16px 16px'
-               }} 
+          <div className="absolute inset-0 opacity-[0.2]"
+            style={{
+              backgroundImage: `radial-gradient(circle at center, #303030 1px, transparent 1px)`,
+              backgroundSize: '16px 16px'
+            }}
           />
-          
+
           {/* Frozen Data Blocks */}
           <div className="grid grid-cols-4 grid-rows-4 gap-4 p-8 h-full opacity-40">
             {[...Array(16)].map((_, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 className="bg-warm-gray/10 border border-warm-gray/20 rounded-md"
               />
             ))}
@@ -185,7 +185,7 @@ const WaitersVisual = () => (
       <span className="text-[8px] font-mono text-warm-gray opacity-40 uppercase tracking-[0.2em]">Status: Static_Observation</span>
     </div>
     <div className="absolute bottom-0 right-0 p-4">
-       <span className="text-[8px] font-mono text-warm-gray opacity-40 uppercase tracking-[0.2em]">Risk_Buffer: MAX</span>
+      <span className="text-[8px] font-mono text-warm-gray opacity-40 uppercase tracking-[0.2em]">Risk_Buffer: MAX</span>
     </div>
   </div>
 );
@@ -227,26 +227,23 @@ export const WhyWeExistSection = () => {
         </div>
 
         {/* Dynamic Selector */}
-        <div className="flex justify-center gap-3 mb-16">
+        <div className="flex justify-center gap-6 mb-16">
           {paths.map((path) => (
             <button
               key={path.id}
               onClick={() => setActivePath(path.id)}
-              className={`group flex items-center gap-4 px-8 py-5 rounded-[2rem] border transition-all duration-500 ${
-                activePath === path.id
-                  ? "bg-white border-gold shadow-2xl scale-105"
-                  : "bg-transparent border-sand hover:border-gold/30"
-              }`}
+              className={`group flex items-center gap-4 px-8 py-5 rounded-[0.5rem] border transition-all duration-500 ${activePath === path.id
+                ? "bg-white border-gold shadow-2xl scale-105"
+                : "bg-transparent border-sand hover:border-gold/30"
+                }`}
             >
-              <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${
-                activePath === path.id ? "bg-gold text-white" : "bg-white border border-sand text-warm-gray/30 group-hover:bg-gold/5"
-              }`}>
+              <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-colors ${activePath === path.id ? "bg-gold text-white" : "bg-white border border-sand text-warm-gray/30 group-hover:bg-gold/5"
+                }`}>
                 <path.icon className="w-5 h-5" />
               </div>
               <div className="text-left">
-                <p className={`text-sm font-black uppercase tracking-widest ${
-                  activePath === path.id ? "text-warm-gray" : "text-warm-gray/40"
-                }`}>
+                <p className={`text-sm font-black uppercase tracking-widest ${activePath === path.id ? "text-warm-gray" : "text-warm-gray/40"
+                  }`}>
                   {path.title}
                 </p>
                 <p className="text-[10px] text-warm-gray/30 font-bold uppercase tracking-widest leading-none mt-1">
@@ -275,49 +272,49 @@ export const WhyWeExistSection = () => {
             transition={{ duration: 0.6 }}
             className="relative"
           >
-            <div className="bg-white p-10 lg:p-14 rounded-[3.5rem] border border-sand shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
-               {/* Pattern overlay */}
-               <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-                  <svg width="100%" height="100%">
-                    <pattern id="card-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
-                      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-                    </pattern>
-                    <rect width="100%" height="100%" fill="url(#card-pattern)" />
-                  </svg>
-                </div>
+            <div className="bg-white p-10 lg:p-14 rounded-[0.5rem] border border-sand shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+              {/* Pattern overlay */}
+              <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
+                <svg width="100%" height="100%">
+                  <pattern id="card-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
+                  </pattern>
+                  <rect width="100%" height="100%" fill="url(#card-pattern)" />
+                </svg>
+              </div>
 
-                <div className="relative z-10">
-                  <div className="grid md:grid-cols-2 gap-10">
-                    <div>
-                      <h3 className="text-[10px] font-black text-gold uppercase tracking-[0.4em] mb-6">The Story</h3>
-                      <div className="space-y-4">
-                        {activeData.story.map((line, i) => (
-                          <p key={i} className="text-lg text-warm-gray-light leading-relaxed font-serif italic selection:bg-gold/20">
-                            "{line}"
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-                    <div>
-                      <h3 className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.4em] mb-6">The Reality</h3>
-                      <div className="space-y-4">
-                        {activeData.pain.map((line, i) => (
-                          <div key={i} className="flex gap-3">
-                            <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
-                            <p className="text-sm font-medium text-warm-gray leading-snug">{line}</p>
-                          </div>
-                        ))}
-                      </div>
+              <div className="relative z-10">
+                <div className="grid md:grid-cols-2 gap-10">
+                  <div>
+                    <h3 className="text-[10px] font-black text-gold uppercase tracking-[0.4em] mb-6">The Story</h3>
+                    <div className="space-y-4">
+                      {activeData.story.map((line, i) => (
+                        <p key={i} className="text-lg text-warm-gray-light leading-relaxed font-serif italic selection:bg-gold/20">
+                          "{line}"
+                        </p>
+                      ))}
                     </div>
                   </div>
-
-                  <div className="mt-12 pt-10 border-t border-sand">
-                    <p className="text-warm-gray-light text-md italic mb-4 opacity-60">{activeData.result}</p>
-                    <p className="text-2xl font-serif font-black text-warm-gray tracking-tight leading-none bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent">
-                      {activeData.conclusion}
-                    </p>
+                  <div>
+                    <h3 className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.4em] mb-6">The Reality</h3>
+                    <div className="space-y-4">
+                      {activeData.pain.map((line, i) => (
+                        <div key={i} className="flex gap-3">
+                          <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
+                          <p className="text-sm font-medium text-warm-gray leading-snug">{line}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
+
+                <div className="mt-12 pt-10 border-t border-sand">
+                  <p className="text-warm-gray-light text-md italic mb-4 opacity-60">{activeData.result}</p>
+                  <p className="text-2xl font-serif font-black text-warm-gray tracking-tight leading-none bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent">
+                    {activeData.conclusion}
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -330,51 +327,51 @@ export const WhyWeExistSection = () => {
           viewport={{ once: true }}
           className="mt-24 max-w-4xl mx-auto"
         >
-          <div className="group relative bg-[#1a1a1a] p-12 lg:p-16 rounded-[4rem] text-center overflow-hidden shadow-2xl">
+          <div className="group relative bg-[#1a1a1a] p-12 lg:p-16 rounded-[0 rem] text-center overflow-hidden shadow-2xl">
             {/* Visual pathway background */}
             <div className="absolute inset-0 opacity-10">
-               <motion.div 
-                 animate={{ scale: [1, 1.2, 1] }}
-                 transition={{ duration: 10, repeat: Infinity }}
-                 className="absolute inset-x-0 top-1/2 h-32 bg-gold/40 border-y-2 border-dashed border-gold blur-3xl -translate-y-1/2" 
-               />
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 10, repeat: Infinity }}
+                className="absolute inset-x-0 top-1/2 h-32 bg-gold/40 border-y-2 border-dashed border-gold blur-3xl -translate-y-1/2"
+              />
             </div>
 
             <div className="relative z-10">
-               <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full mb-8">
-                  <Shield className="w-3 h-3 text-gold" />
-                  <span className="text-[9px] font-black text-gold uppercase tracking-widest">Shared Resolution</span>
-               </div>
-               
-               <h3 className="text-2xl md:text-3xl font-serif font-black text-white mb-8 tracking-tight">
-                 Both groups face the same problem.
-               </h3>
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 rounded-full mb-8">
+                <Shield className="w-3 h-3 text-gold" />
+                <span className="text-[9px] font-black text-gold uppercase tracking-widest">Shared Resolution</span>
+              </div>
 
-               <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24 mb-10">
-                  <div className="text-center group/item">
-                    <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 transition-colors group-hover/item:border-gold/50">
-                      <RefreshCw className="w-8 h-8 text-warm-gray-light" />
-                    </div>
-                    <p className="text-[10px] font-black text-warm-gray-light uppercase tracking-widest">Stuck Rebuilding</p>
+              <h3 className="text-2xl md:text-3xl font-serif font-black text-white mb-8 tracking-tight">
+                Both groups face the same problem.
+              </h3>
+
+              <div className="flex flex-col md:flex-row items-center justify-center gap-12 lg:gap-24 mb-10">
+                <div className="text-center group/item">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 transition-colors group-hover/item:border-gold/50">
+                    <RefreshCw className="w-8 h-8 text-warm-gray-light" />
                   </div>
+                  <p className="text-[10px] font-black text-warm-gray-light uppercase tracking-widest">Stuck Rebuilding</p>
+                </div>
 
-                  <div className="hidden md:flex items-center gap-4">
-                    <div className="w-2 h-2 rounded-full bg-gold" />
-                    <div className="h-px w-32 bg-gradient-to-r from-gold via-white/20 to-gold" />
-                    <div className="w-2 h-2 rounded-full bg-gold" />
+                <div className="hidden md:flex items-center gap-4">
+                  <div className="w-2 h-2 rounded-full bg-gold" />
+                  <div className="h-px w-32 bg-gradient-to-r from-gold via-white/20 to-gold" />
+                  <div className="w-2 h-2 rounded-full bg-gold" />
+                </div>
+
+                <div className="text-center group/item">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 transition-colors group-hover/item:border-gold/50">
+                    <Clock className="w-8 h-8 text-warm-gray-light" />
                   </div>
+                  <p className="text-[10px] font-black text-warm-gray-light uppercase tracking-widest">Stuck Waiting</p>
+                </div>
+              </div>
 
-                  <div className="text-center group/item">
-                    <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 transition-colors group-hover/item:border-gold/50">
-                      <Clock className="w-8 h-8 text-warm-gray-light" />
-                    </div>
-                    <p className="text-[10px] font-black text-warm-gray-light uppercase tracking-widest">Stuck Waiting</p>
-                  </div>
-               </div>
-
-               <p className="text-xl md:text-2xl text-warm-gray-light leading-relaxed font-serif italic max-w-2xl mx-auto selection:bg-gold/20">
-                 VoiShift exists to give both a clear path forward—one that replaces <span className="text-gold not-italic font-bold">guesswork with structure</span> before confidence turns into cost.
-               </p>
+              <p className="text-xl md:text-2xl text-warm-gray-light leading-relaxed font-serif italic max-w-2xl mx-auto selection:bg-gold/20">
+                VoiShift exists to give both a clear path forward—one that replaces <span className="text-gold not-italic font-bold">guesswork with structure</span> before confidence turns into cost.
+              </p>
             </div>
           </div>
         </motion.div>

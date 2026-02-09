@@ -84,7 +84,7 @@ export const LeadershipSection = () => {
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background blueprint elements */}
       <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
-         <div className="text-[120px] font-serif font-black leading-none">V_01</div>
+        <div className="text-[120px] font-serif font-black leading-none">V_01</div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
@@ -95,9 +95,6 @@ export const LeadershipSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
-            <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">The Human Interface</span>
-          </div>
           <h2 className="text-4xl md:text-5xl font-serif font-black text-warm-gray leading-[1.1] tracking-tight mb-8">
             Our Leadership
           </h2>
@@ -124,21 +121,21 @@ export const LeadershipSection = () => {
               >
                 <div className="relative bg-white rounded-[2.5rem] border border-sand p-6 h-full transition-all duration-700 group-hover:shadow-2xl group-hover:border-gold-dark/30 group-hover:bg-[#faf9f6]/30 overflow-hidden">
                   <ArchetypeVisual type={index} isHovered={isHovered} />
-                  
+
                   {/* Portrait Panel */}
                   <div className="relative z-10 mb-8 rounded-[2rem] overflow-hidden aspect-[4/5] border border-sand shadow-sm transition-all duration-700 group-hover:rounded-[1.5rem]">
                     <motion.img
                       src={member.image}
                       alt={member.name}
-                      animate={{ 
+                      animate={{
                         scale: isHovered ? 1.1 : 1,
                         x: isHovered ? -5 : 0,
-                        y: isHovered ? -5 : 0 
+                        y: isHovered ? -5 : 0
                       }}
                       transition={{ duration: 0.7 }}
                       className="w-full h-full object-cover object-top"
                     />
-                    
+
                     {/* Floating Info Overlay for Mobile/Non-hover */}
                     <div className={`absolute inset-0 bg-gradient-to-t from-warm-gray/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 lg:hidden ${isHovered ? 'opacity-100' : 'opacity-40'}`} />
                   </div>
@@ -177,22 +174,22 @@ export const LeadershipSection = () => {
                     >
                       <Linkedin className="w-3.5 h-3.5 group-hover/link:scale-110 transition-transform" />
                       <span>Profile_Ref</span>
-                      
+
                       {/* Micro marking */}
                       <div className="flex gap-1 ml-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
-                         {[1, 2, 3].map(i => (
-                           <div key={i} className="w-1 h-1 rounded-full bg-gold-dark/30" />
-                         ))}
+                        {[1, 2, 3].map(i => (
+                          <div key={i} className="w-1 h-1 rounded-full bg-gold-dark/30" />
+                        ))}
                       </div>
                     </a>
                   </div>
 
                   {/* Corner Label */}
                   <div className="absolute top-4 right-6 text-[7px] font-mono text-warm-gray/20 uppercase tracking-[0.4em]">
-                     AUTH_SIG_0{index + 1}
+                    AUTH_SIG_0{index + 1}
                   </div>
                 </div>
-                
+
                 {/* Structural line behind staggered members */}
                 <div className={`absolute -z-10 bg-sand/20 hidden lg:block ${index % 2 === 0 ? 'top-[-50px] left-1/2 w-[1px] h-20' : 'bottom-[-50px] left-1/2 w-[1px] h-20'}`} />
               </motion.div>
