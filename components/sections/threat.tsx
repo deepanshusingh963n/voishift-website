@@ -367,7 +367,7 @@ export function Threat() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-[2.5rem] border border-gold/20 p-10 lg:p-16 shadow-2xl relative overflow-hidden"
+              className="bg-white border border-gold/50 p-10 lg:p-12 shadow-2xl relative overflow-hidden"
             >
               <div className="grid lg:grid-cols-[1.2fr_2fr] gap-12 lg:gap-16 items-center">
                 <div className="space-y-6">
@@ -414,7 +414,7 @@ export function Threat() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
           viewport={{ once: true }}
-          className="mt-24 lg:mt-32 text-center relative"
+          className="mt-18 lg:mt-18 text-center relative"
         >
           {/* Spotlight Glow */}
           <div className="absolute inset-0 bg-gold/20 blur-[120px] rounded-full scale-50" />

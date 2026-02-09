@@ -251,10 +251,6 @@ export function Diagnostic() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-3 px-4 py-1.5 bg-white border border-sand rounded-full mb-8 shadow-sm">
-            <Activity className="w-4 h-4 text-gold" />
-            <span className="text-[11px] font-black tracking-[0.3em] text-warm-gray uppercase">System_Veracity_Probe</span>
-          </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-warm-gray leading-[0.95] mb-8 text-balance max-w-5xl mx-auto tracking-tighter">
             A five-question reality check
           </h2>
@@ -268,7 +264,7 @@ export function Diagnostic() {
 
           {/* THE PROBES (LEFT) */}
           <div className="space-y-12">
-            <div className="bg-white rounded-[3.5rem] border-2 border-sand p-10 lg:p-14 shadow-sm relative overflow-hidden">
+            <div className="bg-white rounded-[2.5rem] border-2 border-sand p-10 lg:p-14 shadow-sm relative overflow-hidden">
               <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')]" />
 
               <h3 className="text-[11px] font-black text-warm-gray/30 uppercase tracking-[0.5em] mb-12 flex items-center gap-6">
@@ -285,7 +281,7 @@ export function Diagnostic() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     onMouseEnter={() => setActiveSpeed(topic.pulseSpeed)}
                     onMouseLeave={() => setActiveSpeed(1)}
-                    className="group relative bg-[#faf9f6]/50 rounded-[2.5rem] border border-sand p-7 hover:bg-white hover:border-gold/40 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden"
+                    className="group relative bg-[#faf9f6]/50 rounded-[1.5rem] border border-sand p-7 hover:bg-white hover:border-gold/40 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 overflow-hidden"
                   >
                     {/* Large Background Watermark Icon */}
                     <div className="absolute -bottom-8 -right-8 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-700 pointer-events-none">
@@ -367,18 +363,6 @@ export function Diagnostic() {
                       className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
                     />
                   </Button>
-                </div>
-
-                <div className="flex justify-center gap-12 items-center">
-                  <div className="flex items-center gap-3 text-[10px] font-black text-warm-gray/30 uppercase tracking-[0.4em] hover:text-gold transition-colors">
-                    <Search className="w-4 h-4" />
-                    <span>Zero_Pitch</span>
-                  </div>
-                  <div className="w-1.5 h-1.5 rounded-full bg-sand" />
-                  <div className="flex items-center gap-3 text-[10px] font-black text-warm-gray/30 uppercase tracking-[0.4em] hover:text-gold transition-colors">
-                    <Database className="w-4 h-4" />
-                    <span>Pure_Strategy</span>
-                  </div>
                 </div>
               </div>
             </div>

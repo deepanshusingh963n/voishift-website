@@ -27,7 +27,7 @@ const minimumOwnership = [
 /* --- v2.2 Refined Technical Illustrations --- */
 
 const FragileInterfaceVisual = () => (
-  <div className="relative w-full aspect-square max-w-[300px] mx-auto group">
+  <div className="relative w-full aspect-square max-w-[150px] mx-auto group">
     {/* Speaker Mesh Visual */}
     <div className="absolute inset-0 bg-[#f8f7f2] rounded-full border border-sand shadow-inner flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0 opacity-[0.1] bg-[radial-gradient(circle,currentColor_1px,transparent_1px)] bg-[size:10px_10px] text-warm-gray" />
@@ -73,7 +73,7 @@ const FragileInterfaceVisual = () => (
 )
 
 const SolidFoundationVisual = () => (
-  <div className="relative w-full aspect-square max-w-[300px] mx-auto group">
+  <div className="relative w-full aspect-square max-w-[150px] mx-auto group">
     {/* Hex-Grid Foundation */}
     <div className="absolute inset-0 flex items-center justify-center">
       <div className="w-full h-full opacity-[0.05] absolute inset-0 text-gold translate-y-4">
@@ -127,7 +127,7 @@ const SolidFoundationVisual = () => (
 
 export function RentVsBuild() {
   return (
-    <section className="py-20 lg:py-24 bg-cream-light relative overflow-hidden">
+    <section className="py-14 lg:py-20 bg-cream-light relative overflow-hidden">
       {/* Background Decorative Tech Patterns */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gold/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
@@ -141,42 +141,38 @@ export function RentVsBuild() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-24"
+          className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
-            <Box className="w-3.5 h-3.5 text-gold" />
-            <span className="text-[10px] font-black tracking-widest text-gold uppercase">System Architecture</span>
-          </div>
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-4xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-gray mb-8 max-w-4xl mx-auto">
             Rent vs build is not the real decision
           </h2>
           <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
             You can rent a voice. <br className="hidden md:block" />
-            <span className="text-warm-gray not-italic font-bold underline decoration-gold/20">You cannot rent ownership of what is true.</span>
+            <span className="text-gold not-italic font-bold underline decoration-gold/20">You cannot rent ownership of what is true.</span>
           </p>
         </motion.div>
 
         {/* Simplified Two-Column Main Layout */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mb-24">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mb-2">
 
           {/* THE RENT PATH */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-white/40 backdrop-blur-sm rounded-[3rem] border border-sand p-10 lg:p-12 shadow-sm flex flex-col items-center"
+            className="bg-white/40 backdrop-blur-sm border border-gold p-10 lg:p-12 shadow-2xl shadow-gold/30 flex flex-col items-center"
           >
             <div className="mb-12 w-full">
               <FragileInterfaceVisual />
             </div>
 
-            <div className="w-full space-y-12">
+            <div className="w-full space-y-6">
               <div>
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center border border-green-100 shadow-sm">
                     <Check className="w-5 h-5 text-green-700" />
                   </div>
-                  <h3 className="text-2xl font-serif text-warm-gray">When renting is fine</h3>
+                  <h3 className="text-xl font-serif text-warm-gray">When renting is fine</h3>
                 </div>
                 <ul className="space-y-4 px-2">
                   {rentFine.map((text, i) => (
@@ -190,14 +186,14 @@ export function RentVsBuild() {
                 </ul>
               </div>
 
-              <div className="pt-10 border-t border-sand">
+              <div className="pt-6 border-t border-sand">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-red-50 flex items-center justify-center border border-red-100 shadow-sm">
                     <AlertCircle className="w-5 h-5 text-red-500" />
                   </div>
-                  <h3 className="text-2xl font-serif text-warm-gray">When renting becomes risk</h3>
+                  <h3 className="text-xl font-serif text-warm-gray">When renting becomes risk</h3>
                 </div>
-                <ul className="space-y-4 px-2">
+                <ul className="space-y-2 px-2">
                   {rentRisk.map((text, i) => (
                     <li key={i} className="flex gap-4 items-start group">
                       <div className="w-5 h-5 rounded-full bg-red-50 flex items-center justify-center shrink-0 mt-1">
@@ -220,65 +216,62 @@ export function RentVsBuild() {
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="bg-white rounded-[3rem] border-2 border-gold/30 p-10 lg:p-12 shadow-2xl flex flex-col items-center"
+            className="bg-white border-2 border-gold/30 p-10 lg:p-12 shadow-2xl flex flex-col items-center"
           >
             <div className="mb-12 w-full">
               <SolidFoundationVisual />
             </div>
 
-            <div className="w-full space-y-12">
+            <div className="w-full space-y-8">
               <div>
-                <h3 className="text-2xl font-serif text-warm-gray mb-2 text-center md:text-left">The minimum ownership line</h3>
-                <p className="text-warm-gray-light text-sm italic mb-8 text-center md:text-left">Even if you rent, you still need:</p>
+                <h3 className="text-xl font-serif text-warm-gray mb-1 text-center md:text-left">The minimum ownership line</h3>
+                <p className="text-warm-gray-light text-sm italic mb-4 text-center md:text-left">Even if you rent, you still need:</p>
 
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-3">
                   {minimumOwnership.map((item, index) => (
-                    <div key={index} className="p-5 bg-sand/30 rounded-2xl border border-sand group hover:border-gold/40 transition-all shadow-sm">
-                      <div className="w-8 h-8 rounded-lg bg-white border border-sand flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
-                        <item.icon className="w-4 h-4 text-gold" />
+                    <div
+                      key={index}
+                      className="p-3 bg-sand/30 rounded-sm border border-sand group hover:border-gold/40 transition-all shadow-sm"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-8 h-8 rounded-lg bg-white border border-sand flex items-center justify-center flex-shrink-0 group-hover:bg-gold/10 transition-colors">
+                          <item.icon className="w-4 h-4 text-gold" />
+                        </div>
+                        <p className="text-xs font-black text-warm-gray leading-snug">
+                          {item.text}
+                        </p>
                       </div>
-                      <p className="text-[11px] font-black text-warm-gray uppercase tracking-widest leading-tight">{item.text}</p>
                     </div>
                   ))}
                 </div>
+
               </div>
 
-              <div className="mt-10 pt-10 border-t border-sand text-center md:text-left">
-                <div className="relative inline-block mb-10">
-                  <p className="text-xl text-warm-gray-light font-serif italic relative z-10 leading-relaxed">
+              <div className="mt-6 pt-6 border-t border-sand text-center md:text-left">
+                <div className="relative inline-block mb-8">
+                  <p className="text-lg text-warm-gray-light font-serif italic relative z-10 leading-relaxed">
                     Without that, you do not have automation. <br />
-                    <span className="text-warm-gray not-italic font-black uppercase tracking-tighter text-2xl">You have dependency.</span>
+                    <span className="text-warm-gray not-italic font-black uppercase tracking-tighter text-xl">You have dependency.</span>
                   </p>
                   <div className="absolute -left-4 -top-4 w-12 h-12 bg-gold/5 rounded-full blur-xl" />
                 </div>
 
                 {/* Final verdict panel simplified */}
-                <div className="pt-10 border-t-2 border-gold/10">
-                  <div className="flex items-center gap-3 mb-6 justify-center md:justify-start">
+                <div className="pt-6 border-t-2 border-gold/10">
+                  <div className="flex items-center gap-3 mb-4 justify-center md:justify-start">
                     <div className="w-8 h-8 rounded-lg bg-gold shadow-[0_0_15px_rgba(212,175,55,0.3)] flex items-center justify-center">
                       <Zap className="w-5 h-5 text-white" />
                     </div>
                     <p className="text-md text-gold font-serif italic">The question is not "Should we build or buy?"</p>
                   </div>
-                  <h4 className="text-2xl md:text-3xl font-serif font-black text-warm-gray leading-tight text-center md:text-left text-balance">
-                    "When this goes wrong, <br className="hidden md:block" /> who actually knows why?"
+                  <h4 className="text-md md:text-lg font-serif font-black text-warm-gray text-center md:text-left">
+                    "When this goes wrong, who actually knows why?"
                   </h4>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
-
-        {/* Integrated Bottom Indicator */}
-        <div className="flex justify-center">
-          <div className="px-6 py-2 rounded-full border border-sand bg-white/50 backdrop-blur flex items-center gap-4 text-[9px] font-black text-warm-gray/30 uppercase tracking-[0.4em]">
-            <Database className="w-3 h-3" />
-            <span>Verified_Architecture</span>
-            <div className="w-1 h-1 rounded-full bg-gold" />
-            <span>Zero_Dependency</span>
-          </div>
-        </div>
-
       </div>
     </section>
   )

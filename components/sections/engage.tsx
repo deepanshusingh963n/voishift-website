@@ -20,8 +20,8 @@ const stressTestDeliverables = [
 /* --- v2.0 Strategic Visuals --- */
 
 const BlueprintConstructionVisual = () => (
-  <div className="relative w-full aspect-square max-w-[280px] mx-auto group">
-    <div className="absolute inset-0 bg-[#faf9f6] rounded-[2.5rem] border border-sand overflow-hidden">
+  <div className="relative w-full aspect-square max-w-[200px] mx-auto group">
+    <div className="absolute inset-0 bg-[#faf9f6] border border-sand overflow-hidden">
       <div className="absolute inset-0 opacity-[0.05] bg-[linear-gradient(to_right,gold_1px,transparent_1px),linear-gradient(to_bottom,gold_1px,transparent_1px)] bg-[size:25px_25px]" />
     </div>
 
@@ -54,17 +54,12 @@ const BlueprintConstructionVisual = () => (
         </motion.div>
       </motion.div>
     </div>
-
-    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full border border-sand shadow-sm">
-      <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-      <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Architect_Mode_v2</span>
-    </div>
   </div>
 )
 
 const StructuralAuditVisual = () => (
-  <div className="relative w-full aspect-square max-w-[280px] mx-auto group">
-    <div className="absolute inset-0 bg-white rounded-[2.5rem] border-2 border-sand shadow-inner overflow-hidden">
+  <div className="relative w-full aspect-square max-w-[200px] mx-auto group">
+    <div className="absolute inset-0 bg-white border-2 border-gold/50 shadow-inner overflow-hidden">
       <div className="absolute inset-0 opacity-[0.03] bg-[url('https://www.transparenttextures.com/patterns/asphalt.png')]" />
     </div>
 
@@ -77,7 +72,7 @@ const StructuralAuditVisual = () => (
           className="absolute inset-0 bg-gradient-to-b from-transparent via-gold to-transparent h-20 opacity-30"
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <Shield className="w-10 h-10 text-gold/40" />
+          <Shield className="w-10 h-10 text-gold" />
         </div>
       </div>
 
@@ -85,18 +80,13 @@ const StructuralAuditVisual = () => (
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-4 border border-gold/10 border-dashed rounded-full"
+        className="absolute inset-4 border border-gold border-dashed rounded-full"
       />
       <motion.div
         animate={{ rotate: -360 }}
         transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-10 border border-gold/5 border-dashed rounded-full"
+        className="absolute inset-10 border border-gold border-dashed rounded-full"
       />
-    </div>
-
-    <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full border border-sand shadow-sm">
-      <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse shadow-[0_0_10px_gold]" />
-      <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Stress_Audit_Live</span>
     </div>
   </div>
 )
@@ -105,14 +95,13 @@ const DossierItem = ({ item, type }: { item: any, type: 'fresh' | 'stress' }) =>
   <motion.div
     initial={{ opacity: 0, x: -10 }}
     whileInView={{ opacity: 1, x: 0 }}
-    className="group flex items-center gap-4 p-4 bg-white/40 backdrop-blur-sm rounded-2xl border border-sand hover:bg-white hover:border-gold/30 hover:shadow-lg transition-all"
+    className="group flex items-center gap-4 p-4 bg-cream backdrop-blur-sm border border-sand hover:bg-white hover:border-gold/30 hover:shadow-lg transition-all"
   >
     <div className={`w-10 h-10 rounded-xl flex items-center justify-center border transition-colors ${type === 'fresh' ? 'bg-gold/5 border-gold/10 group-hover:bg-gold/10' : 'bg-sand/10 border-sand group-hover:bg-sand/20'}`}>
       <item.icon className={`w-5 h-5 ${type === 'fresh' ? 'text-gold' : 'text-warm-gray'}`} />
     </div>
     <div className="flex-1">
       <span className="text-[14px] font-medium text-warm-gray leading-tight block">{item.text}</span>
-      <span className="text-[7px] font-black text-warm-gray/20 uppercase tracking-widest mt-1 block">Ref: {item.id}</span>
     </div>
   </motion.div>
 )
@@ -136,10 +125,6 @@ export function Engage() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
-            <Boxes className="w-3.5 h-3.5 text-gold" />
-            <span className="text-[10px] font-black tracking-widest text-gold uppercase">Engagement Pathways</span>
-          </div>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-5xl mx-auto">
             Two ways to engage
           </h2>
@@ -157,7 +142,7 @@ export function Engage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="flex flex-col h-full bg-white rounded-[3.5rem] border-2 border-gold/30 p-10 lg:p-14 shadow-2xl relative overflow-hidden group"
+            className="flex flex-col h-full bg-white border-2 border-gold/30 p-10 lg:p-14 shadow-2xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/fabric-of-squares.png')]" />
 
@@ -213,7 +198,7 @@ export function Engage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="flex flex-col h-full bg-[#faf9f6]/90 backdrop-blur rounded-[3.5rem] border-2 border-sand p-10 lg:p-14 shadow-lg relative overflow-hidden group"
+            className="flex flex-col h-full bg-[#faf9f6]/90 backdrop-blur border-2 border-gold/50 p-10 lg:p-14 shadow-lg relative overflow-hidden group"
           >
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
@@ -233,7 +218,6 @@ export function Engage() {
               </div>
 
               <div className="space-y-6 mb-12">
-                <h4 className="text-[11px] font-black text-warm-gray/30 uppercase tracking-[0.4em] mb-4">Audit_Dossier</h4>
                 <div className="space-y-4">
                   {stressTestDeliverables.map((item, index) => (
                     <DossierItem key={index} item={item} type="stress" />
@@ -241,7 +225,7 @@ export function Engage() {
                 </div>
               </div>
 
-              <div className="p-8 bg-white/60 rounded-[2rem] border border-sand mb-10 relative overflow-hidden group/text">
+              <div className="p-8 bg-white/60 rounded-lg border border-sand mb-10 relative overflow-hidden group/text">
                 <div className="absolute top-0 right-0 p-4 opacity-[0.05]">
                   <Activity className="w-12 h-12 text-warm-gray" />
                 </div>
@@ -255,7 +239,7 @@ export function Engage() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full py-10 text-xl font-serif border-2 border-warm-gray/20 text-warm-gray hover:bg-warm-gray hover:text-white rounded-[2.5rem] transition-all duration-500 shadow-md group/btn active:scale-95 bg-white/50"
+                className="w-full py-10 text-xl font-serif border-2 border-warm-gray/20 text-warm-gray bg-cream hover:bg-warm-gray hover:text-white rounded-[2.5rem] transition-all duration-500 shadow-md group/btn active:scale-95"
                 onClick={openModal}
               >
                 Stress test my current build
@@ -274,9 +258,6 @@ export function Engage() {
           className="mt-24 text-center relative"
         >
           <div className="inline-flex flex-col items-center">
-            <div className="px-6 py-2 rounded-full border border-sand bg-white/50 backdrop-blur mb-6 text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.4em]">
-              Verified_Partnership_Flow
-            </div>
             <p className="text-xl md:text-3xl text-warm-gray-light font-serif italic max-w-4xl mx-auto leading-relaxed">
               No sales deck. No pressure. <br className="hidden md:block" />
               <span className="text-warm-gray not-italic font-black text-2xl md:text-4xl uppercase tracking-tighter decoration-gold/30">Just work you can carry back <br className="md:hidden" /> into your organisation tomorrow.</span>

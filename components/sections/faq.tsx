@@ -19,7 +19,7 @@ const faqs = [
 
 const NeuralLibraryVisual = ({ activeLayer = 0 }: { activeLayer?: number }) => (
   <div className="relative w-full aspect-square max-w-[340px] mx-auto group">
-    <div className="absolute inset-0 bg-[#faf9f6] rounded-[3rem] border-2 border-sand overflow-hidden shadow-inner">
+    <div className="absolute inset-0 bg-[#faf9f6] border-2 border-sand overflow-hidden shadow-inner">
       <div className="absolute inset-0 opacity-[0.08] bg-[linear-gradient(to_right,gold_1px,transparent_1px),linear-gradient(to_bottom,gold_1px,transparent_1px)] bg-[size:30px_30px]" />
     </div>
 
@@ -36,7 +36,7 @@ const NeuralLibraryVisual = ({ activeLayer = 0 }: { activeLayer?: number }) => (
               borderColor: activeLayer === i ? "#d4af37" : "#e5e7eb"
             }}
             transition={{ duration: 0.6 }}
-            className="absolute inset-0 bg-white border-2 rounded-2xl shadow-sm flex items-center justify-center"
+            className="absolute inset-0 bg-white border-2 shadow-sm flex items-center justify-center"
             style={{ transform: `translateZ(${i * 15}px)` }}
           >
             {/* Data Fragments inside layers */}
@@ -100,7 +100,7 @@ const ProtocolCard = ({ faq, isOpen, onClick }: { faq: any, isOpen: boolean, onC
   return (
     <motion.div
       layout
-      className={`bg-white rounded-[2.5rem] border-2 transition-all duration-700 overflow-hidden relative group/card ${isOpen ? 'border-gold/30 shadow-2xl' : 'border-sand hover:border-gold/20 hover:shadow-xl'}`}
+      className={`bg-white rounded-lg border-2 transition-all duration-700 overflow-hidden relative group/card ${isOpen ? 'border-gold/30 shadow-2xl' : 'border-sand hover:border-gold/20 hover:shadow-xl'}`}
     >
       {/* Background Thematic Decal */}
       <div className="absolute -top-10 -left-10 opacity-[0.01] pointer-events-none">
@@ -131,10 +131,6 @@ const ProtocolCard = ({ faq, isOpen, onClick }: { faq: any, isOpen: boolean, onC
             <div className="px-8 pb-10 relative z-10">
               {/* Retrieval Progress Bar */}
               <div className="mb-6">
-                <div className="flex justify-between items-center text-[8px] font-black text-warm-gray/30 uppercase tracking-[0.2em] mb-1.5">
-                  <span>Retrieving_Protocol_0{faq.id[3]}</span>
-                  <span className="text-gold">100%_DECRYPTED</span>
-                </div>
                 <div className="h-1 w-full bg-sand rounded-full overflow-hidden">
                   <motion.div
                     initial={{ width: 0 }}
@@ -190,12 +186,6 @@ export function FAQ() {
             transition={{ duration: 1 }}
             className="lg:sticky lg:top-32"
           >
-            <div className="inline-flex items-center gap-2.5 px-4 py-1.5 bg-white border-2 border-sand rounded-full mb-10 shadow-sm relative group overflow-hidden">
-              <div className="absolute inset-0 bg-gold/5 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-              <Database className="w-4 h-4 text-gold" />
-              <span className="text-[11px] font-black tracking-[0.3em] text-warm-gray uppercase relative z-10">Protocol_Library</span>
-            </div>
-
             <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-warm-gray leading-[0.9] mb-12 tracking-tighter">
               Frequently asked questions
             </h2>
@@ -204,13 +194,13 @@ export function FAQ() {
               <NeuralLibraryVisual activeLayer={openIndex !== null ? faqs[openIndex].layer : 0} />
             </div>
 
-            <div className="space-y-8 border-l-4 border-gold/10 pl-10 ml-4">
+            <div className="space-y-8 border-l-4 border-gold pl-10 ml-4">
               <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic leading-snug max-w-sm">
                 Real talk about truth, decisions, and <span className="text-warm-gray not-italic font-bold">behavior under pressure.</span>
               </p>
               <div className="flex gap-4">
                 {[Search, Activity, Layers].map((Icon, i) => (
-                  <Icon key={i} className="w-5 h-5 text-gold/20" />
+                  <Icon key={i} className="w-5 h-5 text-gold" />
                 ))}
               </div>
             </div>
@@ -219,15 +209,14 @@ export function FAQ() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8 }}
-              className="mt-16 p-12 bg-white/30 backdrop-blur-xl rounded-[4rem] border-2 border-sand border-dashed text-center relative overflow-hidden group"
+              className="mt-16 p-8 bg-white backdrop-blur-xl border-2 border-sand border-dashed text-center relative overflow-hidden group"
             >
               <div className="absolute inset-x-0 bottom-0 h-1 bg-gold shadow-[0_0_20px_gold] opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="relative z-10 space-y-6">
-                <span className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 rounded-full border border-gold/10 text-[9px] font-black text-gold uppercase tracking-widest">Decision_Integrity_Final</span>
                 <p className="text-lg md:text-xl text-warm-gray-light font-serif italic leading-relaxed">No fluff. No long procurement cycles.</p>
-                <p className="text-2xl md:text-3xl font-serif text-warm-gray leading-[0.95] tracking-tighter">
-                  Just a <span className="text-[#1a1a1a] font-black not-italic uppercase tracking-tighter underline decoration-gold/40 decoration-wavy">clean way to decide</span> <br className="hidden md:block" />
+                <p className="text-2xl md:text-3xl font-serif text-warm-gray tracking-tighter">
+                  Just a <span className="text-[#1a1a1a] font-black not-italic uppercase underline decoration-gold/50">clean way to decide</span> <br className="hidden md:block" />
                   if this is worth scaling.
                 </p>
               </div>

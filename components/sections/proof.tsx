@@ -48,12 +48,8 @@ const EvidenceFile = ({ item, index }: { item: any, index: number }) => (
     whileInView={{ opacity: 1, x: 0 }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
     viewport={{ once: true }}
-    className="group relative bg-white rounded-2xl border border-sand p-5 shadow-sm hover:shadow-xl hover:border-gold/30 transition-all duration-500 overflow-hidden"
+    className="group relative bg-white border border-gold/30 p-2 shadow-sm hover:shadow-xl hover:border-gold transition-all duration-500 overflow-hidden"
   >
-    {/* File ID Sticker */}
-    <div className="absolute top-0 right-10 bg-[#faf9f6] border-x border-b border-sand px-2 py-0.5 rounded-b-md">
-      <span className="text-[7px] font-black text-warm-gray/30 uppercase tracking-widest">FILE_ID: VSH-0{index + 1}</span>
-    </div>
 
     <div className="flex items-center gap-4 relative z-10">
       <div className="w-12 h-12 rounded-xl bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:bg-gold/10 transition-colors">
@@ -66,18 +62,18 @@ const EvidenceFile = ({ item, index }: { item: any, index: number }) => (
           <span className="text-[8px] font-black text-warm-gray/40 uppercase tracking-tighter">Status: Verified_Output</span>
         </div>
       </div>
-      <ArrowRight className="w-4 h-4 text-sand group-hover:text-gold transition-colors" />
+      <ArrowRight className="w-4 h-4 text-gold/50 group-hover:text-gold transition-colors" />
     </div>
   </motion.div>
 )
 
 const IntegrityBoundaryVisual = () => (
-  <div className="relative w-full aspect-[4/3] bg-[#faf9f6]/50 rounded-[3rem] border border-sand overflow-hidden group">
-    <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
+  <div className="relative w-full aspect-[4/3] bg-cream rounded-lg border border-gold overflow-hidden group">
+    <div className="absolute inset-0 opacity-[0.3] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
 
     {/* 3D Grid Floor */}
     <div className="absolute inset-0 [perspective:1000px]">
-      <div className="absolute inset-0 [transform:rotateX(60deg)] opacity-[0.2]">
+      <div className="absolute inset-0 [transform:rotateX(60deg)] opacity-[0.5]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,gold_1px,transparent_1px),linear-gradient(to_bottom,gold_1px,transparent_1px)] bg-[size:40px_40px]" />
       </div>
     </div>
@@ -148,10 +144,6 @@ export function Proof() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
-            <Cpu className="w-3.5 h-3.5 text-gold" />
-            <span className="text-[10px] font-black tracking-widest text-gold uppercase">Evidence Phase</span>
-          </div>
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-4xl mx-auto">
             Proof that holds up
           </h2>
@@ -174,7 +166,7 @@ export function Proof() {
               transition={{ duration: 0.6 }}
               className="group"
             >
-              <div className="p-8 bg-red-50/30 rounded-[2.5rem] border border-red-100 flex flex-col h-full hover:shadow-lg transition-all duration-500">
+              <div className="p-8 bg-red-50/30 border border-red-100 flex flex-col h-full hover:shadow-lg transition-all duration-500">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-red-500 text-white flex items-center justify-center shadow-lg shadow-red-200">
                     <AlertTriangle className="w-5 h-5" />
@@ -197,7 +189,7 @@ export function Proof() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
             >
-              <div className="p-8 bg-[#faf9f6] rounded-[2.5rem] border border-sand flex flex-col h-full">
+              <div className="p-8 bg-[#faf9f6] border border-sand flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-warm-gray text-white flex items-center justify-center">
                     <Search className="w-5 h-5" />
@@ -221,7 +213,7 @@ export function Proof() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="p-8 bg-gold/5 rounded-[2.5rem] border border-gold/20 flex flex-col h-full">
+              <div className="p-8 bg-gold/5 border border-gold/20 flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-gold text-[#1a1a1a] flex items-center justify-center shadow-lg shadow-gold/20">
                     <Wrench className="w-5 h-5" />
@@ -245,7 +237,7 @@ export function Proof() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              <div className="p-8 bg-green-50/50 rounded-[2.5rem] border border-green-100 flex flex-col h-full shadow-sm">
+              <div className="p-8 bg-green-50/50 border border-green-100 flex flex-col h-full shadow-sm">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center shadow-lg shadow-green-100">
                     <TrendingUp className="w-5 h-5" />
@@ -281,7 +273,7 @@ export function Proof() {
               ))}
             </div>
 
-            <div className="p-8 bg-[#faf9f6] rounded-[2.5rem] border border-sand flex items-start gap-6 group hover:border-gold/30 transition-all">
+            <div className="p-8 bg-[#faf9f6] rounded-lg border border-sand flex items-start gap-6 group hover:border-gold/30 transition-all">
               <TestTube className="w-6 h-6 text-gold mt-1 shrink-0" />
               <div>
                 <h4 className="text-[11px] font-black text-warm-gray/40 uppercase tracking-[0.3em] mb-4">Internal Evidence Context</h4>
@@ -297,7 +289,7 @@ export function Proof() {
           <div className="space-y-10">
             <IntegrityBoundaryVisual />
 
-            <div className="p-10 bg-white rounded-[3.5rem] border-2 border-gold/30 shadow-2xl relative overflow-hidden group">
+            <div className="p-6 bg-white border-3 border-gold/30 shadow-2xl shadow-gold/20 relative overflow-hidden group">
               <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asphalt.png')]" />
 
               <div className="relative z-10 text-center">

@@ -133,8 +133,8 @@ const ScaleOrbit = () => (
     </div>
 
     {/* Orbital Rings */}
-    <div className="absolute inset-0 border border-sand rounded-full" />
-    <div className="absolute inset-8 border border-sand/50 rounded-full" />
+    <div className="absolute inset-0 border border-gold rounded-full" />
+    <div className="absolute inset-8 border border-gold/50 rounded-full" />
 
     {/* Satellites (Steps) */}
     {scaleSteps.map((step, i) => {
@@ -145,13 +145,13 @@ const ScaleOrbit = () => (
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: i * 0.2 }}
-          className="absolute w-12 h-12 bg-white rounded-xl border border-sand shadow-lg flex items-center justify-center text-gold z-20"
+          className="absolute w-18 h-18 bg-white rounded-xl border border-gold shadow-lg flex items-center justify-center text-gold z-20"
           style={{
             left: `calc(50% + ${Math.cos(angle) * 45}% - 24px)`,
             top: `calc(50% + ${Math.sin(angle) * 45}% - 24px)`
           }}
         >
-          <step.icon className="w-5 h-5" />
+          <step.icon className="w-12 h-12" />
         </motion.div>
       )
     })}
@@ -180,7 +180,7 @@ const FixCard = ({ failure, why, fix, result, details }: any) => (
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="group relative grid lg:grid-cols-[1fr_1.5fr] gap-px bg-sand rounded-[2rem] overflow-hidden border border-sand transition-all duration-500 hover:shadow-2xl"
+    className="group relative grid lg:grid-cols-[1fr_1.5fr] gap-px bg-gold overflow-hidden border border-sand transition-all duration-500 hover:shadow-2xl"
   >
     {/* Failure State (Red/Glitched) */}
     <div className="bg-white p-8 relative flex flex-col justify-center">
@@ -238,7 +238,17 @@ export function Differentiation() {
   return (
     <section ref={containerRef} className="py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Background Accents */}
-      <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]" />
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.2]"
+        style={{
+          backgroundImage: `
+            linear-gradient(to right, rgba(0,0,0,0.25) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,0,0,0.25) 1px, transparent 1px)
+          `,
+          backgroundSize: '48px 48px',
+          maskImage: 'radial-gradient(circle at center, black 60%, transparent 100%)'
+        }}
+      />
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gold/5 blur-[150px] rounded-full translate-x-1/3 -translate-y-1/3" />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -251,10 +261,6 @@ export function Differentiation() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6 text-gold">
-            <ShieldOff className="w-3.5 h-3.5 rotate-180" />
-            <span className="text-[10px] font-black tracking-widest uppercase">The VoiShift Standard</span>
-          </div>
           <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance">
             What makes VoiShift different
           </h2>
@@ -273,7 +279,7 @@ export function Differentiation() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative p-8 rounded-[2.5rem] bg-white border border-sand hover:border-gold transition-all duration-500 hover:shadow-2xl overflow-hidden"
+                className="group relative p-8 bg-cream border border-sand hover:border-gold transition-all duration-500 hover:shadow-2xl overflow-hidden"
               >
                 {/* Background Blueprint Grain */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
@@ -304,8 +310,8 @@ export function Differentiation() {
               <h3 className="text-3xl font-serif text-warm-gray mb-6">How this stays sane at scale</h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 {scaleSteps.map((step, i) => (
-                  <div key={i} className="p-5 bg-[#faf9f6] rounded-2xl border border-sand hover:border-gold/30 transition-all group">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-sand flex items-center justify-center mb-4 group-hover:text-gold transition-colors shadow-sm">
+                  <div key={i} className="p-5 bg-cream border border-gold hover:border-gold/30 transition-all group">
+                    <div className="w-10 h-10 rounded-xl bg-white border border-gold flex items-center justify-center mb-4 group-hover:text-gold transition-colors shadow-sm">
                       <step.icon className="w-5 h-5" />
                     </div>
                     <p className="text-sm font-medium text-warm-gray-light leading-tight">{step.text}</p>
@@ -316,11 +322,6 @@ export function Differentiation() {
 
             <div className="flex gap-4 items-center">
               <div className="h-0.5 flex-1 bg-gradient-to-r from-sand to-transparent" />
-              <div className="flex gap-2">
-                {lifecycle.map((stage, i) => (
-                  <span key={i} className="text-[10px] font-black text-gold uppercase tracking-tighter opacity-40">{stage}</span>
-                ))}
-              </div>
             </div>
 
             <div className="grid sm:grid-cols-2 gap-8">
@@ -341,7 +342,7 @@ export function Differentiation() {
         </div>
 
         {/* Anatomy of a Fix - Diagnostics */}
-        <div className="mb-32">
+        <div className="mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -375,7 +376,7 @@ export function Differentiation() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-[#2A2A2A] text-white rounded-[3rem] border-2 border-gold/50 shadow-2xl relative overflow-hidden"
+            className="bg-[#2A2A2A] text-white border-2 border-gold/50 shadow-2xl relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent pointer-events-none" />
 
@@ -420,7 +421,7 @@ export function Differentiation() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="rounded-[3.5rem] bg-gradient-to-br from-[#faf9f6] to-white items-center justify-center flex flex-col p-10 lg:p-16 text-center border border-sand shadow-inner relative overflow-hidden"
+            className="bg-cream items-center justify-center flex flex-col p-10 lg:p-16 text-center border border-sand shadow-inner relative overflow-hidden"
           >
             <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
 
