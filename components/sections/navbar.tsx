@@ -10,7 +10,6 @@ import { useModal } from "@/context/modal-context";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Case Studies", href: "/case-studies" },
   { label: "How It Works", href: "/#how-it-works" },
   { label: "Who It's For", href: "/#who-its-for" },
   { label: "What's Different", href: "/#whats-different" },

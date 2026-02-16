@@ -5,7 +5,6 @@ import Image from "next/image"
 import { Shield, Lock, Mail } from "lucide-react"
 
 const links = [
-  { label: "Case Studies", href: "/case-studies", icon: Shield },
   { label: "Privacy Policy", href: "/privacy-policy", icon: Lock },
   { label: "Contact", href: "/contact", icon: Mail },
 ]

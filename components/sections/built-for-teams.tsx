@@ -266,7 +266,7 @@ export function BuiltForTeams() {
                         <div className="relative z-10">
                             <div className="p-8 bg-[#faf9f6] border border-sand rounded-xl mb-10 group-hover:border-gold/30 transition-all shadow-inner">
                                 <p className="text-warm-gray/40 text-xs font-bold uppercase tracking-widest mb-6">Internal Documentation & Evidence</p>
-                                <Button
+                                {/* <Button
                                     variant="outline"
                                     className="w-full py-6 text-2xl bg-gold text-[#1a1a1a] hover:bg-white hover:text-gold rounded-full border-2 border-gold hover:border-gold transition-all duration-500 font-serif active:scale-[0.98] shadow-lg shadow-gold/10"
                                     asChild
@@ -275,7 +275,7 @@ export function BuiltForTeams() {
                                         Case Studies
                                         <ArrowRight className="ml-3 h-8 w-8" />
                                     </a>
-                                </Button>
+                                </Button> */}
                             </div>
 
                             <div className="flex items-center justify-between">
