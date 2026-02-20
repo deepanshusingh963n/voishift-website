@@ -13,9 +13,10 @@ const navLinks = [
   { label: "About Us", href: "/about" },
   { label: "Case Studies", href: "/case-studies" },
   { label: "How It Works", href: "/how-it-works" },
-  { label: "Who It's For", href: "/#who-its-for" },
-  { label: "What's Different", href: "/#whats-different" },
-  { label: "Proof", href: "/#proof" },
+  { label: "Our Difference", href: "/difference" },
+  { label: "Build Vs Buy", href: "/build-vs-buy" },
+  { label: "What We Solve", href: "/what-we-solve"},
+  { label: "Who It's For", href: "/who-is-this-for" },
   //{ label: "FAQ", href: "/#faq" },
 ];
 

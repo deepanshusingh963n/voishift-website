@@ -52,13 +52,13 @@ const EvidenceFile = ({ item, index }: { item: any, index: number }) => (
   >
 
     <div className="flex items-center gap-4 relative z-10">
-      <div className="w-12 h-12 rounded-xl bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:bg-gold/10 transition-colors">
+      <div className="w-12 h-12 rounded-none bg-gold/5 flex items-center justify-center border border-gold/10 group-hover:bg-gold/10 transition-colors">
         <item.icon className="w-6 h-6 text-gold" />
       </div>
       <div className="flex-1">
         <p className="text-sm font-bold text-warm-gray leading-tight">{item.text}</p>
         <div className="flex items-center gap-1.5 mt-1">
-          <div className="w-1.5 h-1.5 rounded-full bg-green-500/50" />
+          <div className="w-1.5 h-1.5 rounded-none bg-green-500/50" />
           <span className="text-[8px] font-black text-warm-gray/40 uppercase tracking-tighter">Status: Verified_Output</span>
         </div>
       </div>
@@ -68,7 +68,7 @@ const EvidenceFile = ({ item, index }: { item: any, index: number }) => (
 )
 
 const IntegrityBoundaryVisual = () => (
-  <div className="relative w-full aspect-[4/3] bg-cream rounded-lg border border-gold overflow-hidden group">
+  <div className="relative w-full aspect-[4/3] bg-cream rounded-none border border-gold overflow-hidden group">
     <div className="absolute inset-0 opacity-[0.3] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
 
     {/* 3D Grid Floor */}
@@ -84,15 +84,15 @@ const IntegrityBoundaryVisual = () => (
         <motion.div
           animate={{ scale: [1, 1.05, 1], opacity: [0.1, 0.2, 0.1] }}
           transition={{ duration: 4, repeat: Infinity }}
-          className="absolute inset-0 bg-gold blur-3xl rounded-full"
+          className="absolute inset-0 bg-gold blur-3xl rounded-none"
         />
-        <div className="absolute inset-4 rounded-[2.5rem] border-2 border-gold/30 flex items-center justify-center bg-white/40 backdrop-blur-sm">
+        <div className="absolute inset-4 rounded-none border-2 border-gold/30 flex items-center justify-center bg-white/40 backdrop-blur-sm">
           <div className="relative">
             <Shield className="w-16 h-16 text-gold/40" />
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute -inset-8 border border-gold/10 border-dashed rounded-full"
+              className="absolute -inset-8 border border-gold/10 border-dashed rounded-none"
             />
           </div>
         </div>
@@ -115,13 +115,13 @@ const IntegrityBoundaryVisual = () => (
           delay: i * 0.6,
           ease: "easeOut"
         }}
-        className="absolute w-2 h-2 rounded-full bg-red-400 blur-[1px]"
+        className="absolute w-2 h-2 rounded-none bg-red-400 blur-[1px]"
         style={{ top: '50%', left: '30%' }}
       />
     ))}
 
     <div className="absolute top-6 left-6 flex items-center gap-2">
-      <div className="w-2 h-2 rounded-full bg-gold animate-pulse shadow-[0_0_10px_gold]" />
+      <div className="w-2 h-2 rounded-none bg-gold animate-pulse shadow-[0_0_10px_gold]" />
       <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Boundary_Integrity: 100%</span>
     </div>
   </div>
@@ -168,7 +168,7 @@ export function Proof() {
             >
               <div className="p-8 bg-red-50/30 border border-red-100 flex flex-col h-full hover:shadow-lg transition-all duration-500">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-red-500 text-white flex items-center justify-center shadow-lg shadow-red-200">
+                  <div className="w-10 h-10 rounded-none bg-red-500 text-white flex items-center justify-center shadow-lg shadow-red-200">
                     <AlertTriangle className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-black text-red-600 uppercase tracking-widest">Failure_Log</span>
@@ -176,7 +176,7 @@ export function Proof() {
                 <p className="text-lg text-warm-gray leading-snug font-serif italic mb-6">"{failureDetails.what}"</p>
                 <div className="mt-auto pt-6 border-t border-red-100/50">
                   <div className="flex items-center gap-2 opacity-30">
-                    <div className="w-1.5 h-1.5 rounded-full bg-red-500" />
+                    <div className="w-1.5 h-1.5 rounded-none bg-red-500" />
                     <span className="text-[8px] font-bold uppercase">System_Interrupt</span>
                   </div>
                 </div>
@@ -191,7 +191,7 @@ export function Proof() {
             >
               <div className="p-8 bg-[#faf9f6] border border-sand flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-warm-gray text-white flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-none bg-warm-gray text-white flex items-center justify-center">
                     <Search className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-black text-warm-gray-light uppercase tracking-widest">Root_Cause</span>
@@ -215,9 +215,9 @@ export function Proof() {
             >
               <div className="p-8 bg-gold/5 border border-gold/20 flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-gold text-[#1a1a1a] flex items-center justify-center shadow-lg shadow-gold/20">
-                    <Wrench className="w-5 h-5" />
-                  </div>
+                  <div className="w-12 h-12 rounded-none bg-white border border-sand flex items-center justify-center shadow-sm relative z-10">
+                <Activity className="w-6 h-6 text-gold" />
+            </div>
                   <span className="text-[10px] font-black text-gold uppercase tracking-widest">Resolution</span>
                 </div>
                 <ul className="space-y-4">
@@ -239,7 +239,7 @@ export function Proof() {
             >
               <div className="p-8 bg-green-50/50 border border-green-100 flex flex-col h-full shadow-sm">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-green-600 text-white flex items-center justify-center shadow-lg shadow-green-100">
+                  <div className="w-10 h-10 rounded-none bg-green-600 text-white flex items-center justify-center shadow-lg shadow-green-100">
                     <TrendingUp className="w-5 h-5" />
                   </div>
                   <span className="text-[10px] font-black text-green-700 uppercase tracking-widest">Outcome</span>
@@ -247,7 +247,7 @@ export function Proof() {
                 <ul className="space-y-4">
                   {failureDetails.improved.map((item, i) => (
                     <li key={i} className="flex gap-3 text-sm text-green-900 font-bold leading-tight">
-                      <div className="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 shrink-0" />
+                      <div className="w-1.5 h-1.5 rounded-none bg-green-400 mt-1.5 shrink-0" />
                       {item}
                     </li>
                   ))}
@@ -273,7 +273,7 @@ export function Proof() {
               ))}
             </div>
 
-            <div className="p-8 bg-[#faf9f6] rounded-lg border border-sand flex items-start gap-6 group hover:border-gold/30 transition-all">
+            <div className="p-8 bg-[#faf9f6] rounded-none border border-sand flex items-start gap-6 group hover:border-gold/30 transition-all">
               <TestTube className="w-6 h-6 text-gold mt-1 shrink-0" />
               <div>
                 <h4 className="text-[11px] font-black text-warm-gray/40 uppercase tracking-[0.3em] mb-4">Internal Evidence Context</h4>

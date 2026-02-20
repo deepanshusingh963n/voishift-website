@@ -128,13 +128,13 @@ const DisciplineVisual = ({ index }: { index: number }) => {
 const ScaleOrbit = () => (
   <div className="relative w-full aspect-square max-w-[400px] mx-auto flex items-center justify-center">
     {/* Central Core */}
-    <div className="relative z-10 w-24 h-24 rounded-full bg-white border-2 border-gold shadow-[0_0_50px_rgba(212,175,55,0.2)] flex items-center justify-center">
+    <div className="relative z-10 w-24 h-24 rounded-none bg-white border-2 border-gold shadow-[0_0_50px_rgba(212,175,55,0.2)] flex items-center justify-center">
       <RotateCcw className="w-10 h-10 text-gold animate-spin-slow" />
     </div>
 
     {/* Orbital Rings */}
-    <div className="absolute inset-0 border border-gold rounded-full" />
-    <div className="absolute inset-8 border border-gold/50 rounded-full" />
+    <div className="absolute inset-0 border border-gold rounded-none" />
+    <div className="absolute inset-8 border border-gold/50 rounded-none" />
 
     {/* Satellites (Steps) */}
     {scaleSteps.map((step, i) => {
@@ -145,7 +145,7 @@ const ScaleOrbit = () => (
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: i * 0.2 }}
-          className="absolute w-18 h-18 bg-white rounded-xl border border-gold shadow-lg flex items-center justify-center text-gold z-20"
+          className="absolute w-18 h-18 bg-white rounded-none border border-gold shadow-lg flex items-center justify-center text-gold z-20"
           style={{
             left: `calc(50% + ${Math.cos(angle) * 45}% - 24px)`,
             top: `calc(50% + ${Math.sin(angle) * 45}% - 24px)`
@@ -284,10 +284,10 @@ export function Differentiation() {
                 {/* Background Blueprint Grain */}
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-[0.03] transition-opacity pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/graphy.png')]" />
 
-                <div className="w-16 h-16 mb-8 relative">
-                  <div className="absolute inset-0 bg-gold/5 rounded-2xl group-hover:bg-gold/10 transition-colors" />
-                  <DisciplineVisual index={index} />
-                </div>
+          <div className="w-16 h-16 mb-8 relative">
+            <div className="absolute inset-0 bg-gold/5 rounded-none group-hover:bg-gold/10 transition-colors" />
+            <DisciplineVisual index={index} />
+          </div>
 
                 <h4 className="text-xl font-bold text-warm-gray mb-4">{discipline.title}</h4>
                 <p className="text-warm-gray-light leading-relaxed text-sm">{discipline.description}</p>
@@ -310,10 +310,10 @@ export function Differentiation() {
               <h3 className="text-3xl font-serif text-warm-gray mb-6">How this stays sane at scale</h3>
               <div className="grid sm:grid-cols-2 gap-4">
                 {scaleSteps.map((step, i) => (
-                  <div key={i} className="p-5 bg-cream border border-gold hover:border-gold/30 transition-all group">
-                    <div className="w-10 h-10 rounded-xl bg-white border border-gold flex items-center justify-center mb-4 group-hover:text-gold transition-colors shadow-sm">
-                      <step.icon className="w-5 h-5" />
-                    </div>
+                  <div key={i} className="p-5 bg-cream border border-gold hover:border-gold/30 transition-all group rounded-none">
+                    <div className="w-12 h-12 rounded-none bg-white border border-sand flex items-center justify-center shadow-sm relative z-10">
+        <Activity className="w-6 h-6 text-gold" />
+      </div>
                     <p className="text-sm font-medium text-warm-gray-light leading-tight">{step.text}</p>
                   </div>
                 ))}

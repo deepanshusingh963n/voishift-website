@@ -1,3 +1,5 @@
+"use client"
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import {
@@ -93,7 +95,7 @@ export const HowWeDoDifferentlySection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-none mb-6">
             <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">The Methodology</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-serif font-black text-warm-gray leading-[1.1] tracking-tight">
@@ -119,9 +121,9 @@ export const HowWeDoDifferentlySection = () => {
               {mostStart.map((item, index) => (
                 <div
                   key={item.label}
-                  className="flex items-center gap-6 p-5 bg-cream border border-sand rounded-lg opacity-50 hover:opacity-100 transition-all group"
+                  className="flex items-center gap-6 p-5 bg-cream border border-sand rounded-none opacity-50 hover:opacity-100 transition-all group"
                 >
-                  <div className="w-12 h-12 bg-[#faf9f6] rounded-xl flex items-center justify-center border border-sand group-hover:bg-gold group-hover:text-white transition-colors">
+                  <div className="w-12 h-12 bg-[#faf9f6] rounded-none flex items-center justify-center border border-sand group-hover:bg-gold group-hover:text-white transition-colors">
                     <item.icon className="w-5 h-5" />
                   </div>
                   <span className="text-sm font-bold text-warm-gray">{item.label}</span>
@@ -164,9 +166,9 @@ export const HowWeDoDifferentlySection = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
                   whileHover={{ y: -5 }}
-                  className="flex flex-col gap-4 p-6 bg-cream border border-sand rounded-lg hover:bg-white hover:border-gold hover:shadow-xl transition-all group"
+                  className="flex flex-col gap-4 p-6 bg-cream border border-sand rounded-none hover:bg-white hover:border-gold hover:shadow-xl transition-all group"
                 >
-                  <div className="w-10 h-10 bg-white border border-sand rounded-xl flex items-center justify-center group-hover:bg-gold-dark group-hover:text-white transition-colors">
+                  <div className="w-10 h-10 bg-white border border-sand rounded-none flex items-center justify-center group-hover:bg-gold-dark group-hover:text-white transition-colors">
                     <item.icon className="w-5 h-5 text-gold group-hover:text-white" />
                   </div>
                   <span className="text-xs font-black text-warm-gray uppercase tracking-tight">{item.label}</span>
@@ -174,7 +176,7 @@ export const HowWeDoDifferentlySection = () => {
               ))}
             </div>
 
-            <div className="mt-12 p-6 bg-gold/5 border border-gold/10 rounded-2xl border-dashed">
+            <div className="mt-12 p-6 bg-gold/5 border border-gold/10 rounded-none border-dashed">
               <p className="text-sm font-serif italic text-gold text-center">
                 "Those moments are what voice AI will copy—<span className="not-italic font-black uppercase tracking-widest ml-2">at speed.</span>"
               </p>
@@ -206,8 +208,8 @@ export const HowWeDoDifferentlySection = () => {
                 {/* CAD vertical line */}
                 <div className="absolute top-[-30px] bottom-[-30px] left-1/2 w-[1px] bg-sand/50 -translate-x-1/2 pointer-events-none" />
 
-                <div className="relative bg-[#faf9f6] p-4 rounded-full border border-sand mb-8 group-hover:border-gold-dark transition-colors z-10 shadow-sm">
-                  <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center border border-sand group-hover:bg-gold-dark group-hover:text-white transition-all duration-500 shadow-inner overflow-hidden">
+                <div className="relative bg-[#faf9f6] p-4 rounded-none border border-sand mb-8 group-hover:border-gold-dark transition-colors z-10 shadow-sm">
+                  <div className="w-16 h-16 bg-white rounded-none flex items-center justify-center border border-sand group-hover:bg-gold-dark group-hover:text-white transition-all duration-500 shadow-inner overflow-hidden">
                     <motion.div
                       animate={{
                         scale: hoveredIndex === index ? 1.2 : 1,
@@ -247,8 +249,8 @@ export const HowWeDoDifferentlySection = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mt-24 text-center"
         >
-          <div className="inline-block p-1 bg-sand/30 rounded-full mb-6">
-            <div className="px-6 py-2 bg-white border border-sand rounded-full shadow-sm">
+          <div className="inline-block p-1 bg-sand/30 rounded-none mb-6">
+            <div className="px-6 py-2 bg-white border border-sand rounded-none shadow-sm">
               <p className="text-sm font-serif italic text-warm-gray-light">
                 Same tools. Same models. <span className="not-italic font-black text-gold uppercase tracking-widest ml-1">A very different outcome.</span>
               </p>

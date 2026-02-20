@@ -684,7 +684,7 @@ export function WhoThisHits() {
           onValueChange={setActiveCategory}
           className="w-full"
         >
-          <div className="w-full bg-white rounded-[2rem] border border-sand/30 shadow-sm overflow-hidden">
+          <div className="w-full bg-white rounded-none border border-sand/30 shadow-sm overflow-hidden">
 
             {/* Folder-Style Role Tabs */}
             <div className="bg-[#F9F8F6] relative h-[64px]">
@@ -706,7 +706,7 @@ export function WhoThisHits() {
                   <TabsTrigger
                     key={key}
                     value={key}
-                    className="flex-1 min-w-[100px] py-5 px-4 md:px-8 border-r last:border-r-0 border-sand/30 text-md font-bold uppercase tracking-[0.2em] text-warm-gray-light hover:text-warm-gray data-[state=active]:bg-white data-[state=active]:text-warm-gray data-[state=active]:border-b-transparent transition-all rounded-none first:rounded-tl-[2rem] last:rounded-tr-[2rem] relative z-10 data-[state=active]:z-20 -mb-[1px]"
+                    className="flex-1 min-w-[100px] py-5 px-4 md:px-8 border-r last:border-r-0 border-sand/30 text-md font-bold uppercase tracking-[0.2em] text-warm-gray-light hover:text-warm-gray data-[state=active]:bg-white data-[state=active]:text-warm-gray data-[state=active]:border-b-transparent transition-all rounded-none relative z-10 data-[state=active]:z-20 -mb-[1px]"
                   >
                     {key}
                   </TabsTrigger>
@@ -745,7 +745,7 @@ export function WhoThisHits() {
                             key={ind.id}
                             onClick={() => setActiveIndustry(ind.id)}
                             className={cn(
-                              "px-4 py-3 rounded-xl text-[10px] font-bold transition-all border uppercase tracking-widest text-center",
+                              "px-4 py-3 rounded-none text-[10px] font-bold transition-all border uppercase tracking-widest text-center",
                               activeIndustry === ind.id
                                 ? "bg-gold/5 text-gold border-gold/40 shadow-sm"
                                 : "bg-sand/10 text-warm-gray-light border-transparent hover:bg-sand/20"
@@ -793,7 +793,7 @@ export function WhoThisHits() {
                                 className="w-full h-full object-contain"
                               />
                             ) : (
-                              <div className="w-full h-full bg-sand/20 rounded-2xl border border-sand/30 flex items-center justify-center p-4">
+                              <div className="w-full h-full bg-sand/20 rounded-none border border-sand/30 flex items-center justify-center p-4">
                                 <span className="text-[10px] text-warm-gray-light font-bold text-center">
                                   {currentIndustry?.short}
                                 </span>
@@ -810,7 +810,7 @@ export function WhoThisHits() {
                             </span>
                             <div className="flex flex-wrap gap-2">
                               {currentIndustryData.causes.map((cause: string, i: number) => (
-                                <span key={i} className="px-3 py-1 bg-red-600 text-white text-[10px] font-bold rounded-md tracking-tight">
+                                <span key={i} className="px-3 py-1 bg-gold hover:bg-gold-dark text-white text-[10px] font-black rounded-none tracking-[0.2em] transition-colors">
                                   {cause}
                                 </span>
                               ))}
