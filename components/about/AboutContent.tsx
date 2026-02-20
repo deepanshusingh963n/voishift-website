@@ -15,12 +15,12 @@ export function AboutContent() {
         <main>
             <AboutHeroSection />
             <WhoWeAreSection />
-            <WhyWeExistSection />
-            <WhatWeSolveSection />
-            <HowWeDoDifferentlySection />
+            {/* <WhatWeSolveSection /> */}
+            {/* <HowWeDoDifferentlySection /> */}
             <LeadershipSection />
-            <HowWeGetPaidSection />
-            <AboutClosingSection />
+            <WhyWeExistSection />
+            {/* <HowWeGetPaidSection /> */}
+            {/* <AboutClosingSection /> */}
             <CareersSection />
         </main>
     );

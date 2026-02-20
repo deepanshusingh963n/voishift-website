@@ -37,7 +37,7 @@ export const AboutHeroSection = () => {
         <img
           src="/about-hero-bg.png"
           alt="Technical Structure"
-          className="w-full h-full object-cover opacity-[0.2] grayscale contrast-100"
+          className="w-full h-full object-cover opacity-[0.4]"
         />
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
       </div>
@@ -64,7 +64,7 @@ export const AboutHeroSection = () => {
             <h1 className="text-4xl md:text-6xl font-serif font-black text-warm-gray leading-[1.05] tracking-tight mb-12">
               System-first voice AI <br />
               <span className="text-gold italic">for teams that cannot afford</span> <br />
-              confident mistakes.
+              hallucinations dressed up as help.
             </h1>
           </motion.div>
 
@@ -129,16 +129,6 @@ export const AboutHeroSection = () => {
             </motion.div>
           </div>
         </div>
-      </div>
-
-      {/* Micro-detail footer */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-24 opacity-10">
-        {[1, 2, 3].map(i => (
-          <div key={i} className="flex items-center gap-2">
-            <div className="w-1 h-1 rounded-full bg-warm-gray" />
-            <div className="text-[7px] font-mono tracking-widest uppercase">System_Verification_Gate_0{i}</div>
-          </div>
-        ))}
       </div>
     </section>
   );

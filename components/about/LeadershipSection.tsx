@@ -81,7 +81,7 @@ export const LeadershipSection = () => {
   const [hoveredId, setHoveredId] = useState<number | null>(null);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-24 bg-cream relative overflow-hidden">
       {/* Background blueprint elements */}
       <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
         <div className="text-[120px] font-serif font-black leading-none">V_01</div>
@@ -182,11 +182,6 @@ export const LeadershipSection = () => {
                         ))}
                       </div>
                     </a>
-                  </div>
-
-                  {/* Corner Label */}
-                  <div className="absolute top-4 right-6 text-[7px] font-mono text-warm-gray/20 uppercase tracking-[0.4em]">
-                    AUTH_SIG_0{index + 1}
                   </div>
                 </div>
 

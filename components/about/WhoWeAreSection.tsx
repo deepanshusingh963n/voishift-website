@@ -1,12 +1,57 @@
 import { motion } from "framer-motion";
-import { Cpu, Briefcase, Scale, Zap, CheckCircle, ArrowRight } from "lucide-react";
+import { Cpu, Briefcase, Scale, Zap, CheckCircle, ArrowRight, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/context/modal-context";
 
 const betweenItems = [
-  { left: "AI capability", right: "business reality", icon: Cpu },
+  { left: "AI capability", right: "operational reality", icon: Cpu },
   { left: "Automation", right: "accountability", icon: Briefcase },
   { left: "Fluency", right: "correctness", icon: Scale },
+];
+
+const practiceItems = [
+  {
+    title: "Clear boundaries",
+    desc: "on what the system can and cannot do",
+    icon: Shield,
+    visual: () => (
+      <div className="relative w-full h-2 bg-sand/20 rounded-full overflow-hidden">
+        <motion.div
+          animate={{ left: ["-20%", "40%", "-20%"] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+          className="absolute top-0 bottom-0 w-1/3 bg-gold/40 rounded-full"
+        />
+      </div>
+    )
+  },
+  {
+    title: "Escalation rules",
+    desc: "for uncertainty and edge cases",
+    icon: Zap,
+    visual: () => (
+      <div className="flex gap-1 justify-center">
+        {[...Array(5)].map((_, i) => (
+          <motion.div
+            key={i}
+            animate={{ opacity: [0.2, 1, 0.2] }}
+            transition={{ duration: 1.5, repeat: Infinity, delay: i * 0.2 }}
+            className={`w-1.5 h-1.5 rounded-full ${i === 4 ? 'bg-red-400' : 'bg-gold/40'}`}
+          />
+        ))}
+      </div>
+    )
+  },
+  {
+    title: "Simple ways to verify",
+    desc: "correctness, not just fluency",
+    icon: CheckCircle,
+    visual: () => (
+      <div className="flex items-center gap-2 px-3 py-1 bg-white border border-sand rounded-full">
+        <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+        <span className="text-[8px] font-black font-mono text-warm-gray tracking-widest">STATUS_VERIFIED</span>
+      </div>
+    )
+  }
 ];
 
 const EquilibriumBridge = () => (
@@ -48,27 +93,11 @@ const EquilibriumBridge = () => (
   </div>
 );
 
-const SystemIntegrityVisual = () => (
-  <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-    <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(184,146,64,0.3)_1px,transparent_1px),linear-gradient(to_bottom,rgba(184,146,64,0.3)_1px,transparent_1px)] bg-[size:20px_20px]" />
-    <motion.div
-      animate={{
-        opacity: [0.3, 0.6, 0.3],
-        scale: [1, 1.05, 1]
-      }}
-      transition={{ duration: 5, repeat: Infinity }}
-      className="absolute inset-0 bg-gradient-to-br from-gold/10 to-transparent"
-    />
-  </div>
-);
-
 export const WhoWeAreSection = () => {
-  const { openModal } = useModal();
-
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center mb-24">
+        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center mb-12">
           {/* Headline & Narrative - Left */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -76,37 +105,18 @@ export const WhoWeAreSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
-              <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">The Team</span>
-            </div>
             <h2 className="text-4xl md:text-5xl font-serif font-black text-warm-gray leading-[1.1] tracking-tight mb-8">
               Who We Are
             </h2>
             <p className="text-2xl font-serif font-black text-warm-gray leading-tight mb-6">
-              A system-first voice AI team focused on <br />
-              <span className="text-gold italic">real-world behavior.</span>
+              We are a system-first voice AI team.
+            </p>
+            <p className="text-lg text-warm-gray-light font-serif italic max-w-md mb-6 transition-all duration-500">
+              We build voice systems that behave reliably in real situations, not just in controlled demos.
             </p>
             <p className="text-lg text-warm-gray-light font-serif italic max-w-md">
-              Our work sits between raw capability and operational reality, ensuring technology translates into results.
+              Our work sits in the gap between raw AI capability and operational reality, so what you deploy stays consistent, checkable, and usable by real teams.
             </p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.4 }}
-              className="mt-10"
-            >
-              <Button
-                onClick={openModal}
-                className="bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] px-8 py-6 rounded-lg font-serif text-lg transition-all duration-500 group shadow-xl"
-              >
-                Stress Test My Current Build
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </Button>
-            </motion.div>
-
-
           </motion.div>
 
           {/* Equilibrium Bridge - Right */}
@@ -115,45 +125,58 @@ export const WhoWeAreSection = () => {
           </div>
         </div>
 
-        {/* Core Belief Card */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto relative group"
-        >
-          <div className="relative bg-[#faf9f6] rounded-[0.5rem] border border-sand p-10 lg:p-12 text-center overflow-hidden transition-all duration-700 hover:shadow-2xl hover:border-gold">
-            <SystemIntegrityVisual />
-
-            <div className="relative z-10">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-10 border border-sand shadow-sm group-hover:bg-gold-dark group-hover:text-white transition-all duration-500">
-                <Zap className="w-8 h-8 text-gold group-hover:text-white" />
-              </div>
-
-              <h3 className="text-2xl md:text-3xl font-serif font-black text-warm-gray leading-[1.3] mb-8">
-                We care less about how <br className="hidden md:block" /> impressive something sounds
-              </h3>
-
-              <div className="flex justify-center mb-8">
-                <div className="w-8 h-[2px] bg-gold-dark/20" />
-              </div>
-
-              <p className="text-xl md:text-2xl font-serif italic text-warm-gray-light">
-                and more about whether it <br />
-                <span className="not-italic font-black text-gold uppercase tracking-widest text-lg md:text-xl ml-2">holds up under pressure.</span>
-              </p>
-
-              <div className="mt-12 flex justify-center gap-6">
-                {[1, 2, 3].map(i => (
-                  <div key={i} className="flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-gold-dark/20" />
-                  </div>
-                ))}
-              </div>
+        {/* Practice Grid */}
+        <div className="mb-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <p className="text-xl md:text-2xl font-serif italic text-gold mb-8">
+              We care less about how impressive something sounds and more about whether it holds up under pressure.
+            </p>
+            
+            <div className="inline-flex items-center gap-2 px-3 py-1">
+              <span className="text-4xl font-black text-warm-gray">What that means in practice</span>
             </div>
+          </motion.div>
+          
+          <div className="grid md:grid-cols-3 gap-4">
+            {practiceItems.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="bg-cream border border-sand rounded-[1.5rem] p-6 hover:bg-white hover:border-gold/30 hover:shadow-xl transition-all duration-500 group"
+              >
+                <div className="flex items-start gap-5">
+    
+                  {/* Icon */}
+                  <div className="w-12 h-12 bg-white rounded-xl border border-sand flex items-center justify-center group-hover:bg-gold transition-colors duration-500 shrink-0">
+                    <item.icon className="w-6 h-6 text-gold group-hover:text-white transition-colors" />
+                  </div>
+
+                  {/* Text */}
+                  <div>
+                    <h4 className="text-lg font-black text-warm-gray uppercase tracking-tighter mb-2">
+                      {item.title}
+                    </h4>
+                    <p className="text-warm-gray-light font-serif italic leading-snug">
+                      {item.desc}
+                    </p>
+                    <div className="pt-4 border-t border-sand/30">
+                      <item.visual />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

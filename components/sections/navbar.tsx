@@ -6,11 +6,13 @@ import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/context/modal-context";
+import Logo from "@/public/logo.svg";
 
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "How It Works", href: "/#how-it-works" },
+  { label: "Case Studies", href: "/case-studies" },
+  { label: "How It Works", href: "/how-it-works" },
   { label: "Who It's For", href: "/#who-its-for" },
   { label: "What's Different", href: "/#whats-different" },
   { label: "Proof", href: "/#proof" },
@@ -40,16 +42,16 @@ export const Navbar = () => {
         : "bg-transparent"
         }`}
     >
-      <div className="max-w-6xl mx-auto px-1">
+      <div className="max-w-7xl mx-auto px-1">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
             <Image
-              src="/images/logo.png"
+              src="/logo2.png"
               alt="VoiShift"
               width={120}
               height={40}
-              className="h-15 w-auto"
+              className="h-16 w-auto"
               priority
             />
           </a>

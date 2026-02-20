@@ -147,22 +147,19 @@ export function Engage() {
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/fabric-of-squares.png')]" />
 
             <div className="relative z-10 flex-grow">
-              <div className="mb-12">
-                <BlueprintConstructionVisual />
-              </div>
-
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-[1.5rem] bg-gold text-white flex items-center justify-center shadow-lg shadow-gold/20">
-                  <Sparkles className="w-7 h-7" />
+              <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-12">
+                <div className="w-32 sm:w-40 lg:w-48 shrink-0">
+                  <BlueprintConstructionVisual />
                 </div>
-                <div>
-                  <p className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.2em] mb-1">I am starting fresh</p>
-                  <h3 className="text-2xl font-serif font-black text-warm-gray leading-tight">Voice AI Strategy Session</h3>
+                <div className="flex items-center gap-4">
+                  <div>
+                    <p className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.2em] mb-1">I am starting fresh</p>
+                    <h3 className="text-2xl font-serif font-black text-warm-gray leading-tight">Voice AI Strategy Session</h3>
+                  </div>
                 </div>
               </div>
 
               <div className="space-y-6 mb-12">
-                <h4 className="text-[11px] font-black text-warm-gray/30 uppercase tracking-[0.4em] mb-4">Engagement_Dossier</h4>
                 <div className="space-y-4">
                   {freshStartDeliverables.map((item, index) => (
                     <DossierItem key={index} item={item} type="fresh" />
@@ -203,17 +200,15 @@ export function Engage() {
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 
             <div className="relative z-10 flex-grow">
-              <div className="mb-12">
-                <StructuralAuditVisual />
-              </div>
-
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-14 h-14 rounded-[1.5rem] bg-warm-gray text-white flex items-center justify-center">
-                  <Shield className="w-7 h-7" />
+              <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-12">
+                <div className="w-32 sm:w-40 lg:w-48 shrink-0">
+                  <StructuralAuditVisual />
                 </div>
-                <div>
-                  <p className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.2em] mb-1">I already have something live</p>
-                  <h3 className="text-2xl font-serif font-black text-warm-gray leading-tight">Voice AI Stress Test</h3>
+                <div className="flex items-center gap-4">
+                  <div>
+                    <p className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.2em] mb-1">I already have something live</p>
+                    <h3 className="text-2xl font-serif font-black text-warm-gray leading-tight">Voice AI Stress Test</h3>
+                  </div>
                 </div>
               </div>
 
@@ -248,23 +243,6 @@ export function Engage() {
             </div>
           </motion.div>
         </div>
-
-        {/* Closing Message */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-24 text-center relative"
-        >
-          <div className="inline-flex flex-col items-center">
-            <p className="text-xl md:text-3xl text-warm-gray-light font-serif italic max-w-4xl mx-auto leading-relaxed">
-              No sales deck. No pressure. <br className="hidden md:block" />
-              <span className="text-warm-gray not-italic font-black text-2xl md:text-4xl uppercase tracking-tighter decoration-gold/30">Just work you can carry back <br className="md:hidden" /> into your organisation tomorrow.</span>
-            </p>
-          </div>
-        </motion.div>
-
       </div>
     </section>
   )

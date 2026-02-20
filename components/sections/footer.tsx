@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Shield, Lock, Mail } from "lucide-react"
 
 const links = [
+  { label: "Case Studies", href: "/case-studies", icon: Shield },
   { label: "Privacy Policy", href: "/privacy-policy", icon: Lock },
   { label: "Contact", href: "/contact", icon: Mail },
 ]
@@ -24,11 +25,11 @@ export function Footer() {
           >
             <div className="mb-6">
               <Image
-                src="/images/image.png"
+                src="/logo2.png"
                 alt="VoiShift Logo"
                 width={120}
                 height={40}
-                className="h-10 w-auto opacity-80"
+                className="h-15 w-auto opacity-80"
               />
             </div>
             <p className="text-sm md:text-md text-warm-gray leading-relaxed mb-4">

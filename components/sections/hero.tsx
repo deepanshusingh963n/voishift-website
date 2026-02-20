@@ -141,7 +141,6 @@ export function Hero() {
           muted
           playsInline
           className="w-full h-full object-cover opacity-[0.2] mix-blend-multiply"
-          poster="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&q=80"
         >
           <source src="/hero_background.mp4" type="video/mp4" />
         </video>

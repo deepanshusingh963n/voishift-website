@@ -3,14 +3,14 @@
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Brain, Target, AlertTriangle } from "lucide-react"
+import { ArrowRight, Shield, Brain, Target, AlertTriangle, Briefcase, Truck, Users, Quote, LucideIcon, Zap, Database, Lock, Activity, RefreshCw } from "lucide-react"
 import { useModal } from "@/context/modal-context"
 
 const narrativeBlocks = [
   {
     id: 1,
     title: {
-      line1: "If it sounds sure,",
+      line1: "If your BOT sounds sure,",
       line2: "it can be wrong and still sound sure.",
     },
     content: [
@@ -20,7 +20,7 @@ const narrativeBlocks = [
       "If it can sound human, it can mislead like one.",
     ],
     icon: Shield,
-    illustration: "fluency",
+    illustration: "problem",
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const narrativeBlocks = [
       "You fixed the answers, not what makes them true.",
     ],
     icon: Brain,
-    illustration: "system",
+    illustration: "pattern",
   },
   {
     id: 3,
@@ -42,381 +42,312 @@ const narrativeBlocks = [
       "If you need clarity turned into execution, test us.",
     ],
     icon: Target,
-    illustration: "decision",
+    illustration: "stat",
   },
 ]
 
+/* --- Stage 1: Breach Simulation --- */
+const BreachSimulation = () => {
+  return (
+    <div className="w-full max-w-4xl mx-auto space-y-8 px-4">
+      {/* Header HUD */}
+      <div className="flex items-center justify-between border-b border-sand pb-4">
+        <div className="flex items-center gap-3">
+          <div className="w-2 h-2 bg-destructive animate-pulse rounded-full" />
+          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-warm-gray">System_Integrity_Monitor</span>
+        </div>
+        <div className="flex gap-4">
+          <div className="h-1 w-12 bg-sand/30" />
+          <div className="h-1 w-8 bg-sand/30" />
+        </div>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-8 relative">
+        {/* Left Side: The "Bot" Voice Interface */}
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-white border border-sand p-6 shadow-xl relative overflow-hidden group"
+        >
+          <div className="absolute top-0 left-0 w-1 bg-blue-500 h-full" />
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center">
+              <Activity className="w-4 h-4 text-blue-500" />
+            </div>
+            <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Active_Call_Stream</span>
+          </div>
+          
+          <div className="space-y-6">
+            <div className="space-y-2">
+              <p className="text-[10px] text-warm-gray-light font-black uppercase tracking-wider">Customer Inquiry</p>
+              <p className="text-sm font-serif italic text-warm-gray leading-relaxed bg-sand/10 p-3">
+                "Wait, are you SURE you can deliver by Friday? If not, I lose the project."
+              </p>
+            </div>
+            
+            <motion.div 
+              animate={{ opacity: [0.5, 1, 0.5] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="space-y-2"
+            >
+              <p className="text-[10px] text-blue-500 font-black uppercase tracking-wider">Fluent Bot Response</p>
+              <p className="text-sm font-serif text-warm-gray leading-relaxed border-l-2 border-blue-500 pl-4 py-1">
+                "Absolutely. I've personally verified our logistics queue. We will have it at your door by Friday morning."
+              </p>
+            </motion.div>
+          </div>
+          
+          {/* Signal Waveform */}
+          <div className="mt-8 flex items-end gap-1 h-8 opacity-20">
+            {[...Array(12)].map((_, i) => (
+              <motion.div 
+                key={i}
+                animate={{ height: [4, Math.random() * 24 + 8, 4] }}
+                transition={{ repeat: Infinity, duration: 1, delay: i * 0.1 }}
+                className="flex-1 bg-blue-500 rounded-t-sm"
+              />
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Center Connector */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:block">
+          <div className="w-12 h-12 rounded-full bg-destructive flex items-center justify-center shadow-xl border-4 border-white animate-bounce">
+            <Shield className="w-6 h-6 text-white" />
+          </div>
+        </div>
+
+        {/* Right Side: Reality / Policy Block */}
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          className="bg-[#1a1a1a] p-6 shadow-2xl relative overflow-hidden"
+        >
+          <div className="absolute top-0 right-0 p-4 opacity-10">
+            <Lock className="w-16 h-16 text-white" />
+          </div>
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-8 h-8 rounded bg-destructive/20 flex items-center justify-center">
+              <Shield className="w-4 h-4 text-destructive" />
+            </div>
+            <span className="text-[10px] font-black text-white uppercase tracking-widest">Breach_Reality_Scan</span>
+          </div>
+
+          <div className="space-y-6">
+            <div className="p-4 border border-destructive/30 bg-destructive/5 rounded space-y-4">
+              <div className="flex justify-between items-center">
+                <span className="text-[10px] text-destructive font-black uppercase tracking-tighter">Conflict Detected</span>
+                <span className="text-[10px] text-warm-gray-light font-mono">0x44_COMMITMENT_ERROR</span>
+              </div>
+              
+              <div className="space-y-2">
+                <div className="flex justify-between text-[11px] font-mono">
+                  <span className="text-warm-gray-light">Policy Limit</span>
+                  <span className="text-white">7-Day Lead Time</span>
+                </div>
+                <div className="h-1 w-full bg-white/5 overflow-hidden">
+                  <motion.div 
+                    initial={{ x: "-100%" }}
+                    animate={{ x: "0%" }}
+                    transition={{ duration: 1.5 }}
+                    className="h-full bg-destructive w-full" 
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <div className="flex justify-between text-[11px] font-mono">
+                  <span className="text-warm-gray-light">Operational Load</span>
+                  <span className="text-white">94% Capacity</span>
+                </div>
+                <div className="h-1 w-full bg-white/5 overflow-hidden">
+                   <div className="h-full bg-amber-500 w-[94%]" />
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4 space-y-2">
+              <p className="text-[10px] text-destructive font-black uppercase tracking-widest">Conclusion</p>
+              <p className="text-xs text-white/80 leading-relaxed font-serif italic">
+                The commitment violates both Policy Map and Live Capacity. The bot is "Flying Blind"—sounding certain while creating an operational liability.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="text-center">
+        <p className="text-xs font-black text-warm-gray uppercase tracking-[0.4em] opacity-40">
+          Simulation: Common failure pattern in Sales & Field Operations
+        </p>
+      </div>
+    </div>
+  )
+}
+
+/* --- Stage 2: System Network --- */
+const SystemNetwork = () => {
+  const nodes = [
+    { id: 'bot', icon: Activity, label: 'Voice AI', color: 'text-blue-500', pos: 'center' },
+    { id: 'crm', icon: Database, label: 'Live CRM', color: 'text-amber-500', pos: 'top-left' },
+    { id: 'policy', icon: Shield, label: 'Policy Engine', color: 'text-destructive', pos: 'top-right' },
+    { id: 'ops', icon: Briefcase, label: 'Ops Capacity', color: 'text-green-500', pos: 'bottom' },
+  ]
+
+  return (
+    <div className="relative w-full max-w-2xl aspect-square flex items-center justify-center">
+      {/* Background Pulse Rings */}
+      <div className="absolute inset-0 flex items-center justify-center gap-4">
+        {[1, 2, 3].map((i) => (
+          <motion.div
+            key={i}
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1.2, opacity: [0, 0.1, 0] }}
+            transition={{ repeat: Infinity, duration: 4, delay: i * 1.3 }}
+            className="absolute w-[80%] aspect-square border-2 border-gold rounded-full"
+          />
+        ))}
+      </div>
+
+      {/* Connection Lines (Animated) */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
+        <motion.path
+          d="M 50% 50% L 20% 20%"
+          stroke="url(#grad)"
+          strokeWidth="2"
+          fill="none"
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: 1 }}
+          transition={{ duration: 2, repeat: Infinity }}
+        />
+        <defs>
+          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#d4af37" />
+            <stop offset="100%" stopColor="#ffffff" />
+          </linearGradient>
+        </defs>
+      </svg>
+
+      {/* Nodes */}
+      <div className="relative z-10 w-full h-full">
+        {nodes.map((node, i) => (
+          <motion.div
+            key={node.id}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: i * 0.2 }}
+            className={`absolute flex flex-col items-center gap-3 ${
+              node.pos === 'center' ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' :
+              node.pos === 'top-left' ? 'left-[15%] top-[15%]' :
+              node.pos === 'top-right' ? 'right-[15%] top-[15%]' :
+              'left-1/2 bottom-[10%] -translate-x-1/2'
+            }`}
+          >
+            <div className={`w-16 h-16 lg:w-24 lg:h-24 rounded-2xl bg-white border border-sand shadow-2xl flex items-center justify-center group hover:border-gold transition-colors duration-500`}>
+              <node.icon className={`w-8 h-8 lg:w-12 lg:h-12 ${node.color} group-hover:scale-110 transition-transform`} />
+            </div>
+            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-warm-gray bg-white/80 px-3 py-1 border border-sand rounded-full">
+              {node.label}
+            </span>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="absolute top-0 left-0 p-8 space-y-2">
+        <div className="flex items-center gap-2">
+          <motion.div 
+            animate={{ rotate: 360 }}
+            transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+          >
+            <RefreshCw className="w-3 h-3 text-gold" />
+          </motion.div>
+          <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Neural_Sync_Active</span>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+/* --- Stage 3: Technical Audit --- */
+const TechnicalAudit = () => {
+  return (
+    <div className="w-full max-w-2xl bg-white border border-sand p-12 lg:p-16 shadow-2xl relative overflow-hidden text-center">
+      {/* Background Scanner Line */}
+      <motion.div 
+        animate={{ top: ['0%', '100%', '0%'] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
+        className="absolute left-0 right-0 h-px bg-gold/30 z-0"
+      />
+      
+      <div className="relative z-10 space-y-12">
+        <div className="space-y-4">
+          <span className="text-xs font-black text-destructive uppercase tracking-[0.5em] px-4 py-1 border border-destructive/20 inline-block bg-destructive/5 rounded-full">
+            AUDIT_REPORT_FLAG
+          </span>
+          <h4 className="text-lg font-serif text-warm-gray-light italic">VoiShift Enterprise Analysis_ID_7212</h4>
+        </div>
+
+        <div className="relative inline-block">
+          <motion.div
+            initial={{ rotate: -10, opacity: 0 }}
+            animate={{ rotate: 0, opacity: 1 }}
+            className="text-[100px] lg:text-[140px] font-serif font-black text-[#1a1a1a] leading-none tracking-tighter"
+          >
+            78%
+          </motion.div>
+          <motion.div
+            animate={{ opacity: [1, 0, 1] }}
+            transition={{ repeat: Infinity, duration: 1 }}
+            className="absolute -top-4 -right-12 px-4 py-2 bg-destructive text-white text-xs font-black uppercase tracking-widest shadow-xl border-b-4 border-destructive-dark"
+          >
+            CRITICAL_RISK
+          </motion.div>
+        </div>
+
+        <div className="space-y-6 max-w-lg mx-auto">
+          <p className="text-xl lg:text-2xl text-warm-gray font-serif italic leading-snug">
+            Of voice AI deployments create "Ghost Commitments"—promises made by agents that are operationally impossible to fulfill.
+          </p>
+          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-sand">
+            <div>
+              <p className="text-[10px] font-black text-warm-gray-light uppercase mb-1">DATA POINTS</p>
+              <p className="text-sm font-mono text-warm-gray">12,400+</p>
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-warm-gray-light uppercase mb-1">VERTICLES</p>
+              <p className="text-sm font-mono text-warm-gray">SALES/OPS</p>
+            </div>
+            <div>
+              <p className="text-[10px] font-black text-warm-gray-light uppercase mb-1">FAILURE_TYPE</p>
+              <p className="text-sm font-mono text-warm-gray">NON_SYNC</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
 
 const VisualPanel = ({ activeBlock }: { activeBlock: number }) => {
   return (
-    <div className="relative h-full flex items-center justify-center p-8">
+    <div className="relative h-full w-full flex items-center justify-center p-6 lg:p-12 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeBlock}
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.95, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: -20 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-          className="w-full max-w-md"
+          exit={{ opacity: 0, scale: 1.05, y: -10 }}
+          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+          className="w-full flex justify-center"
         >
-          {activeBlock === 0 && (
-            <div className="relative">
-              <div className="card-elevated p-6 bg-white border border-sand/30 shadow-2xl relative overflow-hidden">
-                {/* Tool Header */}
-                <div className="flex items-center justify-between mb-8 border-b border-sand/20 pb-4">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded bg-green-500/10 flex items-center justify-center">
-                      <Target className="w-4 h-4 text-green-600" />
-                    </div>
-                    <div>
-                      <p className="text-[10px] font-bold uppercase tracking-widest text-warm-gray-light leading-none">Voice Layer Analysis</p>
-                      <p className="text-[9px] font-mono text-warm-gray-light/60 mt-1 uppercase">Stream: VOI-TRUTH-09X</p>
-                    </div>
-                  </div>
-                  <div className="px-2 py-1 rounded bg-destructive/10 text-destructive text-[8px] font-bold uppercase tracking-tight animate-pulse">
-                    Logic Mismatch detected
-                  </div>
-                </div>
-
-                {/* Main Visualization: Waveform vs Logic Gap */}
-                <div className="space-y-8">
-                  {/* Waveform Visualization */}
-                  <div className="bg-sand/10 rounded-xl p-4 border border-sand/20">
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="text-[10px] font-bold text-warm-gray-light uppercase">Fluency Waveform</span>
-                      <span className="text-[10px] font-mono text-green-600 font-bold">99.4% STABILITY</span>
-                    </div>
-                    <div className="h-16 flex items-end justify-between gap-1 px-2">
-                      {[...Array(24)].map((_, i) => {
-                        // Deterministic values for SSR compatibility
-                        const seed = i * 11.3;
-                        const height = 20 + ((seed * 1.5) % 40);
-                        const bgColor = i % 3 === 0 ? "#22c55e" : "#86efac";
-                        const duration = 0.8 + ((i * 0.17) % 1);
-
-                        return (
-                          <motion.div
-                            key={i}
-                            animate={{
-                              height: [20, height, 20],
-                              backgroundColor: bgColor
-                            }}
-                            transition={{
-                              duration,
-                              repeat: Infinity,
-                              ease: "easeInOut"
-                            }}
-                            className="w-full rounded-t-sm"
-                          />
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Diagnostic Matrix */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="p-3 bg-green-500/5 rounded-lg border border-green-500/10">
-                      <p className="text-[9px] font-bold text-green-600 uppercase mb-1">Human Confidence</p>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-serif text-green-700">98.1</span>
-                        <span className="text-xs text-green-600/60 font-bold">%</span>
-                      </div>
-                      <p className="text-[8px] text-green-600/70 mt-1 italic">Confident delivery</p>
-                    </div>
-                    <div className="p-3 bg-destructive/5 rounded-lg border border-destructive/10">
-                      <p className="text-[9px] font-bold text-destructive uppercase mb-1">Ground Truth</p>
-                      <div className="flex items-baseline gap-1">
-                        <span className="text-2xl font-serif text-destructive">12.4</span>
-                        <span className="text-xs text-destructive/60 font-bold">%</span>
-                      </div>
-                      <p className="text-[8px] text-destructive/70 mt-1 italic">Systemic contradiction</p>
-                    </div>
-                  </div>
-
-                  {/* Root Cause Alert */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="p-4 bg-destructive rounded-lg shadow-lg shadow-destructive/20 relative"
-                  >
-                    <div className="flex gap-3 items-center">
-                      <AlertTriangle className="w-5 h-5 text-white animate-bounce" />
-                      <div>
-                        <p className="text-[11px] font-bold text-white uppercase tracking-wider">Mismatch Identified</p>
-                        <p className="text-[10px] text-white/80 mt-0.5">Fluent but factually incorrect reasoning.</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Scanning HUD Overlay */}
-                <motion.div
-                  animate={{ y: [-150, 400] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-                  className="absolute left-0 right-0 h-[100px] bg-gradient-to-b from-transparent via-green-500/5 to-transparent pointer-events-none"
-                />
-              </div>
-            </div>
-          )}
-
-          {activeBlock === 1 && (
-            <div className="relative h-[400px] perspective-1000 flex items-center justify-center">
-              {/* 3D Exploded View Container */}
-              <div className="relative w-full max-w-sm h-full flex flex-col items-center justify-center">
-
-                {/* Surface Layer: The Voice Interface */}
-                <motion.div
-                  initial={{ opacity: 0, y: 50, rotateX: 45, translateZ: 100 }}
-                  animate={{ opacity: 1, y: -80, rotateX: 45, translateZ: 100 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="absolute w-64 h-32 bg-white/40 backdrop-blur-md border border-white/60 rounded-xl shadow-2xl flex flex-col items-center justify-center p-4 z-30"
-                >
-                  <div className="w-full flex justify-between items-center mb-2 px-2">
-                    <span className="text-[10px] font-bold text-warm-gray uppercase tracking-tighter">Surface Layer</span>
-                    <div className="flex gap-0.5">
-                      {[...Array(5)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          animate={{ opacity: [0.3, 1, 0.3] }}
-                          transition={{ duration: 1, repeat: Infinity, delay: i * 0.1 }}
-                          className="w-1 h-1 rounded-full bg-green-500"
-                        />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="w-full h-8 flex items-center justify-center gap-1">
-                    {[...Array(15)].map((_, i) => {
-                      // Deterministic height for SSR compatibility
-                      const seed = i * 15.7;
-                      const height = 4 + ((seed * 1.4) % 20);
-                      const duration = 0.5 + ((i * 0.11) % 0.5);
-
-                      return (
-                        <motion.div
-                          key={i}
-                          animate={{ height: [4, height, 4] }}
-                          transition={{ duration, repeat: Infinity }}
-                          className="w-1 bg-green-500/40 rounded-full"
-                        />
-                      );
-                    })}
-                  </div>
-                  <p className="text-[10px] font-bold text-warm-gray-light uppercase mt-3 tracking-widest">The Voice Bot</p>
-                </motion.div>
-
-                {/* The "Chaos" Layer: Disconnected Logic */}
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.8, rotateX: 45 }}
-                  animate={{ opacity: 1, scale: 1, rotateX: 45 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="absolute w-56 h-40 border-2 border-dashed border-destructive/30 rounded-lg flex items-center justify-center z-20"
-                >
-                  <div className="relative w-full h-full">
-                    {/* Floating "Broken" Nodes */}
-                    {[...Array(6)].map((_, i) => {
-                      // Deterministic positioning for SSR compatibility
-                      const seed = i * 37.1;
-                      const xOffset = ((seed * 1.3) % 20) - 10;
-                      const yOffset = ((seed * 1.7) % 20) - 10;
-                      const left = ((seed * 2.1) % 80) + 10;
-                      const top = ((seed * 1.9) % 80) + 10;
-                      const duration = 2 + ((i * 0.23) % 1);
-
-                      return (
-                        <motion.div
-                          key={i}
-                          animate={{
-                            x: [0, xOffset, 0],
-                            y: [0, yOffset, 0],
-                            opacity: [0.2, 0.5, 0.2]
-                          }}
-                          transition={{ duration, repeat: Infinity }}
-                          className="absolute w-3 h-3 bg-destructive rounded shadow-[0_0_10px_rgba(239,68,68,0.5)]"
-                          style={{
-                            left: `${left}%`,
-                            top: `${top}%`
-                          }}
-                        />
-                      );
-                    })}
-                    {/* Connecting wires (visual lines) */}
-                    <svg className="absolute inset-0 w-full h-full opacity-20">
-                      <line x1="10%" y1="20%" x2="90%" y2="80%" stroke="currentColor" className="text-destructive" strokeWidth="1" strokeDasharray="4 2" />
-                      <line x1="80%" y1="10%" x2="20%" y2="90%" stroke="currentColor" className="text-destructive" strokeWidth="1" strokeDasharray="4 2" />
-                    </svg>
-                  </div>
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white/80 px-2 py-1 rounded text-[8px] font-bold text-destructive uppercase whitespace-nowrap shadow-sm">
-                    Structural Logic Gap
-                  </div>
-                </motion.div>
-
-                {/* The Foundation: VoiShift Grounding */}
-                <motion.div
-                  initial={{ opacity: 0, y: -50, rotateX: 45, translateZ: -100 }}
-                  animate={{ opacity: 1, y: 80, rotateX: 45, translateZ: -100 }}
-                  transition={{ duration: 0.8, delay: 0.4 }}
-                  className="absolute w-72 h-48 bg-warm-gray border-b-4 border-gold rounded-2xl shadow-[0_20px_40px_rgba(0,0,0,0.2)] flex flex-col items-center justify-end p-6 z-10"
-                >
-                  <div className="absolute top-4 left-6 right-6">
-                    <div className="flex justify-between items-center mb-6">
-                      <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 rounded-full bg-gold" />
-                        <span className="text-[10px] font-bold text-gold/80 uppercase">Ground Truth Engine</span>
-                      </div>
-                      <Shield className="w-4 h-4 text-gold/40" />
-                    </div>
-                    {/* Stabilizing Logic Blocks */}
-                    <div className="grid grid-cols-4 gap-2 opacity-50">
-                      {[...Array(8)].map((_, i) => (
-                        <div key={i} className="h-4 bg-gold/20 rounded-sm" />
-                      ))}
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <p className="text-[12px] font-black text-white uppercase tracking-[0.3em] mb-1">Business System</p>
-                    <p className="text-[9px] text-gold font-medium uppercase tracking-widest opacity-80 italic">Verified Reality Layer</p>
-                  </div>
-
-                  {/* Glowing core effect */}
-                  <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gold/5 blur-[50px] -z-10" />
-                </motion.div>
-
-              </div>
-
-              {/* Perspective helper styles */}
-              <style jsx>{`
-                .perspective-1000 {
-                  perspective: 1200px;
-                }
-              `}</style>
-            </div>
-          )}
-
-          {activeBlock === 2 && (
-            <div className="relative h-[400px] flex items-center justify-center overflow-hidden">
-              <div className="relative w-full max-w-sm h-full flex flex-col items-center justify-center">
-
-                {/* HUD Background Rings */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                  <div className="w-[300px] h-[300px] rounded-full border border-warm-gray" />
-                  <div className="absolute w-[200px] h-[200px] rounded-full border border-warm-gray border-dashed" />
-                </div>
-
-                <div className="grid grid-cols-1 gap-12 w-full px-4">
-                  {/* The Second Brain (VoiShift) */}
-                  <div className="relative p-6 bg-white/40 backdrop-blur-sm border border-green-500/20 rounded-2xl shadow-xl overflow-hidden group">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="relative w-12 h-12">
-                        {/* Orbital Nodes */}
-                        <motion.div
-                          animate={{ rotate: 360 }}
-                          transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
-                        >
-                          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-green-500 rounded-full shadow-[0_0_10px_#22c55e]" />
-                          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3 h-3 bg-gold rounded-full shadow-[0_0_10px_#e2a746]" />
-                        </motion.div>
-                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-6 h-6 bg-warm-gray rounded-full flex items-center justify-center">
-                          <Shield className="w-3 h-3 text-white" />
-                        </div>
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold text-green-600 uppercase tracking-widest">Second Brain</p>
-                        <p className="text-[12px] font-serif text-warm-gray italic">Strategic Augmentation</p>
-                      </div>
-                    </div>
-                    {/* Trust Link & Pulses */}
-                    <div className="h-1 bg-sand/20 rounded-full relative overflow-hidden">
-                      <motion.div
-                        animate={{ x: ["-100%", "100%"] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 w-1/3 bg-gradient-to-r from-transparent via-green-500 to-transparent"
-                      />
-                    </div>
-                    <div className="mt-3 flex justify-between items-center">
-                      <span className="text-[9px] font-mono text-warm-gray-light">SYNC STATUS: OPTIMAL</span>
-                      <div className="flex gap-1">
-                        {[...Array(3)].map((_, i) => (
-                          <div key={i} className="w-1.5 h-1.5 rounded-full bg-green-500 shadow-[0_0_5px_#22c55e]" />
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* The Only Brain (Replacement) */}
-                  <div className="relative p-6 bg-destructive/5 border border-destructive/10 rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-700">
-                    <div className="flex items-center gap-4 mb-4">
-                      <div className="w-12 h-12 rounded-full border border-destructive/20 flex items-center justify-center relative">
-                        <motion.div
-                          animate={{
-                            scale: [1, 1.1, 1],
-                            opacity: [0.3, 0.6, 0.3]
-                          }}
-                          transition={{ duration: 2, repeat: Infinity }}
-                          className="absolute inset-0 bg-destructive/10 rounded-full"
-                        />
-                        <Brain className="w-6 h-6 text-destructive/40" />
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold text-destructive/60 uppercase tracking-widest">Only Brain</p>
-                        <p className="text-[12px] font-serif text-warm-gray-light italic">Isolation Layer</p>
-                      </div>
-                    </div>
-                    {/* Noise/Hallucination Patterns */}
-                    <div className="h-1 bg-destructive/5 rounded-full relative overflow-hidden">
-                      <motion.div
-                        animate={{
-                          x: ["0%", "100%"],
-                          opacity: [0, 1, 0]
-                        }}
-                        transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 1 }}
-                        className="absolute inset-0 w-full flex justify-around"
-                      >
-                        {[...Array(10)].map((_, i) => (
-                          <div key={i} className="w-1 h-full bg-destructive/40" />
-                        ))}
-                      </motion.div>
-                    </div>
-                    <div className="mt-3 flex items-center justify-between">
-                      <span className="text-[9px] font-mono text-destructive/60 italic">RISK: LOGIC DRIFT DETECTED</span>
-                      <AlertTriangle className="w-3 h-3 text-destructive animate-pulse" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Data Flow Particles */}
-                {[...Array(12)].map((_, i) => {
-                  // Deterministic positioning for SSR compatibility
-                  const seed = i * 29.3;
-                  const xOffset = (i % 2 === 0 ? -1 : 1) * ((seed * 1.5) % 150);
-                  const duration = 3 + ((i * 0.19) % 2);
-
-                  return (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 200 }}
-                      animate={{
-                        opacity: [0, 0.5, 0],
-                        y: [-100, -400],
-                        x: xOffset
-                      }}
-                      transition={{
-                        duration,
-                        repeat: Infinity,
-                        delay: i * 0.4
-                      }}
-                      className="absolute w-1 h-1 bg-gold/20 rounded-full pointer-events-none"
-                      style={{ left: '50%' }}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          )}
+          {activeBlock === 0 && <BreachSimulation />}
+          {activeBlock === 1 && <SystemNetwork />}
+          {activeBlock === 2 && <TechnicalAudit />}
         </motion.div>
       </AnimatePresence>
     </div>
-  );
-};
+  )
+}
 
 export function SubHero() {
   const { openModal } = useModal()
@@ -429,7 +360,7 @@ export function SubHero() {
   })
 
   useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (value) => {
+    const unsubscribe = scrollYProgress.on("change", (value: number) => {
       const newBlock = Math.min(Math.floor(value * 3), 2)
       setActiveBlock(newBlock)
     })
@@ -440,7 +371,7 @@ export function SubHero() {
     <section id="sub-hero" ref={containerRef} className="relative bg-cream-dark">
       <div className="sticky min-h-screen flex">
         {/* Left side - Scrollable narrative */}
-        <div className="w-full lg:w-3/5 overflow-auto">
+        <div className="w-full lg:w-2/5 overflow-auto">
           <div className="py-2 lg:py-4">
             {narrativeBlocks.map((block, index) => (
               <div
@@ -526,7 +457,7 @@ export function SubHero() {
         </div>
 
         {/* Right side - Sticky illustration panel */}
-        <div className="hidden lg:flex w-2/5 sticky top-0 h-screen items-center justify-center bg-sand/30 border-l border-border/50">
+        <div className="hidden lg:flex w-3/5 sticky top-10 h-screen items-center justify-center bg-sand/30 border-l border-border/50">
           <VisualPanel activeBlock={activeBlock} />
         </div>
       </div>

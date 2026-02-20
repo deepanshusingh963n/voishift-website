@@ -4,10 +4,12 @@ import { SubHero } from "@/components/sections/sub-hero"
 import { BuiltForTeams } from "@/components/sections/built-for-teams"
 import { LogoStrip } from "@/components/sections/logo-strip"
 import { VoiShiftIntro } from "@/components/sections/voisshift-intro"
+import { WhatWeDo } from "@/components/sections/what-we-do"
 import { Threat } from "@/components/sections/threat"
 import { WhoThisHits } from "@/components/sections/who-this-hits"
 import { Differentiation } from "@/components/sections/differentiation"
 import { Proof } from "@/components/sections/proof"
+import { CaseStudies } from "@/components/sections/case-studies"
 import { RentVsBuild } from "@/components/sections/rent-vs-build"
 import { Diagnostic } from "@/components/sections/diagnostic"
 import { Engage } from "@/components/sections/engage"
@@ -22,38 +24,15 @@ export default function Home() {
       {/* Section 1: Hero + Sub-hero */}
       <Hero />
 
-      {/* Section 2: Who this hits */}
-      <WhoThisHits />
-
       <SubHero />
 
-      {/* Section 3: Built for real-world teams */}
-      <BuiltForTeams />
+      <WhatWeDo />
 
       {/* Logo Strip */}
       <LogoStrip />
 
-      {/* Section 4: VoiShift intro */}
-      <VoiShiftIntro />
-
-      {/* Section 5: Why this threat exists */}
-      <Threat />
-
-      {/* Section 6: What makes VoiShift different */}
-      <section id="differentiation">
-        <Differentiation />
-      </section>
-
-      {/* Section 7: Rent vs Build */}
-      <section id="rent-vs-build">
-        <RentVsBuild />
-      </section>
-
-      {/* Section 8: Proof that holds up */}
-      <section id="proof">
-        <Proof />
-      </section>
-
+      {/* Case Studies Section */}
+      <CaseStudies />
 
       {/* Section 9: Diagnostic */}
       <Diagnostic />
@@ -68,6 +47,36 @@ export default function Home() {
 
       {/* Section 12: Footer */}
       <Footer />
+
+      {/* Section 2: Who this hits */}
+      {/* <WhoThisHits /> */}
+
+      {/* Section 3: Built for real-world teams */}
+      {/* <BuiltForTeams /> */}
+
+      {/* Section 4: VoiShift intro */}
+      {/* <VoiShiftIntro /> */}
+
+
+
+      {/* Section 5: Why this threat exists */}
+      {/* <Threat /> */}
+
+      {/* Section 6: What makes VoiShift different */}
+      {/* <section id="differentiation">
+        <Differentiation />
+      </section> */}
+
+      {/* Section 7: Rent vs Build */}
+      {/* <section id="rent-vs-build">
+        <RentVsBuild />
+      </section> */}
+
+      {/* Section 8: Proof that holds up */}
+      {/* <section id="proof">
+        <Proof />
+      </section> */}
+      
     </main>
   )
 }

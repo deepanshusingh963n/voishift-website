@@ -1,5 +1,6 @@
 "use client"
 
+import { useState } from "react"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -34,6 +35,8 @@ const tools = [
 
 export function LogoStrip() {
   const { openModal } = useModal()
+  const [isCompaniesHovered, setIsCompaniesHovered] = useState(false)
+  const [isToolsHovered, setIsToolsHovered] = useState(false)
 
   return (
     <section className="py-20 bg-cream-light border-y border-border overflow-hidden">
@@ -44,10 +47,14 @@ export function LogoStrip() {
       </div>
 
       {/* Companies Scroll */}
-      <div className="relative mb-20">
+      <div 
+        className="relative mb-20"
+        onMouseEnter={() => setIsCompaniesHovered(true)}
+        onMouseLeave={() => setIsCompaniesHovered(false)}
+      >
         <div className="flex overflow-hidden">
           <motion.div
-            animate={{ x: ["0%", "-50%"] }}
+            animate={{ x: isCompaniesHovered ? undefined : ["0%", "-50%"] }}
             transition={{
               x: {
                 repeat: Infinity,
@@ -84,10 +91,14 @@ export function LogoStrip() {
       </div>
 
       {/* Tools Scroll */}
-      <div className="relative mb-20">
+      <div 
+        className="relative mb-20"
+        onMouseEnter={() => setIsToolsHovered(true)}
+        onMouseLeave={() => setIsToolsHovered(false)}
+      >
         <div className="flex overflow-hidden">
           <motion.div
-            animate={{ x: ["-50%", "0%"] }}
+            animate={{ x: isToolsHovered ? undefined : ["-50%", "0%"] }}
             transition={{
               x: {
                 repeat: Infinity,
