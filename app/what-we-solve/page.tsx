@@ -3,6 +3,7 @@ import { WhatWeSolveSection } from "@/components/what-we-solve/WhatWeSolveSectio
 import { Threat } from "@/components/what-we-solve/threat"
 import { VoiShiftIntro } from "@/components/what-we-solve/voisshift-intro"
 import { Footer } from "@/components/sections/footer"
+import { BuiltForTeams } from "@/components/what-we-solve/built-for-teams"
 
 export default function WhatWeSolve() {
   return (
@@ -13,6 +14,8 @@ export default function WhatWeSolve() {
       <WhatWeSolveSection />
 
       <Threat />
+
+      <BuiltForTeams />
 
       <VoiShiftIntro />
 

@@ -1,14 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { useState } from "react";
 import {
   AlertTriangle,
   FileQuestion,
   ShieldAlert,
   HelpCircle,
-  CheckCircle,
-  XCircle,
   Lock,
   Hand,
   ArrowUpRight,
@@ -31,13 +28,6 @@ const solutions = [
   { icon: Hand, text: "Refuse cleanly when certainty is missing" },
   { icon: ArrowUpRight, text: "Escalate instead of improvising" },
   { icon: RotateCcw, text: "Can be replayed, reviewed, and corrected" },
-];
-
-const forTeams = [
-  "Voice AI can take action, not just answer",
-  "Wrong actions cost more than slow ones",
-  "Someone must explain outcomes internally or externally",
-  '"Why did it do that?" is not acceptable',
 ];
 
 
@@ -229,51 +219,6 @@ export const WhatWeSolveSection = () => {
             ))}
           </div>
         </div>
-
-        {/* Validation Matrix / Solutions */}
-        <div className="relative py-20 px-8 lg:px-12 bg-[#1a1a1a] rounded-[0rem] text-center overflow-hidden shadow-2xl mb-32">
-          {/* Matrix Background */}
-          <div className="absolute inset-0 opacity-10 pointer-events-none">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
-            <motion.div
-              animate={{ opacity: [0.1, 0.2, 0.1] }}
-              transition={{ duration: 5, repeat: Infinity }}
-              className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(226,167,70,0.1),transparent_70%)]"
-            />
-          </div>
-
-          <div className="relative z-10">
-            <div className="flex flex-col items-center mb-16">
-              <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center mb-8">
-                <Shield className="w-8 h-8 text-gold" />
-              </div>
-              <p className="text-[10px] font-black text-gold uppercase tracking-[0.6em] mb-4">The Solution Engine</p>
-              <h3 className="text-3xl md:text-5xl font-serif font-black text-white mb-6">We design voice AI systems that:</h3>
-              <div className="w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {solutions.map((solution, index) => (
-                <motion.div
-                  key={solution.text}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group relative"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center mx-auto mb-6 text-gold group-hover:bg-gold group-hover:text-black transition-all duration-500">
-                    <solution.icon className="w-5 h-5" />
-                  </div>
-                  <p className="text-sm font-bold text-gold group-hover:text-white transition-colors duration-300">
-                    {solution.text}
-                  </p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </div>
-
       </div>
     </section>
   );

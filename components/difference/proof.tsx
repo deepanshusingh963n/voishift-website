@@ -129,7 +129,7 @@ const IntegrityBoundaryVisual = () => (
 
 export function Proof() {
   return (
-    <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
+    <section className="py-20 lg:py-20 bg-white relative overflow-hidden">
       {/* Background Subtle Elements */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')]" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sand to-transparent" />
@@ -154,7 +154,7 @@ export function Proof() {
         </motion.div>
 
         {/* FORENSIC TIMELINE REPLAY */}
-        <div className="relative mb-32">
+        <div className="relative mb-10">
           <ForensicTrace />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 relative">
@@ -254,58 +254,6 @@ export function Proof() {
                 </ul>
               </div>
             </motion.div>
-          </div>
-        </div>
-
-        {/* DELIVERABLES & INTEGRITY */}
-        <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
-
-          {/* Left side: Evidence Files */}
-          <div className="space-y-12">
-            <div className="relative">
-              <h3 className="text-3xl font-serif text-warm-gray mb-4">What you get back</h3>
-              <div className="h-px w-16 bg-gold/30 mb-8" />
-            </div>
-
-            <div className="grid sm:grid-cols-1 gap-4">
-              {deliverables.map((item, index) => (
-                <EvidenceFile key={index} item={item} index={index} />
-              ))}
-            </div>
-
-            <div className="p-8 bg-[#faf9f6] rounded-none border border-sand flex items-start gap-6 group hover:border-gold/30 transition-all">
-              <TestTube className="w-6 h-6 text-gold mt-1 shrink-0" />
-              <div>
-                <h4 className="text-[11px] font-black text-warm-gray/40 uppercase tracking-[0.3em] mb-4">Internal Evidence Context</h4>
-                <p className="text-lg text-warm-gray leading-relaxed font-serif italic">
-                  Proof does not come from our demos. <br className="hidden md:block" />
-                  It comes from <span className="text-warm-gray not-italic font-bold">your calls, your workflows, your edge cases.</span>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Right side: Boundary Illustration */}
-          <div className="space-y-10">
-            <IntegrityBoundaryVisual />
-
-            <div className="p-6 bg-white border-3 border-gold/30 shadow-2xl shadow-gold/20 relative overflow-hidden group">
-              <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asphalt.png')]" />
-
-              <div className="relative z-10 text-center">
-                <div className="inline-flex items-center gap-2 mb-6 opacity-30">
-                  <RotateCcw className="w-4 h-4" />
-                  <span className="text-[9px] font-black text-warm-gray uppercase tracking-[0.4em]">Continuous_Verification_Loop</span>
-                </div>
-
-                <p className="text-xl md:text-2xl text-warm-gray-light leading-relaxed font-serif italic mb-2">
-                  If something goes wrong again, will you have a replay and an answer...
-                </p>
-                <p className="text-2xl md:text-3xl text-warm-gray font-serif font-black">
-                  Or just a post-mortem story?
-                </p>
-              </div>
-            </div>
           </div>
         </div>
 
