@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { ContactHeroSection } from "@/components/contactus/ContactHeroSection";
 import { ContactOptionsSection } from "@/components/contactus/ContactOptionsSection";
+import { ContactGlobalReachSection } from "@/components/contactus/ContactGlobalReachSection";
 import { ContactAvailabilitySection } from "@/components/contactus/ContactAvailabilitySection";
 import { ContactFormSection } from "@/components/contactus/ContactFormSection";
 import { Navbar } from '@/components/sections/navbar';
@@ -16,6 +17,7 @@ export default function ContactUsPage() {
             <Navbar />
             <ContactHeroSection />
             <ContactOptionsSection />
+            <ContactGlobalReachSection />
             <ContactAvailabilitySection />
             <ContactFormSection />
         </main>
