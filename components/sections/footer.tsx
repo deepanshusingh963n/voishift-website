@@ -13,9 +13,9 @@ const links = [
 
 export function Footer() {
   return (
-    <footer className="py-12 lg:py-16 bg-[#faf9f6] border-t border-sand">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between gap-12 lg:gap-24 mb-12">
+    <footer className="py-12 lg:py-14 bg-[#faf9f6] border-t border-sand">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="flex flex-col md:flex-row justify-between gap-12 lg:gap-24 mb-10">
           {/* Left - Brand & Narrative */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

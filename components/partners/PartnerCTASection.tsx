@@ -22,10 +22,10 @@ export function PartnerCTASection() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row justify-center gap-4 relative z-10">
-                        <button className="inline-flex h-12 items-center justify-center rounded-lg bg-orange-500 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-orange-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-400">
+                        <button className="inline-flex h-12 items-center justify-center rounded-lg bg-gold px-8 text-sm font-medium text-white shadow transition-colors hover:bg-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold">
                             Apply to Partner Program
                         </button>
-                        <button className="inline-flex h-12 items-center justify-center rounded-lg bg-white/10 px-8 text-sm font-medium text-white shadow-sm transition-colors hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 backdrop-blur-sm">
+                        <button className="inline-flex h-12 items-center justify-center rounded-lg bg-white/10 px-8 text-sm font-medium text-white shadow-sm transition-colors hover:bg-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 backdrop-blur-sm">
                             Contact Partnerships Team
                         </button>
                     </div>

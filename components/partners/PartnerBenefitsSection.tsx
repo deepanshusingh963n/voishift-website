@@ -5,34 +5,34 @@ const benefits = [
     {
         title: 'Advanced AI Offering',
         description: 'Leverage VoiShift\'s comprehensive generative voice tools, built for low latency and high realism, to elevate your clients\' automation capabilities.',
-        icon: <ShieldCheck className="h-5 w-5 text-orange-600" />,
+        icon: <ShieldCheck className="h-5 w-5 text-black" />,
     },
     {
         title: 'Demand Generation',
         description: 'Co-market with VoiShift through joint webinars, virtual events, and case studies to build a robust, AI-focused sales pipeline.',
-        icon: <Lightbulb className="h-5 w-5 text-orange-600" />,
+        icon: <Lightbulb className="h-5 w-5 text-black" />,
     },
     {
         title: 'Revenue Opportunities',
         description: 'Unlock multiple revenue streams through generous commissions, tiered reseller discounts, and your own implementation services.',
-        icon: <TrendingUp className="h-5 w-5 text-orange-600" />,
+        icon: <TrendingUp className="h-5 w-5 text-black" />,
     },
     {
         title: 'Growth Enablement',
         description: 'Access exclusive marketing resources, battlecards, and a dedicated partner success manager to help you close deals faster.',
-        icon: <GraduationCap className="h-5 w-5 text-orange-600" />,
+        icon: <GraduationCap className="h-5 w-5 text-black" />,
     },
     {
         title: 'Dedicated Support',
         description: 'Receive priority technical routing, implementation training, and highly responsive assistance to ensure your clients succeed.',
-        icon: <HandshakeIcon className="h-5 w-5 text-orange-600" />,
+        icon: <HandshakeIcon className="h-5 w-5 text-black" />,
     }
 ];
 
 export function PartnerBenefitsSection() {
     return (
         <section className="py-20 md:py-28 bg-slate-50/50 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-orange-50/30 to-transparent pointer-events-none" />
+            <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-gold/30 to-transparent pointer-events-none" />
 
             <div className="container px-4 md:px-6 mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
@@ -47,7 +47,7 @@ export function PartnerBenefitsSection() {
                         </p>
                         <a
                             href="#programs"
-                            className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-orange-600 transition-colors"
+                            className="inline-flex items-center text-sm font-semibold text-slate-900 hover:text-gold transition-colors"
                         >
                             Review Programs
                             <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
@@ -60,9 +60,9 @@ export function PartnerBenefitsSection() {
                             {benefits.map((benefit, index) => (
                                 <div
                                     key={index}
-                                    className="p-6 md:p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-orange-100 transition-colors flex flex-col sm:flex-row gap-6 items-start"
+                                    className="p-6 md:p-8 bg-white rounded-2xl shadow-sm border border-slate-100 hover:border-gold transition-colors flex flex-col sm:flex-row gap-6 items-start"
                                 >
-                                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-orange-50 flex items-center justify-center">
+                                    <div className="flex-shrink-0 h-12 w-12 rounded-full bg-gold flex items-center justify-center">
                                         {benefit.icon}
                                     </div>
                                     <div>

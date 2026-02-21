@@ -5,6 +5,7 @@ import { ContactGlobalReachSection } from "@/components/contactus/ContactGlobalR
 import { ContactAvailabilitySection } from "@/components/contactus/ContactAvailabilitySection";
 import { ContactFormSection } from "@/components/contactus/ContactFormSection";
 import { Navbar } from '@/components/sections/navbar';
+import { Footer } from '@/components/sections/footer';
 
 export const metadata: Metadata = {
     title: 'Contact Us | VoiShift',
@@ -20,6 +21,7 @@ export default function ContactUsPage() {
             <ContactGlobalReachSection />
             <ContactAvailabilitySection />
             <ContactFormSection />
+            <Footer />
         </main>
     );
 }

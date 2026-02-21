@@ -14,10 +14,10 @@ export function PartnerProgramsSection() {
                         VoiShift offers tailored partnership opportunities to help grow your business. Explore our flexible programs designed to match your business model and client needs.
                     </p>
                     <div className="flex flex-col items-center gap-4">
-                        <button className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+                        <button className="inline-flex items-center justify-center bg-gold px-8 py-3.5 text-sm font-medium text-black transition-colors hover:bg-black hover:text-white shadow-2xl shadow-gold">
                             Become a Partner
                         </button>
-                        <Link href="#" className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors group/link mt-2">
+                        <Link href="#" className="inline-flex items-center text-sm font-medium text-black hover:text-black transition-colors group/link mt-2">
                             Join Our Affiliate Program <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                         </Link>
                     </div>
@@ -43,10 +43,10 @@ export function PartnerProgramsSection() {
                         </div>
 
                         <div className="flex flex-col sm:flex-row gap-6">
-                            <Link href="#" className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors group/link">
+                            <Link href="#" className="inline-flex items-center text-sm font-medium text-gold hover:text-black transition-colors group/link">
                                 Explore our Agency Program <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                             </Link>
-                            <Link href="#" className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors group/link">
+                            <Link href="#" className="inline-flex items-center text-sm font-medium text-gold hover:text-black transition-colors group/link">
                                 View all Agency Partners <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                             </Link>
                         </div>
@@ -71,7 +71,7 @@ export function PartnerProgramsSection() {
                         </div>
 
                         <div className="flex flex-col gap-6">
-                            <Link href="#" className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors group/link">
+                            <Link href="#" className="inline-flex items-center text-sm font-medium text-gold hover:text-black transition-colors group/link">
                                 View all Integration Partners <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                             </Link>
                         </div>
@@ -87,7 +87,7 @@ export function PartnerProgramsSection() {
                         </p>
 
                         <div className="flex flex-col gap-6">
-                            <Link href="#" className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700 transition-colors group/link">
+                            <Link href="#" className="inline-flex items-center text-sm font-medium text-gold hover:text-black transition-colors group/link">
                                 Explore our Affiliate Program <ArrowRight className="ml-1.5 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
                             </Link>
                         </div>

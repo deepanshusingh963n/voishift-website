@@ -14,7 +14,7 @@ export function PartnersHeroSection() {
                     </div>
 
                     <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-tight">
-                        Grow your business with the <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-amber-500">voice AI frontier.</span>
+                        Grow your business with the <span className="text-gold">voice AI frontier.</span>
                     </h1>
 
                     <p className="text-lg md:text-xl text-slate-600 max-w-[700px] leading-relaxed">
@@ -22,10 +22,10 @@ export function PartnersHeroSection() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4 w-full sm:w-auto">
-                        <button className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-8 py-3.5 text-sm font-medium text-white transition-colors hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2">
+                        <button className="inline-flex items-center justify-center bg-gold px-8 py-3.5 text-sm font-medium text-black transition-colors hover:bg-black hover:text-white shadow-2xl shadow-gold">
                             Explore Programs
                         </button>
-                        <button className="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white px-8 py-3.5 text-sm font-medium text-slate-900 transition-colors hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-200 focus:ring-offset-2">
+                        <button className="inline-flex items-center justify-center border border-slate-200 bg-white px-8 py-3.5 text-sm font-medium shadow-2xl shadow-slate-200">
                             Talk to Partner Sales
                         </button>
                     </div>

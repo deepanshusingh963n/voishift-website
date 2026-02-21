@@ -140,9 +140,9 @@ export function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-[0.2] mix-blend-multiply"
+          className="w-full h-full object-cover opacity-[0.3] mix-blend-multiply"
         >
-          <source src="/hero_background.mp4" type="video/mp4" />
+          <source src="/Merged VDOs.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-cream-light/40 via-transparent to-cream-light" />
       </div>
