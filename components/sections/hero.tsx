@@ -148,50 +148,32 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center">
+        <div className="flex flex-col items-center justify-center w-full">
 
-          {/* LEFT: System Narrative */}
-          <motion.div style={{ y, opacity }}>
+          {/* CENTER: System Narrative */}
+          <motion.div style={{ y, opacity }} className="flex flex-col items-center text-center max-w-4xl mx-auto">
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+              className="w-full flex flex-col items-center"
             >
-              <h1 className="text-3xl md:text-5xl lg:text-5xl font-serif font-bold text-warm-gray leading-[1.3] mb-12">
-                If you are copying the <br />
-                world with a voice bot,{" "}<br />
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-warm-gray leading-[1.5] mb-12 text-center">
+                If you are copying the world with a voice bot,{" "}<br />
                 <span className="text-gold uppercase text-[0.8em] block mt-2">
-                  you may be copying the <br /> world's blind spots too.
+                  you may be copying the world's blind spots too.
                 </span>
               </h1>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3 }}
-              className="space-y-6 mb-12 relative"
-            >
-              <div className="absolute -left-10 top-0 bottom-0 w-1 bg-gradient-to-b from-gold via-sand to-transparent opacity-30" />
-
-              <div className="p-2 max-w-xl bg-white/40 backdrop-blur-md border border-sand shadow-inner group transition-all hover:bg-white/60">
-                <p className="text-md md:text-lg text-warm-gray-light font-serif italic selection:bg-gold/20">
-                  "Everyone is just following everyone else, installing a voice bot like a widget.
-                  A quick win. A clean demo. A bot that sounds ready. <span className="text-warm-gray not-italic font-black">That is how it starts.</span>"
-                </p>
-              </div>
-
-              <p className="text-lg md:text-xl font-serif text-warm-gray max-w-xl mt-6">
-                Most teams set rules. <span className="text-gold font-black underline decoration-gold/20">Very few know</span> when the bot quietly stopped following the right one.
-              </p>
-            </motion.div>
+          
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex flex-col sm:flex-row items-center gap-6"
+              className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full"
             >
               <Button
                 size="sm"
@@ -212,46 +194,6 @@ export function Hero() {
               </Button>
             </motion.div>
           </motion.div>
-
-          {/* RIGHT: The Logic Engine */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, rotate: 5 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            transition={{ duration: 1.2, ease: "circOut" }}
-            className="hidden lg:block relative"
-          >
-            <LogicEngineVisual />
-
-            {/* HUD Callouts */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-12 -right-8 p-6 bg-white rounded-3xl border border-sand shadow-xl max-w-[200px]"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <Terminal className="w-3 h-3 text-gold" />
-                <span className="text-[9px] font-black text-warm-gray tracking-widest uppercase">Drift_Monitor</span>
-              </div>
-              <div className="h-1.5 w-full bg-sand rounded-full overflow-hidden">
-                <motion.div
-                  animate={{ width: ["10%", "85%", "10%"] }}
-                  transition={{ duration: 5, repeat: Infinity }}
-                  className="h-full bg-gold"
-                />
-              </div>
-            </motion.div>
-
-            <div className="absolute -bottom-12 -left-8 p-6 bg-white/80 backdrop-blur-sm rounded-3xl border border-sand shadow-lg flex items-center gap-4">
-              <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
-                <Layers className="w-5 h-5 text-gold" />
-              </div>
-              <div>
-                <span className="text-[10px] font-black text-warm-gray/40 uppercase tracking-widest block">Structural_Health</span>
-                <span className="text-xl font-serif font-black text-warm-gray">100%_SECURE</span>
-              </div>
-            </div>
-          </motion.div>
-
         </div>
       </div>
 

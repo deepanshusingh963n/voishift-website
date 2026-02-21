@@ -49,38 +49,38 @@ const narrativeBlocks = [
 /* --- Stage 1: Breach Simulation --- */
 const BreachSimulation = () => {
   return (
-    <div className="w-full max-w-4xl mx-auto space-y-8 px-4">
+    <div className="w-full max-w-3xl mx-auto space-y-4 px-4">
       {/* Header HUD */}
-      <div className="flex items-center justify-between border-b border-sand pb-4">
+      <div className="flex items-center justify-between border-b border-sand pb-3">
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 bg-destructive animate-pulse rounded-full" />
           <span className="text-[10px] font-black uppercase tracking-[0.3em] text-warm-gray">System_Integrity_Monitor</span>
         </div>
         <div className="flex gap-4">
-          <div className="h-1 w-12 bg-sand/30" />
-          <div className="h-1 w-8 bg-sand/30" />
+          <div className="h-1 w-10 bg-sand/30" />
+          <div className="h-1 w-6 bg-sand/30" />
         </div>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-8 relative">
+      <div className="grid md:grid-cols-2 gap-6 relative">
         {/* Left Side: The "Bot" Voice Interface */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-white border border-sand p-6 shadow-xl relative overflow-hidden group"
+          className="bg-white border border-sand p-5 shadow-xl relative overflow-hidden group"
         >
           <div className="absolute top-0 left-0 w-1 bg-blue-500 h-full" />
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center">
               <Activity className="w-4 h-4 text-blue-500" />
             </div>
             <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Active_Call_Stream</span>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-4">
             <div className="space-y-2">
               <p className="text-[10px] text-warm-gray-light font-black uppercase tracking-wider">Customer Inquiry</p>
-              <p className="text-sm font-serif italic text-warm-gray leading-relaxed bg-sand/10 p-3">
+              <p className="text-xs md:text-sm font-serif italic text-warm-gray leading-relaxed bg-sand/10 p-2 md:p-3">
                 "Wait, are you SURE you can deliver by Friday? If not, I lose the project."
               </p>
             </div>
@@ -91,7 +91,7 @@ const BreachSimulation = () => {
               className="space-y-2"
             >
               <p className="text-[10px] text-blue-500 font-black uppercase tracking-wider">Fluent Bot Response</p>
-              <p className="text-sm font-serif text-warm-gray leading-relaxed border-l-2 border-blue-500 pl-4 py-1">
+              <p className="text-xs md:text-sm font-serif text-warm-gray leading-relaxed border-l-2 border-blue-500 pl-3 py-1">
                 "Absolutely. I've personally verified our logistics queue. We will have it at your door by Friday morning."
               </p>
             </motion.div>
@@ -112,8 +112,8 @@ const BreachSimulation = () => {
 
         {/* Center Connector */}
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:block">
-          <div className="w-12 h-12 rounded-full bg-destructive flex items-center justify-center shadow-xl border-4 border-white animate-bounce">
-            <Shield className="w-6 h-6 text-white" />
+          <div className="w-10 h-10 rounded-full bg-destructive flex items-center justify-center shadow-xl border-4 border-white animate-bounce">
+            <Shield className="w-5 h-5 text-white" />
           </div>
         </div>
 
@@ -121,20 +121,20 @@ const BreachSimulation = () => {
         <motion.div 
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          className="bg-[#1a1a1a] p-6 shadow-2xl relative overflow-hidden"
+          className="bg-[#1a1a1a] p-5 shadow-2xl relative overflow-hidden"
         >
           <div className="absolute top-0 right-0 p-4 opacity-10">
-            <Lock className="w-16 h-16 text-white" />
+            <Lock className="w-12 h-12 text-white" />
           </div>
-          <div className="flex items-center gap-3 mb-6">
+          <div className="flex items-center gap-3 mb-4">
             <div className="w-8 h-8 rounded bg-destructive/20 flex items-center justify-center">
               <Shield className="w-4 h-4 text-destructive" />
             </div>
             <span className="text-[10px] font-black text-white uppercase tracking-widest">Breach_Reality_Scan</span>
           </div>
 
-          <div className="space-y-6">
-            <div className="p-4 border border-destructive/30 bg-destructive/5 rounded space-y-4">
+          <div className="space-y-4">
+            <div className="p-3 border border-destructive/30 bg-destructive/5 rounded space-y-3">
               <div className="flex justify-between items-center">
                 <span className="text-[10px] text-destructive font-black uppercase tracking-tighter">Conflict Detected</span>
                 <span className="text-[10px] text-warm-gray-light font-mono">0x44_COMMITMENT_ERROR</span>
@@ -197,7 +197,7 @@ const SystemNetwork = () => {
   return (
     <div className="relative w-full max-w-2xl aspect-square flex items-center justify-center">
       {/* Background Pulse Rings */}
-      <div className="absolute inset-0 flex items-center justify-center gap-4">
+      <div className="absolute inset-0 flex items-center justify-center gap-2">
         {[1, 2, 3].map((i) => (
           <motion.div
             key={i}
@@ -236,33 +236,21 @@ const SystemNetwork = () => {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: i * 0.2 }}
-            className={`absolute flex flex-col items-center gap-3 ${
+            className={`absolute flex flex-col items-center gap-2 ${
               node.pos === 'center' ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' :
               node.pos === 'top-left' ? 'left-[15%] top-[15%]' :
               node.pos === 'top-right' ? 'right-[15%] top-[15%]' :
               'left-1/2 bottom-[10%] -translate-x-1/2'
             }`}
           >
-            <div className={`w-16 h-16 lg:w-24 lg:h-24 rounded-2xl bg-white border border-sand shadow-2xl flex items-center justify-center group hover:border-gold transition-colors duration-500`}>
-              <node.icon className={`w-8 h-8 lg:w-12 lg:h-12 ${node.color} group-hover:scale-110 transition-transform`} />
+            <div className={`w-12 h-12 lg:w-16 lg:h-16 rounded-2xl bg-white border border-sand shadow-2xl flex items-center justify-center group hover:border-gold transition-colors duration-500`}>
+              <node.icon className={`w-5 h-5 lg:w-8 lg:h-8 ${node.color} group-hover:scale-110 transition-transform`} />
             </div>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-warm-gray bg-white/80 px-3 py-1 border border-sand rounded-full">
+            <span className="text-[8px] font-black uppercase tracking-[0.2em] text-warm-gray bg-white/80 px-3 py-1 border border-sand rounded-full">
               {node.label}
             </span>
           </motion.div>
         ))}
-      </div>
-
-      <div className="absolute top-0 left-0 p-8 space-y-2">
-        <div className="flex items-center gap-2">
-          <motion.div 
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-          >
-            <RefreshCw className="w-3 h-3 text-gold" />
-          </motion.div>
-          <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Neural_Sync_Active</span>
-        </div>
       </div>
     </div>
   )
@@ -271,7 +259,7 @@ const SystemNetwork = () => {
 /* --- Stage 3: Technical Audit --- */
 const TechnicalAudit = () => {
   return (
-    <div className="w-full max-w-2xl bg-white border border-sand p-12 lg:p-16 shadow-2xl relative overflow-hidden text-center">
+    <div className="w-full max-w-xl bg-white border border-sand p-4 lg:p-6 shadow-2xl relative overflow-hidden text-center">
       {/* Background Scanner Line */}
       <motion.div 
         animate={{ top: ['0%', '100%', '0%'] }}
@@ -284,14 +272,14 @@ const TechnicalAudit = () => {
           <span className="text-xs font-black text-destructive uppercase tracking-[0.5em] px-4 py-1 border border-destructive/20 inline-block bg-destructive/5 rounded-full">
             AUDIT_REPORT_FLAG
           </span>
-          <h4 className="text-lg font-serif text-warm-gray-light italic">VoiShift Enterprise Analysis_ID_7212</h4>
+          <h4 className="text-md font-serif text-warm-gray-light italic">VoiShift Enterprise Analysis_ID_7212</h4>
         </div>
 
         <div className="relative inline-block">
           <motion.div
             initial={{ rotate: -10, opacity: 0 }}
             animate={{ rotate: 0, opacity: 1 }}
-            className="text-[100px] lg:text-[140px] font-serif font-black text-[#1a1a1a] leading-none tracking-tighter"
+            className="text-[60px] lg:text-[90px] font-serif font-black text-[#1a1a1a] leading-none tracking-tighter"
           >
             78%
           </motion.div>
@@ -304,8 +292,8 @@ const TechnicalAudit = () => {
           </motion.div>
         </div>
 
-        <div className="space-y-6 max-w-lg mx-auto">
-          <p className="text-xl lg:text-2xl text-warm-gray font-serif italic leading-snug">
+        <div className="space-y-6 max-w-md mx-auto">
+          <p className="text-md lg:text-lg text-warm-gray font-serif italic leading-snug">
             Of voice AI deployments create "Ghost Commitments"—promises made by agents that are operationally impossible to fulfill.
           </p>
           <div className="grid grid-cols-3 gap-8 pt-8 border-t border-sand">
@@ -330,15 +318,15 @@ const TechnicalAudit = () => {
 
 const VisualPanel = ({ activeBlock }: { activeBlock: number }) => {
   return (
-    <div className="relative h-full w-full flex items-center justify-center p-6 lg:p-12 overflow-hidden">
+    <div className="relative h-full w-full flex items-center justify-center p-4 lg:p-8 overflow-hidden">
       <AnimatePresence mode="wait">
         <motion.div
           key={activeBlock}
-          initial={{ opacity: 0, scale: 0.95, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 1.05, y: -10 }}
+          initial={{ opacity: 0, scale: 0.9, y: 10 }}
+          animate={{ opacity: 1, scale: 0.95, y: 0 }}
+          exit={{ opacity: 0, scale: 1, y: -10 }}
           transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full flex justify-center"
+          className="w-full flex justify-center origin-center"
         >
           {activeBlock === 0 && <BreachSimulation />}
           {activeBlock === 1 && <SystemNetwork />}
@@ -369,10 +357,29 @@ export function SubHero() {
 
   return (
     <section id="sub-hero" ref={containerRef} className="relative bg-cream-dark">
-      <div className="sticky min-h-screen flex">
+      {/* Sticky Intro Bridge from Hero */}
+      <div className="sticky top-[80px] z-40 w-full bg-white backdrop-blur-xl border-b border-sand/50 px-6 py-6 md:py-8 flex flex-col items-center text-center shadow-sm">
+        <motion.div
+           initial={{ opacity: 0, y: -20 }}
+           animate={{ opacity: 1, y: 0 }}
+           transition={{ duration: 0.8 }}
+           className="w-full flex flex-col items-center max-w-7xl mx-auto"
+        >
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-warm-gray-light font-serif italic selection:bg-gold/20 mb-4 text-balance">
+            "Everyone is just following everyone else, installing a voice bot like a widget. <br />
+            <span className="text-warm-gray-light not-italic text-lg md:text-xl">A quick win. A clean demo. A bot that sounds ready. That is how it starts.</span>"
+          </h2>
+
+          <p className="text-lg md:text-xl font-serif text-gold max-w-7xl">
+            Most teams set rules. Very few know when the bot quietly stopped following the right one.
+          </p>
+        </motion.div>
+      </div>
+
+      <div className="flex">
         {/* Left side - Scrollable narrative */}
-        <div className="w-full lg:w-2/5 overflow-auto">
-          <div className="py-2 lg:py-4">
+        <div className="w-full lg:w-2/5 overflow-auto pb-32">
+          <div className="pt-24 lg:pt-32">
             {narrativeBlocks.map((block, index) => (
               <div
                 key={block.id}
@@ -385,20 +392,20 @@ export function SubHero() {
                   viewport={{ once: false, amount: 0.5 }}
                   className="max-w-xl"
                 >
-                  <div className="flex items-start gap-4 mb-6">
+                  <div className="flex items-start gap-4 mb-4">
                     {/* Icon */}
-                    <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                      <block.icon className="w-5 h-5 text-gold" />
+                    <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
+                      <block.icon className="w-4 h-4 text-gold" />
                     </div>
 
                     {/* Content column */}
                     <div className="flex-1">
                       {typeof block.title === "string" ? (
-                        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl text-warm-gray leading-tight mb-6 text-balance">
+                        <h2 className="font-serif text-xl md:text-2xl lg:text-3xl text-warm-gray leading-tight mb-4 text-balance">
                           {block.title}
                         </h2>
                       ) : (
-                        <h2 className="font-serif text-2xl md:text-3xl lg:text-4xl leading-[1.05] tracking-tight text-warm-gray mb-6">
+                        <h2 className="font-serif text-xl md:text-2xl lg:text-3xl leading-[1.05] tracking-tight text-warm-gray mb-4">
                           <span className="block">{block.title.line1}</span>
                           <span className="block italic text-gold/80 font-normal mt-1">
                             {block.title.line2}
@@ -407,7 +414,7 @@ export function SubHero() {
                       )}
 
                       {/* Bullets */}
-                      <ul className="space-y-4 list-disc list-inside text-lg text-warm-gray-light leading-relaxed">
+                      <ul className="space-y-3 list-disc list-inside text-base md:text-lg text-warm-gray-light leading-relaxed">
                         {block.content.map((line, i) => (
                           <motion.li
                             key={i}
@@ -430,10 +437,10 @@ export function SubHero() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.4 }}
                       viewport={{ once: false, amount: 0.8 }}
-                      className="mt-12 flex flex-col sm:flex-row gap-4"
+                      className="mt-8 flex flex-col sm:flex-row gap-4"
                     >
                       <Button
-                        size="lg"
+                        size="default"
                         className="bg-gold hover:bg-gold-dark text-warm-gray rounded-lg shadow-sm transition-all duration-300"
                         onClick={openModal}
                       >
@@ -441,7 +448,7 @@ export function SubHero() {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
                       <Button
-                        size="lg"
+                        size="default"
                         variant="outline"
                         className="border-gold/40 text-warm-gray hover:bg-gold/5 rounded-lg transition-all duration-300 bg-transparent"
                         onClick={openModal}
@@ -457,7 +464,7 @@ export function SubHero() {
         </div>
 
         {/* Right side - Sticky illustration panel */}
-        <div className="hidden lg:flex w-3/5 sticky top-10 h-screen items-center justify-center bg-sand/30 border-l border-border/50">
+        <div className="hidden lg:flex w-3/5 sticky top-[260px] h-[calc(100vh-260px)] items-center justify-center bg-sand/30 border-l border-border/50">
           <VisualPanel activeBlock={activeBlock} />
         </div>
       </div>
