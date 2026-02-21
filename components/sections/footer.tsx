@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Shield, Lock, Mail } from "lucide-react"
+import { Shield, Lock, Mail, Users } from "lucide-react"
 
 const links = [
   { label: "Case Studies", href: "/case-studies", icon: Shield },
   { label: "Privacy Policy", href: "/privacy-policy", icon: Lock },
   { label: "Contact", href: "/contact", icon: Mail },
+  { label: "Partners", href: "/partners", icon: Users },
 ]
 
 export function Footer() {
