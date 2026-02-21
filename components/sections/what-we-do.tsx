@@ -2,10 +2,10 @@
 
 import React, { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { 
-  Mic2, 
-  BrainCircuit, 
-  ShieldAlert, 
+import {
+  Mic2,
+  BrainCircuit,
+  ShieldAlert,
   Workflow,
   Plus,
   ArrowRight,
@@ -119,6 +119,47 @@ export function WhatWeDo() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-[1fr_0.8fr] gap-16 lg:gap-24 mb-24">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="font-serif text-3xl md:text-5xl text-warm-gray leading-[1.1] mb-8">
+              VoiShift is a Voice-AI-first,<br />
+              <span className="text-gold italic"> Anything-AI execution partner.</span>
+            </h2>
+            <div className="space-y-6 text-xl md:text-2xl text-warm-gray-light font-serif italic leading-relaxed max-w-2xl border-l-4 border-gold pl-8 py-2">
+              <p>
+                VoiShift builds voice AI that works in the real world
+              </p>
+              <p className="text-lg">
+                We help teams turn &quot;AI ideas&quot; into systems that actually run inside day-to-day operations, without breaking trust or creating chaos.
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex items-center"
+          >
+            <div className="bg-[#1a1a1a] p-8 shadow-2xl relative group">
+              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gold flex items-center justify-center">
+                <Plus className="text-[#1a1a1a] w-6 h-6" />
+              </div>
+              <p className="text-white text-lg md:text-xl font-serif italic leading-relaxed">
+                If your teams spend hours following up, voice is not a nice-to-have. <span className="text-gold not-italic font-black block mt-4 uppercase tracking-wider text-sm">It is the highest leverage interface you can automate.</span>
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-24">
           <h3 className="text-xs font-black text-gold uppercase tracking-[0.4em] mb-12 flex items-center gap-4">
             <span className="h-px w-12 bg-gold" />
@@ -139,11 +180,10 @@ export function WhatWeDo() {
                       onClick={() => setActivePillar(index)}
                       onMouseEnter={() => isActive && setIsPaused(true)}
                       onMouseLeave={() => isActive && setIsPaused(false)}
-                      className={`w-full text-left flex items-center gap-4 p-4 lg:p-6 transition-all duration-300 border-l-4 rounded-r-lg relative overflow-hidden ${
-                        isActive
+                      className={`w-full text-left flex items-center gap-4 p-4 lg:p-6 transition-all duration-300 border-l-4 rounded-r-lg relative overflow-hidden ${isActive
                           ? "bg-white border-gold shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
                           : "hover:bg-white/40 border-transparent text-warm-gray/60 hover:text-warm-gray hover:border-gold/30"
-                      }`}
+                        }`}
                     >
                       {isActive && (
                         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gold/10">
@@ -154,17 +194,14 @@ export function WhatWeDo() {
                         </div>
                       )}
 
-                      <div className={`w-12 h-12 flex items-center justify-center rounded-md shrink-0 ${
-                        isActive ? "bg-gold/10 border border-gold/20" : ""
-                      }`}>
-                        <Icon className={`w-6 h-6 ${
-                          isActive ? "text-gold" : "text-warm-gray/40"
-                        }`} />
+                      <div className={`w-12 h-12 flex items-center justify-center rounded-md shrink-0 ${isActive ? "bg-gold/10 border border-gold/20" : ""
+                        }`}>
+                        <Icon className={`w-6 h-6 ${isActive ? "text-gold" : "text-warm-gray/40"
+                          }`} />
                       </div>
 
-                      <span className={`font-serif text-lg md:text-xl ${
-                        isActive ? "text-gold" : ""
-                      }`}>
+                      <span className={`font-serif text-lg md:text-xl ${isActive ? "text-gold" : ""
+                        }`}>
                         {pillar.title}
                       </span>
                     </button>
