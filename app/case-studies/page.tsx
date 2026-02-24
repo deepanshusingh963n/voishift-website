@@ -2,6 +2,8 @@ import { Metadata } from "next"
 import { Navbar } from "@/components/sections/navbar"
 import { CaseStudiesHero } from "@/components/case-studies/case-studies-hero"
 import { CaseStudyGrid } from "@/components/case-studies/case-study-grid"
+import { EBooksSection } from "@/components/case-studies/ebooks-section"
+import { WhitepapersSection } from "@/components/case-studies/whitepapers-section"
 import { Testimonials } from "@/components/case-studies/testimonials"
 import { CaseStudiesCTA } from "@/components/case-studies/case-studies-cta"
 import { Footer } from "@/components/sections/footer"
@@ -23,6 +25,8 @@ export default function CaseStudiesPage() {
       <Navbar />
       <CaseStudiesHero />
       <CaseStudyGrid />
+      <EBooksSection />
+      <WhitepapersSection />
       <Testimonials />
       <CaseStudiesCTA />
       <Footer />

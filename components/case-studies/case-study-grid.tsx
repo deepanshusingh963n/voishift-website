@@ -161,7 +161,7 @@ const CaseStudyVisual = ({ category }: { category: string }) => {
     BFSI: (
       <div className="absolute inset-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,gold_1px,transparent_1px)] bg-[size:10px_10px]" />
-        <motion.div 
+        <motion.div
           animate={{ top: ["0%", "100%", "0%"] }}
           transition={{ duration: 4, repeat: Infinity }}
           className="absolute inset-x-0 h-px bg-gold/50 shadow-[0_0_10px_gold]"
@@ -171,8 +171,8 @@ const CaseStudyVisual = ({ category }: { category: string }) => {
     MANUFACTURING: (
       <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 100 100">
         <rect x="20" y="20" width="60" height="60" fill="none" stroke="gold" strokeWidth="0.2" />
-        <motion.circle 
-          cx="50" cy="50" r="20" 
+        <motion.circle
+          cx="50" cy="50" r="20"
           fill="none" stroke="gold" strokeWidth="0.5" strokeDasharray="2 2"
           animate={{ rotate: 360 }}
           transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
@@ -216,11 +216,43 @@ export function CaseStudyGrid() {
             <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">Operational Archive</span>
           </div>
           <h2 className="font-serif text-4xl md:text-6xl text-warm-gray mb-6 tracking-tighter leading-[0.9]">
-            How Teams Built <br /> <span className="text-gold italic">Confidence</span>
+            Case <span className="text-gold italic">Studies</span>
           </h2>
-          <p className="text-xl text-warm-gray-light max-w-2xl mx-auto mb-16 font-serif italic">
-            From struggling to scale support to building voice AI that holds up under pressure.
+          <p className="text-warm-gray font-serif text-lg leading-relaxed">
+            These are not{" "}
+            <span className="text-warm-gray font-bold">&ldquo;look how great we are&rdquo;</span>{" "}
+            case studies.
           </p>
+
+          <p className="text-warm-gray-light font-serif text-base leading-relaxed">
+            They are an{" "}
+            <span className="text-warm-gray font-semibold">exposé of our work, including the parts we got wrong.</span>{" "}
+            You will see what we attempted, the assumptions we carried, the failures we created, what we changed after it broke, and what still does not feel solved.
+            {" "}
+            <span className="text-gold font-bold">No polishing.</span>
+          </p>
+
+          <p className="text-warm-gray-light font-serif text-base leading-relaxed">
+            The point is reflection, {" "}
+            <span className="text-warm-gray font-semibold">not flex.</span>{" "}
+            We are not trying to win a narrative. We are trying to get better.
+          </p>
+
+          {/* Separator */}
+          <div className="flex items-center gap-4 py-2">
+            <div className="flex-1 h-px bg-sand" />
+            <div className="w-1.5 h-1.5 rounded-full bg-gold/40" />
+            <div className="flex-1 h-px bg-sand" />
+          </div>
+
+          <p className="text-sm text-warm-gray-light font-serif italic leading-relaxed mb-6">
+            If this helps your team spot a blind spot, avoid a mistake, or tighten your system, good. If you are already doing this better than us, even better.
+            {" "}
+            <span className="text-warm-gray not-italic font-medium ">
+              We want to learn from you too.
+            </span>
+          </p>
+
 
           {/* HUD Navigation Filter */}
           <div className="flex flex-wrap justify-center gap-2 mb-20 bg-[#faf9f6] p-2 rounded-2xl border border-sand shadow-inner max-w-4xl mx-auto">
@@ -232,8 +264,8 @@ export function CaseStudyGrid() {
                   onClick={() => setActiveCategory(ind.name)}
                   className={cn(
                     "relative group flex items-center gap-3 px-5 py-3 rounded-xl transition-all duration-500 overflow-hidden",
-                    activeCategory === ind.name 
-                      ? "bg-white shadow-xl border border-sand" 
+                    activeCategory === ind.name
+                      ? "bg-white shadow-xl border border-sand"
                       : "hover:bg-white/40"
                   )}
                 >
@@ -284,15 +316,15 @@ export function CaseStudyGrid() {
                       sizes="(max-width: 768px) 100vw, 33vw"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover/card:opacity-40 transition-opacity" />
-                    
+
                     {/* Illustrated Overlays */}
                     <CaseStudyVisual category={study.category} />
-                    
+
                     {/* Category Floating Tag */}
                     <div className="absolute top-6 left-6 flex flex-col gap-1 items-start">
-                       <span className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-md text-[8px] font-mono font-black text-gold uppercase tracking-[0.2em] border border-white/10">
-                         {study.category}
-                       </span>
+                      <span className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-md text-[8px] font-mono font-black text-gold uppercase tracking-[0.2em] border border-white/10">
+                        {study.category}
+                      </span>
                     </div>
 
                     {/* Metrics Floating Badge */}
@@ -319,15 +351,15 @@ export function CaseStudyGrid() {
                     {/* Outcome Evidence Panel */}
                     <div className="bg-[#faf9f6] border border-sand rounded-2xl p-6 mb-8 group-hover/card:bg-white transition-colors duration-500">
                       <div className="flex items-center gap-2 mb-3">
-                         <MousePointer2 className="w-3 h-3 text-gold" />
-                         <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Outcome_Protocol</span>
+                        <MousePointer2 className="w-3 h-3 text-gold" />
+                        <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Outcome_Protocol</span>
                       </div>
                       <p className="text-sm font-bold text-warm-gray leading-snug">
                         {study.outcome}
                       </p>
                     </div>
 
-                    <button 
+                    <button
                       onClick={openModal}
                       className="flex items-center gap-3 text-xs font-black text-warm-gray uppercase tracking-widest group/btn transition-all"
                     >
