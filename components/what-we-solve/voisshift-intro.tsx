@@ -71,13 +71,13 @@ export function VoiShiftIntro() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-black border border-gold/10 rounded-full">
                 <Shield className="w-3.5 h-3.5 text-gold" />
-                <span className="text-[9px] font-black tracking-widest text-gold uppercase">Logic Infrastructure</span>
+                <span className="text-[15px] font-black tracking-widest text-gold uppercase">Logic Infrastructure</span>
               </div>
 
-              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-warm-gray leading-[1.1] text-balance">
-                VoiShift turns voice AI from a speaking layer into a <span className="text-gold italic underline decoration-gold/20">business system that holds up when conditions are not clean.</span>
+              <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-black text-warm-gray leading-[1.1] text-balance">
+                VoiShift turns voice AI from a speaking layer into a <span className="text-gold italic font-black">business system that holds up when conditions are not clean.</span>
               </h2>
 
               <div className="grid sm:grid-cols-2 gap-4">

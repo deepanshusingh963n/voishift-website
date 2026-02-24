@@ -197,12 +197,9 @@ export const HowWeDoDifferentlySection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-none mb-6">
-            <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">The Methodology</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-serif font-black text-warm-gray leading-[1.1] tracking-tight">
-            How We Do the Same Things — <br />
-            <span className="text-gold font-serif italic">Differently</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-black text-gold leading-[1.1] tracking-tight">
+            How We Do the Same Things,
+            <span className="font-serif underline underline-offset-6 italic"> Differently</span>
           </h2>
         </motion.div>
 
@@ -216,14 +213,14 @@ export const HowWeDoDifferentlySection = () => {
             transition={{ duration: 0.6 }}
             className="p-10 lg:p-16 bg-[#faf9f6]/50 border-r border-sand"
           >
-            <h3 className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.3em] mb-12">
+            <h3 className="text-[15px] font-black text-warm-gray/60 uppercase tracking-[0.3em] mb-12">
               Most voice AI builds start with:
             </h3>
             <div className="space-y-6">
               {mostStart.map((item, index) => (
                 <div
                   key={item.label}
-                  className="flex items-center gap-6 p-5 bg-cream border border-sand rounded-none opacity-50 hover:opacity-100 transition-all group"
+                  className="flex items-center gap-6 p-5 bg-cream border border-sand rounded-none shadow-sm opacity-80 hover:opacity-100 transition-all group"
                 >
                   <div className="w-12 h-12 bg-[#faf9f6] rounded-none flex items-center justify-center border border-sand group-hover:bg-gold group-hover:text-white transition-colors">
                     <item.icon className="w-5 h-5" />

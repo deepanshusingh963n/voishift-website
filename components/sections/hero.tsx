@@ -123,7 +123,7 @@ export function Hero() {
   return (
     <section ref={targetRef} className="relative min-h-screen flex items-center bg-cream-light overflow-hidden pt-20">
 
-      {/* Background Architectural Markings */}
+      {/* Background Architectural Markings 
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
         <div className="absolute top-1/4 left-0 w-full h-px bg-charcoal" />
         <div className="absolute top-1/2 left-0 w-full h-px bg-charcoal" />
@@ -131,7 +131,7 @@ export function Hero() {
         <div className="absolute left-1/4 top-0 h-full w-px bg-charcoal" />
         <div className="absolute left-1/2 top-0 h-full w-px bg-charcoal" />
         <div className="absolute left-3/4 top-0 h-full w-px bg-charcoal" />
-      </div>
+      </div>*/}
 
       {/* Atmospheric Video (Low Opacity) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
@@ -140,7 +140,7 @@ export function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-[0.3] mix-blend-multiply"
+          className="w-full h-full object-cover opacity-[0.5] mix-blend-multiply"
         >
           <source src="/Merged VDOs.mp4" type="video/mp4" />
         </video>

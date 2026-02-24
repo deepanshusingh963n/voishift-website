@@ -32,8 +32,8 @@ export default function PaymentModel() {
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         
         <div className="max-w-3xl mx-auto space-y-8 mb-20 animate-fade-in">
-          <span className="text-[10px] font-black text-gold uppercase tracking-[0.4em]">Our Economic Model</span>
-          <h2 className="text-4xl lg:text-6xl font-serif text-warm-gray leading-tight">
+          <span className="text-[15px] border border-gold rounded-full px-4 py-1 bg-black font-black text-gold uppercase tracking-[0.4em]">Our Economic Model</span>
+          <h2 className="text-4xl lg:text-6xl font-serif text-gold font-black leading-tight">
             How we <span className="text-gold italic">get paid</span>
           </h2>
           <p className="text-xl text-warm-gray-light font-serif leading-relaxed italic">

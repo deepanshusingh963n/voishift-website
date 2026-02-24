@@ -27,7 +27,7 @@ export default function RentingAI() {
               <div className="absolute top-0 right-0 p-4">
                 <UserMinus className="w-8 h-8 text-warm-gray/20" />
               </div>
-              <h3 className="text-2xl font-serif text-warm-gray mb-8 italic">What “renting AI” looks like</h3>
+              <h3 className="text-2xl font-serif text-gold mb-8 uppercase">What “renting AI” looks like</h3>
               
               <div className="space-y-6">
                 {points.map((point, i) => (
@@ -45,9 +45,9 @@ export default function RentingAI() {
               </div>
             </div>
 
-            <div className="flex gap-6 p-8 bg-warm-gray text-white rounded-none border-b-4 border-gold">
+            <div className="flex gap-6 p-5 bg-warm-gray text-white rounded-none border-b-4 border-gold">
               <Unlock className="w-10 h-10 text-gold shrink-0" />
-              <p className="font-serif italic text-lg leading-relaxed">
+              <p className="font-serif italic text-md leading-relaxed">
                 "And when something important needs to change, you wait on the owner."
               </p>
             </div>
@@ -55,13 +55,12 @@ export default function RentingAI() {
 
           <div className="space-y-12 order-1 lg:order-2">
             <div className="relative">
-              <span className="text-[10px] font-black text-gold uppercase tracking-[0.4em] mb-4 block">Visual_Analogy_01</span>
               <h2 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight">
                 Like <span className="italic text-gold">renting a house.</span>
               </h2>
             </div>
 
-            <div className="grid gap-6">
+            <div className="grid gap-10">
               {[
                 { label: "CURTAINS", action: "You can change the curtains." },
                 { label: "WALLS", action: "You can repaint the walls." },
@@ -76,7 +75,7 @@ export default function RentingAI() {
                 </div>
               ))}
               
-              <div className="p-8 bg-destructive/5 border-2 border-destructive/20 rounded-none mt-4">
+              <div className="p-8 bg-destructive/5 border-2 border-destructive/20 rounded-none mt-6">
                  <p className="text-xl font-serif text-warm-gray font-bold italic text-center">
                    "But you cannot change the foundation."
                  </p>

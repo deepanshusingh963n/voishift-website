@@ -26,7 +26,7 @@ export default function HowClosingCTA() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-10">
               <div className="space-y-6">
-                <span className="text-[10px] font-black text-gold uppercase tracking-[0.5em]">The Result</span>
+                <span className="text-[15px] font-black text-gold uppercase tracking-[0.5em]">The Result</span>
                 <h2 className="text-4xl lg:text-7xl font-serif text-white leading-tight">
                   Design My <br />
                   <span className="text-gold italic">System.</span>
@@ -48,7 +48,7 @@ export default function HowClosingCTA() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-white/20 text-white hover:bg-white/5 px-10 py-8 text-xl rounded-2xl h-auto bg-transparent"
+                  className="border-white/20 text-white hover:bg-gold px-10 py-8 text-xl rounded-2xl h-auto bg-transparent"
                   onClick={openModal}
                 >
                   Stress Test My Build

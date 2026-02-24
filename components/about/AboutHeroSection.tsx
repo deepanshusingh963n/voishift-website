@@ -50,7 +50,7 @@ export const AboutHeroSection = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -58,12 +58,11 @@ export const AboutHeroSection = () => {
             className="mb-10"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-8">
-              <span className="text-[10px] font-black tracking-[0.4em] text-gold uppercase">What We Stand For</span>
+              <span className="text-5xl font-black text-gold uppercase">What We Stand For</span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-serif font-black text-warm-gray leading-[1.05] tracking-tight mb-12">
-              System-first voice AI <br />
-              <span className="text-gold italic">for teams that cannot afford</span> <br />
+            <h1 className="text-xl md:text-3xl font-serif font-black text-warm-gray mb-12">
+              System-first voice AI <span className="text-gold italic"> for teams that cannot afford</span> <br />
               hallucinations dressed up as help.
             </h1>
           </motion.div>

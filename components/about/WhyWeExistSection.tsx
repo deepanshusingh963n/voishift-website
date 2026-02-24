@@ -62,7 +62,7 @@ export const WhyWeExistSection = () => {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-5xl font-serif font-black text-warm-gray leading-tight">
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-gold leading-tight">
               Our Mission
             </h2>
           </motion.div>
@@ -77,34 +77,35 @@ export const WhyWeExistSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* LEFT COLUMN: Interactive Mission Paths */}
-          <div className="space-y-8">
-            <div className="flex flex-wrap justify-center gap-4">
-              {paths.map((path) => (
-                <button
-                  key={path.id}
-                  onClick={() => setActivePath(path.id)}
-                  className={`group flex items-center gap-4 px-6 py-4 rounded-[0.5rem] border transition-all duration-500 ${activePath === path.id
-                    ? "bg-white border-gold shadow-xl scale-105"
-                    : "bg-transparent border-sand hover:border-gold/30"
-                    }`}
-                >
-                  <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${activePath === path.id ? "bg-gold text-white" : "bg-white border border-sand text-warm-gray/30 group-hover:bg-gold/5"
-                    }`}>
-                    <path.icon className="w-4 h-4" />
-                  </div>
-                  <div className="text-left">
-                    <p className={`text-[10px] font-black uppercase tracking-widest ${activePath === path.id ? "text-warm-gray" : "text-warm-gray/40"
+          <div className="text-center border border-gold p-6 rounded-[0rem]">
+            <div className="space-y-2">
+            
+              <div className="flex flex-wrap justify-center gap-4">
+                {paths.map((path) => (
+                  <button
+                    key={path.id}
+                    onClick={() => setActivePath(path.id)}
+                    className={`group flex items-center gap-4 px-6 py-4 rounded-[0rem] border transition-all duration-500 ${activePath === path.id
+                      ? "bg-white border-gold shadow-xl scale-105"
+                      : "bg-transparent border-gold hover:border-gold/30"
+                      }`}
+                  >
+                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${activePath === path.id ? "bg-gold text-white" : "bg-white border border-sand text-warm-gray/30 group-hover:bg-gold/5"
+                      }`}>
+                      <path.icon className="w-4 h-4" />
+                    </div>
+                    <div className="text-left">
+                      <p className={`text-[10px] font-black uppercase tracking-widest ${activePath === path.id ? "text-warm-gray" : "text-warm-gray/50"
                       }`}>
                       {path.title}
                     </p>
-                    <p className="text-[7px] text-warm-gray/30 font-bold uppercase tracking-widest leading-none mt-1">
+                    <p className="text-[7px] text-warm-gray/50 font-bold uppercase tracking-widest leading-none mt-1">
                       {path.subtitle}
                     </p>
                   </div>
                 </button>
               ))}
             </div>
-
             <motion.div
               key={`${activePath}-content`}
               initial={{ opacity: 0, y: 10 }}
@@ -112,7 +113,7 @@ export const WhyWeExistSection = () => {
               transition={{ duration: 0.5 }}
               className="relative"
             >
-              <div className="bg-white p-8 lg:p-10 rounded-[0.5rem] border border-sand shadow-sm hover:shadow-xl transition-shadow duration-500 overflow-hidden">
+              <div className="bg-white p-8 lg:p-10 shadow-sm transition-shadow duration-500 overflow-hidden">
                 {/* Pattern overlay */}
                 <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
                   <svg width="100%" height="100%">
@@ -126,37 +127,38 @@ export const WhyWeExistSection = () => {
                 <div className="relative z-10">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
-                      <h3 className="text-[8px] font-black text-gold uppercase tracking-[0.4em] mb-4">The Story</h3>
+                      <h3 className="text-[12px] font-black text-gold uppercase tracking-[0.4em] mb-4">The Story</h3>
                       <div className="space-y-3">
                         {activeData.story.map((line, i) => (
-                          <p key={i} className="text-sm text-warm-gray-light leading-relaxed font-serif italic selection:bg-gold/20">
+                          <p key={i} className="text-sm text-left text-warm-gray-light leading-relaxed font-serif italic selection:bg-gold/20">
                             "{line}"
                           </p>
                         ))}
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-[8px] font-black text-warm-gray/40 uppercase tracking-[0.4em] mb-4">The Reality</h3>
+                      <h3 className="text-[12px] font-black text-warm-gray/40 uppercase tracking-[0.4em] mb-4">The Reality</h3>
                       <div className="space-y-3">
                         {activeData.pain.map((line, i) => (
                           <div key={i} className="flex gap-3">
                             <div className="w-1.5 h-1.5 rounded-full bg-gold mt-2 shrink-0" />
-                            <p className="text-sm font-medium text-warm-gray leading-snug">{line}</p>
-                          </div>
-                        ))}
+                              <p className="text-sm font-medium text-warm-gray leading-snug text-left">{line}</p>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="mt-8 pt-8 border-t border-sand">
-                    <p className="text-warm-gray-light text-sm italic mb-4 opacity-60">{activeData.result}</p>
-                    <p className="text-xl font-serif font-black text-warm-gray tracking-tight leading-tight bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent">
-                      {activeData.conclusion}
-                    </p>
+                    <div className="mt-8 pt-8">
+                      <p className="text-warm-gray-light text-sm italic mb-4 opacity-60">{activeData.result}</p>
+                      <p className="text-xl font-serif font-black text-warm-gray tracking-tight leading-tight bg-gradient-to-r from-gold to-gold-dark bg-clip-text text-transparent">
+                        {activeData.conclusion}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           </div>
 
           {/* RIGHT COLUMN: Shared Problem Visual */}

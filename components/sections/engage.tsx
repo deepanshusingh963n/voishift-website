@@ -109,7 +109,7 @@ const DossierItem = ({ item, type }: { item: any, type: 'fresh' | 'stress' }) =>
 export function Engage() {
   const { openModal } = useModal()
   return (
-    <section id="engage" className="py-24 lg:py-32 bg-cream-dark relative overflow-hidden">
+    <section id="engage" className="py-24 lg:py-24 bg-cream-dark relative overflow-hidden">
       {/* Background Ornaments */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')]" />
       <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gold/5 blur-[120px] rounded-full translate-x-1/2 -translate-y-1/2" />
@@ -125,7 +125,7 @@ export function Engage() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-5xl mx-auto">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-gold font-black leading-[1.1] mb-8 text-balance max-w-5xl mx-auto">
             Two ways to engage
           </h2>
           <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">

@@ -24,9 +24,8 @@ export default function BuildingIsOwning() {
           
           <div className="space-y-12">
             <div className="relative">
-              <span className="text-[10px] font-black text-gold uppercase tracking-[0.4em] mb-4 block">System_Authority_01</span>
-              <h2 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight">
-                Building is <span className="italic text-gold">owning</span>
+              <h2 className="text-4xl lg:text-5xl font-serif font-black text-gold leading-tight">
+                Building is <span className="italic">owning.</span>
               </h2>
             </div>
 
@@ -53,15 +52,15 @@ export default function BuildingIsOwning() {
             </div>
           </div>
 
-          <div className="space-y-10">
-            <div className="p-8 lg:p-12 border-2 border-gold/30 bg-white rounded-none relative shadow-2xl overflow-hidden group">
+          <div className="space-y-8">
+            <div className="p-8 lg:p-10 border-2 border-gold/30 bg-white rounded-none relative shadow-2xl overflow-hidden group">
               <div className="absolute -bottom-10 -right-10 opacity-[0.05] group-hover:scale-110 transition-transform duration-700">
                 <Construction className="w-64 h-64 text-warm-gray" />
               </div>
 
-              <div className="flex items-center gap-3 mb-10">
+              <div className="flex items-center gap-2 mb-8">
                 <ShieldCheck className="w-5 h-5 text-gold" />
-                <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Ownership_Parameters</span>
+                <span className="text-[15px] font-black text-warm-gray uppercase tracking-widest">Ownership_Parameters</span>
               </div>
               
               <div className="space-y-6">
@@ -71,7 +70,7 @@ export default function BuildingIsOwning() {
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className="flex gap-4 items-start group/item"
+                    className="flex gap-2 items-start group/item"
                   >
                     <div className="w-5 h-5 rounded-none bg-gold/10 flex items-center justify-center shrink-0 mt-1 group-hover/item:bg-gold transition-colors">
                       <CheckCircle2 className="w-3 h-3 text-gold group-hover/item:text-white transition-colors" />
@@ -79,16 +78,6 @@ export default function BuildingIsOwning() {
                     <p className="text-lg font-bold text-warm-gray leading-tight">{point}</p>
                   </motion.div>
                 ))}
-              </div>
-
-              <div className="mt-12 pt-8 border-t border-sand flex items-center justify-between opacity-40">
-                <div className="flex gap-4">
-                  <Ruler className="w-4 h-4" />
-                  <span className="text-[9px] font-mono tracking-widest uppercase">ID: VOISHFT_ASSET_OVRD</span>
-                </div>
-                <div className="flex gap-1">
-                  {[1, 2, 3].map(i => <div key={i} className="w-4 h-1 bg-gold" />)}
-                </div>
               </div>
             </div>
 

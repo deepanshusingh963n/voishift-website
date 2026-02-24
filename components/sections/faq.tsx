@@ -55,7 +55,7 @@ export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-cream relative shadow-[inset_0_0_120px_rgba(0,0,0,0.03)] overflow-hidden">
+    <section id="faq" className="py-18 lg:py-24 bg-cream relative shadow-[inset_0_0_120px_rgba(0,0,0,0.03)] overflow-hidden">
       {/* Background Decor */}
       <div className="absolute inset-0 opacity-[0.012] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
       
@@ -67,7 +67,7 @@ export function FAQ() {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-warm-gray leading-[0.9] mb-8 tracking-tighter">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-gold font-black leading-[0.9] mb-6 tracking-tighter">
             Frequently asked questions
           </h2>
           <div className="w-24 h-1 bg-gold mx-auto" />

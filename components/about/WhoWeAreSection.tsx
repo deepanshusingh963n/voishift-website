@@ -105,7 +105,7 @@ export const WhoWeAreSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-black text-warm-gray leading-[1.1] tracking-tight mb-8">
+            <h2 className="text-4xl md:text-5xl font-serif font-black text-gold leading-[1.1] tracking-tight mb-8">
               Who We Are
             </h2>
             <p className="text-2xl font-serif font-black text-warm-gray leading-tight mb-6">

@@ -187,75 +187,91 @@ const BreachSimulation = () => {
 
 /* --- Stage 2: System Network --- */
 const SystemNetwork = () => {
-  const nodes = [
-    { id: 'bot', icon: Activity, label: 'Voice AI', color: 'text-blue-500', pos: 'center' },
-    { id: 'crm', icon: Database, label: 'Live CRM', color: 'text-amber-500', pos: 'top-left' },
-    { id: 'policy', icon: Shield, label: 'Policy Engine', color: 'text-destructive', pos: 'top-right' },
-    { id: 'ops', icon: Briefcase, label: 'Ops Capacity', color: 'text-green-500', pos: 'bottom' },
-  ]
-
   return (
-    <div className="relative w-full max-w-2xl aspect-square flex items-center justify-center">
-      {/* Background Pulse Rings */}
-      <div className="absolute inset-0 flex items-center justify-center gap-2">
-        {[1, 2, 3].map((i) => (
-          <motion.div
-            key={i}
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1.2, opacity: [0, 0.1, 0] }}
-            transition={{ repeat: Infinity, duration: 4, delay: i * 1.3 }}
-            className="absolute w-[80%] aspect-square border-2 border-gold rounded-full"
-          />
-        ))}
-      </div>
+    <div className="relative w-full max-w-2xl flex flex-col items-center justify-center gap-10 px-6">
 
-      {/* Connection Lines (Animated) */}
-      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
-        <motion.path
-          d="M 50% 50% L 20% 20%"
-          stroke="url(#grad)"
-          strokeWidth="2"
-          fill="none"
-          initial={{ pathLength: 0 }}
-          animate={{ pathLength: 1 }}
-          transition={{ duration: 2, repeat: Infinity }}
+      {/* Top Layer — Voice AI */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        className="flex flex-col items-center gap-3"
+      >
+        <div className="w-16 h-16 rounded-2xl bg-white border border-sand shadow-2xl flex items-center justify-center">
+          <Activity className="w-7 h-7 text-blue-500" />
+        </div>
+        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-warm-gray bg-white/80 px-4 py-1 border border-sand rounded-full">
+          Voice AI Interface
+        </span>
+      </motion.div>
+
+      {/* Connector Line */}
+      <div className="w-px h-10 bg-gradient-to-b from-blue-400 to-gold/60 relative">
+        <motion.div
+          animate={{ opacity: [0.3, 1, 0.3] }}
+          transition={{ repeat: Infinity, duration: 2 }}
+          className="absolute inset-0 bg-gold blur-[4px]"
         />
-        <defs>
-          <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#d4af37" />
-            <stop offset="100%" stopColor="#ffffff" />
-          </linearGradient>
-        </defs>
-      </svg>
-
-      {/* Nodes */}
-      <div className="relative z-10 w-full h-full">
-        {nodes.map((node, i) => (
-          <motion.div
-            key={node.id}
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: i * 0.2 }}
-            className={`absolute flex flex-col items-center gap-2 ${
-              node.pos === 'center' ? 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2' :
-              node.pos === 'top-left' ? 'left-[15%] top-[15%]' :
-              node.pos === 'top-right' ? 'right-[15%] top-[15%]' :
-              'left-1/2 bottom-[10%] -translate-x-1/2'
-            }`}
-          >
-            <div className={`w-12 h-12 lg:w-16 lg:h-16 rounded-2xl bg-white border border-sand shadow-2xl flex items-center justify-center group hover:border-gold transition-colors duration-500`}>
-              <node.icon className={`w-5 h-5 lg:w-8 lg:h-8 ${node.color} group-hover:scale-110 transition-transform`} />
-            </div>
-            <span className="text-[8px] font-black uppercase tracking-[0.2em] text-warm-gray bg-white/80 px-3 py-1 border border-sand rounded-full">
-              {node.label}
-            </span>
-          </motion.div>
-        ))}
       </div>
+
+      {/* Decision Layer (Highlighted Core) */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.2 }}
+        className="relative bg-white border-2 border-gold rounded-2xl px-10 py-6 shadow-2xl"
+      >
+        <div className="absolute -inset-1 rounded-2xl bg-gold/10 blur-xl opacity-40" />
+        <div className="relative flex flex-col items-center gap-2">
+          <Shield className="w-6 h-6 text-gold" />
+          <span className="text-xs font-black uppercase tracking-[0.3em] text-gold">
+            Decision Authority Layer
+          </span>
+        </div>
+      </motion.div>
+
+      {/* Connector Line */}
+      <div className="w-px h-10 bg-gradient-to-b from-gold to-green-400" />
+
+      {/* Ground Truth Systems */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="grid grid-cols-3 gap-6"
+      >
+        {/* CRM */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-xl bg-white border border-sand shadow-lg flex items-center justify-center">
+            <Database className="w-5 h-5 text-amber-500" />
+          </div>
+          <span className="text-[8px] font-black uppercase tracking-wider text-warm-gray">
+            Live CRM
+          </span>
+        </div>
+
+        {/* Policy */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-xl bg-white border border-sand shadow-lg flex items-center justify-center">
+            <Shield className="w-5 h-5 text-destructive" />
+          </div>
+          <span className="text-[8px] font-black uppercase tracking-wider text-warm-gray">
+            Policy Engine
+          </span>
+        </div>
+
+        {/* Ops */}
+        <div className="flex flex-col items-center gap-2">
+          <div className="w-12 h-12 rounded-xl bg-white border border-sand shadow-lg flex items-center justify-center">
+            <Briefcase className="w-5 h-5 text-green-500" />
+          </div>
+          <span className="text-[8px] font-black uppercase tracking-wider text-warm-gray">
+            Ops Capacity
+          </span>
+        </div>
+      </motion.div>
     </div>
   )
 }
-
 /* --- Stage 3: Technical Audit --- */
 const TechnicalAudit = () => {
   return (
@@ -365,21 +381,16 @@ export function SubHero() {
            transition={{ duration: 0.8 }}
            className="w-full flex flex-col items-center max-w-7xl mx-auto"
         >
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-warm-gray-light font-serif italic selection:bg-gold/20 mb-4 text-balance">
-            "Everyone is just following everyone else, installing a voice bot like a widget. <br />
-            <span className="text-warm-gray-light not-italic text-lg md:text-xl">A quick win. A clean demo. A bot that sounds ready. That is how it starts.</span>"
+          <h2 className="text-xl md:text-2xl lg:text-3xl text-gold font-serif font-black selection:bg-gold/20 mb-4 text-balance">
+            "Everyone is just following everyone else, installing a voice bot like a widget."
           </h2>
-
-          <p className="text-lg md:text-xl font-serif text-gold max-w-7xl">
-            Most teams set rules. Very few know when the bot quietly stopped following the right one.
-          </p>
         </motion.div>
       </div>
 
       <div className="flex">
         {/* Left side - Scrollable narrative */}
         <div className="w-full lg:w-2/5 overflow-auto pb-32">
-          <div className="pt-24 lg:pt-32">
+          <div className="pt-24 lg:pt-24">
             {narrativeBlocks.map((block, index) => (
               <div
                 key={block.id}
@@ -441,7 +452,7 @@ export function SubHero() {
                     >
                       <Button
                         size="default"
-                        className="bg-gold hover:bg-gold-dark text-warm-gray rounded-lg shadow-sm transition-all duration-300"
+                        className="bg-gold hover:bg-black hover:text-gold text-warm-gray rounded-lg shadow-sm transition-all duration-300"
                         onClick={openModal}
                       >
                         I need a system, not a bot
@@ -450,7 +461,7 @@ export function SubHero() {
                       <Button
                         size="default"
                         variant="outline"
-                        className="border-gold/40 text-warm-gray hover:bg-gold/5 rounded-lg transition-all duration-300 bg-transparent"
+                        className="border-gold/40 text-gold bg-black rounded-lg transition-all duration-300"
                         onClick={openModal}
                       >
                         Stress test my current build
@@ -464,7 +475,7 @@ export function SubHero() {
         </div>
 
         {/* Right side - Sticky illustration panel */}
-        <div className="hidden lg:flex w-3/5 sticky top-[260px] h-[calc(100vh-260px)] items-center justify-center bg-sand/30 border-l border-border/50">
+        <div className="hidden lg:flex w-3/5 sticky top-[200px] h-[calc(100vh-200px)] items-center justify-center bg-sand/30 border-l border-border/50">
           <VisualPanel activeBlock={activeBlock} />
         </div>
       </div>

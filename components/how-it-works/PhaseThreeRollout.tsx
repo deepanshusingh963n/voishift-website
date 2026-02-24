@@ -27,10 +27,10 @@ export default function PhaseThreeRollout() {
           {/* Left Side: Content & Visual */}
           <div className="space-y-12">
             <div>
-              <span className="inline-block px-4 py-1 rounded-full bg-gold/10 border border-gold/20 text-[10px] font-black text-gold uppercase tracking-[0.3em] mb-6">
+              <span className="inline-block px-4 py-1 rounded-full bg-black border border-gold/20 text-[15px] font-black text-gold uppercase tracking-[0.3em] mb-6">
                 Phase 03
               </span>
-              <h2 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight mb-6">
+              <h2 className="text-4xl lg:text-5xl font-serif text-gold font-black leading-tight mb-6">
                 VoiShift <span className="text-gold italic">Proof Gated Rollout</span>
               </h2>
               <p className="text-xl text-warm-gray-light font-serif leading-relaxed">

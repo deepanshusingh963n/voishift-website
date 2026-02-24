@@ -148,9 +148,6 @@ export function WhatWeDo() {
             className="flex items-center"
           >
             <div className="bg-[#1a1a1a] p-8 shadow-2xl relative group">
-              <div className="absolute -top-4 -right-4 w-12 h-12 bg-gold flex items-center justify-center">
-                <Plus className="text-[#1a1a1a] w-6 h-6" />
-              </div>
               <p className="text-white text-lg md:text-xl font-serif italic leading-relaxed">
                 If your teams spend hours following up, voice is not a nice-to-have. <span className="text-gold not-italic font-black block mt-4 uppercase tracking-wider text-sm">It is the highest leverage interface you can automate.</span>
               </p>
@@ -161,9 +158,10 @@ export function WhatWeDo() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-24">
-          <h3 className="text-xs font-black text-gold uppercase tracking-[0.4em] mb-12 flex items-center gap-4">
+          <h3 className="text-2xl font-black text-gold uppercase tracking-[0.4em] mb-12 flex items-center justify-center gap-4 text-center">
             <span className="h-px w-12 bg-gold" />
             What we do
+            <span className="h-px w-12 bg-gold" />
           </h3>
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">

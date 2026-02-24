@@ -64,8 +64,8 @@ export function CaseStudies() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-serif text-4xl md:text-6xl text-warm-gray mb-6 tracking-tighter">
-              How Teams Built <span className="text-gold italic">Confidence</span>
+            <h2 className="font-serif text-4xl md:text-6xl text-gold font-black mb-6 tracking-tighter">
+              How Teams Built <span className="underline underline-offset-6 italic">Confidence</span>
             </h2>
             <p className="text-xl text-warm-gray-light max-w-2xl mx-auto font-serif italic">
               Proven outcomes in environments where clarity and reliability are non-negotiable.
@@ -156,9 +156,6 @@ export function CaseStudies() {
               </div>
             </button>
           </Link>
-          <p className="mt-6 text-[10px] font-mono text-warm-gray-light uppercase tracking-[0.3em]">
-            9 sectors documented • Final technical reports available
-          </p>
         </motion.div>
       </div>
     </section>

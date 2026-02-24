@@ -136,15 +136,15 @@ export function BuiltForTeams() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-6">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-black border border-gold/10 rounded-full mb-6">
                             <Activity className="w-3.5 h-3.5 text-gold" />
-                            <span className="text-[10px] font-black tracking-widest text-gold uppercase">Operations Engineering</span>
+                            <span className="text-[15px] font-black tracking-widest text-gold uppercase">Operations Engineering</span>
                         </div>
-                        <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance">
+                        <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-gold font-black leading-[1.1] mb-8 text-balance">
                             We build for real-world teams
                         </h2>
                         <p className="text-xl md:text-2xl text-warm-gray-light max-w-3xl leading-relaxed font-serif italic mb-10">
-                            We build for teams where <span className="text-gold not-italic font-bold">wrong actions cost more than slow answers.</span> Used inside environments where voice AI touches live workflows, changing rules, and real consequences.
+                            We build for teams where <span className="not-italic font-bold">wrong actions cost more than slow answers.</span> Used inside environments where voice AI touches live workflows, changing rules, and real consequences.
                         </p>
 
                         <div className="flex items-center gap-4 py-6 border-t border-sand">

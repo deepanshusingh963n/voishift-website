@@ -95,12 +95,12 @@ export const LeadershipSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-24"
         >
-          <h2 className="text-4xl md:text-5xl font-serif font-black text-warm-gray leading-[1.1] tracking-tight mb-8">
+          <h2 className="text-4xl md:text-5xl font-serif font-black text-gold leading-[1.1] tracking-tight mb-8">
             Our Leadership
           </h2>
           <p className="text-xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
             People who care more about whether systems hold up under pressure <br />
-            <span className="text-gold not-italic font-black">than how impressive they sound.</span>
+            <span className="text-black not-italic font-black">than how impressive they sound.</span>
           </p>
         </motion.div>
 

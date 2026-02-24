@@ -2,6 +2,9 @@
 
 import { motion } from "framer-motion"
 import { CheckCircle2, Calculator, Target, BarChart3, Map, ShieldAlert, Zap } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { ArrowRight } from "lucide-react"
+import { useModal } from "@/context/modal-context"
 
 const outputs = [
   "Ranked WSJF backlog of voice AI opportunities",
@@ -16,6 +19,7 @@ const outputs = [
 ]
 
 export default function PhaseOneOppMap() {
+  const { openModal } = useModal()
   return (
     <section id="phase-1" className="bg-white py-24 lg:py-32 relative overflow-hidden">
       {/* Background Precision Grid */}
@@ -28,10 +32,10 @@ export default function PhaseOneOppMap() {
           {/* Left Side: Content */}
           <div className="space-y-12">
             <div>
-              <span className="inline-block px-4 py-1 rounded-full bg-gold/10 border border-gold/20 text-[10px] font-black text-gold uppercase tracking-[0.3em] mb-6">
+              <span className="inline-block px-4 py-1 rounded-full bg-black border border-gold/20 text-[15px] font-black text-gold uppercase tracking-[0.3em] mb-6">
                 Phase 01
               </span>
-              <h2 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight mb-6">
+              <h2 className="text-4xl lg:text-5xl font-serif text-gold font-black leading-tight mb-6">
                 VoiShift <span className="text-gold italic">OppMap</span>
               </h2>
               <p className="text-xl text-warm-gray-light font-serif leading-relaxed">
@@ -77,6 +81,25 @@ export default function PhaseOneOppMap() {
                 </div>
               </div>
             </div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="pt-4"
+            >
+              <Button
+                onClick={openModal}
+                className="bg-gold hover:bg-gold-dark text-warm-gray px-8 py-5 text-lg rounded-xl h-auto shadow-lg"
+              >
+                Map My Highest ROI Opportunity
+                <ArrowRight className="ml-2 w-5 h-5" />
+              </Button>
+
+              <p className="mt-4 text-sm text-warm-gray-light italic font-serif">
+                Start with clarity before you commit to build.
+              </p>
+            </motion.div>
           </div>
 
           {/* Right Side: "What You Get" Deck */}
@@ -103,17 +126,7 @@ export default function PhaseOneOppMap() {
                 </motion.div>
               ))}
             </div>
-
-            <div className="mt-12 pt-8 border-t border-sand/50 flex items-center justify-between opacity-40">
-              <span className="text-[10px] font-black uppercase tracking-widest text-warm-gray">Evaluation_ID_01</span>
-              <div className="flex gap-2">
-                <div className="w-1 h-1 bg-warm-gray rounded-full" />
-                <div className="w-1 h-1 bg-warm-gray rounded-full" />
-                <div className="w-1 h-1 bg-warm-gray rounded-full" />
-              </div>
-            </div>
           </div>
-
         </div>
       </div>
     </section>

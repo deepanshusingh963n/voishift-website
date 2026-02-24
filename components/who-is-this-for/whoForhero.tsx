@@ -33,21 +33,13 @@ export default function WhoForHero() {
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-start">
           
           <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-none mb-8"
-            >
-              <Filter className="w-3.5 h-3.5 text-gold" />
-              <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">Filter_Protocol v1.0</span>
-            </motion.div>
+            
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl lg:text-8xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
+              className="text-5xl lg:text-8xl font-serif text-gold font-black leading-[1.05] tracking-tight mb-8"
             >
               Who is this for
             </motion.h1>

@@ -13,10 +13,11 @@ export default function DecisionFramework() {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           
-          <div className="space-y-12">
+          <div className="space-y-10">
             <div className="space-y-6">
-              <span className="text-[10px] font-black text-gold uppercase tracking-[0.5em]">The Conclusion</span>
-              <h2 className="text-4xl lg:text-7xl font-serif text-warm-gray leading-tight">
+              <span className="bg-black border border-gold/20 px-4 py-2 rounded-2xl text-[15px] font-black text-gold uppercase tracking-[0.5em]">The Conclusion</span>
+              
+              <h2 className="text-4xl lg:text-6xl font-serif text-gold font-black leading-tight mt-2">
                 One question decides <br />
                 <span className="text-gold italic">build vs buy.</span>
               </h2>
@@ -25,7 +26,7 @@ export default function DecisionFramework() {
               </p>
             </div>
 
-            <div className="p-10 bg-warm-gray text-white border-t-8 border-gold rounded-none relative shadow-2xl space-y-8">
+            <div className="p-10 bg-warm-gray text-white border-t-8 border-gold rounded-2xl relative shadow-2xl space-y-8">
                <div className="flex items-center gap-4 text-gold mb-4">
                   <HelpCircle className="w-8 h-8" />
                   <span className="text-xs font-black uppercase tracking-[0.3em]">Decision_Query</span>

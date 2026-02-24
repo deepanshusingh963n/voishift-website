@@ -135,7 +135,7 @@ export function Differentiation() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance">
+          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-gold font-black leading-[1.1] mb-8 text-balance">
             What makes VoiShift different
           </h2>
           <p className="text-xl md:text-2xl text-warm-gray-light max-w-3xl mx-auto font-serif italic">

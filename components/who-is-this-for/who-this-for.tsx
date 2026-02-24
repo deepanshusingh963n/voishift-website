@@ -30,18 +30,18 @@ export default function WhoThisIsFor() {
   return (
     <section className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex justify-center mb-16">
+        <div className="flex justify-center mb-8">
           <div className="inline-flex bg-[#faf9f6] p-3 border border-sand shadow-inner relative z-20 rounded-none">
             <button
               onClick={() => setActiveTab("for")}
-              className={`relative z-10 px-8 py-4 rounded-none text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "for" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
+              className={`relative z-10 px-8 py-4 rounded-none text-[20px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "for" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
                 }`}
             >
               Who this is for
             </button>
             <button
               onClick={() => setActiveTab("not")}
-              className={`relative z-10 px-8 py-4 rounded-none text-[11px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "not" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
+              className={`relative z-10 px-8 py-4 rounded-none text-[20px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "not" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
                 }`}
             >
               Who this is not for
@@ -57,7 +57,7 @@ export default function WhoThisIsFor() {
           className={`grid md:grid-cols-2 border border-sand rounded-none overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.08)] bg-white`}
         >
           {/* Split A */}
-          <div className={`p-10 lg:p-20 relative overflow-hidden transition-colors duration-700 ${activeTab === "not" ? "bg-[#1a1a1a] text-white" : "bg-white"
+          <div className={`p-10 lg:p-16 relative overflow-hidden transition-colors duration-700 ${activeTab === "not" ? "bg-[#1a1a1a] text-white" : "bg-white"
             }`}>
             {/* Aesthetic overlays */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl opacity-50" />
@@ -95,7 +95,7 @@ export default function WhoThisIsFor() {
           </div>
 
           {/* Split B */}
-          <div className={`p-10 lg:p-20 flex flex-col justify-center border-l border-sand transition-colors duration-700 ${activeTab === "not" ? "bg-warm-gray text-white" : "bg-[#faf9f6]/40"
+          <div className={`p-10 lg:p-16 flex flex-col justify-center border-l border-sand transition-colors duration-700 ${activeTab === "not" ? "bg-warm-gray text-white" : "bg-[#faf9f6]/40"
             }`}>
             <ul className="space-y-8">
               {(activeTab === "for" ? forTeams : notForTeams).map((item, i) => (
@@ -114,7 +114,7 @@ export default function WhoThisIsFor() {
                 transition={{ delay: 0.5 }}
                 className="mt-16 pt-10 border-t border-sand/30"
               >
-                <p className="text-[10px] font-black text-warm-gray/30 uppercase tracking-[0.4em] mb-6 underline decoration-gold/30">Standard Profiles</p>
+                <p className="text-[15px] font-black text-warm-gray/30 uppercase tracking-[0.4em] mb-6 underline decoration-gold/30">Standard Profiles</p>
                 <div className="flex flex-wrap gap-3">
                   {typicalTeams.map(team => (
                     <span key={team} className="px-5 py-2 bg-white border border-sand rounded-none text-[11px] font-bold text-warm-gray/60 shadow-sm hover:shadow-md transition-shadow">

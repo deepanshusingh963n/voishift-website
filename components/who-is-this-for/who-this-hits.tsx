@@ -672,11 +672,11 @@ export function WhoThisHits() {
   }
 
   return (
-    <section className="py-24 lg:py-32 bg-cream">
+    <section className="py-18 lg:py-20 bg-cream">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
-          <h2 className="text-2xl md:text-4xl font-serif text-warm-gray mb-2">Who this hits.</h2>
-          <p className="text-lg md:text-xl text-warm-gray-light max-w-2xl mx-auto">Different roles. Same structural fragility. Same moment of panic.</p>
+          <h2 className="text-5xl md:text-7xl font-serif text-gold font-black mb-2">Who this hits.</h2>
+          <p className="text-lg md:text-xl text-warm-gray-light mt-4 max-w-2xl mx-auto">Different roles. Same structural fragility. Same moment of panic.</p>
         </div>
 
         <Tabs

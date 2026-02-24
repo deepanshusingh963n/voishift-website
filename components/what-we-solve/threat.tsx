@@ -266,8 +266,8 @@ export function Threat() {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <span className="text-[11px] font-black text-gold uppercase tracking-[0.4em] mb-4 block">Structural Failure Modes</span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-6 text-balance">
+          <span className="text-[15px] border border-gold bg-black p-2 rounded-full font-black text-gold uppercase tracking-[0.4em] mb-4">Structural Failure Modes</span>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 text-gold font-black leading-[1.1] mb-6 text-balance">
             Why things go wrong
           </h2>
           <div className="flex flex-col items-center gap-4">
@@ -292,7 +292,7 @@ export function Threat() {
               >
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-gold/10 rounded-full border border-gold/20 mb-4">
                   <Zap className="w-4 h-4 text-gold" />
-                  <span className="text-[10px] font-bold text-gold uppercase tracking-widest">The Optical Illusion</span>
+                  <span className="text-[12px] font-bold text-gold uppercase tracking-widest">The Optical Illusion</span>
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-serif text-warm-gray mb-6">What gets rewarded</h3>
 
@@ -327,7 +327,7 @@ export function Threat() {
               >
                 <div className="inline-flex items-center gap-3 px-4 py-2 bg-warm-gray/5 rounded-full border border-warm-gray/10 mb-4">
                   <Network className="w-4 h-4 text-warm-gray" />
-                  <span className="text-[10px] font-bold text-warm-gray-light uppercase tracking-widest">The Real Foundation</span>
+                  <span className="text-[12px] font-bold text-warm-gray-light uppercase tracking-widest">The Real Foundation</span>
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-serif text-warm-gray mb-6">But the truth is messy</h3>
 

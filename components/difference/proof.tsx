@@ -144,7 +144,7 @@ export function Proof() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-warm-gray leading-[1.1] mb-8 text-balance max-w-4xl mx-auto">
+          <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-gold uppercase font-black leading-[1.1] mb-8 text-balance max-w-4xl mx-auto">
             Proof that holds up
           </h2>
           <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">

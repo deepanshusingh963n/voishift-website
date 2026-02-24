@@ -5,11 +5,38 @@ import { ArrowRight, Box, ShieldCheck, Activity } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useModal } from "@/context/modal-context"
 
+
+type LayerProps = {
+  label: string
+}
+
+const Layer = ({ label }: LayerProps) => (
+  <div className="relative z-10 w-full border border-sand bg-white/70 px-4 py-3 text-xs font-mono text-warm-gray tracking-wide text-center">
+    {label}
+  </div>
+)
+
+type BranchDotProps = {
+  color: string
+}
+
+const BranchDot = ({ color }: BranchDotProps) => (
+  <motion.div
+    animate={{ scale: [1, 1.4, 1] }}
+    transition={{ duration: 2, repeat: Infinity }}
+    className={`w-3 h-3 rounded-full ${color} shadow`}
+  />
+)
+
+const Connector = () => (
+  <div className="w-px h-6 bg-sand/40" />
+)
+
 export default function DifferenceHero() {
   const { openModal } = useModal()
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-cream-dark">
+    <section className="relative pt-32 pb-20 lg:pt-30 lg:pb-28 overflow-hidden bg-cream-dark">
       {/* Background HUD Decor */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-none blur-[150px] -translate-y-1/2 translate-x-1/2" />
@@ -34,15 +61,14 @@ export default function DifferenceHero() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-8"
             >
-              <div className="w-12 h-[1px] bg-gold" />
-              <span className="text-xs font-black uppercase tracking-[0.4em] text-gold">The VoiShift Difference</span>
+              <span className="text-7xl font-black uppercase tracking-[0.15em] text-gold">The VoiShift Difference</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl lg:text-8xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
+              className="text-xl lg:text-2xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
             >
               We do not build voice agents. <br />
               <span className="italic text-gold/90">We build voice systems.</span>
@@ -54,7 +80,7 @@ export default function DifferenceHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6 mb-12"
             >
-              <p className="text-xl lg:text-3xl text-warm-gray-light font-serif italic leading-relaxed max-w-3xl">
+              <p className="text-lg lg:text-xl text-warm-gray-light font-serif italic leading-relaxed max-w-3xl">
                 Proven under edge cases. Governed by rules. Measurable over time.
               </p>
             </motion.div>
@@ -87,68 +113,157 @@ export default function DifferenceHero() {
             </motion.div>
           </div>
 
-          {/* Visual Side HUD */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.4 }}
-            className="hidden lg:block relative"
-          >
-             <div className="relative p-12 bg-white/40 border border-sand shadow-2xl overflow-hidden backdrop-blur-sm">
-                <div className="absolute top-0 right-0 p-4 border-l border-b border-sand text-[8px] font-black text-warm-gray/40 tracking-widest uppercase">
-                  System_Specs_v2.1
-                </div>
+{/* Behavioral System Lifecycle Model */}
+<motion.div
+  initial={{ opacity: 0, scale: 0.95 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="hidden lg:flex justify-center items-center relative w-full"
+>
+  <div className="relative w-full max-w-[480px] aspect-square">
 
-                <div className="space-y-10">
-                   {/* HUD Stat 1 */}
-                   <div className="space-y-4">
-                      <div className="flex justify-between items-end">
-                        <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Logic_Consistency</span>
-                        <span className="text-[10px] font-black text-gold">99.9%_VERIFIED</span>
-                      </div>
-                      <div className="h-1 w-full bg-sand/30 overflow-hidden">
-                        <motion.div 
-                          initial={{ width: 0 }}
-                          animate={{ width: "99.9%" }}
-                          transition={{ duration: 2, delay: 1 }}
-                          className="h-full bg-gold shadow-[0_0_10px_gold]" 
-                        />
-                      </div>
-                   </div>
+    <svg
+      viewBox="0 0 400 400"
+      className="w-full h-full"
+      preserveAspectRatio="xMidYMid meet"
+    >
 
-                   {/* HUD Icons */}
-                   <div className="grid grid-cols-3 gap-6">
-                      <div className="aspect-square border border-sand flex items-center justify-center bg-white/50 group hover:border-gold/30 transition-colors">
-                        <ShieldCheck className="w-6 h-6 text-gold/30 group-hover:text-gold transition-colors" />
-                      </div>
-                      <div className="aspect-square border border-sand flex items-center justify-center bg-white/50 group hover:border-gold/30 transition-colors">
-                        <Box className="w-6 h-6 text-gold/30 group-hover:text-gold transition-colors" />
-                      </div>
-                      <div className="aspect-square border border-sand flex items-center justify-center bg-white/50 group hover:border-gold/30 transition-colors">
-                        <Activity className="w-6 h-6 text-gold/30 group-hover:text-gold transition-colors" />
-                      </div>
-                   </div>
+      {/* Outer Lifecycle Ring */}
+      <circle
+        cx="200"
+        cy="200"
+        r="180"
+        fill="none"
+        stroke="#D4AF37"
+        strokeWidth="1.5"
+        opacity="0.3"
+      />
 
-                   {/* Data Feed */}
-                   <div className="space-y-2">
-                      {[1, 2, 3].map(i => (
-                        <div key={i} className="flex gap-2 items-center">
-                          <div className="w-1 h-1 bg-gold" />
-                          <div className="h-[2px] bg-sand/20 flex-1" />
-                          <span className="text-[8px] font-mono text-warm-gray/40">0x0{i}_READY</span>
-                        </div>
-                      ))}
-                   </div>
-                </div>
+      {/* Middle State Ring */}
+      <circle
+        cx="200"
+        cy="200"
+        r="130"
+        fill="none"
+        stroke="#D4AF37"
+        strokeWidth="1"
+        opacity="0.25"
+      />
 
-                {/* Subtle scanning line */}
-                <motion.div 
-                  animate={{ top: ["0%", "100%", "0%"] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
-                  className="absolute left-0 right-0 h-px bg-gold/10 pointer-events-none"
-                />
-             </div>
-          </motion.div>
+      {/* Inner Function Ring */}
+      <circle
+        cx="200"
+        cy="200"
+        r="85"
+        fill="none"
+        stroke="#D4AF37"
+        strokeWidth="1"
+        opacity="0.2"
+      />
+
+      {/* Section Dividers */}
+      {[0, 90, 180, 270].map((angle, i) => {
+        const rad = (angle * Math.PI) / 180
+        return (
+          <line
+            key={i}
+            x1="200"
+            y1="200"
+            x2={200 + 180 * Math.cos(rad)}
+            y2={200 + 180 * Math.sin(rad)}
+            stroke="#D4AF37"
+            strokeWidth="0.8"
+            opacity="0.15"
+          />
+        )
+      })}
+
+      {/* Center Core */}
+      <motion.circle
+        cx="200"
+        cy="200"
+        r="45"
+        fill="#D4AF37"
+        animate={{ opacity: [0.15, 0.3, 0.15] }}
+        transition={{ duration: 3, repeat: Infinity }}
+      />
+
+      <text
+        x="200"
+        y="195"
+        textAnchor="middle"
+        fontSize="9"
+        fill="#6b5c3b"
+        fontWeight="bold"
+        letterSpacing="2"
+      >
+        VOICE
+      </text>
+
+      <text
+        x="200"
+        y="210"
+        textAnchor="middle"
+        fontSize="9"
+        fill="#6b5c3b"
+        fontWeight="bold"
+        letterSpacing="2"
+      >
+        SYSTEM
+      </text>
+
+      {/* Lifecycle Labels */}
+      <text x="200" y="20" textAnchor="middle" fontSize="10" fill="#6b5c3b">
+        BEFORE
+      </text>
+
+      <text x="380" y="205" textAnchor="end" fontSize="10" fill="#6b5c3b">
+        DURING
+      </text>
+
+      <text x="200" y="395" textAnchor="middle" fontSize="10" fill="#6b5c3b">
+        AFTER
+      </text>
+
+      <text x="20" y="205" textAnchor="start" fontSize="10" fill="#6b5c3b">
+        LONG-TERM
+      </text>
+
+      {/* System States */}
+      <text x="200" y="70" textAnchor="middle" fontSize="9" fill="#8E6B2F">
+        Normal
+      </text>
+
+      <text x="330" y="205" textAnchor="middle" fontSize="9" fill="#8E6B2F">
+        Alert
+      </text>
+
+      <text x="200" y="340" textAnchor="middle" fontSize="9" fill="#8E6B2F">
+        Recovery
+      </text>
+
+      <text x="70" y="205" textAnchor="middle" fontSize="9" fill="#8E6B2F">
+        Intervention
+      </text>
+
+      {/* Core Functions */}
+      <text x="200" y="120" textAnchor="middle" fontSize="8" fill="#6b5c3b">
+        Monitor
+      </text>
+      <text x="285" y="200" textAnchor="middle" fontSize="8" fill="#6b5c3b">
+        Gate
+      </text>
+      <text x="200" y="280" textAnchor="middle" fontSize="8" fill="#6b5c3b">
+        Replay
+      </text>
+      <text x="115" y="200" textAnchor="middle" fontSize="8" fill="#6b5c3b">
+        Escalate
+      </text>
+
+    </svg>
+
+  </div>
+</motion.div>
         </div>
       </div>
 

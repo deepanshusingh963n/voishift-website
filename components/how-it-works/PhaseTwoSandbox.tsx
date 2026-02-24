@@ -48,20 +48,15 @@ export default function PhaseTwoSandbox() {
                 </motion.div>
               ))}
             </div>
-
-            <div className="mt-12 flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span className="text-[10px] font-black uppercase tracking-widest text-warm-gray opacity-40">Sandbox_Environment_Secure</span>
-            </div>
           </div>
 
           {/* Right Side: Content & Visual */}
           <div className="order-1 lg:order-2 space-y-12">
             <div>
-              <span className="inline-block px-4 py-1 rounded-full bg-gold/10 border border-gold/20 text-[10px] font-black text-gold uppercase tracking-[0.3em] mb-6">
+              <span className="inline-block px-4 py-1 rounded-full bg-black border border-gold/20 text-[15px] font-black text-gold uppercase tracking-[0.3em] mb-6">
                 Phase 02
               </span>
-              <h2 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight mb-6">
+              <h2 className="text-4xl lg:text-5xl font-serif text-gold font-black leading-tight mb-6">
                 VoiShift <span className="text-gold italic">Validation Sandbox</span>
               </h2>
               <p className="text-xl text-warm-gray-light font-serif leading-relaxed">

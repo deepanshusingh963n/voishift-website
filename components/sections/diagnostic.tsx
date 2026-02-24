@@ -120,7 +120,7 @@ export function Diagnostic() {
   const [isHovered, setIsHovered] = useState(false)
 
   return (
-    <section id="diagnostic" className="py-24 lg:py-32 bg-cream-light relative overflow-hidden">
+    <section id="diagnostic" className="py-18 lg:py-24 bg-cream-light relative overflow-hidden">
       {/* Premium Background Elements */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gold/5 blur-[160px] rounded-full translate-x-1/2 -translate-y-1/2" />
@@ -136,7 +136,7 @@ export function Diagnostic() {
           viewport={{ once: true }}
           className="text-center mb-24"
         >
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-warm-gray leading-[0.95] mb-8 text-balance max-w-5xl mx-auto tracking-tighter">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-gold font-black leading-[0.95] mb-8 text-balance max-w-5xl mx-auto tracking-tighter">
             A quick reality check
           </h2>
           <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
@@ -192,7 +192,7 @@ export function Diagnostic() {
           className="text-center space-y-12"
         >
           <p className="text-2xl md:text-3xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
-            If the output feels uncomfortable, <br className="hidden md:block" />
+            If the answers make you feel uncomfortable, <br className="hidden md:block" />
             <span className="text-warm-gray not-italic font-black uppercase tracking-tighter text-4xl md:text-5xl">good. That is the point.</span>
           </p>
 
