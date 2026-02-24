@@ -17,20 +17,13 @@ export function ContactAvailabilitySection() {
                         transition={{ duration: 0.6 }}
                         className="w-full flex justify-center lg:justify-end pr-0 lg:pr-12 relative"
                     >
-                        {/* 
-              Note: Using a placeholder container here. If you have an image of team members,
-              replace this div with an <img src="/your-team-image.png" alt="VoiShift Team" />
-              styled to have a transparent background as in the reference image.
-             */}
-                        <div className="w-full max-w-md aspect-[4/3] rounded-2xl bg-gradient-to-br from-gold/20 to-transparent flex items-end justify-center pb-8 border border-border/50 shadow-sm relative overflow-hidden">
-                            <div className="absolute inset-0 bg-cream/10 backdrop-blur-[2px]"></div>
-                            <div className="relative text-center z-10">
-                                <p className="text-xl font-medium text-foreground/80">
-                                    [ Team Image Placeholder ]
-                                </p>
-                                <p className="text-sm text-muted-foreground mt-2">
-                                    Upload your team cut-out here.
-                                </p>
+                        <div className="w-full max-w-md aspect-[4/3] rounded-2xl bg-gradient-to-br from-gold/20 to-transparent border border-border/50 shadow-sm relative overflow-hidden">
+                            <div className="relative items-center justify-center w-full h-full">
+                                <img
+                                    src="/contact-us-image.png"
+                                    alt=""
+                                    className="w-full h-full object-cover"
+                                />
                             </div>
                         </div>
                     </motion.div>

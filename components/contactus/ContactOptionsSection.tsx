@@ -50,7 +50,7 @@ export function ContactOptionsSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
                 >
-                    <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+                    <h2 className="text-4xl md:text-7xl font-black text-gold tracking-tight text-foreground mb-4">
                         How can we help you today?
                     </h2>
                     <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

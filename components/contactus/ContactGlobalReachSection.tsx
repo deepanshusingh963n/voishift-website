@@ -21,11 +21,11 @@ const markers = [
 
 const MapChart = () => {
   return (
-    <div className="relative max-w-7xl mx-auto px-4 md:px-8">
+    <div className="relative max-w-6xl mx-auto px-4 md:px-8">
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
         alt="World Map"
-        className="w-full h-auto opacity-80"
+        className="w-full h-auto opacity-80 rounded-full border border-gold"
       />
 
       {markers.map((marker) => (
@@ -56,7 +56,7 @@ export function ContactGlobalReachSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-5xl font-semibold text-gray-900 mb-6 font-serif">
+          <h2 className="text-4xl md:text-6xl font-black text-gold mb-6 font-serif">
             Customers We Serve Across the Globe
           </h2>
           <p className="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">

@@ -40,6 +40,7 @@ export const viewport: Viewport = {
 import { ModalProvider } from "@/context/modal-context"
 import { CTAFormModal } from "@/components/cta/form"
 import { ScrollTrigger } from "@/components/cta/scroll-trigger"
+import { BackToTopButton } from "@/components/ui/back-to-top"
 
 export default function RootLayout({
   children,
@@ -48,7 +49,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable}`}>
-      <body 
+      <body
         className="font-sans antialiased bg-background text-foreground"
         suppressHydrationWarning
       >
@@ -56,6 +57,7 @@ export default function RootLayout({
           {children}
           <CTAFormModal />
           <ScrollTrigger />
+          <BackToTopButton />
         </ModalProvider>
       </body>
     </html>

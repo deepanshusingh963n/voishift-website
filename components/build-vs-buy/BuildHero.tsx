@@ -26,7 +26,7 @@ export default function BuildHero() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-8"
             >
-              
+
               <span className="text-7xl font-black uppercase tracking-[0.15em] text-gold">
                 Ownership vs Rental
               </span>
@@ -36,10 +36,10 @@ export default function BuildHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-3xl lg:text-4xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
+              className="text-xl lg:text-2xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
             >
-              Build vs buy for <br />
-              <span className="italic text-gold/90">AI/Voice AI.</span>
+              Build vs buy for
+              <span className="italic text-gold/90"> AI/Voice AI.</span>
             </motion.h1>
 
             <motion.div
@@ -48,18 +48,12 @@ export default function BuildHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-6"
             >
-              <p className="text-2xl lg:text-2xl text-warm-gray-light font-serif italic leading-relaxed max-w-3xl">
+              <p className="text-xl lg:text-2xl text-warm-gray-light font-serif italic leading-relaxed max-w-3xl">
                 Here is the simplest way to think about it.
               </p>
 
               <p className="text-2xl lg:text-3xl text-warm-gray font-bold font-serif italic leading-relaxed max-w-3xl">
                 Buying a ready-made AI bot is like renting. Building is owning.
-              </p>
-
-              <p className="text-lg lg:text-xl text-warm-gray leading-relaxed max-w-2xl font-medium border-l-2 border-gold/30 pl-6">
-                If you are deciding this, you are not really deciding “software.”
-                You are deciding whether the AI that speaks for your business
-                will be rented or owned.
               </p>
             </motion.div>
           </div>

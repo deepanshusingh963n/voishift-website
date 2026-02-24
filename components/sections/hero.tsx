@@ -121,7 +121,7 @@ export function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={targetRef} className="relative min-h-screen flex items-center bg-cream-light overflow-hidden pt-20">
+    <section ref={targetRef} className="relative min-h-screen flex items-center bg-warm-gray overflow-hidden pt-20">
 
       {/* Background Architectural Markings 
       <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
@@ -159,7 +159,7 @@ export function Hero() {
               transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
               className="w-full flex flex-col items-center"
             >
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-warm-gray leading-[1.5] mb-12 text-center">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white leading-[1.5] mb-12 text-center">
                 If you are copying the world with a voice bot,{" "}<br />
                 <span className="text-gold uppercase text-[0.8em] block mt-2">
                   you may be copying the world's blind spots too.
@@ -167,7 +167,7 @@ export function Hero() {
               </h1>
             </motion.div>
 
-          
+
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}

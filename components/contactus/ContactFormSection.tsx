@@ -21,7 +21,7 @@ export function ContactFormSection() {
     };
 
     return (
-        <section className="py-20 bg-card relative">
+        <section className="py-20 bg-white relative">
             <div className="section-container relative z-10">
                 <div className="max-w-3xl mx-auto">
                     <motion.div

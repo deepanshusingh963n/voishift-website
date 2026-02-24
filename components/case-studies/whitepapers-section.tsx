@@ -117,7 +117,7 @@ export function WhitepapersSection() {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] gap-16 lg:gap-20 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-[50fr_50fr] gap-12 lg:gap-16 items-start">
 
                     {/* ─── LEFT: Accordion Whitepapers ─── */}
                     <motion.div
@@ -125,7 +125,7 @@ export function WhitepapersSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
-                        className="space-y-3"
+                        className="space-y-8 self-start"
                     >
                         {whitepapers.map((paper, index) => {
                             const isOpen = openId === paper.id
@@ -151,7 +151,7 @@ export function WhitepapersSection() {
                                     >
                                         <div className="flex items-center gap-4 min-w-0">
                                             {/* Number */}
-                                            <span className="text-[11px] font-black text-gold/50 font-mono tabular-nums flex-shrink-0">
+                                            <span className="text-[25px] font-black text-gold/50 font-mono tabular-nums flex-shrink-0">
                                                 {String(index + 1).padStart(2, "0")}
                                             </span>
                                             {/* Title block */}
@@ -167,7 +167,7 @@ export function WhitepapersSection() {
                                                     {paper.title}
                                                 </p>
                                                 {!isOpen && (
-                                                    <p className="text-[11px] text-warm-gray-light mt-0.5 font-mono truncate">
+                                                    <p className="text-[15px] text-warm-gray-light mt-0.5 font-mono truncate">
                                                         {paper.subtitle}
                                                     </p>
                                                 )}
@@ -256,12 +256,13 @@ export function WhitepapersSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="lg:sticky lg:top-28"
+                        className="lg:sticky lg:top-28 item-start"
+                        style={{ willChange: "transform" }}
                     >
                         {/* Label pill */}
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/15 rounded-full mb-8">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-gold border border-gold/15 rounded-full mb-8">
                             <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                            <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">
+                            <span className="text-[15px] font-black tracking-[0.3em] text-gold uppercase">
                                 Research Translated
                             </span>
                         </div>
@@ -275,7 +276,7 @@ export function WhitepapersSection() {
                         <div className="w-16 h-px bg-gold/30 mb-10" />
 
                         {/* Body copy */}
-                        <div className="space-y-5 max-w-md">
+                        <div className="space-y-5 max-w-7xl">
                             <p className="text-warm-gray-light font-serif text-base leading-relaxed">
                                 We are not set up to run large, controlled studies in-house. So we do the next best thing.
                             </p>
@@ -313,18 +314,6 @@ export function WhitepapersSection() {
                                     <span className="text-gold not-italic font-semibold">hunger to improve.</span>
                                 </p>
                             </div>
-                        </div>
-
-                        {/* Bottom tag row */}
-                        <div className="flex flex-wrap gap-2 mt-10">
-                            {["Peer-Reviewed", "Translated to Practice", "Open to Collaborate"].map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="px-3 py-1 border border-sand rounded-md text-[9px] font-mono font-black text-warm-gray/40 uppercase tracking-widest"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
                         </div>
                     </motion.div>
 

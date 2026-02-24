@@ -14,24 +14,36 @@ export default function RentingAI() {
   ]
 
   return (
-    <section className="bg-white py-24 lg:py-32 relative overflow-hidden">
+    <section className="bg-white py-24 lg:py-20 relative overflow-hidden">
       {/* Sharp Grid Pattern Overlay */}
-      <div className="absolute inset-0 opacity-[0.02] pointer-events-none" 
-           style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
+
+      <div className="text-center max-w-7xl mx-auto px-6 mb-20 space-y-6">
+        <div className="p-8 text-center bg-gold border border-gold/20 rounded-full">
+          <p className="text-2xl lg:text-3xl text-black font-serif leading-relaxed mx-auto max-w-7xl text-center">
+            <span className="font-black">If you are deciding this, you are not really deciding “software”.</span>
+            You are deciding whether the AI that speaks for your business
+            will be rented or owned.
+          </p>
+        </div>
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
+
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+
+
           <div className="space-y-10 order-2 lg:order-1">
             <div className="p-8 border-2 border-sand bg-cream-dark/30 rounded-none relative">
               <div className="absolute top-0 right-0 p-4">
                 <UserMinus className="w-8 h-8 text-warm-gray/20" />
               </div>
               <h3 className="text-2xl font-serif text-gold mb-8 uppercase">What “renting AI” looks like</h3>
-              
+
               <div className="space-y-6">
                 {points.map((point, i) => (
-                  <motion.div 
+                  <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -74,11 +86,11 @@ export default function RentingAI() {
                   <Settings2 className="w-6 h-6 text-warm-gray/20 group-hover:text-gold transition-colors" />
                 </div>
               ))}
-              
+
               <div className="p-8 bg-destructive/5 border-2 border-destructive/20 rounded-none mt-6">
-                 <p className="text-xl font-serif text-warm-gray font-bold italic text-center">
-                   "But you cannot change the foundation."
-                 </p>
+                <p className="text-xl font-serif text-warm-gray font-bold italic text-center">
+                  "But you cannot change the foundation."
+                </p>
               </div>
             </div>
           </div>

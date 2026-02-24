@@ -1,36 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Box, ShieldCheck, Activity } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useModal } from "@/context/modal-context"
 
 
-type LayerProps = {
-  label: string
-}
 
-const Layer = ({ label }: LayerProps) => (
-  <div className="relative z-10 w-full border border-sand bg-white/70 px-4 py-3 text-xs font-mono text-warm-gray tracking-wide text-center">
-    {label}
-  </div>
-)
-
-type BranchDotProps = {
-  color: string
-}
-
-const BranchDot = ({ color }: BranchDotProps) => (
-  <motion.div
-    animate={{ scale: [1, 1.4, 1] }}
-    transition={{ duration: 2, repeat: Infinity }}
-    className={`w-3 h-3 rounded-full ${color} shadow`}
-  />
-)
-
-const Connector = () => (
-  <div className="w-px h-6 bg-sand/40" />
-)
 
 export default function DifferenceHero() {
   const { openModal } = useModal()
@@ -41,7 +17,7 @@ export default function DifferenceHero() {
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-none blur-[150px] -translate-y-1/2 translate-x-1/2" />
         <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 rounded-none blur-[120px] translate-y-1/2 -translate-x-1/2" />
-        
+
         {/* Animated Lines */}
         <svg className="absolute inset-0 w-full h-full opacity-[0.03]">
           <pattern id="grid-hero" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -53,7 +29,7 @@ export default function DifferenceHero() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
-          
+
           <div className="max-w-4xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -113,157 +89,212 @@ export default function DifferenceHero() {
             </motion.div>
           </div>
 
-{/* Behavioral System Lifecycle Model */}
-<motion.div
-  initial={{ opacity: 0, scale: 0.95 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  className="hidden lg:flex justify-center items-center relative w-full"
->
-  <div className="relative w-full max-w-[480px] aspect-square">
+          {/* Voice System Pipeline Illustration */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hidden lg:flex justify-center items-center relative w-full"
+          >
+            <div className="relative w-full max-w-[420px]">
 
-    <svg
-      viewBox="0 0 400 400"
-      className="w-full h-full"
-      preserveAspectRatio="xMidYMid meet"
-    >
+              {/* Voice Input Node */}
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.5 }}
+                className="flex flex-col items-center mb-2"
+              >
+                <div className="relative flex items-center justify-center">
+                  <motion.div
+                    animate={{ scale: [1, 1.18, 1], opacity: [0.18, 0.35, 0.18] }}
+                    transition={{ duration: 2.4, repeat: Infinity }}
+                    className="absolute w-16 h-16 rounded-full bg-gold"
+                  />
+                  <div className="relative w-10 h-10 rounded-full border-2 border-gold bg-cream-dark flex items-center justify-center shadow-lg">
+                    <svg viewBox="0 0 24 24" className="w-5 h-5 text-gold" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                      <path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v4M8 23h8" />
+                    </svg>
+                  </div>
+                </div>
+                <span className="mt-2 text-[9px] font-mono tracking-[0.2em] text-gold/70 uppercase">Voice Input</span>
+              </motion.div>
 
-      {/* Outer Lifecycle Ring */}
-      <circle
-        cx="200"
-        cy="200"
-        r="180"
-        fill="none"
-        stroke="#D4AF37"
-        strokeWidth="1.5"
-        opacity="0.3"
-      />
+              {/* Animated signal line down */}
+              <div className="flex justify-center mb-2">
+                <div className="relative w-px h-6 bg-gold/20 overflow-hidden">
+                  <motion.div
+                    animate={{ y: ["-100%", "200%"] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "linear" }}
+                    className="absolute w-full h-3 bg-gradient-to-b from-transparent via-gold to-transparent"
+                  />
+                </div>
+              </div>
 
-      {/* Middle State Ring */}
-      <circle
-        cx="200"
-        cy="200"
-        r="130"
-        fill="none"
-        stroke="#D4AF37"
-        strokeWidth="1"
-        opacity="0.25"
-      />
+              {/* Layer 1 — Controlled Truth */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.7 }}
+                className="group relative border border-gold/30 bg-white/60 backdrop-blur-sm px-5 py-3.5 mb-1 flex items-center gap-4 hover:border-gold/70 hover:bg-white/90 transition-all duration-300"
+              >
+                <div className="flex-shrink-0 w-8 h-8 border border-gold/40 bg-cream-dark flex items-center justify-center group-hover:border-gold transition-colors">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 text-gold" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-mono tracking-[0.18em] text-gold/80 uppercase mb-0.5">Layer 01</p>
+                  <p className="text-xs font-bold text-warm-gray truncate">Controlled Truth</p>
+                </div>
+                <motion.div
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0 }}
+                  className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gold"
+                />
+              </motion.div>
 
-      {/* Inner Function Ring */}
-      <circle
-        cx="200"
-        cy="200"
-        r="85"
-        fill="none"
-        stroke="#D4AF37"
-        strokeWidth="1"
-        opacity="0.2"
-      />
+              {/* Connector */}
+              <div className="flex justify-center mb-1">
+                <div className="relative w-px h-5 bg-gold/15 overflow-hidden">
+                  <motion.div
+                    animate={{ y: ["-100%", "200%"] }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: 0.3 }}
+                    className="absolute w-full h-2.5 bg-gradient-to-b from-transparent via-gold/60 to-transparent"
+                  />
+                </div>
+              </div>
 
-      {/* Section Dividers */}
-      {[0, 90, 180, 270].map((angle, i) => {
-        const rad = (angle * Math.PI) / 180
-        return (
-          <line
-            key={i}
-            x1="200"
-            y1="200"
-            x2={200 + 180 * Math.cos(rad)}
-            y2={200 + 180 * Math.sin(rad)}
-            stroke="#D4AF37"
-            strokeWidth="0.8"
-            opacity="0.15"
-          />
-        )
-      })}
+              {/* Layer 2 — Designed Refusal */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.85 }}
+                className="group relative border border-gold/30 bg-white/60 backdrop-blur-sm px-5 py-3.5 mb-1 flex items-center gap-4 hover:border-gold/70 hover:bg-white/90 transition-all duration-300"
+              >
+                <div className="flex-shrink-0 w-8 h-8 border border-gold/40 bg-cream-dark flex items-center justify-center group-hover:border-gold transition-colors">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 text-gold" fill="none" stroke="currentColor" strokeWidth="2">
+                    <circle cx="12" cy="12" r="10" /><line x1="4.93" y1="4.93" x2="19.07" y2="19.07" />
+                  </svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-mono tracking-[0.18em] text-gold/80 uppercase mb-0.5">Layer 02</p>
+                  <p className="text-xs font-bold text-warm-gray truncate">Designed Refusal</p>
+                </div>
+                <motion.div
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                  className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gold"
+                />
+              </motion.div>
 
-      {/* Center Core */}
-      <motion.circle
-        cx="200"
-        cy="200"
-        r="45"
-        fill="#D4AF37"
-        animate={{ opacity: [0.15, 0.3, 0.15] }}
-        transition={{ duration: 3, repeat: Infinity }}
-      />
+              {/* Connector */}
+              <div className="flex justify-center mb-1">
+                <div className="relative w-px h-5 bg-gold/15 overflow-hidden">
+                  <motion.div
+                    animate={{ y: ["-100%", "200%"] }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: 0.6 }}
+                    className="absolute w-full h-2.5 bg-gradient-to-b from-transparent via-gold/60 to-transparent"
+                  />
+                </div>
+              </div>
 
-      <text
-        x="200"
-        y="195"
-        textAnchor="middle"
-        fontSize="9"
-        fill="#6b5c3b"
-        fontWeight="bold"
-        letterSpacing="2"
-      >
-        VOICE
-      </text>
+              {/* Layer 3 — Edge-Case Testing */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1 }}
+                className="group relative border border-gold/30 bg-white/60 backdrop-blur-sm px-5 py-3.5 mb-1 flex items-center gap-4 hover:border-gold/70 hover:bg-white/90 transition-all duration-300"
+              >
+                <div className="flex-shrink-0 w-8 h-8 border border-gold/40 bg-cream-dark flex items-center justify-center group-hover:border-gold transition-colors">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 text-gold" fill="none" stroke="currentColor" strokeWidth="2">
+                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                  </svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-mono tracking-[0.18em] text-gold/80 uppercase mb-0.5">Layer 03</p>
+                  <p className="text-xs font-bold text-warm-gray truncate">Real Evaluation</p>
+                </div>
+                <motion.div
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1 }}
+                  className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gold"
+                />
+              </motion.div>
 
-      <text
-        x="200"
-        y="210"
-        textAnchor="middle"
-        fontSize="9"
-        fill="#6b5c3b"
-        fontWeight="bold"
-        letterSpacing="2"
-      >
-        SYSTEM
-      </text>
+              {/* Connector */}
+              <div className="flex justify-center mb-1">
+                <div className="relative w-px h-5 bg-gold/15 overflow-hidden">
+                  <motion.div
+                    animate={{ y: ["-100%", "200%"] }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: 0.9 }}
+                    className="absolute w-full h-2.5 bg-gradient-to-b from-transparent via-gold/60 to-transparent"
+                  />
+                </div>
+              </div>
 
-      {/* Lifecycle Labels */}
-      <text x="200" y="20" textAnchor="middle" fontSize="10" fill="#6b5c3b">
-        BEFORE
-      </text>
+              {/* Layer 4 — Long-tail Coverage */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 1.15 }}
+                className="group relative border border-gold/30 bg-white/60 backdrop-blur-sm px-5 py-3.5 mb-2 flex items-center gap-4 hover:border-gold/70 hover:bg-white/90 transition-all duration-300"
+              >
+                <div className="flex-shrink-0 w-8 h-8 border border-gold/40 bg-cream-dark flex items-center justify-center group-hover:border-gold transition-colors">
+                  <svg viewBox="0 0 24 24" className="w-4 h-4 text-gold" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M2 20h.01M7 20v-4M12 20v-8M17 20V8M22 4v16" />
+                  </svg>
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] font-mono tracking-[0.18em] text-gold/80 uppercase mb-0.5">Layer 04</p>
+                  <p className="text-xs font-bold text-warm-gray truncate">Long-tail First</p>
+                </div>
+                <motion.div
+                  animate={{ opacity: [0.4, 1, 0.4] }}
+                  transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+                  className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-gold"
+                />
+              </motion.div>
 
-      <text x="380" y="205" textAnchor="end" fontSize="10" fill="#6b5c3b">
-        DURING
-      </text>
+              {/* Signal line to output */}
+              <div className="flex justify-center mb-2">
+                <div className="relative w-px h-6 bg-gold/20 overflow-hidden">
+                  <motion.div
+                    animate={{ y: ["-100%", "200%"] }}
+                    transition={{ duration: 1.2, repeat: Infinity, ease: "linear", delay: 1.2 }}
+                    className="absolute w-full h-3 bg-gradient-to-b from-transparent via-gold to-transparent"
+                  />
+                </div>
+              </div>
 
-      <text x="200" y="395" textAnchor="middle" fontSize="10" fill="#6b5c3b">
-        AFTER
-      </text>
+              {/* Measurable Output Node */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.3 }}
+                className="flex flex-col items-center"
+              >
+                <div className="relative w-full border border-gold/50 bg-gold/8 px-5 py-3 flex items-center gap-3">
+                  <motion.div
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 1.8, repeat: Infinity }}
+                    className="w-2 h-2 rounded-full bg-gold flex-shrink-0"
+                  />
+                  <span className="text-[10px] font-mono tracking-[0.2em] text-gold uppercase">Measured. Governed. Replayable.</span>
+                </div>
+              </motion.div>
 
-      <text x="20" y="205" textAnchor="start" fontSize="10" fill="#6b5c3b">
-        LONG-TERM
-      </text>
+              {/* Side rule labels */}
+              <div className="absolute -left-3 top-0 bottom-0 flex flex-col justify-center pointer-events-none">
+                <div className="w-px flex-1 bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
+              </div>
+              <div className="absolute -right-3 top-0 bottom-0 flex flex-col justify-center pointer-events-none">
+                <div className="w-px flex-1 bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
+              </div>
 
-      {/* System States */}
-      <text x="200" y="70" textAnchor="middle" fontSize="9" fill="#8E6B2F">
-        Normal
-      </text>
-
-      <text x="330" y="205" textAnchor="middle" fontSize="9" fill="#8E6B2F">
-        Alert
-      </text>
-
-      <text x="200" y="340" textAnchor="middle" fontSize="9" fill="#8E6B2F">
-        Recovery
-      </text>
-
-      <text x="70" y="205" textAnchor="middle" fontSize="9" fill="#8E6B2F">
-        Intervention
-      </text>
-
-      {/* Core Functions */}
-      <text x="200" y="120" textAnchor="middle" fontSize="8" fill="#6b5c3b">
-        Monitor
-      </text>
-      <text x="285" y="200" textAnchor="middle" fontSize="8" fill="#6b5c3b">
-        Gate
-      </text>
-      <text x="200" y="280" textAnchor="middle" fontSize="8" fill="#6b5c3b">
-        Replay
-      </text>
-      <text x="115" y="200" textAnchor="middle" fontSize="8" fill="#6b5c3b">
-        Escalate
-      </text>
-
-    </svg>
-
-  </div>
-</motion.div>
+            </div>
+          </motion.div>
         </div>
       </div>
 

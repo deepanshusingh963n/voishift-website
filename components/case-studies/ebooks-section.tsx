@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, Download, BookOpen } from "lucide-react"
+import { ChevronDown, Download, BookOpen, CheckCheck, FileText, ClipboardList, Quote } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 interface EBook {
@@ -156,9 +156,9 @@ export function EBooksSection() {
                         className="lg:sticky lg:top-28"
                     >
                         {/* Label pill */}
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/15 rounded-full mb-8">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-gold border border-gold/15 rounded-full mb-8">
                             <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                            <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">
+                            <span className="text-[15px] font-black tracking-[0.3em] text-gold uppercase">
                                 Operator Field Manuals
                             </span>
                         </div>
@@ -171,7 +171,7 @@ export function EBooksSection() {
                         {/* Faint rule */}
                         <div className="w-16 h-px bg-gold/30 mb-10" />
 
-                        {/* Body copy */}
+                        {/* ── ZONE A: What these are ── */}
                         <div className="space-y-5 max-w-md">
                             <p className="text-warm-gray font-serif text-lg leading-relaxed">
                                 These are not{" "}
@@ -187,23 +187,43 @@ export function EBooksSection() {
                                 <span className="text-gold font-bold">2 a.m.</span>
                             </p>
 
-                            <p className="text-warm-gray-light font-serif text-base leading-relaxed">
-                                Clear steps. Concrete examples.{" "}
-                                <span className="text-warm-gray font-semibold">Templates you can copy-paste.</span>{" "}
-                                Checklists you can run.
-                            </p>
-
-                            {/* Separator */}
-                            <div className="flex items-center gap-4 py-2">
-                                <div className="flex-1 h-px bg-sand" />
-                                <div className="w-1.5 h-1.5 rounded-full bg-gold/40" />
-                                <div className="flex-1 h-px bg-sand" />
+                            {/* Option 2 — Scannable bullet points */}
+                            <div className="space-y-3 pt-1">
+                                {[
+                                    { icon: CheckCheck, text: "Clear steps. Concrete examples." },
+                                    { icon: FileText, text: <><span className="text-warm-gray font-semibold">Templates you can copy-paste.</span></> },
+                                    { icon: ClipboardList, text: "Checklists you can run." },
+                                ].map(({ icon: Icon, text }, i) => (
+                                    <div key={i} className="flex items-start gap-3">
+                                        <div className="flex-shrink-0 w-6 h-6 flex items-center justify-center border border-gold/20 bg-gold/5 mt-0.5">
+                                            <Icon className="w-3.5 h-3.5 text-gold" />
+                                        </div>
+                                        <p className="text-warm-gray-light font-serif text-base leading-snug pt-0.5">{text}</p>
+                                    </div>
+                                ))}
                             </div>
+                        </div>
 
+                        {/* Separator between zones */}
+                        <div className="flex items-center gap-4 py-2 max-w-md">
+                            <div className="flex-1 h-px bg-sand" />
+                            <div className="w-1.5 h-1.5 rounded-full bg-gold/40" />
+                            <div className="flex-1 h-px bg-sand" />
+                        </div>
+
+                        {/* ── ZONE B: Our promise ── */}
+                        <div className="max-w-md border-l-2 border-gold/20 pl-4 space-y-3">
                             <p className="text-sm text-warm-gray-light font-serif italic leading-relaxed">
                                 No filler chapters. No padding. No vague frameworks that sound smart but do nothing.
                             </p>
+                        </div>
 
+                        {/* Option 5 — Guarantee callout */}
+                        <div className="max-w-md border-l-2 border-gold/50 pl-4 bg-gold/4 py-4 pr-4">
+                            <div className="flex items-start gap-2.5 mb-2">
+                                <Quote className="w-3.5 h-3.5 text-gold/60 flex-shrink-0 mt-0.5" />
+                                <span className="text-[9px] font-black tracking-[0.25em] text-gold uppercase">Our commitment</span>
+                            </div>
                             <p className="text-sm text-warm-gray-light font-serif italic leading-relaxed">
                                 If you finish one and still cannot make a decision, run a test, or change a workflow
                                 that week — then it is just another e-book.{" "}
@@ -211,18 +231,6 @@ export function EBooksSection() {
                                     Tell us, and we will make it better.
                                 </span>
                             </p>
-                        </div>
-
-                        {/* Bottom tag row */}
-                        <div className="flex flex-wrap gap-2 mt-10">
-                            {["No Fluff", "Copy-Paste Ready", "Battle-Tested"].map((tag) => (
-                                <span
-                                    key={tag}
-                                    className="px-3 py-1 border border-sand rounded-md text-[9px] font-mono font-black text-warm-gray/40 uppercase tracking-widest"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
                         </div>
                     </motion.div>
 
@@ -232,7 +240,7 @@ export function EBooksSection() {
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="space-y-3"
+                        className="space-y-8"
                     >
                         {ebooks.map((ebook, index) => {
                             const isOpen = openId === ebook.id
@@ -258,7 +266,7 @@ export function EBooksSection() {
                                     >
                                         <div className="flex items-center gap-4 min-w-0">
                                             {/* Number */}
-                                            <span className="text-[11px] font-black text-gold/50 font-mono tabular-nums flex-shrink-0">
+                                            <span className="text-[25px] font-black text-gold/50 font-mono tabular-nums flex-shrink-0">
                                                 {String(index + 1).padStart(2, "0")}
                                             </span>
                                             {/* Title */}
@@ -272,7 +280,7 @@ export function EBooksSection() {
                                                     {ebook.title}
                                                 </p>
                                                 {!isOpen && (
-                                                    <p className="text-[11px] text-warm-gray-light mt-0.5 truncate font-mono">
+                                                    <p className="text-[15px] text-warm-gray-light mt-0.5 truncate font-mono">
                                                         {ebook.subtitle}
                                                     </p>
                                                 )}
