@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Download, BookOpen, CheckCheck, FileText, ClipboardList, Quote } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 interface EBook {
     id: string
@@ -13,113 +14,118 @@ interface EBook {
     coverColor: string
     coverAccent: string
     tag: string
+    thumbnail: string
 }
 
 const ebooks: EBook[] = [
     {
         id: "1",
-        title: "Voice AI Implementation Playbook",
-        subtitle: "From Zero to Production in 90 Days",
+        title: "Listening (not hearing) Is the New Moat",
+        subtitle: "You can store calls. You can transcribe calls. You still lose the account when one missing constraint triggers the wrong action.",
         description:
-            "A step-by-step field manual for deploying enterprise voice AI. Includes environment checklists, rollout timelines, escalation templates, and go-live criteria you can hand to your team on day one.",
+            "A short field guide to making voice workflows executable, defensible, and safe to scale.",
         coverColor: "#1a1a1a",
         coverAccent: "#D4AF37",
         tag: "DEPLOYMENT",
+        thumbnail: "/eBooks/Listening (not hearing) Is the New Moat.png",
     },
     {
         id: "2",
-        title: "The Operations Breakdown Guide",
-        subtitle: "Diagnosing What Is Actually Failing",
+        title: "Forgiveness Engineering",
+        subtitle: "How to design below the frustration threshold",
         description:
-            "A diagnostic framework for operations teams. Maps common failure modes across logistics, manufacturing, and field service into root causes and specific voice AI interventions with before/after metrics.",
+            "Users forgive a mistake when the system repairs it fast. They don't forgive a system that wastes time, repeats itself, or acts confident when it's unsure.",
         coverColor: "#2a2016",
         coverAccent: "#C9A227",
         tag: "OPERATIONS",
+        thumbnail: "/eBooks/Forgiveness Engineering.png",
     },
     {
         id: "3",
-        title: "CX Automation Without the Chaos",
-        subtitle: "Keeping Human Quality at Machine Scale",
+        title: "The Frustration Line",
+        subtitle: "Where adoption dies, and how VoiceOps keeps it alive",
         description:
-            "Covers handoff logic, fallback design, CSAT instrumentation, and the exact triggers that separate effective automation from the kind that generates callbacks. Includes a ready-to-use QA scorecard.",
+            "Users don't quit voice workflows when they see one mistake. They quit when the system wastes their time, misses the moment, and then acts confident anyway.",
         coverColor: "#1a1f1a",
         coverAccent: "#D4AF37",
         tag: "CUSTOMER EXPERIENCE",
+        thumbnail: "/eBooks/The Frustration Line.png",
     },
     {
         id: "4",
-        title: "The Voice AI Vendor Audit Kit",
-        subtitle: "Questions They Hope You Never Ask",
+        title: "Refusal is the Moat",
+        subtitle: "The boundary maps that stop voice AI from becoming a liability",
         description:
-            "A structured evaluation framework for comparing voice AI vendors. Thirty-two adversarial questions, scoring rubric, red-flag checklist, and a contract clause reference sheet built from real procurement cycles.",
+            "Most voice failures don't look like crashes. They look like confident compliance at the wrong moment. A short field guide to designing refusal, confirmation, and escalation boundaries so voice workflows stay safe under pressure.",
         coverColor: "#1a1a2a",
         coverAccent: "#B8972B",
         tag: "PROCUREMENT",
+        thumbnail: "/eBooks/Refusal is the Moat.png",
     },
     {
         id: "5",
-        title: "RevOps & Sales Velocity Manual",
-        subtitle: "Voice AI for Pipeline You Can Actually Measure",
+        title: "Interactional DNA",
+        subtitle: "How to turn everyday calls into owned intelligence",
         description:
-            "Practical guide for RevOps teams on deploying voice AI across outbound, inbound routing, and post-call workflows. Includes CRM integration patterns, attribution logic, and a pipeline impact calculator.",
+            "You can build conversational intelligence. You can buy conversational intelligence. You still miss the move that would have changed the outcome.",
         coverColor: "#1f1a1a",
         coverAccent: "#D4AF37",
         tag: "REVENUE OPS",
+        thumbnail: "/eBooks/Interactional DNA.png",
     },
     {
         id: "6",
-        title: "Incident Response at 2 A.M.",
-        subtitle: "The Voice AI Runbook for When Things Break",
+        title: "Own Your Intelligence",
+        subtitle: "Why renting \"AI features\" keeps you stuck, and VoiceOps breaks dependency",
         description:
-            "The manual you want on your desk when the system is down and the clock is running. Covers triage sequences, rollback procedures, escalation trees, and post-mortem templates that prevent repeat failures.",
+            "You can buy AI features fast. You can still stay dependent forever. A short field guide for operators who want voice workflows that improve as a company capability, not as a vendor subscription.",
         coverColor: "#1a1a1a",
         coverAccent: "#D4AF37",
         tag: "INCIDENT RESPONSE",
+        thumbnail: "/eBooks/Own Your Intelligence.png",
     },
 ]
 
 function EBookCover({ ebook }: { ebook: EBook }) {
     return (
         <div
-            className="relative w-24 h-32 sm:w-28 sm:h-36 flex-shrink-0 rounded-md overflow-hidden shadow-xl"
+            className="relative w-24 h-32 sm:w-28 sm:h-36 flex-shrink-0 rounded-md overflow-hidden shadow-2xl ring-1 ring-black/5"
             style={{ backgroundColor: ebook.coverColor }}
         >
-            {/* Spine accent */}
+            {/* eBook Thumbnail Image */}
+            <Image
+                src={ebook.thumbnail}
+                alt={ebook.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 96px, 112px"
+            />
+
+            {/* Spine accent (On top of image) */}
             <div
-                className="absolute left-0 top-0 bottom-0 w-1.5"
+                className="absolute left-0 top-0 bottom-0 w-1.5 z-10"
                 style={{ backgroundColor: ebook.coverAccent }}
             />
-            {/* Grid texture */}
+
+            {/* Grid texture overlay (On top of image) */}
             <div
-                className="absolute inset-0 opacity-10"
+                className="absolute inset-0 opacity-[0.08] z-10 pointer-events-none"
                 style={{
-                    backgroundImage: `linear-gradient(${ebook.coverAccent}44 1px, transparent 1px), linear-gradient(90deg, ${ebook.coverAccent}44 1px, transparent 1px)`,
+                    backgroundImage: `linear-gradient(${ebook.coverAccent} 1px, transparent 1px), linear-gradient(90deg, ${ebook.coverAccent} 1px, transparent 1px)`,
                     backgroundSize: "12px 12px",
                 }}
             />
-            {/* Book icon */}
-            <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 px-3">
-                <BookOpen
-                    className="w-6 h-6 opacity-80"
-                    style={{ color: ebook.coverAccent }}
-                />
-                <div
-                    className="w-8 h-px opacity-60"
-                    style={{ backgroundColor: ebook.coverAccent }}
-                />
-                <div
-                    className="w-5 h-px opacity-40"
-                    style={{ backgroundColor: ebook.coverAccent }}
-                />
-            </div>
+
+            {/* Shadow overlay for depth */}
+            <div className="absolute inset-y-0 left-1.5 w-4 bg-gradient-to-r from-black/20 to-transparent z-10 opacity-60" />
+
             {/* Tag strip at bottom */}
             <div
-                className="absolute bottom-0 left-0 right-0 py-1 px-2 text-center"
-                style={{ backgroundColor: `${ebook.coverAccent}22` }}
+                className="absolute bottom-0 left-0 right-0 py-1 px-2 text-center z-10"
+                style={{ backgroundColor: `${ebook.coverAccent}cc`, backdropFilter: "blur(4px)" }}
             >
                 <span
-                    className="text-[6px] font-black tracking-widest uppercase"
-                    style={{ color: ebook.coverAccent }}
+                    className="text-[6px] font-black tracking-widest uppercase text-white drop-shadow-sm"
                 >
                     {ebook.tag}
                 </span>

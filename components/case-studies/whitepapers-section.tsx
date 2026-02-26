@@ -4,93 +4,109 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, FileText, ExternalLink } from "lucide-react"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 interface Whitepaper {
     id: string
     title: string
     subtitle: string
     description: string
-    journal: string
+    //journal: string
     tag: string
     accentColor: string
+    thumbnail: string
 }
 
 const whitepapers: Whitepaper[] = [
     {
         id: "1",
-        title: "Latency Thresholds in Conversational Voice AI",
-        subtitle: "How Response Delay Shapes User Trust and Drop-off",
+        title: "Frustration Threshold Mapping",
+        subtitle: "A discipline for adoption immunity",
         description:
-            "Synthesises findings from cognitive load and human-computer interaction research to define the latency bands where voice AI systems lose user confidence. Includes a practical tuning guide for enterprise deployments where sub-300ms targets are non-negotiable.",
-        journal: "Journal of Human-Computer Studies · Adapted Field Notes",
+            "A research-grounded method for measuring where voice adoption collapses and designing VoiceOps behavior so users keep trusting the workflow under real conditions.",
+        //journal: "Journal of Human-Computer Studies · Adapted Field Notes",
         tag: "LATENCY & UX",
         accentColor: "#D4AF37",
+        thumbnail: "/whitepapers/Frustration Threshold Mapping.png",
     },
     {
         id: "2",
-        title: "Accuracy vs. Naturalness in ASR Systems",
-        subtitle: "The Trade-off Operators Almost Always Get Wrong",
+        title: "Interactional DNA as Enterprise IP",
+        subtitle: "How to build owned intelligence",
         description:
-            "Reviews peer-reviewed benchmarks on automatic speech recognition accuracy across accent diversity and ambient noise conditions. Translated into a practical framework for choosing and tuning ASR components in high-stakes operational environments.",
-        journal: "IEEE Transactions on Audio, Speech & Language · Adapted Field Notes",
+            "A research-grounded whitepaper for teams building or buying conversational intelligence for recorded voice calls, and for teams trying to turn call data into a durable internal capability.",
+        //journal: "IEEE Transactions on Audio, Speech & Language · Adapted Field Notes",
         tag: "ASR SYSTEMS",
         accentColor: "#C9A227",
+        thumbnail: "/whitepapers/Interactional DNA as Enterprise IP.png",
     },
     {
         id: "3",
-        title: "Voice Biometrics in Enterprise Security",
-        subtitle: "What the Research Says About Reliability and Attack Vectors",
+        title: "Drift Monitoring for Voice Systems",
+        subtitle: "How to stop silent degradation",
         description:
-            "Draws from identity verification and spoofing-attack research to map real-world reliability of voice biometrics across use cases. Includes a risk-tiering model and the specific conditions under which biometric reliance becomes a liability.",
-        journal: "Computer & Security Journal · Adapted Field Notes",
+            "A research-grounded whitepaper for teams building, buying, or operating voice systems for recorded calls, where performance can degrade quietly until trust and adoption collapse.",
+        //journal: "Computer & Security Journal · Adapted Field Notes",
         tag: "SECURITY",
         accentColor: "#B8972B",
+        thumbnail: "/whitepapers/Drift Monitoring for Voice Systems.png",
     },
     {
         id: "4",
-        title: "Multimodal AI in Operational Workflows",
-        subtitle: "When Voice Alone Is Not Enough — and What to Add",
+        title: "The VoiceOps Operating Model",
+        subtitle: "From interactional DNA to adoption loops",
         description:
-            "Examines research on combining voice with visual, tactile, and contextual signals. Provides a decision matrix for operations and IT teams evaluating where pure-voice interactions hit a ceiling and what hybrid architectures deliver measurably better outcomes.",
-        journal: "Frontiers in Artificial Intelligence · Adapted Field Notes",
+            "A research-grounded operating model for teams building, buying, or running voice and conversational intelligence systems for recorded calls, where timing, trust, and workflow integrity decide adoption.",
+        //journal: "Frontiers in Artificial Intelligence · Adapted Field Notes",
         tag: "MULTIMODAL AI",
         accentColor: "#D4AF37",
+        thumbnail: "/whitepapers/The VoiceOps Operating Model.png",
     },
 ]
 
 function WhitepaperCover({ paper }: { paper: Whitepaper }) {
     return (
-        <div className="relative w-20 h-28 sm:w-24 sm:h-32 flex-shrink-0 rounded-md overflow-hidden shadow-lg bg-[#faf9f6] border border-sand">
-            {/* Top accent bar */}
+        <div className="relative w-20 h-28 sm:w-24 sm:h-32 flex-shrink-0 rounded-md overflow-hidden shadow-xl bg-[#faf9f6] border border-sand ring-1 ring-black/5">
+            {/* Whitepaper Thumbnail Image */}
+            <Image
+                src={paper.thumbnail}
+                alt={paper.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 80px, 96px"
+            />
+
+            {/* Top accent bar (On top of image) */}
             <div
-                className="absolute top-0 left-0 right-0 h-1.5"
+                className="absolute top-0 left-0 right-0 h-1.5 z-10"
                 style={{ backgroundColor: paper.accentColor }}
             />
-            {/* Lined paper texture */}
-            <div className="absolute inset-0 pt-4">
+
+            {/* Lined paper texture overlay (Subtle, on top) */}
+            <div className="absolute inset-0 pt-4 z-10 pointer-events-none opacity-20">
                 {Array.from({ length: 7 }).map((_, i) => (
                     <div
                         key={i}
                         className="mx-3 mb-2 h-px"
-                        style={{ backgroundColor: `${paper.accentColor}22` }}
+                        style={{ backgroundColor: `${paper.accentColor}44` }}
                     />
                 ))}
             </div>
-            {/* Icon */}
-            <div className="absolute inset-0 flex items-center justify-center">
-                <FileText
-                    className="w-7 h-7 opacity-25"
-                    style={{ color: paper.accentColor }}
-                />
-            </div>
+
+            {/* Shadow overlay for "paper stack" depth */}
+            <div className="absolute inset-y-0 left-0 w-2 bg-gradient-to-r from-black/5 to-transparent z-10" />
+
             {/* Bottom tag strip */}
             <div
-                className="absolute bottom-0 left-0 right-0 py-1 px-1.5 text-center border-t"
-                style={{ borderColor: `${paper.accentColor}25`, backgroundColor: `${paper.accentColor}0d` }}
+                className="absolute bottom-0 left-0 right-0 py-1 px-1.5 text-center border-t z-10"
+                style={{
+                    borderColor: `${paper.accentColor}44`,
+                    backgroundColor: `${paper.accentColor}dd`,
+                    backdropFilter: "blur(4px)"
+                }}
             >
                 <span
-                    className="text-[6px] font-black tracking-widest uppercase leading-none"
-                    style={{ color: paper.accentColor }}
+                    className="text-[6px] font-black tracking-widest uppercase leading-none text-white drop-shadow-sm"
                 >
                     {paper.tag}
                 </span>
@@ -229,10 +245,11 @@ export function WhitepapersSection() {
                                                                 {paper.description}
                                                             </p>
 
-                                                            {/* Source label */}
+                                                            {/* Source label 
                                                             <p className="text-[10px] font-mono text-warm-gray/40 tracking-wide mb-5">
                                                                 Source basis: {paper.journal}
                                                             </p>
+                                                            */}
 
                                                             {/* CTA */}
                                                             <button className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-warm-gray text-warm-gray rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-warm-gray hover:text-white hover:shadow-lg group/btn">
