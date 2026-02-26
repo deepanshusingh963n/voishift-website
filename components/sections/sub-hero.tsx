@@ -2,8 +2,9 @@
 
 import { useRef, useState, useEffect } from "react"
 import { motion, useScroll, AnimatePresence } from "framer-motion"
+import { Shield, Brain, Target, AlertTriangle, Database } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Shield, Brain, Target, AlertTriangle, Briefcase, Truck, Users, Quote, LucideIcon, Zap, Database, Lock, Activity, RefreshCw } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { useModal } from "@/context/modal-context"
 
 const narrativeBlocks = [
@@ -20,7 +21,6 @@ const narrativeBlocks = [
       "If it can sound human, it can mislead like one.",
     ],
     icon: Shield,
-    illustration: "problem",
   },
   {
     id: 2,
@@ -31,7 +31,6 @@ const narrativeBlocks = [
       "You fixed the answers, not what makes them true.",
     ],
     icon: Brain,
-    illustration: "pattern",
   },
   {
     id: 3,
@@ -42,314 +41,76 @@ const narrativeBlocks = [
       "If you need clarity turned into execution, test us.",
     ],
     icon: Target,
-    illustration: "stat",
   },
 ]
 
-/* --- Stage 1: Breach Simulation --- */
-const BreachSimulation = () => {
+function VisualPanel({ active }: { active: number }) {
   return (
-    <div className="w-full max-w-3xl mx-auto space-y-4 px-4">
-      {/* Header HUD */}
-      <div className="flex items-center justify-between border-b border-sand pb-3">
-        <div className="flex items-center gap-3">
-          <div className="w-2 h-2 bg-destructive animate-pulse rounded-full" />
-          <span className="text-[10px] font-black uppercase tracking-[0.3em] text-warm-gray">System_Integrity_Monitor</span>
-        </div>
-        <div className="flex gap-4">
-          <div className="h-1 w-10 bg-sand/30" />
-          <div className="h-1 w-6 bg-sand/30" />
-        </div>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6 relative">
-        {/* Left Side: The "Bot" Voice Interface */}
-        <motion.div 
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="bg-white border border-sand p-5 shadow-xl relative overflow-hidden group"
-        >
-          <div className="absolute top-0 left-0 w-1 bg-blue-500 h-full" />
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded bg-blue-50 flex items-center justify-center">
-              <Activity className="w-4 h-4 text-blue-500" />
-            </div>
-            <span className="text-[10px] font-black text-warm-gray uppercase tracking-widest">Active_Call_Stream</span>
-          </div>
-          
-          <div className="space-y-4">
-            <div className="space-y-2">
-              <p className="text-[10px] text-warm-gray-light font-black uppercase tracking-wider">Customer Inquiry</p>
-              <p className="text-xs md:text-sm font-serif italic text-warm-gray leading-relaxed bg-sand/10 p-2 md:p-3">
-                "Wait, are you SURE you can deliver by Friday? If not, I lose the project."
-              </p>
-            </div>
-            
-            <motion.div 
-              animate={{ opacity: [0.5, 1, 0.5] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="space-y-2"
-            >
-              <p className="text-[10px] text-blue-500 font-black uppercase tracking-wider">Fluent Bot Response</p>
-              <p className="text-xs md:text-sm font-serif text-warm-gray leading-relaxed border-l-2 border-blue-500 pl-3 py-1">
-                "Absolutely. I've personally verified our logistics queue. We will have it at your door by Friday morning."
-              </p>
-            </motion.div>
-          </div>
-          
-          {/* Signal Waveform */}
-          <div className="mt-8 flex items-end gap-1 h-8 opacity-20">
-            {[...Array(12)].map((_, i) => (
-              <motion.div 
-                key={i}
-                animate={{ height: [4, Math.random() * 24 + 8, 4] }}
-                transition={{ repeat: Infinity, duration: 1, delay: i * 0.1 }}
-                className="flex-1 bg-blue-500 rounded-t-sm"
-              />
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Center Connector */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20 hidden md:block">
-          <div className="w-10 h-10 rounded-full bg-destructive flex items-center justify-center shadow-xl border-4 border-white animate-bounce">
-            <Shield className="w-5 h-5 text-white" />
-          </div>
-        </div>
-
-        {/* Right Side: Reality / Policy Block */}
-        <motion.div 
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          className="bg-[#1a1a1a] p-5 shadow-2xl relative overflow-hidden"
-        >
-          <div className="absolute top-0 right-0 p-4 opacity-10">
-            <Lock className="w-12 h-12 text-white" />
-          </div>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 rounded bg-destructive/20 flex items-center justify-center">
-              <Shield className="w-4 h-4 text-destructive" />
-            </div>
-            <span className="text-[10px] font-black text-white uppercase tracking-widest">Breach_Reality_Scan</span>
-          </div>
-
-          <div className="space-y-4">
-            <div className="p-3 border border-destructive/30 bg-destructive/5 rounded space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-[10px] text-destructive font-black uppercase tracking-tighter">Conflict Detected</span>
-                <span className="text-[10px] text-warm-gray-light font-mono">0x44_COMMITMENT_ERROR</span>
-              </div>
-              
-              <div className="space-y-2">
-                <div className="flex justify-between text-[11px] font-mono">
-                  <span className="text-warm-gray-light">Policy Limit</span>
-                  <span className="text-white">7-Day Lead Time</span>
-                </div>
-                <div className="h-1 w-full bg-white/5 overflow-hidden">
-                  <motion.div 
-                    initial={{ x: "-100%" }}
-                    animate={{ x: "0%" }}
-                    transition={{ duration: 1.5 }}
-                    className="h-full bg-destructive w-full" 
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <div className="flex justify-between text-[11px] font-mono">
-                  <span className="text-warm-gray-light">Operational Load</span>
-                  <span className="text-white">94% Capacity</span>
-                </div>
-                <div className="h-1 w-full bg-white/5 overflow-hidden">
-                   <div className="h-full bg-amber-500 w-[94%]" />
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-4 space-y-2">
-              <p className="text-[10px] text-destructive font-black uppercase tracking-widest">Conclusion</p>
-              <p className="text-xs text-white/80 leading-relaxed font-serif italic">
-                The commitment violates both Policy Map and Live Capacity. The bot is "Flying Blind"—sounding certain while creating an operational liability.
-              </p>
-            </div>
-          </div>
-        </motion.div>
-      </div>
-
-      <div className="text-center">
-        <p className="text-xs font-black text-warm-gray uppercase tracking-[0.4em] opacity-40">
-          Simulation: Common failure pattern in Sales & Field Operations
-        </p>
-      </div>
-    </div>
-  )
-}
-
-/* --- Stage 2: System Network --- */
-const SystemNetwork = () => {
-  return (
-    <div className="relative w-full max-w-2xl flex flex-col items-center justify-center gap-10 px-6">
-
-      {/* Top Layer — Voice AI */}
+    <AnimatePresence mode="wait">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="flex flex-col items-center gap-3"
-      >
-        <div className="w-16 h-16 rounded-2xl bg-white border border-sand shadow-2xl flex items-center justify-center">
-          <Activity className="w-7 h-7 text-blue-500" />
-        </div>
-        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-warm-gray bg-white/80 px-4 py-1 border border-sand rounded-full">
-          Voice AI Interface
-        </span>
-      </motion.div>
-
-      {/* Connector Line */}
-      <div className="w-px h-10 bg-gradient-to-b from-blue-400 to-gold/60 relative">
-        <motion.div
-          animate={{ opacity: [0.3, 1, 0.3] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute inset-0 bg-gold blur-[4px]"
-        />
-      </div>
-
-      {/* Decision Layer (Highlighted Core) */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.2 }}
-        className="relative bg-white border-2 border-gold rounded-2xl px-10 py-6 shadow-2xl"
-      >
-        <div className="absolute -inset-1 rounded-2xl bg-gold/10 blur-xl opacity-40" />
-        <div className="relative flex flex-col items-center gap-2">
-          <Shield className="w-6 h-6 text-gold" />
-          <span className="text-xs font-black uppercase tracking-[0.3em] text-gold">
-            Decision Authority Layer
-          </span>
-        </div>
-      </motion.div>
-
-      {/* Connector Line */}
-      <div className="w-px h-10 bg-gradient-to-b from-gold to-green-400" />
-
-      {/* Ground Truth Systems */}
-      <motion.div
+        key={active}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="grid grid-cols-3 gap-6"
+        exit={{ opacity: 0, y: -20 }}
+        transition={{ duration: 0.4 }}
+        className="w-full max-w-md"
       >
-        {/* CRM */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-xl bg-white border border-sand shadow-lg flex items-center justify-center">
-            <Database className="w-5 h-5 text-amber-500" />
+        {/* Stage 1 Visual */}
+        {active === 0 && (
+          <div className="bg-white border border-sand shadow-xl p-6 space-y-6">
+            <div className="flex items-center gap-3">
+              <AlertTriangle className="w-5 h-5 text-destructive" />
+              <span className="text-xs font-black uppercase tracking-widest text-destructive">
+                False Certainty Detected
+              </span>
+            </div>
+            <div className="p-4 bg-sand/20 border border-sand text-sm font-serif italic text-warm-gray">
+              “Absolutely. We will deliver by Friday morning.”
+            </div>
+            <div className="text-xs text-warm-gray-light font-mono">
+              Policy Conflict: 7-Day Lead Time
+              <br />
+              Capacity: 94%
+            </div>
           </div>
-          <span className="text-[8px] font-black uppercase tracking-wider text-warm-gray">
-            Live CRM
-          </span>
-        </div>
+        )}
 
-        {/* Policy */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-xl bg-white border border-sand shadow-lg flex items-center justify-center">
-            <Shield className="w-5 h-5 text-destructive" />
+        {/* Stage 2 Visual */}
+        {active === 1 && (
+          <div className="bg-white border border-sand shadow-xl p-6 space-y-8 text-center">
+            <div className="flex justify-center">
+              <div className="w-16 h-16 rounded-2xl bg-gold/10 flex items-center justify-center">
+                <Brain className="w-8 h-8 text-gold" />
+              </div>
+            </div>
+            <div className="space-y-3 text-sm font-mono text-warm-gray-light">
+              <div>Voice Interface</div>
+              <div className="h-px bg-sand" />
+              <div className="font-bold text-warm-gray">
+                No Decision Authority Layer
+              </div>
+              <div className="h-px bg-sand" />
+              <div>CRM | Policy | Ops</div>
+            </div>
           </div>
-          <span className="text-[8px] font-black uppercase tracking-wider text-warm-gray">
-            Policy Engine
-          </span>
-        </div>
+        )}
 
-        {/* Ops */}
-        <div className="flex flex-col items-center gap-2">
-          <div className="w-12 h-12 rounded-xl bg-white border border-sand shadow-lg flex items-center justify-center">
-            <Briefcase className="w-5 h-5 text-green-500" />
+        {/* Stage 3 Visual */}
+        {active === 2 && (
+          <div className="bg-white border border-sand shadow-xl p-6 space-y-6 text-center">
+            <div className="flex justify-center">
+              <Database className="w-10 h-10 text-gold" />
+            </div>
+            <div className="text-5xl font-serif font-black text-warm-gray">
+              ?
+            </div>
+            <p className="text-sm text-warm-gray-light font-serif italic">
+              Second Brain or the Only Brain?
+            </p>
           </div>
-          <span className="text-[8px] font-black uppercase tracking-wider text-warm-gray">
-            Ops Capacity
-          </span>
-        </div>
+        )}
       </motion.div>
-    </div>
-  )
-}
-/* --- Stage 3: Technical Audit --- */
-const TechnicalAudit = () => {
-  return (
-    <div className="w-full max-w-xl bg-white border border-sand p-4 lg:p-6 shadow-2xl relative overflow-hidden text-center">
-      {/* Background Scanner Line */}
-      <motion.div 
-        animate={{ top: ['0%', '100%', '0%'] }}
-        transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
-        className="absolute left-0 right-0 h-px bg-gold/30 z-0"
-      />
-      
-      <div className="relative z-10 space-y-12">
-        <div className="space-y-4">
-          <span className="text-xs font-black text-destructive uppercase tracking-[0.5em] px-4 py-1 border border-destructive/20 inline-block bg-destructive/5 rounded-full">
-            AUDIT_REPORT_FLAG
-          </span>
-          <h4 className="text-md font-serif text-warm-gray-light italic">VoiShift Enterprise Analysis_ID_7212</h4>
-        </div>
-
-        <div className="relative inline-block">
-          <motion.div
-            initial={{ rotate: -10, opacity: 0 }}
-            animate={{ rotate: 0, opacity: 1 }}
-            className="text-[60px] lg:text-[90px] font-serif font-black text-[#1a1a1a] leading-none tracking-tighter"
-          >
-            78%
-          </motion.div>
-          <motion.div
-            animate={{ opacity: [1, 0, 1] }}
-            transition={{ repeat: Infinity, duration: 1 }}
-            className="absolute -top-4 -right-12 px-4 py-2 bg-destructive text-white text-xs font-black uppercase tracking-widest shadow-xl border-b-4 border-destructive-dark"
-          >
-            CRITICAL_RISK
-          </motion.div>
-        </div>
-
-        <div className="space-y-6 max-w-md mx-auto">
-          <p className="text-md lg:text-lg text-warm-gray font-serif italic leading-snug">
-            Of voice AI deployments create "Ghost Commitments"—promises made by agents that are operationally impossible to fulfill.
-          </p>
-          <div className="grid grid-cols-3 gap-8 pt-8 border-t border-sand">
-            <div>
-              <p className="text-[10px] font-black text-warm-gray-light uppercase mb-1">DATA POINTS</p>
-              <p className="text-sm font-mono text-warm-gray">12,400+</p>
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-warm-gray-light uppercase mb-1">VERTICLES</p>
-              <p className="text-sm font-mono text-warm-gray">SALES/OPS</p>
-            </div>
-            <div>
-              <p className="text-[10px] font-black text-warm-gray-light uppercase mb-1">FAILURE_TYPE</p>
-              <p className="text-sm font-mono text-warm-gray">NON_SYNC</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-const VisualPanel = ({ activeBlock }: { activeBlock: number }) => {
-  return (
-    <div className="relative h-full w-full flex items-center justify-center p-4 lg:p-8 overflow-hidden">
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={activeBlock}
-          initial={{ opacity: 0, scale: 0.9, y: 10 }}
-          animate={{ opacity: 1, scale: 0.95, y: 0 }}
-          exit={{ opacity: 0, scale: 1, y: -10 }}
-          transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full flex justify-center origin-center"
-        >
-          {activeBlock === 0 && <BreachSimulation />}
-          {activeBlock === 1 && <SystemNetwork />}
-          {activeBlock === 2 && <TechnicalAudit />}
-        </motion.div>
-      </AnimatePresence>
-    </div>
+    </AnimatePresence>
   )
 }
 
@@ -360,123 +121,90 @@ export function SubHero() {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"]
+    offset: ["start start", "end end"],
   })
 
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (value: number) => {
-      const newBlock = Math.min(Math.floor(value * 3), 2)
-      setActiveBlock(newBlock)
+      const index = Math.min(
+        Math.floor(value * narrativeBlocks.length),
+        narrativeBlocks.length - 1
+      )
+      setActiveBlock(index)
     })
     return () => unsubscribe()
   }, [scrollYProgress])
 
   return (
-    <section id="sub-hero" ref={containerRef} className="relative bg-cream-dark">
-      {/* Sticky Intro Bridge from Hero */}
-      <div className="sticky top-[80px] z-40 w-full bg-white backdrop-blur-xl border-b border-sand/50 px-6 py-6 md:py-8 flex flex-col items-center text-center shadow-sm">
-        <motion.div
-           initial={{ opacity: 0, y: -20 }}
-           animate={{ opacity: 1, y: 0 }}
-           transition={{ duration: 0.8 }}
-           className="w-full flex flex-col items-center max-w-7xl mx-auto"
-        >
-          <h2 className="text-xl md:text-2xl lg:text-3xl text-gold font-serif font-black selection:bg-gold/20 mb-4 text-balance">
-            "Everyone is just following everyone else, installing a voice bot like a widget."
-          </h2>
-        </motion.div>
+    <section ref={containerRef} className="relative bg-cream-dark">
+      {/* Sticky Heading */}
+      <div className="sticky top-12 lg:top-12 z-40 bg-white border-b border-sand px-6 py-8 text-center">
+        <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-serif font-black text-gold leading-tight max-w-5xl mx-auto">
+          "Everyone is just following everyone else, installing a voice bot like a widget."
+        </h2>
       </div>
 
-      <div className="flex">
-        {/* Left side - Scrollable narrative */}
-        <div className="w-full lg:w-2/5 overflow-auto pb-32">
-          <div className="pt-24 lg:pt-24">
-            {narrativeBlocks.map((block, index) => (
-              <div
-                key={block.id}
-                className="min-h-screen flex items-center px-6 lg:px-16"
-              >
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                  viewport={{ once: false, amount: 0.5 }}
-                  className="max-w-xl"
-                >
-                  <div className="flex items-start gap-4 mb-4">
-                    {/* Icon */}
-                    <div className="w-8 h-8 rounded-lg bg-gold/10 flex items-center justify-center shrink-0">
-                      <block.icon className="w-4 h-4 text-gold" />
-                    </div>
+      <div className="flex flex-col lg:flex-row">
+        {/* Left Scroll Narrative */}
+        <div className="w-full lg:w-1/2">
+          {narrativeBlocks.map((block, index) => (
+            <div
+              key={block.id}
+              className="min-h-screen flex items-center px-6 sm:px-12 lg:px-20"
+            >
+              <div className="max-w-xl space-y-6 w-full">
+        
+                {/* Title */}
+                {typeof block.title === "string" ? (
+                  <h3 className="text-2xl md:text-3xl font-serif text-warm-gray leading-tight">
+                    {block.title}
+                  </h3>
+                ) : (
+                  <h3 className="text-2xl md:text-3xl font-serif text-warm-gray leading-tight">
+                    <span className="block">{block.title.line1}</span>
+                    <span className="block italic text-gold/80 font-normal mt-1">
+                      {block.title.line2}
+                    </span>
+                  </h3>
+                )}
 
-                    {/* Content column */}
-                    <div className="flex-1">
-                      {typeof block.title === "string" ? (
-                        <h2 className="font-serif text-xl md:text-2xl lg:text-3xl text-warm-gray leading-tight mb-4 text-balance">
-                          {block.title}
-                        </h2>
-                      ) : (
-                        <h2 className="font-serif text-xl md:text-2xl lg:text-3xl leading-[1.05] tracking-tight text-warm-gray mb-4">
-                          <span className="block">{block.title.line1}</span>
-                          <span className="block italic text-gold/80 font-normal mt-1">
-                            {block.title.line2}
-                          </span>
-                        </h2>
-                      )}
+                {/* Content */}
+                <ul className="space-y-3 list-disc list-inside text-base md:text-lg text-warm-gray-light">
+                  {block.content.map((item, i) => (
+                    <li key={i}>{item}</li>
+                  ))}
+                </ul>
 
-                      {/* Bullets */}
-                      <ul className="space-y-3 list-disc list-inside text-base md:text-lg text-warm-gray-light leading-relaxed">
-                        {block.content.map((line, i) => (
-                          <motion.li
-                            key={i}
-                            initial={{ opacity: 0, y: 10 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.4, delay: i * 0.1 }}
-                            viewport={{ once: false, amount: 0.8 }}
-                          >
-                            {line}
-                          </motion.li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-
-                  {index === 2 && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                      viewport={{ once: false, amount: 0.8 }}
-                      className="mt-8 flex flex-col sm:flex-row gap-4"
+                {/* CTA only on Block 3 */}
+                {index === 2 && (
+                  <div className="pt-6 flex flex-col sm:flex-row gap-4">
+                    <Button
+                      size="default"
+                      className="bg-gold hover:bg-black hover:text-gold text-warm-gray rounded-lg transition-all duration-300 w-full sm:w-auto"
+                      onClick={openModal}
                     >
-                      <Button
-                        size="default"
-                        className="bg-gold hover:bg-black hover:text-gold text-warm-gray rounded-lg shadow-sm transition-all duration-300"
-                        onClick={openModal}
-                      >
-                        I need a system, not a bot
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                      <Button
-                        size="default"
-                        variant="outline"
-                        className="border-gold/40 text-gold bg-black rounded-lg transition-all duration-300"
-                        onClick={openModal}
-                      >
-                        Stress test my current build
-                      </Button>
-                    </motion.div>
-                  )}
-                </motion.div>
+                      I need a system, not a bot
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+
+                    <Button
+                      size="default"
+                      variant="outline"
+                      className="border-gold/40 text-gold bg-black rounded-lg transition-all duration-300 w-full sm:w-auto"
+                      onClick={openModal}
+                    >
+                      Stress test my current build
+                    </Button>
+                  </div>
+                )}
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
 
-        {/* Right side - Sticky illustration panel */}
-        <div className="hidden lg:flex w-3/5 sticky top-[200px] h-[calc(100vh-200px)] items-center justify-center bg-sand/30 border-l border-border/50">
-          <VisualPanel activeBlock={activeBlock} />
+        {/* Right Sticky Visuals */}
+        <div className="hidden lg:flex lg:w-1/2 sticky top-[120px] h-[calc(100vh-120px)] items-center justify-center border-l border-sand bg-sand/30 px-10">
+          <VisualPanel active={activeBlock} />
         </div>
       </div>
     </section>
