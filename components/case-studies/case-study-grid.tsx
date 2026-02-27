@@ -210,82 +210,100 @@ export function CaseStudyGrid() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-20 text-center"
+          className="mb-24"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-8">
-            <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">Operational Archive</span>
-          </div>
-          <h2 className="font-serif text-4xl md:text-6xl text-warm-gray mb-6 tracking-tighter leading-[0.9]">
-            Case <span className="text-gold italic">Studies</span>
-          </h2>
-          <p className="text-warm-gray font-serif text-lg leading-relaxed">
-            These are not{" "}
-            <span className="text-warm-gray font-bold">&ldquo;look how great we are&rdquo;</span>{" "}
-            case studies.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-[40fr_1fr_59fr] gap-8 lg:gap-16 items-start">
 
-          <p className="text-warm-gray-light font-serif text-base leading-relaxed">
-            They are an{" "}
-            <span className="text-warm-gray font-semibold">exposé of our work, including the parts we got wrong.</span>{" "}
-            You will see what we attempted, the assumptions we carried, the failures we created, what we changed after it broke, and what still does not feel solved.
-            {" "}
-            <span className="text-gold font-bold">No polishing.</span>
-          </p>
+            {/* Left Column: Branding & Title */}
+            <div className="flex flex-col items-start text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-gold border border-gold/15 rounded-full mb-8">
+                <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                <span className="text-[15px] font-black tracking-[0.3em] text-gold uppercase">
+                  Operational Archive
+                </span>
+              </div>
 
-          <p className="text-warm-gray-light font-serif text-base leading-relaxed">
-            The point is reflection, {" "}
-            <span className="text-warm-gray font-semibold">not flex.</span>{" "}
-            We are not trying to win a narrative. We are trying to get better.
-          </p>
+              <h2 className="font-serif text-6xl md:text-8xl lg:text-9xl text-warm-gray tracking-tighter leading-[0.8] mb-4">
+                Case <span className="text-gold italic block lg:inline-block lg:mt-2">Studies</span>
+              </h2>
+            </div>
 
-          {/* Separator */}
-          <div className="flex items-center gap-4 py-2">
-            <div className="flex-1 h-px bg-sand" />
-            <div className="w-1.5 h-1.5 rounded-full bg-gold/40" />
-            <div className="flex-1 h-px bg-sand" />
-          </div>
+            {/* Vertical Spine (Desktop only) / Horizontal (Mobile) */}
+            <div className="relative flex justify-center lg:justify-start h-px lg:h-full lg:min-h-[300px]">
+              <div className="w-full lg:w-px h-px lg:h-full bg-gradient-to-b from-transparent via-gold to-transparent opacity-40 lg:absolute lg:left-0 lg:top-0" />
+              <div className="w-1.5 h-1.5 rounded-full bg-gold absolute top-1/2 left-1/2 lg:left-0 -translate-x-1/2 -translate-y-1/2" />
+            </div>
 
-          <p className="text-sm text-warm-gray-light font-serif italic leading-relaxed mb-6">
-            If this helps your team spot a blind spot, avoid a mistake, or tighten your system, good. If you are already doing this better than us, even better.
-            {" "}
-            <span className="text-warm-gray not-italic font-medium ">
-              We want to learn from you too.
-            </span>
-          </p>
+            {/* Right Column: Narrative Content */}
+            <div className="space-y-6 text-left max-w-2xl">
+              <p className="text-warm-gray font-serif text-xl md:text-2xl leading-relaxed">
+                These are not{" "}
+                <span className="text-warm-gray font-bold">&ldquo;look how great we are&rdquo;</span>{" "}
+                case studies.
+              </p>
 
+              <div className="space-y-6">
+                <p className="text-warm-gray-light font-serif text-base leading-relaxed">
+                  They are an{" "}
+                  <span className="text-warm-gray font-semibold">exposé of our work, including the parts we got wrong.</span>{" "}
+                  You will see what we attempted, the assumptions we carried, the failures we created, what we changed after it broke, and what still does not feel solved.
+                  {" "}
+                  <span className="text-gold font-bold">No polishing.</span>
+                </p>
 
-          {/* HUD Navigation Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-20 bg-[#faf9f6] p-2 rounded-2xl border border-sand shadow-inner max-w-4xl mx-auto">
-            {industries.map((ind) => {
-              const Icon = ind.icon
-              return (
-                <button
-                  key={ind.name}
-                  onClick={() => setActiveCategory(ind.name)}
-                  className={cn(
-                    "relative group flex items-center gap-3 px-5 py-3 rounded-xl transition-all duration-500 overflow-hidden",
-                    activeCategory === ind.name
-                      ? "bg-white shadow-xl border border-sand"
-                      : "hover:bg-white/40"
-                  )}
-                >
-                  <Icon className={cn(
-                    "w-4 h-4 transition-colors duration-500",
-                    activeCategory === ind.name ? "text-gold" : "text-warm-gray/40 group-hover:text-warm-gray"
-                  )} />
-                  <div className="flex flex-col items-start leading-[1]">
-                    <span className={cn(
-                      "text-[10px] font-black uppercase tracking-widest",
-                      activeCategory === ind.name ? "text-warm-gray" : "text-warm-gray/30 group-hover:text-warm-gray/60"
-                    )}>
-                      {ind.name}
-                    </span>
-                  </div>
-                </button>
-              )
-            })}
+                <p className="text-warm-gray-light font-serif text-base leading-relaxed">
+                  The point is reflection, {" "}
+                  <span className="text-warm-gray font-semibold">not flex.</span>{" "}
+                  We are not trying to win a narrative. We are trying to get better.
+                </p>
+
+                {/* Micro-separator for narrative flow */}
+                <div className="w-12 h-px bg-gold/30 my-8" />
+
+                <p className="text-sm text-warm-gray-light font-serif italic leading-relaxed">
+                  If this helps your team spot a blind spot, avoid a mistake, or tighten your system, good. If you are already doing this better than us, even better.
+                  {" "}
+                  <span className="text-warm-gray not-italic font-medium ">
+                    We want to learn from you too.
+                  </span>
+                </p>
+              </div>
+            </div>
           </div>
         </motion.div>
+
+
+        {/* HUD Navigation Filter */}
+        <div className="flex flex-wrap justify-center gap-2 mb-20 bg-[#faf9f6] p-2 rounded-2xl border border-sand shadow-inner max-w-4xl mx-auto">
+          {industries.map((ind) => {
+            const Icon = ind.icon
+            return (
+              <button
+                key={ind.name}
+                onClick={() => setActiveCategory(ind.name)}
+                className={cn(
+                  "relative group flex items-center gap-3 px-5 py-3 rounded-xl transition-all duration-500 overflow-hidden",
+                  activeCategory === ind.name
+                    ? "bg-white shadow-xl border border-sand"
+                    : "hover:bg-white/40"
+                )}
+              >
+                <Icon className={cn(
+                  "w-4 h-4 transition-colors duration-500",
+                  activeCategory === ind.name ? "text-gold" : "text-warm-gray/40 group-hover:text-warm-gray"
+                )} />
+                <div className="flex flex-col items-start leading-[1]">
+                  <span className={cn(
+                    "text-[10px] font-black uppercase tracking-widest",
+                    activeCategory === ind.name ? "text-warm-gray" : "text-warm-gray/30 group-hover:text-warm-gray/60"
+                  )}>
+                    {ind.name}
+                  </span>
+                </div>
+              </button>
+            )
+          })}
+        </div>
 
         <motion.div
           layout
@@ -379,6 +397,6 @@ export function CaseStudyGrid() {
           </div>
         )}
       </div>
-    </section>
+    </section >
   )
 }
