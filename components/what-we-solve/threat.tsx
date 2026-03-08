@@ -249,7 +249,7 @@ export function Threat() {
   const containerRef = useRef(null)
 
   return (
-    <section ref={containerRef} className="py-16 lg:py-24 bg-cream-dark relative overflow-hidden">
+    <section id="challenges" ref={containerRef} className="py-16 lg:py-24 bg-cream-dark relative overflow-hidden">
       {/* Dynamic background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-full blur-[150px] -translate-y-1/2 translate-x-1/3" />
@@ -266,7 +266,7 @@ export function Threat() {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <span className="text-[15px] border border-gold bg-black p-2 rounded-full font-black text-gold uppercase tracking-[0.4em] mb-4">Structural Failure Modes</span>
+          <span className="text-[10px] md:text-[12px] lg:text-[15px] border border-gold bg-black p-2 rounded-full font-black text-gold uppercase tracking-[0.4em] mb-4">Structural Failure Modes</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 text-gold font-black leading-[1.1] mb-6 text-balance">
             Why things go wrong
           </h2>

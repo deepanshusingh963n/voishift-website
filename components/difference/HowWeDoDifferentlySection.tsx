@@ -186,7 +186,7 @@ export const HowWeDoDifferentlySection = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-[#faf9f6]/30 relative overflow-hidden">
+    <section id="approach" className="py-20 bg-[#faf9f6]/30 relative overflow-hidden">
       <BehavioralAnatomy />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">

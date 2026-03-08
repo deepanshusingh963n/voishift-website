@@ -1,0 +1,87 @@
+# VoiShift Lead Capture: Path A Strategy
+
+This document provides a detailed explanation of **Path A**, the recommended lead capture and scheduling workflow for the VoiShift website.
+
+---
+
+## 🌟 Strategy Overview
+**Path A** is designed to maximize lead conversion while providing a premium, high-tech experience. It captures user data *immediately* to prevent lead loss and then seamlessly transitions to a live booking system.
+
+**The Workflow**: 
+1. **CAPTURE**: Custom Form (Name, Email, Phone)
+2. **STORE**: Google Sheets (via Apps Script)
+3. **BOOK**: Calendly (Integrated & Pre-filled)
+4. **QUALIFY**: Voice Bot Link (via Automated Email)
+
+---
+
+## 🚶 The User Journey
+
+### 1. The Interaction
+The user clicks **"Get Started"** on the VoiShift site. A modal appears asking for their basic contact info. This feels like a low-friction "first step."
+
+### 2. The Submission
+When the user clicks **"Continue to Booking"**:
+- **Technically**: A `POST` request is sent to a hidden Google Apps Script URL.
+- **Result**: Their details are instantly added to a private Google Sheet. Even if they close the tab now, you have their info.
+
+### 3. The Seamless Transition
+The form fades away, and the **Calendly Widget** appears inside the same modal. 
+- **The "Magic"**: Your website passes the user's `Name` and `Email` to Calendly. 
+- **The Result**: The user picks a date and time, and their info is already filled out. They just hit **"Confirm."**
+
+### 4. The Value-Add
+Minutes after booking, the user receives an email: *"Hi [Name], I've seen your initial request. Talk to our Strategy AI to prepare for our call."* This proves your technology works before the meeting starts.
+
+---
+
+## 🛠️ Technical Components
+
+### A. Google Apps Script (The Bridge)
+Since VoiShift is a static site (Netlify), it has no backend. The Apps Script acts as your "serverless" backend. It listens for data and writes it to your Google Sheet.
+
+**The Apps Script Logic**:
+```javascript
+function doPost(e) {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  var data = JSON.parse(e.postData.contents);
+  sheet.appendRow([new Date(), data.name, data.email, data.phone]);
+  
+  // Optional: Trigger a confirmation email here
+  return ContentService.createTextOutput("Success");
+}
+```
+
+### B. Next.js Frontend (The UI)
+We use React state to manage the multi-step modal.
+- `step 1`: Show the form.
+- `step 2`: Show a "Connecting to Calendar..." loading spinner.
+- `step 3`: Show the `InlineWidget` from `react-calendly`.
+
+### C. Calendly "Pre-fill"
+This is a standard feature of the Calendly API. We pass an object like this to the widget:
+```javascript
+prefill: {
+  email: "user@example.com",
+  firstName: "John Doe"
+}
+```
+
+---
+
+## 💎 Why Path A is the Best Choice
+
+1.  **Reliability**: Google Sheets is free, robust, and industry-standard.
+2.  **Zero Lead Loss**: You catch the "drop-offs" (people who see the calendar but don't book).
+3.  **High-Tech Brand**: It makes VoiShift look like an integrated, smart system.
+4.  **No Cost**: This entire setup can be run on the free tiers of Google and Calendly.
+
+---
+
+## 📝 Implementation Checklist
+
+1. [ ] **Sheet ID**: Create a Google Sheet and secure the ID.
+2. [ ] **Apps Script URL**: Deploy the script and get the Web App URL.
+3. [ ] **Calendly Link**: Secure your event link.
+4. [ ] **Bot Link**: Have your Voice Bot URL ready.
+5. [ ] **Code Update**: Modify [form.tsx](file:///d:/voishift-website/components/cta/form.tsx) to handle the multi-step logic.

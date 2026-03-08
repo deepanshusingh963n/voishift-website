@@ -129,7 +129,7 @@ const IntegrityBoundaryVisual = () => (
 
 export function Proof() {
   return (
-    <section className="py-20 lg:py-20 bg-white relative overflow-hidden">
+    <section id="proof" className="py-20 lg:py-20 bg-white relative overflow-hidden">
       {/* Background Subtle Elements */}
       <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/concrete-wall.png')]" />
       <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sand to-transparent" />

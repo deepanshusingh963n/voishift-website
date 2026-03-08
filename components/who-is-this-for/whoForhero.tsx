@@ -18,7 +18,7 @@ export default function WhoForHero() {
   ]
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+    <section id="hero" className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
       {/* Background Decorative Grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg width="100%" height="100%">
@@ -29,8 +29,8 @@ export default function WhoForHero() {
         </svg>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-start">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
+        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-24 items-start">
           
           <div>
             
@@ -39,7 +39,7 @@ export default function WhoForHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl lg:text-8xl font-serif text-gold font-black leading-[1.05] tracking-tight mb-8"
+              className="text-4xl md:text-6xl lg:text-8xl font-serif text-gold font-black leading-[1.05] tracking-tight mb-8 text-center lg:text-left"
             >
               Who is this for
             </motion.h1>
@@ -50,24 +50,24 @@ export default function WhoForHero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-8 mb-12"
             >
-              <p className="text-xl lg:text-3xl text-warm-gray font-serif italic leading-tight">
-                This is a filter page. <span className="text-gold not-italic font-black uppercase tracking-widest ml-1">Not a sales pitch.</span>
+              <p className="text-lg lg:text-3xl text-warm-gray font-serif italic leading-tight text-center lg:text-left">
+                This is a filter page. <span className="text-gold not-italic font-black uppercase tracking-wider lg:tracking-widest ml-1">Not a sales pitch.</span>
               </p>
               
-              <div className="p-8 bg-[#faf9f6] border-l-4 border-gold rounded-none relative overflow-hidden">
+              <div className="p-5 lg:p-6 bg-[#faf9f6] border-l-4 border-gold rounded-none relative overflow-hidden mx-auto lg:mx-0">
                  {/* Subtle warning icon in bg */}
-                 <ShieldAlert className="absolute top-1/2 right-4 -translate-y-1/2 w-32 h-32 text-gold/5" />
+                 <ShieldAlert className="absolute top-1/2 right-4 -translate-y-1/2 w-32 h-32 text-gold/5 lg:right-4" />
                  
-                 <p className="text-xl lg:text-2xl text-warm-gray font-serif leading-relaxed relative z-10">
+                 <p className="text-lg lg:text-2xl text-warm-gray font-serif leading-relaxed relative z-10 text-center lg:text-left">
                    "Not everyone should use voice AI yet."
                  </p>
-                 <p className="mt-4 text-warm-gray-light font-serif italic text-lg relative z-10">
+                 <p className="mt-4 mx-auto text-warm-gray-light font-serif italic text-[12px] lg:text-lg relative z-10 text-center lg:text-left">
                    VoiShift is for operators who want voice AI that behaves predictably under pressure, with guardrails, traceability, and proof gates.
                  </p>
               </div>
 
-              <div className="p-8 bg-red-50/50 border border-red-100 rounded-none">
-                <p className="text-lg text-red-900/70 font-serif italic">
+              <div className="p-5 lg:p-8 bg-red-50/50 border border-red-100 rounded-none mx-auto lg:mx-0">
+                <p className="text-lg text-red-900/70 font-serif italic text-center lg:text-left">
                   If you want a quick agent demo and a big launch, <span className="font-black text-red-600 uppercase tracking-widest not-italic">stop here.</span>
                 </p>
               </div>
@@ -77,13 +77,13 @@ export default function WhoForHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap gap-4 justify-center lg:justify-start"
             >
               <Button
                 variant="hero"
                 size="lg"
-                onClick={openModal}
-                className="rounded-none px-8 py-7 text-lg group shadow-xl"
+                onClick={() => openModal()}
+                className="w-full sm:w-auto rounded-none px-6 py-4 md:px-8 md:py-6 lg:px-8 lg:py-7 text-lg group shadow-xl"
               >
                 Book Strategy Session
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -92,7 +92,7 @@ export default function WhoForHero() {
                 variant="heroSecondary"
                 size="lg"
                 asChild
-                className="rounded-none px-8 py-7 text-lg border-2"
+                className="w-full sm:w-auto rounded-none px-6 py-4 md:px-8 md:py-6 lg:px-8 lg:py-7 text-lg border-2"
               >
                 <a href="/how-it-works">
                   How It Works
@@ -108,9 +108,9 @@ export default function WhoForHero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative lg:mt-12"
           >
-            <div className="bg-[#1a1a1a] p-10 lg:p-12 border-2 border-gold/30 shadow-2xl rounded-none relative overflow-hidden">
+            <div className="bg-[#1a1a1a] p-1 lg:p-12 border-2 border-gold/30 shadow-2xl rounded-none relative overflow-hidden">
                {/* Animated HUD Detail */}
-               <div className="absolute top-0 right-0 p-6 flex gap-2">
+               <div className="absolute top-0 right-0 p-4 lg:p-6 flex gap-2">
                  <div className="w-2 h-2 rounded-none bg-gold animate-pulse" />
                  <div className="w-2 h-2 rounded-none bg-gold/30" />
                </div>
@@ -126,17 +126,17 @@ export default function WhoForHero() {
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 + i * 0.1 }}
-                    className={`flex items-start gap-4 p-4 border ${item.allowed ? 'border-gold/20 bg-gold/5' : 'border-red-500/20 bg-red-500/5'} rounded-none group transition-colors`}
+                    className={`flex items-start gap-3 lg:gap-4 p-3 lg:p-4 border ${item.allowed ? 'border-gold/20 bg-gold/5' : 'border-red-500/20 bg-red-500/5'} rounded-none group transition-colors`}
                    >
                      <item.icon className={`w-5 h-5 mt-0.5 ${item.allowed ? 'text-gold' : 'text-red-500'}`} />
-                     <span className={`text-sm font-bold uppercase tracking-wide ${item.allowed ? 'text-white/80' : 'text-white/40 line-through'}`}>
+                     <span className={`text-[11px] lg:text-sm font-bold uppercase tracking-normal lg:tracking-wide ${item.allowed ? 'text-white/80' : 'text-white/40 line-through'}`}>
                        {item.text}
                      </span>
                    </motion.div>
                  ))}
                </div>
 
-               <div className="mt-12 pt-12 border-t border-white/10">
+               <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
                  <div className="flex justify-between items-end">
                    <div>
                      <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] mb-2">Operational_Fit</p>

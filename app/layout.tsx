@@ -9,25 +9,32 @@ const inter = localFont({
   display: 'swap',
 });
 
+const image = "/images/voishift-logo.png"
+
 export const metadata: Metadata = {
   title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
   description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean. Build voice AI that behaves safely when things break.',
   keywords: ['voice AI', 'voice automation', 'AI system', 'voice bot', 'enterprise AI', 'AI safety'],
   authors: [{ name: 'VoiShift' }],
   metadataBase: new URL('https://voishift.com'),
+  icons: {
+    icon: '/images/voishift-logo.png',
+  },
   alternates: {
-    canonical: '/',
+    canonical: './',
   },
   openGraph: {
     title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
     description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.',
     type: 'website',
     siteName: 'VoiShift',
+    images: [image],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
     description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.',
+    images: [image],
   },
 };
 

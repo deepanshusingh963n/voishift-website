@@ -1,5 +1,6 @@
 "use client"
 
+import React from "react"
 import { motion } from "framer-motion"
 import { ShieldCheck, TrendingUp, MonitorCheck, Lock, Layers, History, CheckCircle2, Activity } from "lucide-react"
 
@@ -15,6 +16,11 @@ const outputs = [
 ]
 
 export default function PhaseThreeRollout() {
+  const [mounted, setMounted] = React.useState(false)
+  React.useEffect(() => {
+    setMounted(true)
+  }, [])
+
   return (
     <section id="phase-3" className="bg-white py-24 lg:py-32 relative overflow-hidden">
       {/* Background Section Decor */}
@@ -53,13 +59,19 @@ export default function PhaseThreeRollout() {
                <div className="space-y-8">
                  {/* Drift Graph Placeholder Style */}
                  <div className="relative h-24 flex items-end gap-1 px-2">
-                    {[...Array(20)].map((_, i) => (
+                    {mounted && [...Array(20)].map((_, i) => (
                       <motion.div 
                         key={i}
                         initial={{ height: "10%" }}
                         whileInView={{ height: `${20 + Math.random() * 60}%` }}
                         transition={{ duration: 1, delay: i * 0.05 }}
                         className={`flex-1 rounded-t-sm ${i > 15 ? 'bg-destructive/40' : 'bg-gold'}`}
+                      />
+                    ))}
+                    {!mounted && [...Array(20)].map((_, i) => (
+                      <div 
+                        key={i}
+                        className={`flex-1 h-[10%] rounded-t-sm ${i > 15 ? 'bg-destructive/40' : 'bg-gold'}`}
                       />
                     ))}
                     {/* Baseline Line */}

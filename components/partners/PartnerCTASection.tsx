@@ -2,7 +2,7 @@ import React from 'react';
 
 export function PartnerCTASection() {
     return (
-        <section className="py-24 bg-white relative overflow-hidden">
+        <section id="cta" className="py-24 bg-white relative overflow-hidden">
             {/* Background elements to add VoiShift aesthetic */}
             <div className="absolute top-1/2 left-0 -translate-y-1/2 w-64 h-64 bg-orange-100/50 rounded-full blur-[80px] pointer-events-none" />
             <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 h-64 bg-amber-100/30 rounded-full blur-[80px] pointer-events-none" />

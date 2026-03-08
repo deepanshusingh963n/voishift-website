@@ -4,7 +4,7 @@ import { ContactOptionsSection } from "@/components/contactus/ContactOptionsSect
 import { ContactGlobalReachSection } from "@/components/contactus/ContactGlobalReachSection";
 import { ContactAvailabilitySection } from "@/components/contactus/ContactAvailabilitySection";
 import { ContactFormSection } from "@/components/contactus/ContactFormSection";
-import { Navbar } from '@/components/sections/navbar';
+import { Navbar } from '@/components/contactus/navbar';
 import { Footer } from '@/components/sections/footer';
 
 export const metadata: Metadata = {

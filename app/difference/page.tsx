@@ -2,7 +2,7 @@ import DifferenceHero from "@/components/difference/differenceHero"
 import { Differentiation } from "@/components/difference/differentiation"
 import { HowWeDoDifferentlySection } from "@/components/difference/HowWeDoDifferentlySection"
 import { Proof } from "@/components/difference/proof"
-import { Navbar } from "@/components/sections/navbar"
+import { Navbar } from "@/components/difference/navbar"
 import { Footer } from "@/components/sections/footer"
 
 export const metadata = {

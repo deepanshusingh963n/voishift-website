@@ -672,7 +672,7 @@ export function WhoThisHits() {
   }
 
   return (
-    <section className="py-18 lg:py-20 bg-cream">
+    <section id="operators" className="py-24 bg-[#faf9f6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <h2 className="text-5xl md:text-7xl font-serif text-gold font-black mb-2">Who this hits.</h2>

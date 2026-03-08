@@ -34,7 +34,7 @@ export const WhatWeSolveSection = () => {
   const { openModal } = useModal();
 
   return (
-    <section className="py-40 pb-12 bg-white relative overflow-hidden">
+    <section id="hero" className="py-40 pb-12 bg-white relative overflow-hidden">
       {/* Structural Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(#e5dbba_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.1]" />
@@ -73,7 +73,7 @@ export const WhatWeSolveSection = () => {
               className="mt-10"
             >
               <Button
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="bg-gold text-[#1a1a1a] hover:bg-gold-dark hover:text-white px-8 py-6 rounded-full font-serif text-lg transition-all duration-500 group shadow-xl"
               >
                 Design My System

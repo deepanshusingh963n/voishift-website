@@ -47,7 +47,7 @@ export const WhyWeExistSection = () => {
   const activeData = paths.find((p) => p.id === activePath)!;
 
   return (
-    <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
+    <section id="why-we-exist" className="py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Background markup */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
         <div className="absolute top-0 right-0 w-1/2 h-full border-l border-sand" />

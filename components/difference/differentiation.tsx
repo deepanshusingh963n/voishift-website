@@ -110,7 +110,7 @@ const DisciplineVisual = ({ index }: { index: number }) => {
 
 export function Differentiation() {
   return (
-    <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
+    <section id="disciplines" className="py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Background Accents */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.2]"

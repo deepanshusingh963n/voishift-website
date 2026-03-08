@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 
 export function CaseStudiesHero() {
   return (
-    <section className="relative pt-32 pb-24 px-6 bg-cream overflow-hidden">
+    <section id="hero" className="relative pt-32 pb-20 lg:pt-30 lg:pb-28 overflow-hidden bg-cream-dark">
       {/* Structural Blueprint Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(#e5dbba_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.1]" />

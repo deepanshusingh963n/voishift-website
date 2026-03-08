@@ -7,6 +7,7 @@ import Image from "next/image"
 import { useModal } from "@/context/modal-context"
 import { cn } from "@/lib/utils"
 import {
+  Hammer,
   Truck,
   Factory,
   Stethoscope,
@@ -18,7 +19,9 @@ import {
   Tv2,
   MousePointer2,
   Binary,
-  ArrowRight
+  ArrowRight,
+  Book,
+  HammerIcon
 } from "lucide-react"
 
 interface CaseStudy {
@@ -28,103 +31,99 @@ interface CaseStudy {
   image: string
   description: string
   outcome: string
-  metrics?: string
 }
 
 const industries = [
   { name: "ALL", icon: Binary },
-  { name: "LOGISTICS", icon: Truck },
   { name: "MANUFACTURING", icon: Factory },
-  { name: "HEALTHCARE", icon: Stethoscope },
-  { name: "TELECOM", icon: Wifi },
-  { name: "eCOMMERCE", icon: ShoppingBag },
-  { name: "BFSI", icon: ShieldCheck },
-  { name: "TRAVEL", icon: Globe },
   { name: "TECH/SaaS", icon: Code2 },
-  { name: "MEDIA", icon: Tv2 },
+  { name: "SOCIAL MEDIA MARKETING", icon: Wifi },
+  { name: "PROCUREMENT", icon: Tv2 },
+  { name: "OPERATIONS MANAGEMENT", icon: Truck },
+  { name: "B2B SALES", icon: Tv2 },
+  { name: "EdTech", icon: Book },
 ]
 
 const caseStudies: CaseStudy[] = [
   {
     id: "1",
-    title: "Route Optimization Voice Assistant",
-    category: "LOGISTICS",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
-    description: "Real-time coordination for a fleet of 500+ vehicles using voice-first dispatch.",
-    outcome: "Reduced manual dispatch calls by 70% while improving driver safety.",
-    metrics: "22% fuel cost reduction",
+    title: "Role-Aware Policy, SOP, and Safety Voice Copilot",
+    category: "MANUFACTURING",
+    image: "/Case-studies/Role-Aware Policy, SOP, and Safety Voice Copilot.png",
+    description: "A mobile voice AI app that delivers the correct policy, SOP, or safety answer to employees based on their role, department, and site by retrieving information from the relevant documents.",
+    outcome: "Enabled faster and more accurate policy access, reduced confusion from multiple document versions, and created a clear audit trail of guidance provided.",
   },
   {
     id: "2",
-    title: "Shop Floor Diagnostic Bot",
+    title: "Floor and QA Voice Desk",
     category: "MANUFACTURING",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-    description: "Hands-free diagnostic reporting for heavy machinery operators.",
-    outcome: "Eliminated reporting downtime; technicians log issues via voice mid-repair.",
-    metrics: "15% increase in OEE",
+    image: "/Case-studies/Floor and QA Voice Desk.png",
+    description: "A voice-enabled system that allows floor and QA teams to log downtime, quality holds, and shift handovers in real time while automatically generating structured operational records.",
+    outcome: "Reduced reporting errors and operational confusion by enforcing required checkpoints, capturing accurate records, and improving traceability across production and quality processes.",
   },
   {
     id: "3",
-    title: "Patient Pre-Admission triage",
-    category: "HEALTHCARE",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
-    description: "voice-based triage system for surgical pre-admissions.",
-    outcome: "Shifted 45% of routine data collection away from nursing staff.",
-    metrics: "Zero data entry errors",
+    title: "Contract and Supplier Change Voice Copilot",
+    category: "PROCUREMENT",
+    image: "/Case-studies/Contract and Supplier Change Voice Copilot.png",
+    description: "A voice-enabled copilot that helps procurement and legal teams manage supplier changes and contract clauses by retrieving the correct rules and automatically creating structured approval requests with required context.",
+    outcome: "Accelerated approvals and reduced compliance risks by ensuring complete requests, enforcing required sign-offs, and maintaining a clear traceable record of decisions.",
   },
   {
     id: "4",
-    title: "Automated Service Activation",
-    category: "TELECOM",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800",
-    description: "End-to-end voice-driven troubleshooting and activation.",
-    outcome: "Resolved 60% of common connectivity issues without human agents.",
-    metrics: "4.8/5 CSAT score",
+    title: "Store Performance Voice Analyst",
+    category: "RETAIL",
+    image: "/Case-studies/Store Performance Voice Analyst.png",
+    description: "A voice-powered analytics assistant that helps sales teams analyze store performance, identify sales drivers, and forecast demand by combining sales, inventory, and promotion data.",
+    outcome: "Enabled sales teams to explain performance with data, improve replenishment decisions, and act earlier on stockout risks and demand changes.",
   },
   {
     id: "5",
-    title: "Returns Management Voice Bot",
-    category: "eCOMMERCE",
-    image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&q=80&w=800",
-    description: "Handling peak-season return inquiries via automated voice channels.",
-    outcome: "Processed 10,000+ returns weekly with zero wait times.",
-    metrics: "35% lower return costs",
+    title: "Operational Action Voice Copilot",
+    category: "OPERATIONS MANAGEMENT",
+    image: "/Case-studies/Operational Action Voice Copilot.png",
+    description: "A voice and automation system that captures issues mentioned in calls and converts them into structured actions linked to sites, assets, vendors, and work orders.",
+    outcome: "Improved accountability and operational visibility by assigning clear owners, tracking proof of resolution, and preventing recurring issues from being overlooked.",
   },
   {
     id: "6",
-    title: "Secure Verification Systems",
-    category: "BFSI",
-    image: "https://images.unsplash.com/photo-1550565118-3a14e8d0386f?auto=format&fit=crop&q=80&w=800",
-    description: "Voice-biometric enabled account verification for high-net-worth clients.",
-    outcome: "Increased security while reducing verification friction.",
-    metrics: "99.9% fraud prevention",
+    title: "Buyer Request Capture and Routing Module",
+    category: "B2B SALES",
+    image: "/Case-studies/Buyer Request Capture and Routing Module.png",
+    description: "A system that captures buyer questions from webinars and sales calls, converts them into structured requests, and routes them to the right internal owners with clear deadlines.",
+    outcome: "Improved follow-up execution and buyer experience by ensuring every request is tracked, assigned to the correct team, and resolved with a clear response.",
   },
   {
     id: "7",
-    title: "Dynamic Booking Assistant",
-    category: "TRAVEL",
-    image: "https://images.unsplash.com/photo-1436491865332-7a61a109c0f3?auto=format&fit=crop&q=80&w=800",
-    description: "Multilingual reservation support for global hotel chain.",
-    outcome: "Instant booking confirmations in 12 languages.",
-    metrics: "30% more direct bookings",
+    title: "Voice-First Learner Support Assistant",
+    category: "EdTech",
+    image: "/Case-studies/Voice-First Learner Support Assistant.png",
+    description: "A voice-enabled support assistant integrated into the learner portal and help center that answers student questions using approved lesson content, policies, and FAQs.",
+    outcome: "Reduced support workload and improved learner experience by providing instant, consistent answers while escalating complex cases to human support with full context.",
   },
   {
     id: "8",
-    title: "Developer Documentation Guide",
+    title: "Voice Command and Control Layer for SaaS Analytics",
     category: "TECH/SaaS",
-    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=800",
-    description: "Voice-searchable documentation for rapid API integration.",
-    outcome: "Reduced support tickets for basic implementation queries.",
-    metrics: "50% faster onboarding",
+    image: "/Case-studies/Voice Command and Control Layer for SaaS Analytics.png",
+    description: "A voice-enabled control layer embedded in a SaaS analytics product that lets users execute analysis and configuration tasks by speaking commands instead of navigating complex UI workflows.",
+    outcome: "Reduced workflow friction and improved product adoption by allowing users to move from insight to action faster while keeping all changes visible and reviewable before execution.",
   },
   {
     id: "9",
-    title: "Interactive Content Guide",
-    category: "MEDIA",
-    image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=800",
-    description: "Voice-activated content navigation for streaming platforms.",
-    outcome: "Improved content discoverability for new users.",
-    metrics: "25% higher user retention",
+    title: "Voice Diagnostic Dialogue Layer for SaaS Analytics",
+    category: "TECH/SaaS",
+    image: "/Case-studies/Voice Diagnostic Dialogue Layer for SaaS Analytics.png",
+    description: "A voice-enabled interaction layer inside a diagnostic analytics tool that allows users to question results, add context, and re-run analyses with updated assumptions directly within the product.",
+    outcome: "Improved trust and usability of diagnostic reports by enabling users to challenge insights, apply contextual changes, and generate traceable updated analysis versions.",
+  },
+  {
+    id: "10",
+    title: "Voice Editing Layer for AI Content Tools",
+    category: "SOCIAL MEDIA MARKETING",
+    image: "/Case-studies/Voice Editing Layer for AI Content Tools.png",
+    description: "A voice-based editing layer integrated into a content editor that allows users to refine drafts through spoken instructions instead of repeatedly typing revision prompts.",
+    outcome: "Improved content quality and user engagement by enabling faster revisions, longer iteration cycles, and more precise editing through natural voice commands.",
   },
 ]
 
@@ -195,7 +194,7 @@ export function CaseStudyGrid() {
     : caseStudies.filter(study => study.category === activeCategory)
 
   return (
-    <section className="py-24 px-6 bg-cream relative overflow-hidden">
+    <section id="studies" className="py-24 px-6 bg-white relative overflow-hidden">
       {/* Structural Backdrop */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-px bg-sand/30" />
@@ -274,7 +273,7 @@ export function CaseStudyGrid() {
 
 
         {/* HUD Navigation Filter */}
-        <div className="flex flex-wrap justify-center gap-2 mb-20 bg-[#faf9f6] p-2 rounded-2xl border border-sand shadow-inner max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 lg:flex lg:flex-wrap justify-center gap-2 mb-20 bg-[#faf9f6] p-2 rounded-2xl border border-sand shadow-inner max-w-4xl mx-auto">
           {industries.map((ind) => {
             const Icon = ind.icon
             return (
@@ -282,19 +281,19 @@ export function CaseStudyGrid() {
                 key={ind.name}
                 onClick={() => setActiveCategory(ind.name)}
                 className={cn(
-                  "relative group flex items-center gap-3 px-5 py-3 rounded-xl transition-all duration-500 overflow-hidden",
+                  "relative group flex items-center justify-center lg:justify-start gap-2 lg:gap-3 px-2 lg:px-5 py-3 rounded-xl transition-all duration-500 overflow-hidden",
                   activeCategory === ind.name
                     ? "bg-white shadow-xl border border-sand"
                     : "hover:bg-white/40"
                 )}
               >
                 <Icon className={cn(
-                  "w-4 h-4 transition-colors duration-500",
+                  "w-4 h-4 transition-colors duration-500 flex-shrink-0",
                   activeCategory === ind.name ? "text-gold" : "text-warm-gray/40 group-hover:text-warm-gray"
                 )} />
-                <div className="flex flex-col items-start leading-[1]">
+                <div className="flex flex-col items-start text-left leading-[1]">
                   <span className={cn(
-                    "text-[10px] font-black uppercase tracking-widest",
+                    "text-[9px] lg:text-[10px] font-black uppercase tracking-wider lg:tracking-widest line-clamp-1 break-all lg:break-normal",
                     activeCategory === ind.name ? "text-warm-gray" : "text-warm-gray/30 group-hover:text-warm-gray/60"
                   )}>
                     {ind.name}
@@ -344,16 +343,6 @@ export function CaseStudyGrid() {
                         {study.category}
                       </span>
                     </div>
-
-                    {/* Metrics Floating Badge */}
-                    {study.metrics && (
-                      <div className="absolute bottom-6 left-6">
-                        <div className="bg-gold text-[#1a1a1a] px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-2 group-hover/card:scale-110 transition-transform duration-500">
-                          <div className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] animate-pulse" />
-                          {study.metrics}
-                        </div>
-                      </div>
-                    )}
                   </div>
 
                   <div className="p-10 relative">
@@ -378,7 +367,7 @@ export function CaseStudyGrid() {
                     </div>
 
                     <button
-                      onClick={openModal}
+                      onClick={() => openModal("resource", { name: study.title, type: "Case Study" })}
                       className="flex items-center gap-3 text-xs font-black text-warm-gray uppercase tracking-widest group/btn transition-all"
                     >
                       <span className="border-b-2 border-gold pb-1">Read full story</span>

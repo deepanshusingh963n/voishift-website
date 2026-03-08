@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function ContactHeroSection() {
     return (
-        <section className="relative w-full bg-white pt-32 pb-20 overflow-hidden">
+        <section id="hero" className="relative w-full bg-white pt-32 pb-20 overflow-hidden">
             {/* Abstract Background Element (similar to other VoiShift hero sections) */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[80%] bg-gold/5 rounded-full blur-3xl opacity-50" />

@@ -95,7 +95,7 @@ const EquilibriumBridge = () => (
 
 export const WhoWeAreSection = () => {
   return (
-    <section className="py-20 bg-white relative overflow-hidden">
+    <section id="who-we-are" className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center mb-12">
           {/* Headline & Narrative - Left */}

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, Download, BookOpen, CheckCheck, FileText, ClipboardList, Quote } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { useModal } from "@/context/modal-context"
 
 interface EBook {
     id: string
@@ -136,13 +137,14 @@ function EBookCover({ ebook }: { ebook: EBook }) {
 
 export function EBooksSection() {
     const [openId, setOpenId] = useState<string | null>(null)
+    const { openModal } = useModal()
 
     const toggle = (id: string) => {
         setOpenId((prev) => (prev === id ? null : id))
     }
 
     return (
-        <section className="relative py-24 px-6 bg-white overflow-hidden">
+        <section id="ebooks" className="relative py-24 px-6 bg-white overflow-hidden">
             {/* Structural backdrop lines */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sand to-transparent" />
@@ -347,7 +349,10 @@ export function EBooksSection() {
                                                             </p>
 
                                                             {/* CTA */}
-                                                            <button className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-warm-gray text-white rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-gold hover:text-[#1a1a1a] hover:shadow-lg hover:shadow-gold/20 group/btn">
+                                                            <button 
+                                                                onClick={() => openModal("resource", { name: ebook.title, type: "eBook" })}
+                                                                className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-warm-gray text-white rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-gold hover:text-[#1a1a1a] hover:shadow-lg hover:shadow-gold/20 group/btn"
+                                                            >
                                                                 <Download className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0" />
                                                                 Download eBook
                                                             </button>

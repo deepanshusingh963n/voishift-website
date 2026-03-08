@@ -5,7 +5,7 @@ import { Cloud, KeyRound } from "lucide-react"
 
 export default function BuildHero() {
   return (
-    <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-cream-dark">
+    <section id="hero" className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-cream-dark">
 
       {/* Background HUD Decor */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
@@ -27,7 +27,7 @@ export default function BuildHero() {
               className="flex items-center gap-3 mb-8"
             >
 
-              <span className="text-7xl font-black uppercase tracking-[0.15em] text-gold">
+              <span className="text-5xl md:text-7xl lg:text-7xl font-black uppercase tracking-[0.15em] text-gold">
                 Ownership vs Rental
               </span>
             </motion.div>

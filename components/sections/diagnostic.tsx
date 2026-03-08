@@ -8,7 +8,7 @@ import { useModal } from "@/context/modal-context"
 
 const questionTopics = [
   {
-    text: "If your agent is unsure, can you show exactly where it will guess today?",
+    text: "When numbers spike or drop, how many tabs and exports before you can say “this is why” with proof?",
     icon: Search,
     visual: () => (
       <div className="flex items-center gap-1.5 bg-gold/5 px-2 py-0.5 rounded-full border border-gold/10">
@@ -17,7 +17,7 @@ const questionTopics = [
     )
   },
   {
-    text: "Do you have a written boundary line for what the agent must never do, even if the user pushes?",
+    text: "When you need next week’s plan, how much is evidence, and how much is instinct?",
     icon: Shield,
     visual: () => (
       <div className="flex gap-0.5">
@@ -27,7 +27,7 @@ const questionTopics = [
     )
   },
   {
-    text: "Does your team have a simple pass or fail trust grade before you let it talk to real users?",
+    text: "When something happens on the ground, is it logged in the moment, or reconstructed later from memory?",
     icon: Gauge,
     visual: () => (
       <div className="flex items-center gap-1.5 bg-green-500/5 px-2 py-0.5 rounded-full border border-green-500/10">
@@ -36,7 +36,7 @@ const questionTopics = [
     )
   },
   {
-    text: "If the user stays silent for 4+ seconds, does the agent know what to do next without awkward looping?",
+    text: "When the same issue shows up again, is it treated as an early warning, or a fresh firefight?",
     icon: AlertTriangle,
     visual: () => (
       <div className="flex gap-1 items-center h-4">
@@ -52,7 +52,7 @@ const questionTopics = [
     )
   },
   {
-    text: "If the agent gives a wrong answer, can you trace exactly why that answer was given?",
+    text: "When work needs an owner, how often does it take multiple pings to find who actually owns it?",
     icon: Target,
     visual: () => (
       <div className="flex gap-1 items-center">
@@ -71,7 +71,7 @@ const questionTopics = [
     )
   },
   {
-    text: "Is your end-to-end response time under 800ms for 99% of calls?",
+    text: "When a decision is made, how often does it fail to become a task with an owner and due-by?",
     icon: Clock,
     visual: () => (
       <div className="flex items-center gap-1.5 bg-gold/5 px-2 py-0.5 rounded-full border border-gold/10">
@@ -81,7 +81,7 @@ const questionTopics = [
     )
   },
   {
-    text: "Do you remove or mask PII before anything is sent to the model?",
+    text: "When something is urgent, how often do approvals and updates stall because context is scattered?",
     icon: Lock,
     visual: () => (
       <div className="flex items-center gap-1 text-[8px] font-mono text-warm-gray/30">
@@ -97,7 +97,7 @@ const questionTopics = [
     )
   },
   {
-    text: "Can you update a policy today without retraining anything, and know the change actually took effect?",
+    text: "When someone says “it’s done,” how often is one small step missed and the job still isn’t complete?",
     icon: Zap,
     visual: () => (
       <div className="flex items-center gap-1">
@@ -139,9 +139,9 @@ export function Diagnostic() {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-gold font-black leading-[0.95] mb-8 text-balance max-w-5xl mx-auto tracking-tighter">
             A quick reality check
           </h2>
-          <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
-            Before you book anything, answer five questions. <br className="hidden md:block" />
-            <span className="text-warm-gray not-italic font-black uppercase tracking-tighter decoration-gold/20">Not about tools. About behavior.</span>
+          <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-4xl mx-auto">
+            Before you decide whether to keep reading or move on, answer these. <br className="hidden md:block" />
+            <span className="text-warm-gray not-italic font-black uppercase tracking-tighter decoration-gold/20">About what it takes today to get one decision right and one workflow finished.</span>
           </p>
         </motion.div>
 
@@ -192,7 +192,7 @@ export function Diagnostic() {
           className="text-center space-y-12"
         >
           <p className="text-2xl md:text-3xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
-            If the answers make you feel uncomfortable, <br className="hidden md:block" />
+            If a few of these felt familiar, <br className="hidden md:block" />
             <span className="text-warm-gray not-italic font-black uppercase tracking-tighter text-4xl md:text-5xl">good. That is the point.</span>
           </p>
 
@@ -200,7 +200,7 @@ export function Diagnostic() {
             <Button
               size="lg"
               className="w-full py-12 text-2xl md:text-3xl bg-[#1a1a1a] text-white hover:bg-white hover:text-[#1a1a1a] border-2 border-[#1a1a1a] rounded-[3rem] shadow-2xl active:scale-[0.97] transition-all duration-700 font-serif relative overflow-hidden"
-              onClick={openModal}
+              onClick={() => openModal()}
             >
               <AnimatePresence mode="wait">
                 {isHovered ? (

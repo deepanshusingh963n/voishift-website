@@ -9,7 +9,7 @@ export default function HowHero() {
   const { openModal } = useModal()
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-30 lg:pb-18 overflow-hidden bg-cream-dark">
+    <section id="hero" className="relative pt-32 pb-20 lg:pt-30 lg:pb-18 overflow-hidden bg-cream-dark">
       {/* Background HUD Decor */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2" />
@@ -58,7 +58,7 @@ export default function HowHero() {
             >
               <Button
                 className="bg-gold hover:bg-gold-dark text-warm-gray px-8 py-5 text-lg rounded-xl h-auto"
-                onClick={openModal}
+                onClick={() => openModal()}
               >
                 Let's Build
                 <ArrowRight className="ml-2 w-5 h-5" />

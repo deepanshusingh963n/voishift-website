@@ -5,7 +5,7 @@ import { HelpCircle, CheckCircle2, XCircle, ShieldCheck, Scale, ArrowRight } fro
 
 export default function DecisionFramework() {
   return (
-    <section className="bg-cream-dark py-24 lg:py-32 relative overflow-hidden">
+    <section id="framework" className="bg-cream-dark py-24 lg:py-32 relative overflow-hidden">
       {/* Background HUD Decor */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
            style={{ backgroundImage: 'radial-gradient(#d4af37 1px, transparent 1px)', backgroundSize: '40px 40px' }} />

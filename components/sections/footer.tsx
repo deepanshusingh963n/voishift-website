@@ -5,10 +5,10 @@ import Image from "next/image"
 import { Shield, Lock, Mail, Users } from "lucide-react"
 
 const links = [
-  { label: "Case Studies", href: "/case-studies", icon: Shield },
+  { label: "Resources", href: "/case-studies", icon: Shield },
   { label: "Privacy Policy", href: "/privacy-policy", icon: Lock },
   { label: "Contact", href: "/contact", icon: Mail },
-  { label: "Partners", href: "/partners", icon: Users },
+  //{ label: "Partners", href: "/partners", icon: Users },
 ]
 
 export function Footer() {
@@ -83,7 +83,7 @@ export function Footer() {
           viewport={{ once: true }}
           className="pt-8 border-t border-sand/50 flex flex-col sm:flex-row justify-between items-center gap-4"
         >
-          <p className="text-[10px] font-bold text-warm-gray/30 uppercase tracking-widest">
+          <p className="text-[10px] font-bold text-warm-gray/30 uppercase tracking-widest" suppressHydrationWarning>
             © {new Date().getFullYear()} VoiShift. All rights reserved.
           </p>
           <div className="flex items-center gap-2 opacity-40">

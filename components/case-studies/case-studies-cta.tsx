@@ -180,7 +180,7 @@ export function CaseStudiesCTA() {
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 {/* Tactical Console Buttons */}
                 <button
-                  onClick={openModal}
+                  onClick={() => openModal()}
                   className="group relative flex flex-col items-center justify-center gap-1 px-8 py-5 bg-[#1a1a1a] text-white rounded-2xl transition-all duration-500 hover:bg-gold hover:text-[#1a1a1a] overflow-hidden"
                 >
                   <div className="flex items-center gap-3">
@@ -192,7 +192,7 @@ export function CaseStudiesCTA() {
                 </button>
 
                 <button
-                  onClick={openModal}
+                  onClick={() => openModal()}
                   className="group relative flex flex-col items-center justify-center gap-1 px-8 py-5 border-2 border-gold text-gold rounded-2xl transition-all duration-500 hover:bg-gold/5 overflow-hidden"
                 >
                   <div className="flex items-center gap-3">

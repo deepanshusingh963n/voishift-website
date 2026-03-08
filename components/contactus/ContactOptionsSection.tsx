@@ -41,7 +41,7 @@ export function ContactOptionsSection() {
     ];
 
     return (
-        <section className="py-20 bg-background relative border-t border-border/40">
+        <section id="solutions" className="py-20 bg-background relative border-t border-border/40">
             <div className="section-container">
                 <motion.div
                     className="text-center mb-16"

@@ -121,7 +121,7 @@ const PathOfVeracity = () => (
 
 export function BuiltForTeams() {
     return (
-        <section className="py-20 lg:py-24 bg-white relative overflow-hidden">
+        <section id="teams" className="py-24 bg-white relative overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]" />
             <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gold/5 blur-[120px] rounded-full -translate-y-1/3 translate-x-1/3" />

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ChevronDown, FileText, ExternalLink } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { useModal } from "@/context/modal-context"
 
 interface Whitepaper {
     id: string
@@ -117,13 +118,14 @@ function WhitepaperCover({ paper }: { paper: Whitepaper }) {
 
 export function WhitepapersSection() {
     const [openId, setOpenId] = useState<string | null>(null)
+    const { openModal } = useModal()
 
     const toggle = (id: string) => {
         setOpenId((prev) => (prev === id ? null : id))
     }
 
     return (
-        <section className="relative py-24 px-6 bg-[#faf9f6] overflow-hidden">
+        <section id="whitepapers" className="relative py-24 px-6 bg-[#faf9f6] overflow-hidden">
             {/* Structural backdrop */}
             <div className="absolute inset-0 pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sand to-transparent" />
@@ -133,15 +135,15 @@ export function WhitepapersSection() {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-[50fr_50fr] gap-12 lg:gap-16 items-start">
+                <div className="flex flex-col lg:grid lg:grid-cols-[50fr_50fr] gap-12 lg:gap-16 items-start">
 
-                    {/* ─── LEFT: Accordion Whitepapers ─── */}
+                    {/* ─── LEFT: Accordion Whitepapers (Second on mobile) ─── */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         viewport={{ once: true }}
-                        className="space-y-8 self-start"
+                        className="space-y-8 self-start order-2 lg:order-1"
                     >
                         {whitepapers.map((paper, index) => {
                             const isOpen = openId === paper.id
@@ -252,7 +254,10 @@ export function WhitepapersSection() {
                                                             */}
 
                                                             {/* CTA */}
-                                                            <button className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-warm-gray text-warm-gray rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-warm-gray hover:text-white hover:shadow-lg group/btn">
+                                                            <button 
+                                                                onClick={() => openModal("resource", { name: paper.title, type: "Whitepaper" })}
+                                                                className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-warm-gray text-warm-gray rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-warm-gray hover:text-white hover:shadow-lg group/btn"
+                                                            >
                                                                 <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
                                                                 Read Whitepaper
                                                             </button>
@@ -267,13 +272,13 @@ export function WhitepapersSection() {
                         })}
                     </motion.div>
 
-                    {/* ─── RIGHT: Copy Block ─── */}
+                    {/* ─── RIGHT: Copy Block (First on mobile) ─── */}
                     <motion.div
                         initial={{ opacity: 0, x: 30 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
                         viewport={{ once: true }}
-                        className="lg:sticky lg:top-28 item-start"
+                        className="lg:sticky lg:top-28 item-start order-1 lg:order-2"
                         style={{ willChange: "transform" }}
                     >
                         {/* Label pill */}
@@ -285,7 +290,7 @@ export function WhitepapersSection() {
                         </div>
 
                         {/* Heading */}
-                        <h2 className="font-serif text-7xl md:text-8xl lg:text-9xl text-warm-gray tracking-tighter leading-[0.85] mb-10">
+                        <h2 className="font-serif text-5xl md:text-8xl lg:text-9xl text-warm-gray tracking-tighter leading-[0.9] lg:leading-[0.85] mb-10">
                             White<span className="text-gold italic">papers</span>
                         </h2>
 
@@ -336,6 +341,8 @@ export function WhitepapersSection() {
 
                 </div>
             </div>
+            {/* Mobile-only spacer for floating buttons */}
+            <div className="h-20 lg:hidden" />
         </section>
     )
 }

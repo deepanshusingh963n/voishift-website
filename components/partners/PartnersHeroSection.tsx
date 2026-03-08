@@ -2,7 +2,7 @@ import React from 'react';
 
 export function PartnersHeroSection() {
     return (
-        <section className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-background">
+        <section id="hero" className="relative w-full pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden bg-background">
             {/* Subtle background glow effect consistent with VoiShift aesthetic */}
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1000px] h-[300px] bg-orange-100/50 blur-[100px] rounded-full pointer-events-none opacity-50" />
 

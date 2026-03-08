@@ -11,7 +11,7 @@ import Logo from "@/public/logo.svg";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Resources", href: "/case-studies" },
   { label: "How It Works", href: "/how-it-works" },
   { label: "Our Difference", href: "/difference" },
   { label: "Build Vs Buy", href: "/build-vs-buy" },
@@ -24,8 +24,10 @@ export const Navbar = () => {
   const { openModal } = useModal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -40,8 +42,9 @@ export const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
         ? "bg-cream/95 backdrop-blur-md shadow-sm border-b border-border"
-        : "bg-transparent"
+        : "bg-transparent text-white"
         }`}
+      suppressHydrationWarning
     >
       <div className="max-w-7xl mx-auto px-1">
         <nav className="flex items-center justify-between h-20">
@@ -58,12 +61,13 @@ export const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-10" suppressHydrationWarning>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-warm-gray hover:text-gold transition-colors duration-200"
+                className="text-md md:text-sm lg:text-md font-medium hover:text-gold transition-colors text-center justify-center duration-200"
+                suppressHydrationWarning
               >
                 {link.label}
               </a>
@@ -75,7 +79,7 @@ export const Navbar = () => {
             <Button
               variant="hero"
               size="sm"
-              onClick={openModal}
+              onClick={() => openModal()}
             >
               Book Strategy Session
             </Button>
@@ -112,9 +116,6 @@ export const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4 space-y-3">
-                <Button variant="heroSecondary" className="w-full">
-                  Trust Center
-                </Button>
                 <Button
                   variant="hero"
                   className="w-full"

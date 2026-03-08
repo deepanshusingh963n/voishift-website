@@ -28,7 +28,7 @@ const comparisons = [
 
 export default function PaymentModel() {
   return (
-    <section className="bg-cream-dark py-24 lg:py-32 relative overflow-hidden">
+    <section id="pricing" className="bg-cream-dark py-24 lg:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
         
         <div className="max-w-3xl mx-auto space-y-8 mb-20 animate-fade-in">

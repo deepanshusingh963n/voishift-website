@@ -12,7 +12,7 @@ export default function DifferenceHero() {
   const { openModal } = useModal()
 
   return (
-    <section className="relative pt-32 pb-20 lg:pt-30 lg:pb-28 overflow-hidden bg-cream-dark">
+    <section id="hero" className="relative pt-32 pb-20 lg:pt-30 lg:pb-28 overflow-hidden bg-cream-dark">
       {/* Background HUD Decor */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-none blur-[150px] -translate-y-1/2 translate-x-1/2" />
@@ -37,7 +37,7 @@ export default function DifferenceHero() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-8"
             >
-              <span className="text-7xl font-black uppercase tracking-[0.15em] text-gold">The VoiShift Difference</span>
+              <span className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[0.15em] text-gold">The VoiShift Difference</span>
             </motion.div>
 
             <motion.h1
@@ -70,7 +70,7 @@ export default function DifferenceHero() {
               <Button
                 variant="hero"
                 size="lg"
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="rounded-none px-8 py-7 text-lg group shadow-xl"
               >
                 Design My System

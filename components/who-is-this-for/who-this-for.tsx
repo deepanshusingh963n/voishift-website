@@ -28,7 +28,7 @@ export default function WhoThisIsFor() {
   const [activeTab, setActiveTab] = useState<"for" | "not">("for")
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden">
+    <section id="criteria" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-center mb-8">
           <div className="inline-flex bg-[#faf9f6] p-3 border border-sand shadow-inner relative z-20 rounded-none">

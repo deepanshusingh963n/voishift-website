@@ -16,30 +16,27 @@ import {
 const caseStudies = [
   {
     id: "1",
-    title: "Route Optimization Voice Assistant",
-    category: "LOGISTICS",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800",
-    description: "Real-time coordination for a fleet of 500+ vehicles using voice-first dispatch.",
-    outcome: "Reduced manual dispatch calls by 70% while improving driver safety.",
-    metrics: "22% fuel cost reduction",
+    title: "Role-Aware Policy, SOP, and Safety Voice Copilot",
+    category: "MANUFACTURING",
+    image: "/Case-studies/Role-Aware Policy, SOP, and Safety Voice Copilot.png",
+    description: "A mobile voice AI app that delivers the correct policy, SOP, or safety answer to employees based on their role, department, and site by retrieving information from the relevant documents.",
+    outcome: "Enabled faster and more accurate policy access, reduced confusion from multiple document versions, and created a clear audit trail of guidance provided.",
   },
   {
     id: "2",
-    title: "Shop Floor Diagnostic Bot",
-    category: "MANUFACTURING",
-    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800",
-    description: "Hands-free diagnostic reporting for heavy machinery operators.",
-    outcome: "Eliminated reporting downtime; technicians log issues via voice mid-repair.",
-    metrics: "15% increase in OEE",
+    title: "Store Performance Voice Analyst",
+    category: "RETAIL",
+    image: "/Case-studies/Store Performance Voice Analyst.png",
+    description: "A voice-powered analytics assistant that helps sales teams analyze store performance, identify sales drivers, and forecast demand by combining sales, inventory, and promotion data.",
+    outcome: "Enabled sales teams to explain performance with data, improve replenishment decisions, and act earlier on stockout risks and demand changes.",
   },
   {
     id: "3",
-    title: "Patient Pre-Admission Triage",
-    category: "HEALTHCARE",
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800",
-    description: "Voice-based triage system for surgical pre-admissions.",
-    outcome: "Shifted 45% of routine data collection away from nursing staff.",
-    metrics: "Zero data entry errors",
+    title: "Contract and Supplier Change Voice Copilot",
+    category: "PROCUREMENT",
+    image: "/Case-studies/Contract and Supplier Change Voice Copilot.png",
+    description: "A voice-based system that helps procurement and category teams quickly find contract terms, supplier information, and change request status by retrieving relevant details from contracts, supplier profiles, and change logs.",
+    outcome: "Enabled faster supplier and contract research, reduced time spent searching through documents, and improved responsiveness during supplier discussions and change management processes.",
   },
 ]
 
@@ -93,14 +90,6 @@ export function CaseStudies() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60" />
                 
-                {/* Metrics Badge */}
-                <div className="absolute bottom-6 left-6">
-                  <div className="bg-gold text-[#1a1a1a] px-4 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-2xl flex items-center gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] animate-pulse" />
-                    {study.metrics}
-                  </div>
-                </div>
-
                 {/* Category Tag */}
                 <div className="absolute top-6 left-6">
                   <span className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-md text-[8px] font-mono font-black text-gold uppercase tracking-[0.2em] border border-white/10">

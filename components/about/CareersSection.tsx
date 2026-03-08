@@ -35,7 +35,7 @@ export const CareersSection = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <section className="py-24 bg-cream-dark/50">
+    <section id="careers" className="py-24 bg-cream-dark/50">
       <div className="section-container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

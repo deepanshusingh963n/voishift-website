@@ -14,7 +14,7 @@ export default function RentingAI() {
   ]
 
   return (
-    <section className="bg-white py-24 lg:py-20 relative overflow-hidden">
+    <section id="renting" className="bg-white py-24 lg:py-20 relative overflow-hidden">
       {/* Sharp Grid Pattern Overlay */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '50px 50px' }} />

@@ -15,7 +15,7 @@ export default function BuildingIsOwning() {
   ]
 
   return (
-    <section className="bg-cream-dark py-24 lg:py-32 relative overflow-hidden">
+    <section id="owning" className="py-24 bg-cream relative overflow-hidden">
       {/* Background HUD Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-none blur-[120px] -translate-y-1/2 translate-x-1/2" />
       

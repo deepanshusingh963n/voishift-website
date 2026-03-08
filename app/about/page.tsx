@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { Navbar } from "@/components/sections/navbar";
+import { Navbar } from "@/components/about/navbar";
 import { Footer } from "@/components/sections/footer";
 import { AboutContent } from "@/components/about/AboutContent";
 
