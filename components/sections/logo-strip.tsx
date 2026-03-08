@@ -47,7 +47,7 @@ export function LogoStrip() {
       </div>
 
       {/* Companies Scroll */}
-      <div 
+      <div
         className="relative mb-20"
         onMouseEnter={() => setIsCompaniesHovered(true)}
         onMouseLeave={() => setIsCompaniesHovered(false)}
@@ -91,7 +91,7 @@ export function LogoStrip() {
       </div>
 
       {/* Tools Scroll */}
-      <div 
+      <div
         className="relative mb-20"
         onMouseEnter={() => setIsToolsHovered(true)}
         onMouseLeave={() => setIsToolsHovered(false)}
@@ -141,7 +141,7 @@ export function LogoStrip() {
         className="flex justify-center mt-12"
       >
         <Button
-          onClick={openModal}
+          onClick={() => openModal()}
           size="lg"
           className="bg-gold hover:bg-gold-dark text-warm-gray rounded-lg shadow-sm group"
         >

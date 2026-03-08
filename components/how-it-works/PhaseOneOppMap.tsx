@@ -89,7 +89,7 @@ export default function PhaseOneOppMap() {
               className="pt-4"
             >
               <Button
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="bg-gold hover:bg-gold-dark text-warm-gray px-8 py-5 text-lg rounded-xl h-auto shadow-lg"
               >
                 Map My Highest ROI Opportunity

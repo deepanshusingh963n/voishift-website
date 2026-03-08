@@ -162,7 +162,7 @@ export const HowWeGetPaidSection = () => {
               </p>
 
               <Button
-                onClick={openModal}
+                onClick={() => openModal()}
                 className="bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] px-8 py-6 rounded-lg font-serif text-lg transition-all duration-500 group shadow-xl"
               >
                 Design My System

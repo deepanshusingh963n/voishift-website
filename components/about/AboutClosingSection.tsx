@@ -123,7 +123,7 @@ export const AboutClosingSection = () => {
                     <Button
                       variant="hero"
                       className="w-full bg-white border border-sand text-warm-gray font-black uppercase text-[9px] tracking-widest hover:bg-gold-dark hover:text-white hover:border-gold-dark transition-all duration-300 py-5"
-                      onClick={openModal}
+                      onClick={() => openModal()}
                     >
                       <Calendar className="mr-2 w-3.5 h-3.5" />
                       Book the session
@@ -159,7 +159,7 @@ export const AboutClosingSection = () => {
                     <Button
                       variant="heroSecondary"
                       className="w-full bg-warm-gray text-white border border-warm-gray font-black uppercase text-[9px] tracking-widest hover:bg-gold-dark hover:border-gold-dark transition-all duration-300 py-5"
-                      onClick={openModal}
+                      onClick={() => openModal()}
                     >
                       <Shield className="mr-2 w-3.5 h-3.5" />
                       Stress test build

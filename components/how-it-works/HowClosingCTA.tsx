@@ -40,7 +40,7 @@ export default function HowClosingCTA() {
                 <Button
                   size="lg"
                   className="bg-gold hover:bg-gold-dark text-warm-gray px-10 py-8 text-xl rounded-2xl h-auto transition-transform hover:scale-105"
-                  onClick={openModal}
+                  onClick={() => openModal()}
                 >
                   Get Started
                   <ArrowRight className="ml-3 w-6 h-6" />
@@ -49,7 +49,7 @@ export default function HowClosingCTA() {
                   variant="outline"
                   size="lg"
                   className="border-white/20 text-white hover:bg-gold px-10 py-8 text-xl rounded-2xl h-auto bg-transparent"
-                  onClick={openModal}
+                  onClick={() => openModal()}
                 >
                   Stress Test My Build
                 </Button>

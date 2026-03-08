@@ -5,35 +5,67 @@ import { Linkedin } from "lucide-react";
 const teamMembers = [
   {
     id: 1,
-    name: "Sarah Chen",
-    role: "Founder & CEO",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=500&fit=crop&crop=face",
-    linkedin: "https://linkedin.com/in/",
-    bio: "With 15+ years in enterprise AI and operations, Sarah leads VoiShift's mission to make voice AI systems that behave reliably under real-world pressure. Previously led automation initiatives at Fortune 500 companies.",
+    name: "Vivek",
+    role: "Chief Technical Officer",
+    image: "/team/Vivek.png",
+    linkedin: "https://www.linkedin.com/in/vivekrungta/",
+    bio: "Architecting the technical foundation of VoiShift, ensuring our voice systems translate raw AI capability into reliable, high-pressure operational reality.",
   },
   {
     id: 2,
-    name: "Michael Torres",
-    role: "Chief Technology Officer",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face",
-    linkedin: "https://linkedin.com/in/",
-    bio: "Michael architects VoiShift's core systems with a focus on reliability and traceability. His background spans distributed systems, ML infrastructure, and building platforms that scale without breaking trust.",
+    name: "Neil Roy",
+    role: "VP Sales",
+    image: "/team/Neil.png",
+    linkedin: "https://www.linkedin.com/in/klyrr/",
+    bio: "Driving VoiShift’s global reach by helping enterprises bridge the gap between AI hype and practical, high-stakes voice automation.",
   },
   {
     id: 3,
-    name: "Elena Rodriguez",
-    role: "VP, Product & Design",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=500&fit=crop&crop=face",
-    linkedin: "https://linkedin.com/in/",
-    bio: "Elena shapes how teams interact with VoiShift's tools, ensuring complexity stays manageable. She brings 12 years of experience designing enterprise products that people actually want to use.",
+    name: "Pankaj",
+    role: "Full Stack Developer",
+    image: "/team/Pankaj.png",
+    linkedin: "https://www.linkedin.com/in/iampankajt/",
+    bio: "Building robust, end-to-end interfaces that provide transparency and control over complex AI-driven voice interactions.",
   },
   {
     id: 4,
-    name: "David Kim",
-    role: "VP, Engineering",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
-    linkedin: "https://linkedin.com/in/",
-    bio: "David leads the engineering team building voice AI systems that know when to stop. His expertise in conversation systems and safety-critical software informs VoiShift's technical approach.",
+    name: "Varsha Goel",
+    role: "Business Operations",
+    image: "/team/Varsha Goel.png",
+    linkedin: "https://www.linkedin.com/in/varsha-goel-47635bb1/",
+    bio: "Driving VoiShift’s operational efficiency, ensuring that our technology is matched by seamless execution and scalable processes.",
+  },
+  {
+    id: 5,
+    name: "Harshveer Singh",
+    role: "AI Engineer",
+    image: "/team/Harshveer.png",
+    linkedin: "https://www.linkedin.com/in/harshveer-singh-1a6912205/",
+    bio: "Optimizing the core models and logic lattices that enable VoiShift to handle unpredictable real-world voice environments with high precision.",
+  },
+  {
+    id: 6,
+    name: "Deepanshu Singh",
+    role: "AI Engineer",
+    image: "/team/Deepanshu.png",
+    linkedin: "https://www.linkedin.com/in/deepanshu-singh-ab0249148/",
+    bio: "Focusing on the reliability and safety of our AI systems, ensuring that every voice interaction remains consistent and checkable.",
+  },
+  {
+    id: 7,
+    name: "Anubhav",
+    role: "Marketing & Growth",
+    image: "/team/Anubhav.png",
+    linkedin: "https://www.linkedin.com/in/anubhav--gautam/",
+    bio: "Driving VoiShift’s market presence, translating our technical innovation into clear value for enterprise partners.",
+  },
+  {
+    id: 8,
+    name: "Pintu Kumar",
+    role: "Full Stack Developer",
+    image: "/team/Pintu Kumar.png",
+    linkedin: "https://www.linkedin.com/in/pintu-kumar-627128121/",
+    bio: "Engineering the modular components that ensure VoiShift stays robust across various platforms and edge cases.",
   },
 ];
 
@@ -120,7 +152,7 @@ export const LeadershipSection = () => {
                 onMouseLeave={() => setHoveredId(null)}
               >
                 <div className="relative bg-white rounded-[2.5rem] border border-sand p-6 h-full transition-all duration-700 group-hover:shadow-2xl group-hover:border-gold-dark/30 group-hover:bg-[#faf9f6]/30 overflow-hidden">
-                  <ArchetypeVisual type={index} isHovered={isHovered} />
+                  <ArchetypeVisual type={index % 4} isHovered={isHovered} />
 
                   {/* Portrait Panel */}
                   <div className="relative z-10 mb-8 rounded-[2rem] overflow-hidden aspect-[4/5] border border-sand shadow-sm transition-all duration-700 group-hover:rounded-[1.5rem]">

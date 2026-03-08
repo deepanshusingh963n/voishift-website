@@ -20,19 +20,29 @@ export function CTAFormModal() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState<E164Number | undefined>(undefined)
+    const [company, setCompany] = useState("")
+    const [jobTitle, setJobTitle] = useState("")
+    const [message, setMessage] = useState("")
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault()
         setIsLoading(true)
 
         try {
-            const response = await fetch("https://script.google.com/macros/s/AKfycbxLRq0GrmChpPv6v1Z3QFkCsEdXMtNUNfsI28y4aZQgjFMEnajzkow-QtEV9jPde_MHGg/exec", {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbyp2UbVaxo2WvyPftf_Yyb-U1NvlmGSt7ZfqEiMa9zrYkQiorT8i2Lb4yZn5iOtJSXAZA/exec", {
                 method: "POST",
                 mode: "no-cors",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify({ name, email, phone: phone || "" }),
+                body: JSON.stringify({
+                    name,
+                    email,
+                    phone: phone || "",
+                    company,
+                    jobTitle,
+                    message
+                }),
             })
 
             console.log("Form submitted successfully")
@@ -47,6 +57,9 @@ export function CTAFormModal() {
                     setName("")
                     setEmail("")
                     setPhone(undefined)
+                    setCompany("")
+                    setJobTitle("")
+                    setMessage("")
                     setIsLoading(false)
                 }, 500)
             }, 2500)
@@ -66,7 +79,7 @@ export function CTAFormModal() {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={closeModal}
+                        onClick={() => closeModal()}
                         className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
                     />
 
@@ -78,23 +91,23 @@ export function CTAFormModal() {
                             exit={{ opacity: 0, scale: 0.9, y: 20 }}
                             className={cn(
                                 "bg-cream border border-gold/30 rounded-2xl shadow-2xl w-full overflow-hidden pointer-events-auto relative",
-                                modalType === "resource" ? "max-w-2xl" : "max-w-md"
+                                modalType === "resource" ? "max-w-2xl" : "max-w-xl"
                             )}
                         >
                             {/* Close Button */}
                             <button
-                                onClick={closeModal}
+                                onClick={() => closeModal()}
                                 className="absolute top-4 right-4 text-warm-gray-light hover:text-gold transition-colors p-1 z-50"
                                 aria-label="Close modal"
                             >
                                 <X className="w-6 h-6" />
                             </button>
 
-                            <div className="p-6 md:p-8">
+                            <div className="p-6 md:p-8 max-h-[90vh] overflow-y-auto custom-scrollbar">
                                 {modalType === "resource" && resourceData ? (
-                                    <ResourceDownloadForm 
-                                        resourceName={resourceData.name} 
-                                        resourceType={resourceData.type} 
+                                    <ResourceDownloadForm
+                                        resourceName={resourceData.name}
+                                        resourceType={resourceData.type}
                                     />
                                 ) : (
                                     <AnimatePresence mode="wait">
@@ -112,48 +125,88 @@ export function CTAFormModal() {
                                                     Secure your strategy session and build voice AI that holds up.
                                                 </p>
 
-                                                <form onSubmit={handleSubmit} className="space-y-6">
+                                                <form onSubmit={handleSubmit} className="space-y-4">
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        <div className="space-y-2">
+                                                            <Label htmlFor="name" className="text-warm-gray">Full Name</Label>
+                                                            <Input
+                                                                id="name"
+                                                                placeholder="John Doe"
+                                                                required
+                                                                value={name}
+                                                                onChange={(e) => setName(e.target.value)}
+                                                                className="bg-transparent border-gold/20 focus:border-gold transition-all"
+                                                            />
+                                                        </div>
+
+                                                        <div className="space-y-2">
+                                                            <Label htmlFor="email" className="text-warm-gray">Work Email</Label>
+                                                            <Input
+                                                                id="email"
+                                                                type="email"
+                                                                placeholder="john@example.com"
+                                                                required
+                                                                value={email}
+                                                                onChange={(e) => setEmail(e.target.value)}
+                                                                className="bg-transparent border-gold/20 focus:border-gold transition-all"
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        <div className="space-y-2">
+                                                            <Label htmlFor="phone" className="text-warm-gray">Phone Number</Label>
+                                                            <PhoneInput
+                                                                id="phone"
+                                                                international
+                                                                defaultCountry="US"
+                                                                value={phone}
+                                                                onChange={setPhone}
+                                                                className="voishift-phone-input"
+                                                            />
+                                                        </div>
+
+                                                        <div className="space-y-2">
+                                                            <Label htmlFor="company" className="text-warm-gray">Company Name</Label>
+                                                            <Input
+                                                                id="company"
+                                                                placeholder="Acme Corp"
+                                                                required
+                                                                value={company}
+                                                                onChange={(e) => setCompany(e.target.value)}
+                                                                className="bg-transparent border-gold/20 focus:border-gold transition-all"
+                                                            />
+                                                        </div>
+                                                    </div>
+
                                                     <div className="space-y-2">
-                                                        <Label htmlFor="name" className="text-warm-gray">Full Name</Label>
+                                                        <Label htmlFor="jobTitle" className="text-warm-gray">Job Title</Label>
                                                         <Input
-                                                            id="name"
-                                                            placeholder="John Doe"
+                                                            id="jobTitle"
+                                                            placeholder="Director of Operations"
                                                             required
-                                                            value={name}
-                                                            onChange={(e) => setName(e.target.value)}
+                                                            value={jobTitle}
+                                                            onChange={(e) => setJobTitle(e.target.value)}
                                                             className="bg-transparent border-gold/20 focus:border-gold transition-all"
                                                         />
                                                     </div>
 
                                                     <div className="space-y-2">
-                                                        <Label htmlFor="email" className="text-warm-gray">Email Address</Label>
-                                                        <Input
-                                                            id="email"
-                                                            type="email"
-                                                            placeholder="john@example.com"
+                                                        <Label htmlFor="message" className="text-warm-gray">Message</Label>
+                                                        <textarea
+                                                            id="message"
+                                                            placeholder="Tell us about your project..."
                                                             required
-                                                            value={email}
-                                                            onChange={(e) => setEmail(e.target.value)}
-                                                            className="bg-transparent border-gold/20 focus:border-gold transition-all"
-                                                        />
-                                                    </div>
-
-                                                    <div className="space-y-2">
-                                                        <Label htmlFor="phone" className="text-warm-gray">Phone Number</Label>
-                                                        <PhoneInput
-                                                            id="phone"
-                                                            international
-                                                            defaultCountry="US"
-                                                            value={phone}
-                                                            onChange={setPhone}
-                                                            className="voishift-phone-input"
+                                                            value={message}
+                                                            onChange={(e) => setMessage(e.target.value)}
+                                                            className="flex min-h-[80px] w-full rounded-md border border-gold/20 bg-transparent px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/20 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 focus:border-gold transition-all"
                                                         />
                                                     </div>
 
                                                     <Button
                                                         type="submit"
                                                         disabled={isLoading}
-                                                        className="w-full bg-gold hover:bg-gold-dark text-warm-gray font-semibold h-12 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
+                                                        className="w-full bg-gold hover:bg-gold-dark text-warm-gray font-semibold h-12 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed mt-4"
                                                     >
                                                         {isLoading ? "Sending..." : "Send My Request"}
                                                     </Button>

@@ -3,15 +3,17 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Shield, Lock, Mail, Users } from "lucide-react"
+import { useModal } from "@/context/modal-context"
 
 const links = [
   { label: "Resources", href: "/case-studies", icon: Shield },
   { label: "Privacy Policy", href: "/privacy-policy", icon: Lock },
-  { label: "Contact", href: "/contact", icon: Mail },
+  { label: "Contact", href: "#", icon: Mail, isModalTrigger: true },
   //{ label: "Partners", href: "/partners", icon: Users },
 ]
 
 export function Footer() {
+  const { openModal } = useModal()
   return (
     <footer className="py-12 lg:py-14 bg-[#faf9f6] border-t border-sand">
       <div className="max-w-7xl mx-auto px-6">
@@ -54,16 +56,30 @@ export function Footer() {
                 Resources
               </h3>
               <div className="flex flex-col gap-3">
-                {links.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.href}
-                    className="text-sm text-warm-gray hover:text-gold transition-colors duration-200 flex items-center gap-2 group"
-                  >
-                    <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" />
-                    <span>{link.label}</span>
-                  </a>
-                ))}
+                {links.map((link, index) => {
+                  if (link.isModalTrigger) {
+                    return (
+                      <button
+                        key={index}
+                        onClick={() => openModal()}
+                        className="text-sm text-warm-gray hover:text-gold transition-colors duration-200 flex items-center gap-2 group text-left"
+                      >
+                        <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" />
+                        <span>{link.label}</span>
+                      </button>
+                    )
+                  }
+                  return (
+                    <a
+                      key={index}
+                      href={link.href}
+                      className="text-sm text-warm-gray hover:text-gold transition-colors duration-200 flex items-center gap-2 group"
+                    >
+                      <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" />
+                      <span>{link.label}</span>
+                    </a>
+                  )
+                })}
               </div>
             </div>
 

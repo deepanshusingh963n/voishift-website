@@ -9,7 +9,7 @@ const inter = localFont({
   display: 'swap',
 });
 
-const image = "/images/voishift-logo.png"
+const image = "/voishift.png"
 
 export const metadata: Metadata = {
   title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   authors: [{ name: 'VoiShift' }],
   metadataBase: new URL('https://voishift.com'),
   icons: {
-    icon: '/images/voishift-logo.png',
+    icon: '/voishift.png',
   },
   alternates: {
     canonical: './',

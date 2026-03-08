@@ -111,7 +111,7 @@ export const CareersSection = () => {
                   <Button
                     variant="hero"
                     className="w-full md:w-auto bg-[#1a1a1a] text-white hover:bg-gold py-8 px-10 rounded-xl transition-all duration-500 font-serif text-xl shadow-xl"
-                    onClick={openModal}
+                    onClick={() => openModal()}
                   >
                     Make yourself impossible to ignore - connect on LinkedIn
                   </Button>
