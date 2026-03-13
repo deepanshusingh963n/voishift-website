@@ -5,27 +5,27 @@ import { Linkedin } from "lucide-react";
 const teamMembers = [
   {
     id: 1,
-    name: "Vivek",
-    role: "Chief Technical Officer",
-    image: "/team/Vivek.png",
-    linkedin: "https://www.linkedin.com/in/vivekrungta/",
-    bio: "Architecting the technical foundation of VoiShift, ensuring our voice systems translate raw AI capability into reliable, high-pressure operational reality.",
-  },
-  {
-    id: 2,
     name: "Neil Roy",
     role: "VP Sales",
     image: "/team/Neil.png",
     linkedin: "https://www.linkedin.com/in/klyrr/",
-    bio: "Driving VoiShift’s global reach by helping enterprises bridge the gap between AI hype and practical, high-stakes voice automation.",
+    bio: "Heading VoiShift’s global service delivery, managing strategic client partnerships to transform high-stakes voice automation from a concept into a reliable operational service.",
+  },
+  {
+    id: 2,
+    name: "Vivek Rungta",
+    role: "Principal Consultant",
+    image: "/team/Vivek.png",
+    linkedin: "https://www.linkedin.com/in/vivekrungta/",
+    bio: "Leading the engineering of bespoke technical solutions, ensuring our service delivery translates complex AI capabilities into high-pressure operational reality for every client.",
   },
   {
     id: 3,
-    name: "Pankaj",
+    name: "Pankaj T.",
     role: "Full Stack Developer",
     image: "/team/Pankaj.png",
     linkedin: "https://www.linkedin.com/in/iampankajt/",
-    bio: "Building robust, end-to-end interfaces that provide transparency and control over complex AI-driven voice interactions.",
+    bio: "Crafting custom-built interfaces and transparency tools that allow clients to monitor and manage their bespoke AI voice services with precision.",
   },
   {
     id: 4,
@@ -33,7 +33,7 @@ const teamMembers = [
     role: "Business Operations",
     image: "/team/Varsha Goel.png",
     linkedin: "https://www.linkedin.com/in/varsha-goel-47635bb1/",
-    bio: "Driving VoiShift’s operational efficiency, ensuring that our technology is matched by seamless execution and scalable processes.",
+    bio: "Directing VoiShift’s service operations, ensuring that every client engagement is backed by seamless execution, quality assurance, and scalable delivery workflows.",
   },
   {
     id: 5,
@@ -41,7 +41,7 @@ const teamMembers = [
     role: "AI Engineer",
     image: "/team/Harshveer.png",
     linkedin: "https://www.linkedin.com/in/harshveer-singh-1a6912205/",
-    bio: "Optimizing the core models and logic lattices that enable VoiShift to handle unpredictable real-world voice environments with high precision.",
+    bio: "Adapting and fine-tuning AI logic lattices to meet specific client needs, ensuring our delivered services remain high-precision across diverse real-world environments.",
   },
   {
     id: 6,
@@ -49,15 +49,15 @@ const teamMembers = [
     role: "AI Engineer",
     image: "/team/Deepanshu.png",
     linkedin: "https://www.linkedin.com/in/deepanshu-singh-ab0249148/",
-    bio: "Focusing on the reliability and safety of our AI systems, ensuring that every voice interaction remains consistent and checkable.",
+    bio: "Managing the integrity and ethical alignment of our AI service deployments, ensuring every delivered voice interaction meets rigorous enterprise standards.",
   },
   {
     id: 7,
-    name: "Anubhav",
+    name: "Anubhav Gautam",
     role: "Marketing & Growth",
     image: "/team/Anubhav.png",
     linkedin: "https://www.linkedin.com/in/anubhav--gautam/",
-    bio: "Driving VoiShift’s market presence, translating our technical innovation into clear value for enterprise partners.",
+    bio: "Leading client growth and strategy, helping enterprise partners navigate the move to automated voice services with clear, value-driven implementation roadmaps.",
   },
   {
     id: 8,
@@ -65,7 +65,7 @@ const teamMembers = [
     role: "Full Stack Developer",
     image: "/team/Pintu Kumar.png",
     linkedin: "https://www.linkedin.com/in/pintu-kumar-627128121/",
-    bio: "Engineering the modular components that ensure VoiShift stays robust across various platforms and edge cases.",
+    bio: "Specializing in the deployment of robust, cross-platform technical architectures that power VoiShift’s bespoke service implementations for modern enterprises.",
   },
 ];
 
@@ -136,7 +136,7 @@ export const LeadershipSection = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 items-start">
           {teamMembers.map((member, index) => {
             const isHovered = hoveredId === member.id;
 
@@ -151,7 +151,7 @@ export const LeadershipSection = () => {
                 onMouseEnter={() => setHoveredId(member.id)}
                 onMouseLeave={() => setHoveredId(null)}
               >
-                <div className="relative bg-white rounded-[2.5rem] border border-sand p-6 h-full transition-all duration-700 group-hover:shadow-2xl group-hover:border-gold-dark/30 group-hover:bg-[#faf9f6]/30 overflow-hidden">
+                <div className="relative bg-white rounded-[2.5rem] border border-sand p-6 transition-all duration-700 group-hover:shadow-2xl group-hover:border-gold-dark/30 group-hover:bg-[#faf9f6]/30 overflow-hidden">
                   <ArchetypeVisual type={index % 4} isHovered={isHovered} />
 
                   {/* Portrait Panel */}

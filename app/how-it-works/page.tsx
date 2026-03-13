@@ -4,7 +4,7 @@ import PhaseTwoSandbox from "@/components/how-it-works/PhaseTwoSandbox"
 import PhaseThreeRollout from "@/components/how-it-works/PhaseThreeRollout"
 import PaymentModel from "@/components/how-it-works/PaymentModel"
 import HowClosingCTA from "@/components/how-it-works/HowClosingCTA"
-import { Navbar } from "@/components/how-it-works/navbar"
+import { Navbar } from "@/components/sections/navbar"
 import { Footer } from "@/components/sections/footer"
 
 export const metadata = {

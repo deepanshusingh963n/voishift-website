@@ -2,7 +2,7 @@
 
 import React, { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, CheckCircle2, Loader2 } from "lucide-react"
+import { X, CheckCircle2, Loader2, Check } from "lucide-react"
 import { InlineWidget } from "react-calendly"
 import { useModal } from "@/context/modal-context"
 import { Button } from "@/components/ui/button"
@@ -197,10 +197,27 @@ export function CTAFormModal() {
                                                         />
                                                     </div>
 
+                                                    {/* Permission Protocol */}
+                                                    <div className="py-2">
+                                                        <label className="flex items-start gap-3 cursor-pointer group">
+                                                            <div className="relative flex items-center mt-1">
+                                                                <input
+                                                                    type="checkbox"
+                                                                    required
+                                                                    className="peer h-4 w-4 border border-sand rounded bg-white checked:bg-gold checked:border-gold transition-all appearance-none cursor-pointer"
+                                                                />
+                                                                <Check className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none left-0.5" />
+                                                            </div>
+                                                            <span className="text-[11px] leading-relaxed text-warm-gray-light font-serif italic">
+                                                                I agree to the VoiShift data storage protocol. Please contact me regarding my request and include me in future research updates and unpolished field reports.
+                                                            </span>
+                                                        </label>
+                                                    </div>
+
                                                     <Button
                                                         type="submit"
                                                         disabled={isLoading}
-                                                        className="w-full bg-gold hover:bg-gold-dark text-warm-gray font-semibold h-12 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed mt-4"
+                                                        className="w-full bg-gold hover:bg-gold-dark text-warm-gray font-semibold h-12 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed mt-2"
                                                     >
                                                         {isLoading ? "Sending..." : "Continue to Booking"}
                                                     </Button>

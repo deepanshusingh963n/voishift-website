@@ -3,7 +3,7 @@ import RentingAI from "@/components/build-vs-buy/RentingAI"
 import BuildingIsOwning from "@/components/build-vs-buy/BuildingIsOwning"
 import PainPoints from "@/components/build-vs-buy/PainPoints"
 import DecisionFramework from "@/components/build-vs-buy/DecisionFramework"
-import { Navbar } from "@/components/build-vs-buy/navbar"
+import { Navbar } from "@/components/sections/navbar"
 import { Footer } from "@/components/sections/footer"
 
 export const metadata = {

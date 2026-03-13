@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { Navbar } from '@/components/partners/navbar';
+import { Navbar } from '@/components/sections/navbar';
 import { Footer } from '@/components/sections/footer';
 import { PartnersHeroSection } from '@/components/partners/PartnersHeroSection';
 import { PartnerProgramsSection } from '@/components/partners/PartnerProgramsSection';

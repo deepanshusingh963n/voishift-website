@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, CheckCircle, Target, Users } from "lucide-react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/context/modal-context";
 import Logo from "@/public/logo.svg";
@@ -11,11 +12,14 @@ import Logo from "@/public/logo.svg";
 import { navLinks } from "@/constants/nav-data";
 
 export const Navbar = () => {
+  const pathname = usePathname();
   const { openModal } = useModal();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeHover, setActiveHover] = useState<string | null>(null);
   const [mounted, setMounted] = useState(false);
+
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     setMounted(true);
@@ -26,6 +30,10 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const textColor = isScrolled 
+    ? "text-warm-gray" 
+    : (isHomePage ? "text-white" : "text-black");
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -33,8 +41,8 @@ export const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
         ? "bg-cream/95 backdrop-blur-md shadow-sm border-b border-border"
-        : "bg-transparent text-white"
-        }`}
+        : "bg-transparent"
+        } ${textColor}`}
       suppressHydrationWarning
     >
       <div className="max-w-7xl mx-auto px-1">

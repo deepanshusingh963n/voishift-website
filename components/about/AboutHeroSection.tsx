@@ -61,7 +61,7 @@ export const AboutHeroSection = () => {
             className="mb-10"
           >
             <div className="inline-flex items-center gap-2 px-3 py-1 mb-8">
-              <span className="text-2xl font-black text-warm-gray-light uppercase tracking-widest">What We Stand For</span>
+              <span className="text-2xl lg:text-5xl font-black text-gold uppercase tracking-widest">What We Stand For</span>
             </div>
 
             <h1 className="text-xl md:text-3xl font-serif font-black text-warm-gray mb-12">

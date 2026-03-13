@@ -1,5 +1,5 @@
 import { Metadata } from "next"
-import { Navbar } from "@/components/case-studies/navbar"
+import { Navbar } from "@/components/sections/navbar"
 import { CaseStudiesHero } from "@/components/case-studies/case-studies-hero"
 import { CaseStudyGrid } from "@/components/case-studies/case-study-grid"
 import { EBooksSection } from "@/components/case-studies/ebooks-section"

@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { Navbar } from "@/components/what-we-solve/navbar"
+import { Navbar } from "@/components/sections/navbar"
 import { WhatWeSolveSection } from "@/components/what-we-solve/WhatWeSolveSection"
 import { Threat } from "@/components/what-we-solve/threat"
 import { VoiShiftIntro } from "@/components/what-we-solve/voisshift-intro"

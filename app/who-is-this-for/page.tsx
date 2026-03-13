@@ -1,7 +1,7 @@
 import WhoForHero from "@/components/who-is-this-for/whoForhero"
 import { WhoThisHits } from "@/components/who-is-this-for/who-this-hits"
 import WhoThisIsFor from "@/components/who-is-this-for/who-this-for"
-import { Navbar } from "@/components/who-is-this-for/navbar"
+import { Navbar } from "@/components/sections/navbar"
 import { Footer } from "@/components/sections/footer"
 
 export const metadata = {
