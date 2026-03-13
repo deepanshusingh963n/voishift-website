@@ -71,7 +71,7 @@ export default function DifferenceHero() {
                 variant="hero"
                 size="lg"
                 onClick={() => openModal()}
-                className="rounded-none px-8 py-7 text-lg group shadow-xl"
+                className="rounded-none px-8 py-7 text-lg group hover:bg-black hover:text-white transition-colors shadow-xl"
               >
                 Design My System
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -80,7 +80,7 @@ export default function DifferenceHero() {
                 variant="heroSecondary"
                 size="lg"
                 asChild
-                className="rounded-none px-8 py-7 text-lg group border-2"
+                className="rounded-none px-8 py-7 text-lg group hover:bg-gold hover:text-white border-2 shadow-xl"
               >
                 <a href="/case-studies">
                   View Case Studies

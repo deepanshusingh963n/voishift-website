@@ -202,10 +202,10 @@ export function SubHero() {
   return (
     <section ref={containerRef} className="relative bg-cream-dark">
       {/* Sticky Heading */}
-      <div className="sticky top-12 lg:top-14 z-40 bg-white border-b border-sand px-6 py-8 text-center">
-        <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-serif font-black text-gold leading-tight max-w-7xl mx-auto">
-          Most teams install a “plug-n-play” voice bot & call it “AI transformation.”
-          But “plug-n-play” also means “plug-n-play” failure modes.
+      <div className="sticky top-14 lg:top-16 z-40 bg-white border-b border-sand px-6 py-8 text-center">
+        <h2 className="text-xl sm:text-xl md:text-2xl lg:text-3xl font-serif font-black text-gold leading-tight max-w-7xl lg:max-w-5xl mx-auto">
+          Most teams install a <span className="text-warm-gray">plug-n-play</span> voice bot & call it <span className="text-warm-gray">AI transformation. </span>
+          But <span className="text-warm-gray">plug-n-play</span> also means <span className="text-warm-gray">plug-n-play</span> failure modes.
         </h2>
       </div>
 
@@ -218,7 +218,7 @@ export function SubHero() {
               className="min-h-screen flex items-center px-6 sm:px-12 lg:px-20"
             >
               <div className="max-w-xl space-y-6 w-full">
-        
+
                 {/* Title */}
                 {typeof block.title === "string" ? (
                   <h3 className="text-2xl md:text-3xl font-serif text-warm-gray leading-tight">

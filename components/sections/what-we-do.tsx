@@ -239,7 +239,11 @@ export function WhatWeDo() {
             {/* Desktop Right Content */}
             <div className="hidden lg:block lg:w-[60%] w-full">
               {activePillar !== null && (
-                <div className="bg-white p-8 lg:p-12 border-2 border-gold relative border-t-8 shadow-[0_20px_50px_rgb(0,0,0,0.05)] min-h-[500px] flex flex-col rounded-lg">
+                <div 
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                  className="bg-white p-8 lg:p-12 border-2 border-gold relative border-t-8 shadow-[0_20px_50px_rgb(0,0,0,0.05)] min-h-[500px] flex flex-col rounded-lg"
+                >
                   <AnimatePresence mode="wait">
                     <motion.div
                       key={activePillar}

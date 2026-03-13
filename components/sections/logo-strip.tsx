@@ -73,7 +73,7 @@ export function LogoStrip() {
                 <div className="relative h-20 w-32 opacity-100 hover:opacity-100 transition-all duration-500">
                   <Image
                     src={company.logo}
-                    alt={company.name}
+                    alt={`${company.name} logo - VoiShift enterprise client`}
                     fill
                     className="object-contain"
                   />
@@ -117,7 +117,7 @@ export function LogoStrip() {
                 <div className="relative h-20 w-32 opacity-100 hover:opacity-100 transition-all duration-500">
                   <Image
                     src={tool.logo}
-                    alt={tool.name}
+                    alt={`${tool.name} logo - VoiShift technology stack`}
                     fill
                     className="object-contain"
                   />

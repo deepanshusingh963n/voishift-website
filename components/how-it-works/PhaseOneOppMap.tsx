@@ -23,12 +23,12 @@ export default function PhaseOneOppMap() {
   return (
     <section id="phase-1" className="bg-white py-24 lg:py-32 relative overflow-hidden">
       {/* Background Precision Grid */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(#d4af37 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{ backgroundImage: 'radial-gradient(#d4af37 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-start">
-          
+
           {/* Left Side: Content */}
           <div className="space-y-12">
             <div>
@@ -90,7 +90,7 @@ export default function PhaseOneOppMap() {
             >
               <Button
                 onClick={() => openModal()}
-                className="bg-gold hover:bg-gold-dark text-warm-gray px-8 py-5 text-lg rounded-xl h-auto shadow-lg"
+                className="bg-gold hover:bg-black text-warm-gray hover:text-white px-8 py-5 text-lg rounded-xl h-auto shadow-lg"
               >
                 Map My Highest ROI Opportunity
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -107,12 +107,12 @@ export default function PhaseOneOppMap() {
             <div className="absolute -top-6 -right-6 w-20 h-20 bg-gold rounded-full flex items-center justify-center text-warm-gray shadow-xl border-4 border-white rotate-12">
               <Zap className="w-10 h-10" />
             </div>
-            
+
             <h3 className="text-2xl font-serif text-warm-gray italic mb-10">System Output Pack: OppMap</h3>
-            
+
             <div className="space-y-5">
               {outputs.map((item, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}

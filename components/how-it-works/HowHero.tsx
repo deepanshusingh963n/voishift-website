@@ -18,7 +18,7 @@ export default function HowHero() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="lg:grid lg:grid-cols-2 lg:gap-20 lg:items-center">
-          
+
           {/* LEFT SIDE — YOUR ORIGINAL CONTENT (UNCHANGED) */}
           <div className="max-w-4xl">
             <motion.div
@@ -27,19 +27,19 @@ export default function HowHero() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-8"
             >
-              <span className="text-7xl font-black uppercase tracking-[0.1em] text-gold">
+              <h1 className="text-7xl font-black uppercase tracking-[0.1em] text-gold">
                 The VoiShift Process
-              </span>
+              </h1>
             </motion.div>
-
-            <motion.h1
+Page 20 / 22
+            <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-2xl lg:text-xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
             >
               Voice AI that ships <span className="italic text-gold/90">safely, not loudly.</span>
-            </motion.h1>
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function HowHero() {
               className="flex flex-col sm:flex-row gap-2"
             >
               <Button
-                className="bg-gold hover:bg-gold-dark text-warm-gray px-8 py-5 text-lg rounded-xl h-auto"
+                className="bg-gold hover:bg-black text-warm-gray hover:text-white px-8 py-5 text-lg rounded-xl h-auto"
                 onClick={() => openModal()}
               >
                 Let's Build
@@ -66,7 +66,7 @@ export default function HowHero() {
 
               <Button
                 variant="outline"
-                className="border-gold/30 text-warm-gray hover:bg-gold/5 px-8 py-5 text-lg rounded-xl h-auto bg-transparent"
+                className="border-gold/30 text-warm-gray hover:bg-gold hover:text-white px-8 py-5 text-lg rounded-xl h-auto bg-transparent"
                 onClick={() => {
                   const phase1 = document.getElementById("phase-1")
                   phase1?.scrollIntoView({ behavior: "smooth" })
@@ -176,9 +176,9 @@ export default function HowHero() {
                     </div>
                   </div>
                 </motion.div>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>

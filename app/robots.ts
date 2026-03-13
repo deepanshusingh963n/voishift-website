@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
             userAgent: '*',
             allow: '/',
         },
-        sitemap: 'https://voishift.com/sitemap.xml',
+        sitemap: 'https://voishiftai.com/sitemap.xml',
     }
 }

@@ -38,7 +38,7 @@ function BeautifiedSelect({ label, options, value, onChange, placeholder, icon, 
       <label className="text-[10px] font-black text-warm-gray/40 uppercase tracking-widest flex items-center gap-2">
         {icon} {label}
       </label>
-      
+
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
@@ -87,13 +87,13 @@ function BeautifiedSelect({ label, options, value, onChange, placeholder, icon, 
 
       {/* Hidden input for form requirement */}
       {required && (
-        <input 
-          tabIndex={-1} 
-          autoComplete="off" 
-          style={{ opacity: 0, position: 'absolute', height: 0, width: 0 }} 
-          value={value} 
-          required 
-          readOnly 
+        <input
+          tabIndex={-1}
+          autoComplete="off"
+          style={{ opacity: 0, position: 'absolute', height: 0, width: 0 }}
+          value={value}
+          required
+          readOnly
         />
       )}
     </div>
@@ -108,8 +108,12 @@ interface ResourceDownloadFormProps {
 export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDownloadFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
-  
-  // State for beautified select
+
+  // Form state
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [company, setCompany] = useState("")
   const [role, setRole] = useState("")
   const [discipline, setDiscipline] = useState("")
 
@@ -123,7 +127,7 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
   ]
 
   const disciplineOptions = [
-    { label: "Manufacturing & Industrial", value: "manufacuring" },
+    { label: "Manufacturing & Industrial", value: "manufacturing" },
     { label: "Logistics & Supply Chain", value: "logistics" },
     { label: "SaaS & Enterprise Tech", value: "saas" },
     { label: "Healthcare & Life Sciences", value: "healthcare" },
@@ -133,14 +137,38 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
     { label: "Travel & Hospitality", value: "travel" },
   ]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false)
+
+    try {
+      // POST to Google Apps Script
+      // Replace with your new script URL if it's different
+      await fetch("https://script.google.com/macros/s/AKfycbwx7dDv2rTAbhyjfNGlCrxXzpT65Oj91q7mC6QVg7VJzivp5dH8xcTq5CH99DtKPnsUjw/exec", {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          company,
+          role,
+          discipline,
+          resourceName,
+          resourceType
+        }),
+      })
+
       setIsSuccess(true)
-    }, 1500)
+    } catch (error) {
+      console.error("Error submitting form:", error)
+      alert("There was an error connecting to the archive. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   if (isSuccess) {
@@ -167,11 +195,11 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
     <div className="max-w-2xl mx-auto">
       <div className="mb-10 text-center">
         <h2 className="font-serif text-3xl md:text-4xl text-warm-gray mb-4 tracking-tight">
-          Get Archive <span className="text-gold italic">Access</span>
+          Get <span className="text-gold italic">Access</span>
         </h2>
         <div className="flex items-center justify-center gap-4 text-warm-gray/40">
           <div className="h-px w-8 bg-sand" />
-          <span className="text-[10px] font-black uppercase tracking-[0.3em]">Operational Access Request</span>
+          <span className="text-[10px] font-black uppercase tracking-[0.3em]">Resources Access Request</span>
           <div className="h-px w-8 bg-sand" />
         </div>
       </div>
@@ -187,6 +215,8 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
               required
               type="text"
               placeholder="Ex: Marcus"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
               className="w-full bg-white border border-sand px-4 py-3 rounded-xl text-sm italic font-serif focus:outline-none focus:border-gold transition-colors placeholder:text-warm-gray/20"
             />
           </div>
@@ -198,6 +228,8 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
               required
               type="text"
               placeholder="Ex: Webb"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
               className="w-full bg-white border border-sand px-4 py-3 rounded-xl text-sm italic font-serif focus:outline-none focus:border-gold transition-colors placeholder:text-warm-gray/20"
             />
           </div>
@@ -213,6 +245,8 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
               required
               type="email"
               placeholder="marcus@global-logistics.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full bg-white border border-sand px-4 py-3 rounded-xl text-sm italic font-serif focus:outline-none focus:border-gold transition-colors placeholder:text-warm-gray/20"
             />
           </div>
@@ -224,6 +258,8 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
               required
               type="text"
               placeholder="Enterprise Organization"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
               className="w-full bg-white border border-sand px-4 py-3 rounded-xl text-sm italic font-serif focus:outline-none focus:border-gold transition-colors placeholder:text-warm-gray/20"
             />
           </div>
@@ -231,7 +267,7 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
 
         {/* Roles & Responsibility Grid - Beautified */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <BeautifiedSelect 
+          <BeautifiedSelect
             label="Role Selection"
             options={roleOptions}
             value={role}
@@ -240,7 +276,7 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
             required
             icon={<Briefcase className="w-3 h-3 text-gold/60" />}
           />
-          <BeautifiedSelect 
+          <BeautifiedSelect
             label="Industry Discipline"
             options={disciplineOptions}
             value={discipline}
@@ -255,8 +291,8 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
         <div className="py-2">
           <label className="flex items-start gap-3 cursor-pointer group">
             <div className="relative flex items-center mt-1">
-              <input 
-                type="checkbox" 
+              <input
+                type="checkbox"
                 required
                 className="peer h-4 w-4 border border-sand rounded bg-white checked:bg-gold checked:border-gold transition-all appearance-none cursor-pointer"
               />
@@ -281,16 +317,16 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
             {isSubmitting ? "Initializing Access..." : "Get access"}
             {!isSubmitting && <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />}
           </div>
-          
+
           {/* Subtle Scanline on processing */}
           {isSubmitting && (
-            <motion.div 
-               animate={{ x: ["-100%", "200%"] }}
-               transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-               className="absolute top-0 bottom-0 left-0 w-1/3 bg-white/10 skew-x-12"
+            <motion.div
+              animate={{ x: ["-100%", "200%"] }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+              className="absolute top-0 bottom-0 left-0 w-1/3 bg-white/10 skew-x-12"
             />
           )}
-          
+
           {/* Glow Effect */}
           <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity blur-xl" />
         </button>

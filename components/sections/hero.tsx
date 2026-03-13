@@ -94,7 +94,7 @@ export function Hero() {
               className="w-full flex flex-col items-center"
             >
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white leading-[1.5] mb-5 text-center">
-                Human edge isn’t a defect to automate away with shelfware. <br /> It’s the moat to build around.
+                Voice-first AI: Human edge isn’t a defect to automate away. <br /> It’s the moat to build around.
                 <span className="text-gold uppercase text-5xl md:text-7xl lg:text-9xl block mt-2">
                   OWN YOUR OWN
                 </span>

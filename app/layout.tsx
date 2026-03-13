@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean. Build voice AI that behaves safely when things break.',
   keywords: ['voice AI', 'voice automation', 'AI system', 'voice bot', 'enterprise AI', 'AI safety'],
   authors: [{ name: 'VoiShift' }],
-  metadataBase: new URL('https://voishift.com'),
+  metadataBase: new URL('https://voishiftai.com'),
   icons: {
     icon: '/voishift.png',
   },
   alternates: {
-    canonical: './',
+    canonical: '/',
   },
   openGraph: {
     title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'VoiShift',
     images: [image],
+    url: 'https://voishiftai.com',
   },
   twitter: {
     card: 'summary_large_image',
@@ -60,6 +61,23 @@ export default function RootLayout({
         className="font-sans antialiased bg-background text-foreground"
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "VoiShift",
+              "url": "https://voishiftai.com",
+              "logo": "https://voishiftai.com/voishift.png",
+              "description": "VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.",
+              "sameAs": [
+                "https://twitter.com/voishift",
+                "https://linkedin.com/company/voishift"
+              ]
+            })
+          }}
+        />
         <ModalProvider>
           {children}
           <CTAFormModal />

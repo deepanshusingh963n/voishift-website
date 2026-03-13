@@ -14,6 +14,7 @@ import {
   Users,
   MessageSquare,
   Mail,
+  Linkedin
 } from "lucide-react";
 
 const youFitIf = [
@@ -98,7 +99,7 @@ export const CareersSection = () => {
                     Pick anyone on this page, connect on LinkedIn, and tell us one thing: <br />
                     <span className="text-gold font-bold italic">What would you fix first, and why should it be you doing it?</span>
                   </p>
-                  
+
                   <div className="bg-white/50 border border-sand p-6 rounded-xl">
                     <p className="text-foreground font-black uppercase tracking-tight text-lg mb-2">
                       If you make yourself impossible to ignore, we will find you a seat.
@@ -110,10 +111,11 @@ export const CareersSection = () => {
 
                   <Button
                     variant="hero"
-                    className="w-full md:w-auto bg-[#1a1a1a] text-white hover:bg-gold py-8 px-10 rounded-xl transition-all duration-500 font-serif text-xl shadow-xl"
+                    className="w-full md:w-auto bg-[#1a1a1a] text-white hover:bg-gold py-8 px-10 rounded-xl transition-all duration-500 font-serif text-sm shadow-xl flex items-center gap-2"
                     onClick={() => openModal()}
                   >
-                    Make yourself impossible to ignore - connect on LinkedIn
+                    <Linkedin className="w-5 h-5" />
+                    Make yourself impossible to ignore
                   </Button>
                 </div>
               </div>

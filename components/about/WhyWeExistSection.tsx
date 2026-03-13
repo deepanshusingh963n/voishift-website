@@ -77,10 +77,10 @@ export const WhyWeExistSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* LEFT COLUMN: Interactive Mission Paths */}
-          <div className="text-center border border-gold p-6 rounded-[0rem]">
+          <div className="text-center lg:border lg:border-gold p-0 lg:p-6 rounded-[0rem]">
             <div className="space-y-2">
             
-              <div className="flex flex-wrap justify-center gap-4">
+              <div className="grid grid-cols-2 lg:flex lg:flex-wrap justify-center gap-4">
                 {paths.map((path) => (
                   <button
                     key={path.id}

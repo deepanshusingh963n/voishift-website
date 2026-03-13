@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Shield, Target, CheckCircle } from "lucide-react";
 
 const DecisionLattice = () => (
@@ -34,10 +35,12 @@ export const AboutHeroSection = () => {
     <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-white">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/about-hero-bg.png"
-          alt="Technical Structure"
-          className="w-full h-full object-cover opacity-[0.4]"
+          alt="Technical blueprint structure representing VoiShift system design"
+          fill
+          priority
+          className="object-cover opacity-[0.4]"
         />
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
       </div>
@@ -57,8 +60,8 @@ export const AboutHeroSection = () => {
             transition={{ duration: 0.6 }}
             className="mb-10"
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-8">
-              <span className="text-5xl font-black text-gold uppercase">What We Stand For</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 mb-8">
+              <span className="text-2xl font-black text-warm-gray-light uppercase tracking-widest">What We Stand For</span>
             </div>
 
             <h1 className="text-xl md:text-3xl font-serif font-black text-warm-gray mb-12">
