@@ -76,13 +76,13 @@ export default function WhoThisIsFor() {
                 </span>
               </div>
 
-              <h4 className="text-3xl md:text-4xl font-serif font-black mb-10 leading-tight">
+              <h2 className="text-3xl md:text-4xl font-serif font-black mb-10 leading-tight">
                 {activeTab === "for" ? (
                   <>Voice AI as a <span className="text-gold italic underline decoration-gold/20">system of record</span>, not an interface.</>
                 ) : (
                   <>If <span className="text-red-500/80 italic">confident guesses</span> are acceptable, we are not the right partner.</>
                 )}
-              </h4>
+              </h2>
 
               <p className="text-xl italic font-serif opacity-70 leading-relaxed max-w-md">
                 {activeTab === "for" ? (

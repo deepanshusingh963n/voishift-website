@@ -62,7 +62,7 @@ const SignalCard = ({ signal, index }: { signal: any, index: number }) => (
         </div>
 
         <div className="relative z-10">
-            <h4 className="text-warm-gray font-bold text-md mb-2 leading-tight">{signal.text}</h4>
+            <h3 className="text-warm-gray font-bold text-md mb-2 leading-tight">{signal.text}</h3>
             <div className="flex items-center gap-1.5 ">
                 <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Signal_Optimized</span>

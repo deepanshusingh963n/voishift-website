@@ -109,14 +109,15 @@ export const CareersSection = () => {
                     </p>
                   </div>
 
-                  <Button
-                    variant="hero"
-                    className="w-full md:w-auto bg-[#1a1a1a] text-white hover:bg-gold py-8 px-10 rounded-xl transition-all duration-500 font-serif text-sm shadow-xl flex items-center gap-2"
-                    onClick={() => openModal()}
+                  <a
+                    href="https://www.linkedin.com/company/klyrr/people/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full md:w-auto bg-[#1a1a1a] text-white hover:bg-gold py-8 px-10 rounded-xl transition-all duration-500 font-serif text-sm shadow-xl flex items-center justify-center gap-2"
                   >
                     <Linkedin className="w-5 h-5" />
                     Make yourself impossible to ignore
-                  </Button>
+                  </a>
                 </div>
               </div>
             </div>

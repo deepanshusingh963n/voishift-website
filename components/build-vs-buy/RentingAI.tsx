@@ -39,7 +39,7 @@ export default function RentingAI() {
               <div className="absolute top-0 right-0 p-4">
                 <UserMinus className="w-8 h-8 text-warm-gray/20" />
               </div>
-              <h3 className="text-2xl font-serif text-gold mb-8 uppercase">What “renting AI” looks like</h3>
+              <h2 className="text-2xl font-serif text-gold mb-8 uppercase">What “renting AI” looks like</h2>
 
               <div className="space-y-6">
                 {points.map((point, i) => (
@@ -67,9 +67,9 @@ export default function RentingAI() {
 
           <div className="space-y-12 order-1 lg:order-2">
             <div className="relative">
-              <h2 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight">
+              <h3 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight">
                 Like <span className="italic text-gold">renting a house.</span>
-              </h2>
+              </h3>
             </div>
 
             <div className="grid gap-10">

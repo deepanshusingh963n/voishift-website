@@ -16,17 +16,17 @@ const faqs = [
   { question: "How do you handle safety, sensitive data, and risk?", answer: "We handle safety and risk by designing for control, not by promising perfection. That starts with least privilege access, meaning the system can only see and do what it must, and nothing more. It continues with data minimization and masking where needed, so sensitive fields are not exposed unnecessarily. It also includes strict boundaries for what actions are allowed, what actions are blocked, and what actions require human approval, and those boundaries are enforced even when the user pushes. Traceability is non-negotiable: you need to reconstruct who asked what, what sources and rules were used, what decision was made, and what action was taken. Risk also includes “soft failures” like reputational damage from confidently wrong answers, so we build missing-info capture and refusal behavior where uncertainty is high. The honest truth is that any system touching real operations carries risk, including humans. The goal is not to pretend risk disappears. The goal is to reduce risk before scale, make failures visible, and make decisions defensible. If your risk tolerance is zero, you should not deploy voice automation for execution at all, only for read-only assistance and draft preparation.", id: "Q-09" }
 ];
 
-const ProtocolCard = ({ 
-  faq, 
-  isOpen, 
+const ProtocolCard = ({
+  faq,
+  isOpen,
   onClick,
   isSpeaking,
   isPaused,
   onSpeechToggle,
   currentCharIndex
-}: { 
-  faq: any, 
-  isOpen: boolean, 
+}: {
+  faq: any,
+  isOpen: boolean,
   onClick: () => void,
   isSpeaking: boolean,
   isPaused: boolean,
@@ -57,7 +57,7 @@ const ProtocolCard = ({
           <span className="text-[17px] font-black text-warm-gray leading-tight tracking-tight pr-4">{faq.question}</span>
           <ChevronDown className={`w-6 h-6 text-gold transition-transform duration-700 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
         </button>
-        
+
         <button
           onClick={onSpeechToggle}
           className={`relative z-20 p-3 rounded-full transition-all duration-300 ${isSpeaking ? (isPaused ? 'bg-gold/50 text-white' : 'bg-gold text-white scale-110 shadow-lg') : 'bg-gold text-white hover:bg-black hover:text-white'}`}
@@ -86,16 +86,16 @@ const ProtocolCard = ({
           >
             <div className="px-8 pb-10 relative z-10">
               <div className="pt-4 border-t border-sand/30">
-                <p className="text-warm-gray-light leading-relaxed text-[16px] font-medium selection:bg-gold/20">
+                <p className="text-warm-gray-light text-justify leading-relaxed text-[16px] font-medium selection:bg-gold/20">
                   {words.map((word: any, i: number) => {
-                    const isHighlighted = isSpeaking && currentCharIndex !== null && 
-                                       currentCharIndex >= word.start && 
-                                       currentCharIndex < word.end && 
-                                       /\S/.test(word.text); // Only highlight non-whitespace
-                    
+                    const isHighlighted = isSpeaking && currentCharIndex !== null &&
+                      currentCharIndex >= word.start &&
+                      currentCharIndex < word.end &&
+                      /\S/.test(word.text); // Only highlight non-whitespace
+
                     return (
-                      <span 
-                        key={i} 
+                      <span
+                        key={i}
                         className={`transition-colors duration-200 rounded-sm ${isHighlighted ? 'bg-gold text-white px-0.5' : ''}`}
                       >
                         {word.text}
@@ -129,10 +129,10 @@ export function FAQ() {
         // Highlighting (onboundary) is most reliable on local voices.
         // We prioritize local voices that sound natural.
         const voice = voices.find(v => v.localService && (v.name.includes("Google") || v.name.includes("Natural") || v.name.includes("Premium")) && v.lang.startsWith("en"))
-                      || voices.find(v => v.localService && v.lang.startsWith("en"))
-                      || voices.find(v => (v.name.includes("Google") || v.name.includes("Natural")) && v.lang.startsWith("en"))
-                      || voices.find(v => v.lang.startsWith("en"))
-                      || voices[0];
+          || voices.find(v => v.localService && v.lang.startsWith("en"))
+          || voices.find(v => (v.name.includes("Google") || v.name.includes("Natural")) && v.lang.startsWith("en"))
+          || voices.find(v => v.lang.startsWith("en"))
+          || voices[0];
         setPreferredVoice(voice);
       }
     };
@@ -169,17 +169,17 @@ export function FAQ() {
 
     // New speech or restart: Full cleanup first
     window.speechSynthesis.cancel();
-    
+
     // Normalize text (curly quotes can break charIndex sync in some browsers)
     const normalizedText = text.replace(/[“”]/g, '"').replace(/[‘’]/g, "'").trim();
 
     // Create new utterance
     const utterance = new SpeechSynthesisUtterance(normalizedText);
-    
+
     // CRITICAL: Attach to window to prevent garbage collection in Chrome
     (window as any)._currentUtterance = utterance;
     utteranceRef.current = utterance;
-    
+
     if (preferredVoice) {
       utterance.voice = preferredVoice;
     }
@@ -262,9 +262,9 @@ export function FAQ() {
   }, [stopSpeech]);
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="faq" 
+      id="faq"
       className="py-18 lg:py-24 bg-cream relative shadow-[inset_0_0_120px_rgba(0,0,0,0.03)] overflow-hidden"
     >
       <script
@@ -286,7 +286,7 @@ export function FAQ() {
       />
       {/* Background Decor */}
       <div className="absolute inset-0 opacity-[0.012] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-      
+
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

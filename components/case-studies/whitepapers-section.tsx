@@ -137,6 +137,73 @@ export function WhitepapersSection() {
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="flex flex-col lg:grid lg:grid-cols-[50fr_50fr] gap-12 lg:gap-16 items-start">
 
+                    {/* ─── RIGHT: Copy Block (First on mobile) ─── */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="lg:sticky lg:top-28 item-start order-1 lg:order-2"
+                        style={{ willChange: "transform" }}
+                    >
+                        {/* Label pill */}
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-gold border border-gold/15 rounded-full mb-8">
+                            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                            <span className="text-[15px] font-black tracking-[0.3em] text-gold uppercase">
+                                Research Translated
+                            </span>
+                        </div>
+
+                        {/* Heading */}
+                        <h2 className="font-serif text-5xl md:text-8xl lg:text-9xl text-warm-gray tracking-tighter leading-[0.9] lg:leading-[0.85] mb-10">
+                            White<span className="text-gold italic">papers</span>
+                        </h2>
+
+                        {/* Faint rule */}
+                        <div className="w-16 h-px bg-gold/30 mb-10" />
+
+                        {/* Body copy */}
+                        <div className="space-y-5 max-w-7xl">
+                            <p className="text-warm-gray-light font-serif text-base leading-relaxed">
+                                We are not set up to run large, controlled studies in-house. So we do the next best thing.
+                            </p>
+
+                            <p className="text-warm-gray font-serif text-base leading-relaxed">
+                                We study{" "}
+                                <span className="font-semibold">peer-reviewed research</span> from journals with high impact factor. We then translate it into{" "}
+                                <span className="text-gold font-semibold">practical takeaways</span> for voice systems and enterprise workflows.
+                            </p>
+
+                            <p className="text-warm-gray-light font-serif text-base leading-relaxed">
+                                These whitepapers are our learning notes in public.
+                            </p>
+
+                            {/* Separator */}
+                            <div className="flex items-center gap-4 py-2">
+                                <div className="flex-1 h-px bg-sand" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-gold/40" />
+                                <div className="flex-1 h-px bg-sand" />
+                            </div>
+
+                            {/* Collaboration invite — highlighted block */}
+                            <div className="relative border border-gold/20 rounded-2xl p-6 bg-white/60">
+                                {/* Corner accent */}
+                                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold/40 rounded-tl-2xl" />
+                                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-gold/40 rounded-br-2xl" />
+
+                                <p className="text-sm text-warm-gray font-serif leading-relaxed">
+                                    Want to write the next one with us as a mini research team?
+                                </p>
+                                <p className="text-sm text-warm-gray-light font-serif italic leading-relaxed mt-2">
+                                    No fees on either side. Just{" "}
+                                    <span className="text-warm-gray not-italic font-medium">effort</span>,{" "}
+                                    <span className="text-warm-gray not-italic font-medium">curiosity</span>, and a{" "}
+                                    <span className="text-gold not-italic font-semibold">hunger to improve.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </motion.div>
+
                     {/* ─── LEFT: Accordion Whitepapers (Second on mobile) ─── */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -270,73 +337,6 @@ export function WhitepapersSection() {
                                 </motion.div>
                             )
                         })}
-                    </motion.div>
-
-                    {/* ─── RIGHT: Copy Block (First on mobile) ─── */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-                        viewport={{ once: true }}
-                        className="lg:sticky lg:top-28 item-start order-1 lg:order-2"
-                        style={{ willChange: "transform" }}
-                    >
-                        {/* Label pill */}
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-black text-gold border border-gold/15 rounded-full mb-8">
-                            <div className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
-                            <span className="text-[15px] font-black tracking-[0.3em] text-gold uppercase">
-                                Research Translated
-                            </span>
-                        </div>
-
-                        {/* Heading */}
-                        <h2 className="font-serif text-5xl md:text-8xl lg:text-9xl text-warm-gray tracking-tighter leading-[0.9] lg:leading-[0.85] mb-10">
-                            White<span className="text-gold italic">papers</span>
-                        </h2>
-
-                        {/* Faint rule */}
-                        <div className="w-16 h-px bg-gold/30 mb-10" />
-
-                        {/* Body copy */}
-                        <div className="space-y-5 max-w-7xl">
-                            <p className="text-warm-gray-light font-serif text-base leading-relaxed">
-                                We are not set up to run large, controlled studies in-house. So we do the next best thing.
-                            </p>
-
-                            <p className="text-warm-gray font-serif text-base leading-relaxed">
-                                We study{" "}
-                                <span className="font-semibold">peer-reviewed research</span> from journals with high impact factor. We then translate it into{" "}
-                                <span className="text-gold font-semibold">practical takeaways</span> for voice systems and enterprise workflows.
-                            </p>
-
-                            <p className="text-warm-gray-light font-serif text-base leading-relaxed">
-                                These whitepapers are our learning notes in public.
-                            </p>
-
-                            {/* Separator */}
-                            <div className="flex items-center gap-4 py-2">
-                                <div className="flex-1 h-px bg-sand" />
-                                <div className="w-1.5 h-1.5 rounded-full bg-gold/40" />
-                                <div className="flex-1 h-px bg-sand" />
-                            </div>
-
-                            {/* Collaboration invite — highlighted block */}
-                            <div className="relative border border-gold/20 rounded-2xl p-6 bg-white/60">
-                                {/* Corner accent */}
-                                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-gold/40 rounded-tl-2xl" />
-                                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-gold/40 rounded-br-2xl" />
-
-                                <p className="text-sm text-warm-gray font-serif leading-relaxed">
-                                    Want to write the next one with us as a mini research team?
-                                </p>
-                                <p className="text-sm text-warm-gray-light font-serif italic leading-relaxed mt-2">
-                                    No fees on either side. Just{" "}
-                                    <span className="text-warm-gray not-italic font-medium">effort</span>,{" "}
-                                    <span className="text-warm-gray not-italic font-medium">curiosity</span>, and a{" "}
-                                    <span className="text-gold not-italic font-semibold">hunger to improve.</span>
-                                </p>
-                            </div>
-                        </div>
                     </motion.div>
 
                 </div>

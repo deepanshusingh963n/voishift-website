@@ -102,9 +102,9 @@ export const WhatWeSolveSection = () => {
                     </div>
                   </div>
 
-                  <h4 className="text-lg font-black text-warm-gray leading-tight mb-4">
+                  <h3 className="text-lg font-black text-warm-gray leading-tight mb-4">
                     {problem.text}
-                  </h4>
+                  </h3>
 
                   <div className="h-px w-full bg-sand/30 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 </div>

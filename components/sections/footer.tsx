@@ -7,13 +7,13 @@ import { useModal } from "@/context/modal-context"
 
 const links = [
   { label: "Resources", href: "/case-studies", icon: Shield },
-  { label: "Privacy Policy", href: "/privacy-policy", icon: Lock },
+  { label: "Privacy Policy", href: "/privacy", icon: Lock },
   { label: "Contact", href: "#", icon: Mail, isModalTrigger: true },
   //{ label: "Partners", href: "/partners", icon: Users },
 ]
 
 export function Footer() {
-  const { openModal } = useModal()
+  const { openModal, openPrivacyModal } = useModal()
   return (
     <footer className="py-12 lg:py-14 bg-[#faf9f6] border-t border-sand">
       <div className="max-w-7xl mx-auto px-6">
@@ -29,7 +29,7 @@ export function Footer() {
             <div className="mb-6">
               <Image
                 src="/logo2.png"
-                alt="VoiShift Logo"
+                alt="VoiShift Voice AI Platform Logo"
                 width={120}
                 height={40}
                 className="h-15 w-auto opacity-80"
@@ -69,6 +69,7 @@ export function Footer() {
                       </button>
                     )
                   }
+
                   return (
                     <a
                       key={index}

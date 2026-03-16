@@ -115,9 +115,9 @@ export default function WhoForHero() {
                  <div className="w-2 h-2 rounded-none bg-gold/30" />
                </div>
 
-               <h3 className="text-xs font-black text-gold uppercase tracking-[0.4em] mb-12">
+               <h2 className="text-xs font-black text-gold uppercase tracking-[0.4em] mb-12">
                  Filter_Criteria_Array
-               </h3>
+               </h2>
 
                <div className="space-y-6">
                  {criteria.map((item, i) => (

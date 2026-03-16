@@ -4,11 +4,11 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import Link from "next/link"
 import { useModal } from "@/context/modal-context"
-import { 
-  Truck, 
-  Factory, 
-  Stethoscope, 
-  ArrowRight, 
+import {
+  Truck,
+  Factory,
+  Stethoscope,
+  ArrowRight,
   MousePointer2,
   Activity
 } from "lucide-react"
@@ -89,7 +89,7 @@ export function CaseStudies() {
                   className="object-cover transition-all duration-1000 grayscale group-hover:grayscale-0 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60" />
-                
+
                 {/* Category Tag */}
                 <div className="absolute top-6 left-6">
                   <span className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-md text-[8px] font-mono font-black text-gold uppercase tracking-[0.2em] border border-white/10">
@@ -102,7 +102,7 @@ export function CaseStudies() {
                 <h3 className="font-serif text-2xl text-warm-gray mb-4 leading-tight group-hover:text-gold transition-colors duration-500">
                   {study.title}
                 </h3>
-                <p className="text-sm text-warm-gray-light leading-relaxed mb-6 italic font-serif">
+                <p className="text-[12px] text-warm-gray-light leading-relaxed mb-6 italic font-serif">
                   "{study.description}"
                 </p>
 
@@ -111,16 +111,16 @@ export function CaseStudies() {
                     <MousePointer2 className="w-3 h-3 text-gold" />
                     <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Outcome_Protocol</span>
                   </div>
-                  <p className="text-sm font-bold text-warm-gray leading-snug">
+                  <p className="text-[12px] font-medium text-warm-gray leading-snug">
                     {study.outcome}
                   </p>
                 </div>
 
-                <Link 
-                  href="/case-studies"
+                <Link
+                  href="/case-studies#studies"
                   className="inline-flex items-center gap-3 text-xs font-black text-warm-gray uppercase tracking-widest group/btn"
                 >
-                  <span className="border-b-2 border-gold pb-1">Full Analysis</span>
+                  <span className="border-b-2 border-gold pb-1">Read More</span>
                   <ArrowRight className="w-4 h-4 text-gold group-hover/btn:translate-x-3 transition-transform duration-500" />
                 </Link>
               </div>

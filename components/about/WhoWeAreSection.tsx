@@ -161,9 +161,9 @@ export const WhoWeAreSection = () => {
 
                   {/* Text */}
                   <div>
-                    <h4 className="text-lg font-black text-warm-gray uppercase tracking-tighter mb-2">
+                    <h3 className="text-lg font-black text-warm-gray uppercase tracking-tighter mb-2">
                       {item.title}
-                    </h4>
+                    </h3>
                     <p className="text-warm-gray-light font-serif italic leading-snug">
                       {item.desc}
                     </p>

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Check, Mail, Building, User, Briefcase, Network, ArrowRight, ChevronDown } from "lucide-react"
+import { useModal } from "@/context/modal-context"
 import { cn } from "@/lib/utils"
 
 interface Option {
@@ -105,17 +106,22 @@ interface ResourceDownloadFormProps {
   resourceType: "eBook" | "Whitepaper" | "Case Study"
 }
 
-export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDownloadFormProps) {
+export function ResourceDownloadForm({
+  resourceName,
+  resourceType
+}: ResourceDownloadFormProps) {
+  const { openPrivacyModal } = useModal()
+  
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
 
   // Form state
-  const [firstName, setFirstName] = useState("")
-  const [lastName, setLastName] = useState("")
+  const [fullName, setFullName] = useState("")
   const [email, setEmail] = useState("")
   const [company, setCompany] = useState("")
   const [role, setRole] = useState("")
   const [discipline, setDiscipline] = useState("")
+  const [otherDiscipline, setOtherDiscipline] = useState("")
 
   const roleOptions = [
     { label: "CXOs (CEO, CTO, COO, CMO, CHRO)", value: "cxos" },
@@ -127,6 +133,7 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
   ]
 
   const disciplineOptions = [
+    { label: "Other", value: "other" },
     { label: "Manufacturing & Industrial", value: "manufacturing" },
     { label: "Logistics & Supply Chain", value: "logistics" },
     { label: "SaaS & Enterprise Tech", value: "saas" },
@@ -144,19 +151,18 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
     try {
       // POST to Google Apps Script
       // Replace with your new script URL if it's different
-      await fetch("https://script.google.com/macros/s/AKfycbwx7dDv2rTAbhyjfNGlCrxXzpT65Oj91q7mC6QVg7VJzivp5dH8xcTq5CH99DtKPnsUjw/exec", {
+      await fetch("https://script.google.com/macros/s/AKfycbxqHq1M3ixN69MhZcZzklh9h1UTh0mHcINVmg-9t2xBAyueuArRutaWRDUieJpiw0kWKA/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          firstName,
-          lastName,
+          fullName,
           email,
           company,
           role,
-          discipline,
+          discipline: discipline === "other" ? otherDiscipline : discipline,
           resourceName,
           resourceType
         }),
@@ -206,30 +212,17 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <div className="space-y-1.5">
             <label className="text-[10px] font-black text-warm-gray/40 uppercase tracking-widest flex items-center gap-2">
-              <User className="w-3 h-3 text-gold/60" /> First Name
+              <User className="w-3 h-3 text-gold/60" /> Full Name
             </label>
             <input
               required
               type="text"
-              placeholder="Ex: Marcus"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              className="w-full bg-white border border-sand px-4 py-3 rounded-xl text-sm italic font-serif focus:outline-none focus:border-gold transition-colors placeholder:text-warm-gray/20"
-            />
-          </div>
-          <div className="space-y-1.5">
-            <label className="text-[10px] font-black text-warm-gray/40 uppercase tracking-widest flex items-center gap-2">
-              <User className="w-3 h-3 text-gold/60" /> Last Name
-            </label>
-            <input
-              required
-              type="text"
-              placeholder="Ex: Webb"
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              placeholder="Ex: Marcus Webb"
+              value={fullName}
+              onChange={(e) => setFullName(e.target.value)}
               className="w-full bg-white border border-sand px-4 py-3 rounded-xl text-sm italic font-serif focus:outline-none focus:border-gold transition-colors placeholder:text-warm-gray/20"
             />
           </div>
@@ -268,7 +261,7 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
         {/* Roles & Responsibility Grid - Beautified */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <BeautifiedSelect
-            label="Role Selection"
+            label="Role"
             options={roleOptions}
             value={role}
             onChange={setRole}
@@ -277,7 +270,7 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
             icon={<Briefcase className="w-3 h-3 text-gold/60" />}
           />
           <BeautifiedSelect
-            label="Industry Discipline"
+            label="Industry / Function"
             options={disciplineOptions}
             value={discipline}
             onChange={setDiscipline}
@@ -286,6 +279,31 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
             icon={<Network className="w-3 h-3 text-gold/60" />}
           />
         </div>
+
+        {/* Conditional Custom Industry Input */}
+        <AnimatePresence>
+          {discipline === "other" && (
+            <motion.div
+              initial={{ opacity: 0, height: 0, marginTop: 0 }}
+              animate={{ opacity: 1, height: "auto", marginTop: 16 }}
+              exit={{ opacity: 0, height: 0, marginTop: 0 }}
+              transition={{ duration: 0.2 }}
+              className="space-y-1.5 overflow-hidden"
+            >
+              <label className="text-[10px] font-black text-warm-gray/40 uppercase tracking-widest flex items-center gap-2">
+                Please specify your industry / function
+              </label>
+              <textarea
+                required
+                rows={2}
+                placeholder="Briefly describe your industry or function..."
+                value={otherDiscipline}
+                onChange={(e) => setOtherDiscipline(e.target.value)}
+                className="w-full bg-white border border-sand px-4 py-3 rounded-xl text-sm italic font-serif focus:outline-none focus:border-gold transition-colors placeholder:text-warm-gray/20 resize-none"
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         {/* Permission Protocol */}
         <div className="py-2">
@@ -298,8 +316,16 @@ export function ResourceDownloadForm({ resourceName, resourceType }: ResourceDow
               />
               <Check className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none left-0.5" />
             </div>
-            <span className="text-[11px] leading-relaxed text-warm-gray-light font-serif italic">
-              I agree to the VoiShift data storage protocol. Please send me this {resourceType} and include me in future research updates and unpolished field reports.
+            <span className="text-[11px] leading-relaxed text-warm-gray-light font-serif italic pr-4">
+              I agree to the VoiShift{" "}
+              <button
+                type="button"
+                onClick={openPrivacyModal}
+                className="text-gold hover:underline font-bold"
+              >
+                  Privacy Protocol
+              </button>
+              {" "}and data storage terms. Please send this resource to my email and include me in future research updates.
             </span>
           </label>
         </div>

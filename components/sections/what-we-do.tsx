@@ -64,7 +64,6 @@ const pillars = [
 const AUTO_PLAY_INTERVAL = 5000
 
 export function WhatWeDo() {
-  const { openModal } = useModal()
 
   const [activePillar, setActivePillar] = useState<number | null>(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -74,6 +73,7 @@ export function WhatWeDo() {
   const startTimeRef = useRef<number | null>(null)
   const pausedElapsedRef = useRef(0)
   const frameRef = useRef<number | null>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -136,8 +136,37 @@ export function WhatWeDo() {
     }
   }
 
+  // Intersection Observer to reset active pillar when scrolled into view
+  useEffect(() => {
+    // Only apply on desktop to maintain mobile accordion state
+    if (isMobile) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActivePillar(0)
+          }
+        })
+      },
+      {
+        threshold: 0.1, // Trigger when 10% of the section is visible
+      }
+    )
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current)
+    }
+
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current)
+      }
+    }
+  }, [isMobile])
+
   return (
-    <div className="relative bg-white py-24 scroll-mt-32 overflow-hidden">
+    <div ref={sectionRef} className="relative bg-white py-24 scroll-mt-32 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#1a1a1a_1px,transparent_1px),linear-gradient(to_bottom,#1a1a1a_1px,transparent_1px)] bg-[size:40px_40px]" />
       </div>
@@ -150,9 +179,9 @@ export function WhatWeDo() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-serif text-xl md:text-3xl text-warm-gray-light leading-[1.1] mb-8">
+            <div className="font-serif text-xl md:text-3xl text-warm-gray-light leading-[1.1] mb-8">
               <span className="font-black text-warm-gray">VoiShift</span> is a <span className="text-gold"> Voice-first, Anything-AI </span> execution partner that helps enterprises run work, not chase it or firefight it.
-            </h2>
+            </div>
             <div className="space-y-3 text-lg md:text-xl text-warm-gray-light font-serif leading-relaxed max-w-2xl border-l-4 border-gold pl-8 py-1">
               <p>
                 VoiShift adds a voice layer to how work gets decided and done, across tools, reports, and workflows.
@@ -181,11 +210,11 @@ export function WhatWeDo() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="mb-10">
-          <h3 className="text-2xl font-black text-gold uppercase tracking-[0.4em] mb-12 flex items-center justify-center gap-4 text-center">
+          <h2 className="text-2xl font-black text-gold uppercase tracking-[0.4em] mb-12 flex items-center justify-center gap-4 text-center">
             <span className="h-px w-12 bg-gold" />
             What we do
             <span className="h-px w-12 bg-gold" />
-          </h3>
+          </h2>
 
           <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
 
@@ -202,11 +231,10 @@ export function WhatWeDo() {
                       onClick={() => handleAccordionClick(index)}
                       onMouseEnter={() => isActive && setIsPaused(true)}
                       onMouseLeave={() => isActive && setIsPaused(false)}
-                      className={`w-full text-left flex items-center gap-4 p-4 lg:p-6 transition-all duration-300 border-l-4 rounded-r-lg relative overflow-hidden ${
-                        isActive
+                      className={`w-full text-left flex items-center gap-4 p-4 lg:p-6 transition-all duration-300 border-l-4 rounded-r-lg relative overflow-hidden ${isActive
                           ? "bg-white border-gold shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
                           : "hover:bg-white/40 border-transparent text-warm-gray/60 hover:text-warm-gray hover:border-gold/30"
-                      }`}
+                        }`}
                     >
                       {isActive && (
                         <div className="absolute bottom-0 left-0 w-full h-[3px] bg-gold/10">
@@ -217,17 +245,14 @@ export function WhatWeDo() {
                         </div>
                       )}
 
-                      <div className={`w-12 h-12 flex items-center justify-center rounded-md shrink-0 ${
-                        isActive ? "bg-gold/10 border border-gold/20" : ""
-                      }`}>
-                        <Icon className={`w-6 h-6 ${
-                          isActive ? "text-gold" : "text-warm-gray/40"
-                        }`} />
+                      <div className={`w-12 h-12 flex items-center justify-center rounded-md shrink-0 ${isActive ? "bg-gold/10 border border-gold/20" : ""
+                        }`}>
+                        <Icon className={`w-6 h-6 ${isActive ? "text-gold" : "text-warm-gray/40"
+                          }`} />
                       </div>
 
-                      <span className={`font-serif text-lg md:text-xl ${
-                        isActive ? "text-gold" : ""
-                      }`}>
+                      <span className={`font-serif text-lg md:text-xl ${isActive ? "text-gold" : ""
+                        }`}>
                         {pillar.title}
                       </span>
                     </button>
@@ -239,7 +264,7 @@ export function WhatWeDo() {
             {/* Desktop Right Content */}
             <div className="hidden lg:block lg:w-[60%] w-full">
               {activePillar !== null && (
-                <div 
+                <div
                   onMouseEnter={() => setIsPaused(true)}
                   onMouseLeave={() => setIsPaused(false)}
                   className="bg-white p-8 lg:p-12 border-2 border-gold relative border-t-8 shadow-[0_20px_50px_rgb(0,0,0,0.05)] min-h-[500px] flex flex-col rounded-lg"
@@ -252,9 +277,9 @@ export function WhatWeDo() {
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <h4 className="text-xl md:text-3xl font-serif text-warm-gray mb-6">
+                      <h3 className="text-xl md:text-3xl font-serif text-warm-gray mb-6">
                         {pillars[activePillar].title}
-                      </h4>
+                      </h3>
 
                       <ul className="space-y-8">
                         {pillars[activePillar].examples.map((example, i) => (
@@ -291,9 +316,8 @@ export function WhatWeDo() {
                         </span>
                       </div>
                       <ChevronDown
-                        className={`w-5 h-5 text-gold transition-transform duration-300 ${
-                          isActive ? "rotate-180" : ""
-                        }`}
+                        className={`w-5 h-5 text-gold transition-transform duration-300 ${isActive ? "rotate-180" : ""
+                          }`}
                       />
                     </button>
 

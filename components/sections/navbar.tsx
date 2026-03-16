@@ -30,8 +30,8 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const textColor = isScrolled 
-    ? "text-warm-gray" 
+  const textColor = isScrolled
+    ? "text-warm-gray"
     : (isHomePage ? "text-white" : "text-black");
 
   return (
@@ -51,7 +51,7 @@ export const Navbar = () => {
           <a href="/" className="flex items-center gap-3">
             <Image
               src="/logo2.png"
-              alt="VoiShift"
+              alt="VoiShift Voice AI Platform Logo"
               width={120}
               height={40}
               className="h-16 w-auto"

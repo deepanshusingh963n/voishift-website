@@ -15,7 +15,7 @@ import type { E164Number } from "libphonenumber-js/core"
 import "react-phone-number-input/style.css"
 
 export function CTAFormModal() {
-    const { isOpen, closeModal, modalType, resourceData } = useModal()
+    const { isOpen, closeModal, modalType, resourceData, openPrivacyModal } = useModal()
     const [formStep, setFormStep] = useState<"form" | "loading" | "calendly">("form")
     const [isLoading, setIsLoading] = useState(false)
     const [name, setName] = useState("")
@@ -30,7 +30,7 @@ export function CTAFormModal() {
         setIsLoading(true)
 
         try {
-            await fetch("https://script.google.com/macros/s/AKfycbyp2UbVaxo2WvyPftf_Yyb-U1NvlmGSt7ZfqEiMa9zrYkQiorT8i2Lb4yZn5iOtJSXAZA/exec", {
+            await fetch("https://script.google.com/macros/s/AKfycbzjvQiRxKf_5RgXZI1d2Tfvogo_SwgaJXoTRwRyDRyZvXUfL_eEqkqi1j0cGSJTTMXOcw/exec", {
                 method: "POST",
                 mode: "no-cors",
                 headers: {
@@ -209,7 +209,15 @@ export function CTAFormModal() {
                                                                 <Check className="absolute w-3 h-3 text-white opacity-0 peer-checked:opacity-100 transition-opacity pointer-events-none left-0.5" />
                                                             </div>
                                                             <span className="text-[11px] leading-relaxed text-warm-gray-light font-serif italic">
-                                                                I agree to the VoiShift data storage protocol. Please contact me regarding my request and include me in future research updates and unpolished field reports.
+                                                                I agree to the VoiShift{" "}
+                                                                <button
+                                                                    type="button"
+                                                                    onClick={openPrivacyModal}
+                                                                    className="text-gold hover:underline font-bold"
+                                                                >
+                                                                    Privacy Protocol
+                                                                </button>
+                                                                {" "}and data storage terms. Please contact me regarding my request and include me in future research updates and unpolished field reports.
                                                             </span>
                                                         </label>
                                                     </div>

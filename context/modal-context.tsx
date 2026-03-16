@@ -7,8 +7,11 @@ interface ModalContextType {
     hasAutoTriggered: boolean
     modalType: "default" | "resource"
     resourceData: { name: string; type: "eBook" | "Whitepaper" | "Case Study" } | null
+    isPrivacyModalOpen: boolean
     openModal: (type?: "default" | "resource", data?: { name: string; type: "eBook" | "Whitepaper" | "Case Study" }) => void
     closeModal: () => void
+    openPrivacyModal: () => void
+    closePrivacyModal: () => void
     markAutoTriggered: () => void
 }
 
@@ -19,6 +22,7 @@ export function ModalProvider({ children }: { children: ReactNode }) {
     const [hasAutoTriggered, setHasAutoTriggered] = useState(false)
     const [modalType, setModalType] = useState<"default" | "resource">("default")
     const [resourceData, setResourceData] = useState<{ name: string; type: "eBook" | "Whitepaper" | "Case Study" } | null>(null)
+    const [isPrivacyModalOpen, setIsPrivacyModalOpen] = useState(false)
 
     // Initialize from sessionStorage on mount
     React.useEffect(() => {
@@ -35,6 +39,10 @@ export function ModalProvider({ children }: { children: ReactNode }) {
     }, [])
     
     const closeModal = useCallback(() => setIsOpen(false), [])
+    
+    const openPrivacyModal = useCallback(() => setIsPrivacyModalOpen(true), [])
+    const closePrivacyModal = useCallback(() => setIsPrivacyModalOpen(false), [])
+
     const markAutoTriggered = useCallback(() => {
         setHasAutoTriggered(true)
         sessionStorage.setItem("voishift_cta_triggered", "true")
@@ -46,8 +54,11 @@ export function ModalProvider({ children }: { children: ReactNode }) {
             hasAutoTriggered,
             modalType,
             resourceData,
+            isPrivacyModalOpen,
             openModal,
             closeModal,
+            openPrivacyModal,
+            closePrivacyModal,
             markAutoTriggered
         }}>
             {children}

@@ -87,10 +87,10 @@ export const AboutClosingSection = () => {
             className="text-center mb-10"
           >
             <h3 className="text-[9px] font-black tracking-[0.4em] text-warm-gray/30 uppercase mb-3">The Next Step</h3>
-            <h4 className="text-2xl md:text-3xl font-serif font-black text-warm-gray leading-tight">
+            <h3 className="text-2xl md:text-3xl font-serif font-black text-warm-gray leading-tight">
               Two ways to start. <br />
               <span className="text-xs font-serif italic text-warm-gray-light">Both focused on clarity.</span>
-            </h4>
+            </h3>
           </motion.div>
 
           <div className="relative">
@@ -113,7 +113,7 @@ export const AboutClosingSection = () => {
                   </div>
 
                   <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest mb-2">Starting Fresh</span>
-                  <h5 className="text-lg font-serif font-black text-warm-gray mb-4">Voice AI Strategy Session</h5>
+                  <h4 className="text-lg font-serif font-black text-warm-gray mb-4">Voice AI Strategy Session</h4>
 
                   <p className="text-xs font-serif italic text-warm-gray-light leading-snug mb-8 max-w-[220px]">
                     Decide where automation makes sense—and where it does not.
@@ -149,7 +149,7 @@ export const AboutClosingSection = () => {
                   </div>
 
                   <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest mb-2">Already Live</span>
-                  <h5 className="text-lg font-serif font-black text-warm-gray mb-4">Voice AI Stress Test</h5>
+                  <h4 className="text-lg font-serif font-black text-warm-gray mb-4">Voice AI Stress Test</h4>
 
                   <p className="text-xs font-serif italic text-warm-gray-light leading-snug mb-8 max-w-[220px]">
                     Find where the system will guess before users feel it.

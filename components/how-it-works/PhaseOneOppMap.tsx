@@ -67,7 +67,7 @@ export default function PhaseOneOppMap() {
                   <Target className="w-5 h-5 text-warm-gray" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-warm-gray mb-1">ROI Focus</h4>
+                  <h3 className="font-bold text-warm-gray mb-1">ROI Focus</h3>
                   <p className="text-sm text-warm-gray-light leading-snug">Highest value workflows identified via data, not gut feel.</p>
                 </div>
               </div>
@@ -76,7 +76,7 @@ export default function PhaseOneOppMap() {
                   <ShieldAlert className="w-5 h-5 text-warm-gray" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-warm-gray mb-1">Risk Reduction</h4>
+                  <h3 className="font-bold text-warm-gray mb-1">Risk Reduction</h3>
                   <p className="text-sm text-warm-gray-light leading-snug">Boundary maps and refusal rules locked before a single line of code.</p>
                 </div>
               </div>

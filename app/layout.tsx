@@ -47,6 +47,7 @@ export const viewport: Viewport = {
 
 import { ModalProvider } from "@/context/modal-context"
 import { CTAFormModal } from "@/components/cta/form"
+import { PrivacyModal } from "@/components/legal/privacy-modal"
 import { ScrollTrigger } from "@/components/cta/scroll-trigger"
 import { BackToTopButton } from "@/components/ui/back-to-top"
 
@@ -81,6 +82,7 @@ export default function RootLayout({
         <ModalProvider>
           {children}
           <CTAFormModal />
+          <PrivacyModal />
           <ScrollTrigger />
           <BackToTopButton />
         </ModalProvider>

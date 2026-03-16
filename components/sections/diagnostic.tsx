@@ -158,8 +158,8 @@ export function Diagnostic() {
                   <topic.icon className="w-4 h-4 text-gold group-hover:text-white transition-colors" />
                 </div>
                 <div className="flex-1 space-y-2">
-                  <p className="text-md font-bold text-warm-gray leading-snug">{topic.text}</p>
-                  
+                  <p className="text-md font-medium text-warm-gray leading-snug">{topic.text}</p>
+
                 </div>
               </div>
             ))}
@@ -177,8 +177,8 @@ export function Diagnostic() {
                   <topic.icon className="w-4 h-4 text-gold group-hover:text-white transition-colors" />
                 </div>
                 <div className="flex-1 space-y-2">
-                  <p className="text-md font-bold text-warm-gray leading-snug">{topic.text}</p>
-                  
+                  <p className="text-md font-medium text-warm-gray leading-snug">{topic.text}</p>
+
                 </div>
               </div>
             ))}

@@ -74,7 +74,7 @@ export function Hero() {
           loop
           muted
           playsInline
-          className="w-full h-full object-cover opacity-[0.5] mix-blend-multiply"
+          className="w-full h-full object-cover opacity-[0.8] mix-blend-multiply"
         >
           <source src="/Merged VDOs.mp4" type="video/mp4" />
         </video>
@@ -94,26 +94,26 @@ export function Hero() {
               className="w-full flex flex-col items-center"
             >
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-white leading-[1.5] mb-5 text-center">
-                Voice-first AI: Human edge isn’t a defect to automate away. <br /> It’s the moat to build around.
+                Human edge isn’t a defect to automate away. <br /> It’s the moat to build around.
                 <span className="text-gold uppercase text-5xl md:text-7xl lg:text-9xl block mt-2">
                   OWN YOUR OWN
                 </span>
               </h1>
 
               <div className="text-gold text-[1.5rem] md:text-[2.5rem] lg:text-[3rem] flex flex-col md:flex-row items-center justify-center gap-x-4 min-h-[4rem] md:min-h-0 mb-5">
-                  Enterprise
-                  <span className="text-black bg-gold px-2 rounded-md italic font-light whitespace-nowrap inline-flex items-center">
-                    {displayText}
+                Enterprise
+                <span className="text-black bg-gold px-2 rounded-md italic font-light whitespace-nowrap inline-flex items-center">
+                  {displayText}
 
-                    <motion.span
-                      animate={{ opacity: [1, 0] }}
-                      transition={{ duration: 0.8, repeat: Infinity }}
-                      className="ml-1"
-                    >
-                      |
-                    </motion.span>
+                  <motion.span
+                    animate={{ opacity: [1, 0] }}
+                    transition={{ duration: 0.8, repeat: Infinity }}
+                    className="ml-1"
+                  >
+                    |
+                  </motion.span>
 
-                  </span>
+                </span>
 
               </div>
             </motion.div>
@@ -137,7 +137,7 @@ export function Hero() {
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full sm:w-auto py-6 px-10 text-sm font-serif border-2 border-gold text-warm-gray hover:bg-gold/5 transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/50"
+                className="w-full sm:w-auto py-6 px-10 text-sm font-serif border-2 border-gold text-warm-gray hover:bg-gold/50 transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/70"
                 onClick={() => openModal()}
               >
                 <Shield className="mr-3 h-7 w-7 text-gold" />

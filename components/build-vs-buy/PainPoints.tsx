@@ -75,9 +75,9 @@ export default function PainPoints() {
               <div className="space-y-6 group">
                 <div className="flex items-center gap-4 text-warm-gray">
                   <RefreshCcw className="w-5 h-5 text-gold group-hover:rotate-180 transition-transform duration-700" />
-                  <h4 className="text-xl font-bold uppercase tracking-tight">
+                  <h3 className="text-xl font-bold uppercase tracking-tight">
                     Your internal world is not stable either.
-                  </h4>
+                  </h3>
                 </div>
 
                 <div className="space-y-4 border-l-2 border-sand pl-6">

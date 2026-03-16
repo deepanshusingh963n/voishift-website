@@ -163,7 +163,7 @@ export function Differentiation() {
             <DisciplineVisual index={index} />
           </div>
 
-                <h4 className="text-xl font-bold text-warm-gray mb-4">{discipline.title}</h4>
+                <h3 className="text-xl font-bold text-warm-gray mb-4">{discipline.title}</h3>
                 <p className="text-warm-gray-light leading-relaxed text-sm">{discipline.description}</p>
               </motion.div>
             ))}
