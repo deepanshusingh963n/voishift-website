@@ -65,7 +65,7 @@ const StructuralAuditVisual = () => (
 
     {/* Shielded Column */}
     <div className="absolute inset-0 flex items-center justify-center">
-      <div className="relative w-24 h-48 bg-gold/5 border-2 border-gold/20 rounded-xl overflow-hidden">
+      <div className="relative w-20 h-20 bg-gold/5 border-2 border-gold/20 rounded-xl overflow-hidden">
         <motion.div
           animate={{ top: ["-100%", "100%"] }}
           transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
@@ -171,7 +171,7 @@ export function Engage() {
                 <div className="absolute top-0 right-0 p-4 opacity-[0.05]">
                   <Cpu className="w-12 h-12 text-gold" />
                 </div>
-                <p className="text-md text-warm-gray-light italic font-serif leading-relaxed relative z-10">
+                <p className="text-sm text-warm-gray-light italic font-serif leading-relaxed relative z-10">
                   "This is for teams <span className="text-warm-gray not-italic font-bold">deciding what to build, and what not to.</span>"
                 </p>
               </div>
@@ -194,7 +194,7 @@ export function Engage() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
             viewport={{ once: true }}
-            className="flex flex-col h-full bg-[#faf9f6]/90 backdrop-blur border-2 border-gold/50 p-10 lg:p-14 shadow-lg relative overflow-hidden group"
+            className="flex flex-col h-full bg-[#faf9f6]/90 backdrop-blur border-2 border-gold/50 p-10 lg:p-14 shadow-2xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
 

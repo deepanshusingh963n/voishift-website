@@ -54,7 +54,7 @@ export const WhatWeSolveSection = () => {
             viewport={{ once: true }}
             className="max-w-xl"
           >
-            <h2 className="text-4xl md:text-7xl font-serif font-black text-gold leading-[1.05] tracking-tight mb-8">
+            <h2 className="text-5xl md:text-7xl font-serif font-black text-gold leading-[1.05] tracking-tight mb-8">
               What We <br /> <span className="text-gold italic">Solve</span>
             </h2>
 

@@ -115,9 +115,6 @@ export const LeadershipSection = () => {
   return (
     <section id="leadership" className="py-24 bg-cream relative overflow-hidden">
       {/* Background blueprint elements */}
-      <div className="absolute top-0 right-0 p-12 opacity-[0.03] pointer-events-none">
-        <div className="text-[120px] font-serif font-black leading-none">V_01</div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-6">
         <motion.div

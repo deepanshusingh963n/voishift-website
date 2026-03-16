@@ -27,11 +27,10 @@ export default function HowHero() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-8"
             >
-              <h1 className="text-7xl font-black uppercase tracking-[0.1em] text-gold">
+              <h1 className="text-5xl lg:text-7xl font-black uppercase tracking-[0.1em] text-gold">
                 The VoiShift Process
               </h1>
             </motion.div>
-Page 20 / 22
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

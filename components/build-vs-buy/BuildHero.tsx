@@ -27,7 +27,7 @@ export default function BuildHero() {
               className="flex items-center gap-3 mb-8"
             >
 
-              <span className="text-5xl md:text-7xl lg:text-7xl font-black uppercase tracking-[0.15em] text-gold">
+              <span className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[0.15em] text-gold">
                 Ownership vs Rental
               </span>
             </motion.div>

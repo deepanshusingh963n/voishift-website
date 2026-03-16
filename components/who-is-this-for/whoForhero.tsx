@@ -31,15 +31,15 @@ export default function WhoForHero() {
 
       <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-24 items-start">
-          
+
           <div>
-            
+
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl md:text-6xl lg:text-8xl font-serif text-gold font-black leading-[1.05] tracking-tight mb-8 text-center lg:text-left"
+              className="text-5xl md:text-6xl lg:text-7xl font-serif text-gold font-black leading-[1.05] tracking-tight mb-8 text-center lg:text-left lg:mt-12"
             >
               Who is this for
             </motion.h1>
@@ -53,17 +53,17 @@ export default function WhoForHero() {
               <p className="text-lg lg:text-3xl text-warm-gray font-serif italic leading-tight text-center lg:text-left">
                 This is a filter page. <span className="text-gold not-italic font-black uppercase tracking-wider lg:tracking-widest ml-1">Not a sales pitch.</span>
               </p>
-              
+
               <div className="p-5 lg:p-6 bg-[#faf9f6] border-l-4 border-gold rounded-none relative overflow-hidden mx-auto lg:mx-0">
-                 {/* Subtle warning icon in bg */}
-                 <ShieldAlert className="absolute top-1/2 right-4 -translate-y-1/2 w-32 h-32 text-gold/5 lg:right-4" />
-                 
-                 <p className="text-lg lg:text-2xl text-warm-gray font-serif leading-relaxed relative z-10 text-center lg:text-left">
-                   "Not everyone should use voice AI yet."
-                 </p>
-                 <p className="mt-4 mx-auto text-warm-gray-light font-serif italic text-[12px] lg:text-lg relative z-10 text-center lg:text-left">
-                   VoiShift is for operators who want voice AI that behaves predictably under pressure, with guardrails, traceability, and proof gates.
-                 </p>
+                {/* Subtle warning icon in bg */}
+                <ShieldAlert className="absolute top-1/2 right-4 -translate-y-1/2 w-32 h-32 text-gold/5 lg:right-4" />
+
+                <p className="text-lg lg:text-2xl text-warm-gray font-serif leading-relaxed relative z-10 text-center lg:text-left">
+                  "Not everyone should use voice AI yet."
+                </p>
+                <p className="mt-4 mx-auto text-warm-gray-light font-serif italic text-[12px] lg:text-lg relative z-10 text-center lg:text-left">
+                  VoiShift is for operators who want voice AI that behaves predictably under pressure, with guardrails, traceability, and proof gates.
+                </p>
               </div>
 
               <div className="p-5 lg:p-8 bg-red-50/50 border border-red-100 rounded-none mx-auto lg:mx-0">
@@ -106,55 +106,55 @@ export default function WhoForHero() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative lg:mt-12"
+            className="relative"
           >
             <div className="bg-[#1a1a1a] p-1 lg:p-12 border-2 border-gold/30 shadow-2xl rounded-none relative overflow-hidden">
-               {/* Animated HUD Detail */}
-               <div className="absolute top-0 right-0 p-4 lg:p-6 flex gap-2">
-                 <div className="w-2 h-2 rounded-none bg-gold animate-pulse" />
-                 <div className="w-2 h-2 rounded-none bg-gold/30" />
-               </div>
+              {/* Animated HUD Detail */}
+              <div className="absolute top-0 right-0 p-4 lg:p-6 flex gap-2">
+                <div className="w-2 h-2 rounded-none bg-gold animate-pulse" />
+                <div className="w-2 h-2 rounded-none bg-gold/30" />
+              </div>
 
-               <h2 className="text-xs font-black text-gold uppercase tracking-[0.4em] mb-12">
-                 Filter_Criteria_Array
-               </h2>
+              <h2 className="text-xs font-black text-gold uppercase tracking-[0.4em] mb-12">
+                Filter_Criteria_Array
+              </h2>
 
-               <div className="space-y-6">
-                 {criteria.map((item, i) => (
-                   <motion.div
+              <div className="space-y-6">
+                {criteria.map((item, i) => (
+                  <motion.div
                     key={i}
                     initial={{ opacity: 0, x: -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.6 + i * 0.1 }}
                     className={`flex items-start gap-3 lg:gap-4 p-3 lg:p-4 border ${item.allowed ? 'border-gold/20 bg-gold/5' : 'border-red-500/20 bg-red-500/5'} rounded-none group transition-colors`}
-                   >
-                     <item.icon className={`w-5 h-5 mt-0.5 ${item.allowed ? 'text-gold' : 'text-red-500'}`} />
-                     <span className={`text-[11px] lg:text-sm font-bold uppercase tracking-normal lg:tracking-wide ${item.allowed ? 'text-white/80' : 'text-white/40 line-through'}`}>
-                       {item.text}
-                     </span>
-                   </motion.div>
-                 ))}
-               </div>
+                  >
+                    <item.icon className={`w-5 h-5 mt-0.5 ${item.allowed ? 'text-gold' : 'text-red-500'}`} />
+                    <span className={`text-[11px] lg:text-sm font-bold uppercase tracking-normal lg:tracking-wide ${item.allowed ? 'text-white/80' : 'text-white/40 line-through'}`}>
+                      {item.text}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
 
-               <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
-                 <div className="flex justify-between items-end">
-                   <div>
-                     <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] mb-2">Operational_Fit</p>
-                     <p className="text-2xl font-serif text-gold">High_Risk_Hardened</p>
-                   </div>
-                   <div className="text-right">
-                     <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] mb-2">Integrity_Check</p>
-                     <p className="text-2xl font-serif text-white">READY</p>
-                   </div>
-                 </div>
-               </div>
+              <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
+                <div className="flex justify-between items-end">
+                  <div>
+                    <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] mb-2">Operational_Fit</p>
+                    <p className="text-2xl font-serif text-gold">High_Risk_Hardened</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] mb-2">Integrity_Check</p>
+                    <p className="text-2xl font-serif text-white">READY</p>
+                  </div>
+                </div>
+              </div>
 
-               {/* Scanning Line */}
-               <motion.div 
+              {/* Scanning Line */}
+              <motion.div
                 animate={{ top: ["0%", "100%", "0%"] }}
                 transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
                 className="absolute left-0 right-0 h-px bg-gold/20 pointer-events-none"
-               />
+              />
             </div>
           </motion.div>
 
