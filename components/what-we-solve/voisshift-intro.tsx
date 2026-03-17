@@ -80,7 +80,7 @@ export function VoiShiftIntro() {
                 VoiShift turns voice AI from a speaking layer into a <span className="text-gold italic font-black">business system that holds up when conditions are not clean.</span>
               </h2>
 
-              <div className="grid sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 <div className="p-2 bg-white border border-sand shadow-sm hover:border-gold/30 transition-colors text-center">
                   <p className="text-lg font-serif text-warm-gray italic mb-1">
                     You can rent a voice.

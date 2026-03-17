@@ -1,10 +1,10 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { AlertTriangle, ArrowRight, Quote } from "lucide-react"
+import { AlertTriangle, ArrowRight, Quote, ChevronLeft, ChevronRight } from "lucide-react"
 
 const industries = [
   { id: "logistics", name: "Logistics and supply chain", short: "LOGISTICS" },
@@ -661,6 +661,27 @@ export function WhoThisHits() {
   const [activeCategory, setActiveCategory] = useState("cco")
   const [activeIndustry, setActiveIndustry] = useState("logistics")
 
+  // Mobile scroll indicator state
+  const tabsListRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(true)
+
+  const handleTabScroll = () => {
+    const el = tabsListRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 4)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+  }
+
+  const scrollTabs = (amount: number) => {
+    tabsListRef.current?.scrollBy({ left: amount, behavior: "smooth" })
+  }
+
+  useEffect(() => {
+    // Check initial scroll state once mounted
+    handleTabScroll()
+  }, [])
+
   const currentCategory = categoryData[activeCategory]
   const currentIndustry = industries.find(ind => ind.id === activeIndustry)
   const currentIndustryData = currentCategory.industryTriggers[activeIndustry] || {
@@ -688,8 +709,31 @@ export function WhoThisHits() {
 
             {/* Folder-Style Role Tabs */}
             <div className="bg-[#F9F8F6] relative h-[64px]">
+
+              {/* Mobile Scroll Indicators - only visible on mobile */}
+              {canScrollLeft && (
+                <button
+                  onClick={() => scrollTabs(-150)}
+                  className="md:hidden absolute left-0 top-0 h-full z-40 flex items-center px-1 bg-gradient-to-r from-white to-transparent pointer-events-auto"
+                  aria-label="Scroll tabs left"
+                >
+                  <ChevronLeft className="w-5 h-5 text-gold" />
+                </button>
+              )}
+              {canScrollRight && (
+                <button
+                  onClick={() => scrollTabs(150)}
+                  className="md:hidden absolute right-0 top-0 h-full z-40 flex items-center px-1 bg-gradient-to-l from-white to-transparent pointer-events-auto"
+                  aria-label="Scroll tabs right"
+                >
+                  <ChevronRight className="w-5 h-5 text-gold" />
+                </button>
+              )}
+
               <TabsList
-                className="bg-transparent h-full flex p-0 border-b border-sand/30 rounded-none w-full overflow-x-auto overflow-y-hidden scrollbar-hide"
+                ref={tabsListRef}
+                onScroll={handleTabScroll}
+                className="bg-transparent h-full flex p-0 rounded-none w-full overflow-x-auto overflow-y-hidden scrollbar-hide"
                 style={{
                   msOverflowStyle: 'none',
                   scrollbarWidth: 'none',

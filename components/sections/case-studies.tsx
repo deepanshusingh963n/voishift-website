@@ -140,7 +140,7 @@ export function CaseStudies() {
             <button className="group relative px-12 py-5 bg-[#1a1a1a] text-white overflow-hidden transition-all duration-500 hover:shadow-[0_0_30px_rgba(212,175,55,0.2)]">
               <div className="absolute inset-x-0 bottom-0 h-1 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               <div className="flex items-center gap-4 relative z-10">
-                <span className="text-sm font-black uppercase tracking-[0.2em]">Explore All Case Studies</span>
+                <span className="text-sm font-black uppercase tracking-[0.2em]">Explore More</span>
                 <ArrowRight className="w-5 h-5 text-gold group-hover:translate-x-2 transition-transform" />
               </div>
             </button>

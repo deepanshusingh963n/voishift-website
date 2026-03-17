@@ -145,7 +145,7 @@ export function CaseStudiesCTA() {
   const { openModal } = useModal()
 
   return (
-    <section className="py-24 px-6 bg-white relative overflow-hidden border-t border-sand">
+    <section className="py-24 px-6 bg-cream-light relative overflow-hidden border-t border-sand">
       {/* Blueprint Grid Backdrop */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,theme(colors.sand/10)_1px,transparent_1px),linear-gradient(to_bottom,theme(colors.sand/10)_1px,transparent_1px)] bg-[size:40px_40px]" />
@@ -163,11 +163,6 @@ export function CaseStudiesCTA() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold/5 border border-gold/10 rounded-full mb-8">
-                <Zap className="w-3 h-3 text-gold" />
-                <span className="text-[10px] font-black tracking-[0.3em] text-gold uppercase">Readiness Protocol</span>
-              </div>
-
               <h2 className="font-serif text-4xl md:text-6xl text-warm-gray mb-8 tracking-tighter leading-[0.9]">
                 Ready to Build Voice AI That <br />
                 <span className="text-gold italic">Holds Up?</span>
@@ -193,7 +188,7 @@ export function CaseStudiesCTA() {
 
                 <button
                   onClick={() => openModal()}
-                  className="group relative flex flex-col items-center justify-center gap-1 px-8 py-5 border-2 border-gold text-gold rounded-2xl transition-all duration-500 hover:bg-gold/5 overflow-hidden"
+                  className="group relative flex flex-col items-center justify-center gap-1 px-8 py-5 border-2 border-gold text-gold rounded-2xl transition-all duration-500 hover:bg-gold hover:text-white overflow-hidden"
                 >
                   <div className="flex items-center gap-3">
                     <span className="font-black uppercase tracking-widest text-sm">Voice AI Stress Test</span>

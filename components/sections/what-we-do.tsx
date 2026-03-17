@@ -179,7 +179,7 @@ export function WhatWeDo() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="font-serif text-xl md:text-3xl text-warm-gray-light leading-[1.1] mb-8">
+            <div className="font-serif text-2xl md:text-4xl text-warm-gray-light leading-[1.1] mb-8">
               <span className="font-black text-warm-gray">VoiShift</span> is a <span className="text-gold"> Voice-first, Anything-AI </span> execution partner that helps enterprises run work, not chase it or firefight it.
             </div>
             <div className="space-y-3 text-lg md:text-xl text-warm-gray-light font-serif leading-relaxed max-w-2xl border-l-4 border-gold pl-8 py-1">
@@ -232,8 +232,8 @@ export function WhatWeDo() {
                       onMouseEnter={() => isActive && setIsPaused(true)}
                       onMouseLeave={() => isActive && setIsPaused(false)}
                       className={`w-full text-left flex items-center gap-4 p-4 lg:p-6 transition-all duration-300 border-l-4 rounded-r-lg relative overflow-hidden ${isActive
-                          ? "bg-white border-gold shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
-                          : "hover:bg-white/40 border-transparent text-warm-gray/60 hover:text-warm-gray hover:border-gold/30"
+                        ? "bg-white border-gold shadow-[0_8px_30px_rgb(0,0,0,0.04)]"
+                        : "hover:bg-white/40 border-transparent text-warm-gray/60 hover:text-warm-gray hover:border-gold/30"
                         }`}
                     >
                       {isActive && (

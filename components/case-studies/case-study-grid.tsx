@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import React from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Image from "next/image"
@@ -187,14 +187,38 @@ const CaseStudyVisual = ({ category }: { category: string }) => {
 
 export function CaseStudyGrid() {
   const [activeCategory, setActiveCategory] = useState("ALL")
+  const [isExpanded, setIsExpanded] = useState(false)
+  const sectionRef = useRef<HTMLElement>(null)
+  const gridRef = useRef<HTMLDivElement>(null)
   const { openModal } = useModal();
+
+  const handleCategoryChange = (category: string) => {
+    setActiveCategory(category)
+    setIsExpanded(false)
+  }
+
+  const handleToggle = () => {
+    if (isExpanded) {
+      // Collapse: scroll to grid instantly first, then collapse (so animation is out of view)
+      if (gridRef.current) {
+        gridRef.current.scrollIntoView({ behavior: "instant" })
+      }
+      setIsExpanded(false)
+    } else {
+      // Expand: just expand downwards, no scroll needed
+      setIsExpanded(true)
+    }
+  }
 
   const filteredStudies = activeCategory === "ALL"
     ? caseStudies
     : caseStudies.filter(study => study.category === activeCategory)
 
+  const initialVisible = filteredStudies.slice(0, 3)
+  const extraVisible = filteredStudies.slice(3)
+
   return (
-    <section id="studies" className="py-24 px-6 bg-white relative overflow-hidden">
+    <section ref={sectionRef} id="studies" className="py-24 px-6 bg-white relative overflow-hidden">
       {/* Structural Backdrop */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-px bg-sand/30" />
@@ -279,7 +303,7 @@ export function CaseStudyGrid() {
             return (
               <button
                 key={ind.name}
-                onClick={() => setActiveCategory(ind.name)}
+                onClick={() => handleCategoryChange(ind.name)}
                 className={cn(
                   "relative group flex items-center justify-center lg:justify-start gap-2 lg:gap-3 px-2 lg:px-5 py-3 rounded-xl transition-all duration-500 overflow-hidden",
                   activeCategory === ind.name
@@ -305,80 +329,189 @@ export function CaseStudyGrid() {
         </div>
 
         <motion.div
+          ref={gridRef}
           layout
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16"
         >
-          <AnimatePresence mode="popLayout">
-            {filteredStudies.map((study, index) => (
-              <motion.div
-                key={study.id}
-                layout
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.6, delay: index * 0.05 }}
-                className={cn(
-                  "group relative",
-                  index % 3 === 1 ? "lg:mt-12" : index % 3 === 2 ? "lg:mt-24" : ""
-                )}
-              >
-                <div className="relative bg-white border border-sand rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:shadow-2xl hover:border-gold group/card">
-                  {/* Case Study Image Wrapper */}
-                  <div className="relative h-64 overflow-hidden bg-[#faf9f6]">
-                    <Image
-                      src={study.image}
-                      alt={study.title}
-                      fill
-                      className="object-cover transition-all duration-1000 grayscale group-hover/card:grayscale-0 group-hover/card:scale-110"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover/card:opacity-40 transition-opacity" />
+          {initialVisible.map((study, index) => (
+            <motion.div
+              key={study.id}
+              layout
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.05 }}
+              className={cn(
+                "group relative",
+                index % 3 === 1 ? "lg:mt-12" : index % 3 === 2 ? "lg:mt-24" : ""
+              )}
+            >
+              <div className="relative bg-white border border-sand rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:shadow-2xl hover:border-gold group/card">
+                {/* Case Study Image Wrapper */}
+                <div className="relative h-64 overflow-hidden bg-[#faf9f6]">
+                  <Image
+                    src={study.image}
+                    alt={study.title}
+                    fill
+                    className="object-cover transition-all duration-1000 grayscale group-hover/card:grayscale-0 group-hover/card:scale-110"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover/card:opacity-40 transition-opacity" />
 
-                    {/* Illustrated Overlays */}
-                    <CaseStudyVisual category={study.category} />
+                  {/* Illustrated Overlays */}
+                  <CaseStudyVisual category={study.category} />
 
-                    {/* Category Floating Tag */}
-                    <div className="absolute top-6 left-6 flex flex-col gap-1 items-start">
-                      <span className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-md text-[8px] font-mono font-black text-gold uppercase tracking-[0.2em] border border-white/10">
-                        {study.category}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="p-10 relative">
-                    {/* Card Narrative */}
-                    <h3 className="font-serif text-2xl text-warm-gray mb-4 leading-tight group-hover/card:text-gold transition-colors duration-500">
-                      {study.title}
-                    </h3>
-
-                    <p className="text-sm text-warm-gray-light leading-relaxed mb-6 italic font-serif">
-                      "{study.description}"
-                    </p>
-
-                    {/* Outcome Evidence Panel */}
-                    <div className="bg-[#faf9f6] border border-sand rounded-2xl p-6 mb-8 group-hover/card:bg-white transition-colors duration-500">
-                      <div className="flex items-center gap-2 mb-3">
-                        <MousePointer2 className="w-3 h-3 text-gold" />
-                        <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Outcome_Protocol</span>
-                      </div>
-                      <p className="text-sm font-bold text-warm-gray leading-snug">
-                        {study.outcome}
-                      </p>
-                    </div>
-
-                    <button
-                      onClick={() => openModal("resource", { name: study.title, type: "Case Study" })}
-                      className="flex items-center gap-3 text-xs font-black text-warm-gray uppercase tracking-widest group/btn transition-all"
-                    >
-                      <span className="border-b-2 border-gold pb-1">Read full story</span>
-                      <ArrowRight className="w-4 h-4 text-gold group-hover/btn:translate-x-3 transition-transform duration-500" />
-                    </button>
+                  {/* Category Floating Tag */}
+                  <div className="absolute top-6 left-6 flex flex-col gap-1 items-start">
+                    <span className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-md text-[8px] font-mono font-black text-gold uppercase tracking-[0.2em] border border-white/10">
+                      {study.category}
+                    </span>
                   </div>
                 </div>
-              </motion.div>
-            ))}
-          </AnimatePresence>
+
+                <div className="p-10 relative">
+                  {/* Card Narrative */}
+                  <h3 className="font-serif text-2xl text-warm-gray mb-4 leading-tight group-hover/card:text-gold transition-colors duration-500">
+                    {study.title}
+                  </h3>
+
+                  <p className="text-sm text-warm-gray-light leading-relaxed mb-6 italic font-serif">
+                    "{study.description}"
+                  </p>
+
+                  {/* Outcome Evidence Panel */}
+                  <div className="bg-[#faf9f6] border border-sand rounded-2xl p-6 mb-8 group-hover/card:bg-white transition-colors duration-500">
+                    <div className="flex items-center gap-2 mb-3">
+                      <MousePointer2 className="w-3 h-3 text-gold" />
+                      <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Outcome_Protocol</span>
+                    </div>
+                    <p className="text-sm font-bold text-warm-gray leading-snug">
+                      {study.outcome}
+                    </p>
+                  </div>
+
+                  <button
+                    onClick={() => openModal("resource", { name: study.title, type: "Case Study" })}
+                    className="flex items-center gap-3 text-xs font-black text-warm-gray uppercase tracking-widest group/btn transition-all"
+                  >
+                    <span className="border-b-2 border-gold pb-1">Read full story</span>
+                    <ArrowRight className="w-4 h-4 text-gold group-hover/btn:translate-x-3 transition-transform duration-500" />
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
+
+        <AnimatePresence mode="wait">
+          {isExpanded && extraVisible.length > 0 && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
+              className="overflow-hidden"
+            >
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16 mt-16 pb-8">
+                {extraVisible.map((study, index) => {
+                  const globalIndex = index + 3;
+                  return (
+                    <motion.div
+                      key={study.id}
+                      layout
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                      className={cn(
+                        "group relative",
+                        globalIndex % 3 === 1 ? "lg:mt-12" : globalIndex % 3 === 2 ? "lg:mt-24" : ""
+                      )}
+                    >
+                      <div className="relative bg-white border border-sand rounded-[2.5rem] overflow-hidden transition-all duration-700 hover:shadow-2xl hover:border-gold group/card">
+                        {/* Case Study Image Wrapper */}
+                        <div className="relative h-64 overflow-hidden bg-[#faf9f6]">
+                          <Image
+                            src={study.image}
+                            alt={study.title}
+                            fill
+                            className="object-cover transition-all duration-1000 grayscale group-hover/card:grayscale-0 group-hover/card:scale-110"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover/card:opacity-40 transition-opacity" />
+
+                          {/* Illustrated Overlays */}
+                          <CaseStudyVisual category={study.category} />
+
+                          {/* Category Floating Tag */}
+                          <div className="absolute top-6 left-6 flex flex-col gap-1 items-start">
+                            <span className="px-3 py-1 bg-black/40 backdrop-blur-md rounded-md text-[8px] font-mono font-black text-gold uppercase tracking-[0.2em] border border-white/10">
+                              {study.category}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="p-10 relative">
+                          {/* Card Narrative */}
+                          <h3 className="font-serif text-2xl text-warm-gray mb-4 leading-tight group-hover/card:text-gold transition-colors duration-500">
+                            {study.title}
+                          </h3>
+
+                          <p className="text-sm text-warm-gray-light leading-relaxed mb-6 italic font-serif">
+                            "{study.description}"
+                          </p>
+
+                          {/* Outcome Evidence Panel */}
+                          <div className="bg-[#faf9f6] border border-sand rounded-2xl p-6 mb-8 group-hover/card:bg-white transition-colors duration-500">
+                            <div className="flex items-center gap-2 mb-3">
+                              <MousePointer2 className="w-3 h-3 text-gold" />
+                              <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Outcome_Protocol</span>
+                            </div>
+                            <p className="text-sm font-bold text-warm-gray leading-snug">
+                              {study.outcome}
+                            </p>
+                          </div>
+
+                          <button
+                            onClick={() => openModal("resource", { name: study.title, type: "Case Study" })}
+                            className="flex items-center gap-3 text-xs font-black text-warm-gray uppercase tracking-widest group/btn transition-all"
+                          >
+                            <span className="border-b-2 border-gold pb-1">Read full story</span>
+                            <ArrowRight className="w-4 h-4 text-gold group-hover/btn:translate-x-3 transition-transform duration-500" />
+                          </button>
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* Show All/Less Toggle */}
+        {filteredStudies.length > 3 && (
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mt-16 flex justify-center"
+          >
+            <button
+               onClick={handleToggle}
+              className="group relative px-10 py-4 bg-white border border-sand hover:border-gold transition-all duration-500 overflow-hidden shadow-sm"
+            >
+              <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+              <div className="flex items-center gap-3">
+                <span className="text-xs font-black uppercase tracking-[0.2em] text-warm-gray group-hover:text-gold transition-colors">
+                  {isExpanded ? "Show Less" : "Show All"}
+                </span>
+                <ArrowRight className={cn(
+                  "w-4 h-4 text-gold transition-transform duration-500",
+                  isExpanded ? "-rotate-90" : "group-hover:translate-x-1"
+                )} />
+              </div>
+            </button>
+          </motion.div>
+        )}
 
         {filteredStudies.length === 0 && (
           <div className="text-center py-32 border-2 border-dashed border-sand rounded-[3rem]">

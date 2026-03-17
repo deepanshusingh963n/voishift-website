@@ -34,14 +34,14 @@ export default function WhoThisIsFor() {
           <div className="inline-flex bg-[#faf9f6] p-3 border border-sand shadow-inner relative z-20 rounded-none">
             <button
               onClick={() => setActiveTab("for")}
-              className={`relative z-10 px-8 py-4 rounded-none text-[20px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "for" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
+              className={`relative z-10 px-8 py-4 rounded-none md:text-[20px] text-[12px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "for" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
                 }`}
             >
               Who this is for
             </button>
             <button
               onClick={() => setActiveTab("not")}
-              className={`relative z-10 px-8 py-4 rounded-none text-[20px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "not" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
+              className={`relative z-10 px-8 py-4 rounded-none md:text-[20px] text-[12px] font-black uppercase tracking-[0.2em] transition-all duration-500 ${activeTab === "not" ? "bg-white border border-sand shadow-lg text-gold" : "text-gold/40 hover:text-gold/60"
                 }`}
             >
               Who this is not for
@@ -114,7 +114,7 @@ export default function WhoThisIsFor() {
                 transition={{ delay: 0.5 }}
                 className="mt-16 pt-10 border-t border-sand/30"
               >
-                <p className="text-[15px] font-black text-warm-gray/30 uppercase tracking-[0.4em] mb-6 underline decoration-gold/30">Standard Profiles</p>
+                <p className="text-[15px] font-black text-warm-gray/50 uppercase tracking-[0.4em] mb-6">Standard Profiles</p>
                 <div className="flex flex-wrap gap-3">
                   {typicalTeams.map(team => (
                     <span key={team} className="px-5 py-2 bg-white border border-sand rounded-none text-[11px] font-bold text-warm-gray/60 shadow-sm hover:shadow-md transition-shadow">

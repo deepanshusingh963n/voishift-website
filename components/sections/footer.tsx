@@ -13,7 +13,7 @@ const links = [
 ]
 
 export function Footer() {
-  const { openModal, openPrivacyModal } = useModal()
+  const { openModal } = useModal()
   return (
     <footer className="py-12 lg:py-14 bg-[#faf9f6] border-t border-sand">
       <div className="max-w-7xl mx-auto px-6">

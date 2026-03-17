@@ -41,35 +41,7 @@ export default function Home() {
       {/* Section 12: Footer */}
       <Footer />
 
-      {/* Section 2: Who this hits */}
-      {/* <WhoThisHits /> */}
 
-      {/* Section 3: Built for real-world teams */}
-      {/* <BuiltForTeams /> */}
-
-      {/* Section 4: VoiShift intro */}
-      {/* <VoiShiftIntro /> */}
-
-
-
-      {/* Section 5: Why this threat exists */}
-      {/* <Threat /> */}
-
-      {/* Section 6: What makes VoiShift different */}
-      {/* <section id="differentiation">
-        <Differentiation />
-      </section> */}
-
-      {/* Section 7: Rent vs Build */}
-      {/* <section id="rent-vs-build">
-        <RentVsBuild />
-      </section> */}
-
-      {/* Section 8: Proof that holds up */}
-      {/* <section id="proof">
-        <Proof />
-      </section> */}
-      
     </main>
   )
 }

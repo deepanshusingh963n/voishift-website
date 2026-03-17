@@ -167,11 +167,11 @@ export function Engage() {
                 </div>
               </div>
 
-              <div className="p-8 bg-gold/5 rounded-[2rem] border border-gold/10 mb-10 relative overflow-hidden group/text">
+              <div className="p-6 bg-gold/5 rounded-[0rem] border border-gold/10 mb-10 relative overflow-hidden group/text">
                 <div className="absolute top-0 right-0 p-4 opacity-[0.05]">
                   <Cpu className="w-12 h-12 text-gold" />
                 </div>
-                <p className="text-sm text-warm-gray-light italic font-serif leading-relaxed relative z-10">
+                <p className="text-md text-warm-gray-light italic font-serif leading-relaxed tracking-tight relative z-10">
                   "This is for teams <span className="text-warm-gray not-italic font-bold">deciding what to build, and what not to.</span>"
                 </p>
               </div>
@@ -219,11 +219,11 @@ export function Engage() {
                 </div>
               </div>
 
-              <div className="p-8 bg-white/60 rounded-lg border border-sand mb-10 relative overflow-hidden group/text">
+              <div className="p-8 bg-white/60 rounded-[0rem] border border-sand mb-10 relative overflow-hidden group/text">
                 <div className="absolute top-0 right-0 p-4 opacity-[0.05]">
                   <Activity className="w-12 h-12 text-warm-gray" />
                 </div>
-                <p className="text-md text-warm-gray-light italic font-serif leading-relaxed relative z-10">
+                <p className="text-sm text-warm-gray-light italic font-serif leading-relaxed relative z-10">
                   "This is for teams asking <span className="text-warm-gray not-italic font-bold">Is this actually safe to scale?</span>"
                 </p>
               </div>
