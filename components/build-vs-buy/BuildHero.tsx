@@ -68,7 +68,7 @@ export default function BuildHero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 0.6, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="bg-white/40 border border-sand rounded-2xl p-8 shadow-lg backdrop-blur-sm"
+                className="bg-white border border-sand/80 rounded-2xl p-8 shadow-2xl backdrop-blur-sm"
               >
                 <div className="flex flex-col items-center gap-6 text-center">
                   <Cloud className="w-10 h-10 text-warm-gray/60" />

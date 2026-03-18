@@ -28,7 +28,7 @@ export default function WhoThisIsFor() {
   const [activeTab, setActiveTab] = useState<"for" | "not">("for")
 
   return (
-    <section id="criteria" className="py-24 bg-white relative overflow-hidden">
+    <section id="criteria" className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-center mb-8">
           <div className="inline-flex bg-[#faf9f6] p-3 border border-sand shadow-inner relative z-20 rounded-none">
@@ -57,7 +57,7 @@ export default function WhoThisIsFor() {
           className={`grid md:grid-cols-2 border border-sand rounded-none overflow-hidden shadow-[0_40px_100px_rgba(0,0,0,0.08)] bg-white`}
         >
           {/* Split A */}
-          <div className={`p-10 lg:p-16 relative overflow-hidden transition-colors duration-700 ${activeTab === "not" ? "bg-[#1a1a1a] text-white" : "bg-white"
+          <div className={`p-8 lg:p-16 relative overflow-hidden transition-colors duration-700 ${activeTab === "not" ? "bg-[#1a1a1a] text-white" : "bg-white"
             }`}>
             {/* Aesthetic overlays */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 blur-3xl opacity-50" />
@@ -95,12 +95,12 @@ export default function WhoThisIsFor() {
           </div>
 
           {/* Split B */}
-          <div className={`p-10 lg:p-16 flex flex-col justify-center border-l border-sand transition-colors duration-700 ${activeTab === "not" ? "bg-warm-gray text-white" : "bg-[#faf9f6]/40"
+          <div className={`p-8 lg:p-16 flex flex-col justify-center border-l border-sand transition-colors duration-700 ${activeTab === "not" ? "bg-warm-gray text-white" : "bg-[#faf9f6]/40"
             }`}>
             <ul className="space-y-8">
               {(activeTab === "for" ? forTeams : notForTeams).map((item, i) => (
-                <li key={i} className="flex items-start gap-6 group/item">
-                  <div className={`mt-2.5 w-2 h-2 rounded-none shrink-0 transition-all duration-500 group-hover/item:scale-150 ${activeTab === "for" ? "bg-gold" : "bg-red-400"
+                <li key={i} className="flex items-start gap-1 lg:gap-6 group/item">
+                  <div className={`mt-2 w-2 h-2 rounded-none shrink-0 transition-all duration-500 group-hover/item:scale-150 ${activeTab === "for" ? "bg-gold" : "bg-red-400"
                     }`} />
                   <span className="text-base font-bold tracking-tight opacity-90">{item}</span>
                 </li>

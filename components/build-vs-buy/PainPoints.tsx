@@ -16,10 +16,10 @@ export default function PainPoints() {
   ]
 
   return (
-    <section className="bg-white py-24 lg:py-24 relative overflow-hidden">
+    <section className="bg-white py-24 lg:py-18 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Increased width for better layout balance */}
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
 
           <div className="text-center mb-16 space-y-6">
             <span className="text-[15px] bg-black border border-gold/20 px-2 py-1 rounded-2xl font-black text-gold uppercase tracking-[0.5em]">

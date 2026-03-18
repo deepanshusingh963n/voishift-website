@@ -14,13 +14,13 @@ export default function RentingAI() {
   ]
 
   return (
-    <section id="renting" className="bg-white py-24 lg:py-20 relative overflow-hidden">
+    <section id="renting" className="bg-white py-24 lg:py-18 relative overflow-hidden">
       {/* Sharp Grid Pattern Overlay */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
         style={{ backgroundImage: 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)', backgroundSize: '50px 50px' }} />
 
-      <div className="text-center max-w-7xl mx-auto px-6 mb-20 space-y-6">
-        <div className="p-8 text-center bg-gold border border-gold/20 rounded-full">
+      <div className="text-center w-full mb-10 space-y-4">
+        <div className="p-6 text-center bg-gold border border-gold/20 ">
           <p className="text-2xl lg:text-3xl text-black font-serif leading-relaxed mx-auto max-w-7xl text-center">
             <span className="font-black">If you are deciding this, you are not really deciding “software”.</span>
             You are deciding whether the AI that speaks for your business
@@ -36,9 +36,6 @@ export default function RentingAI() {
 
           <div className="space-y-10 order-2 lg:order-1">
             <div className="p-8 border-2 border-sand bg-cream-dark/30 rounded-none relative">
-              <div className="absolute top-0 right-0 p-4">
-                <UserMinus className="w-8 h-8 text-warm-gray/20" />
-              </div>
               <h2 className="text-2xl font-serif text-gold mb-8 uppercase">What “renting AI” looks like</h2>
 
               <div className="space-y-6">
@@ -48,7 +45,7 @@ export default function RentingAI() {
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex gap-4 items-start"
+                    className="flex gap-3 items-start"
                   >
                     <div className="w-1.5 h-1.5 bg-gold shrink-0 mt-2.5 rounded-none" />
                     <p className="text-lg text-warm-gray-light font-serif leading-snug">{point}</p>
@@ -78,7 +75,7 @@ export default function RentingAI() {
                 { label: "WALLS", action: "You can repaint the walls." },
                 { label: "FURNITURE", action: "You can rearrange the furniture." },
               ].map((item, i) => (
-                <div key={i} className="flex items-center justify-between p-6 border border-sand hover:border-gold transition-colors group rounded-none">
+                <div key={i} className="flex items-center justify-between p-3 border border-sand hover:border-gold transition-colors group rounded-none">
                   <div className="space-y-1">
                     <p className="text-[9px] font-black text-gold uppercase tracking-widest">{item.label}</p>
                     <p className="text-xl font-serif text-warm-gray">{item.action}</p>

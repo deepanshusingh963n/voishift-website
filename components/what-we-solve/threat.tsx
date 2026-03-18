@@ -266,11 +266,11 @@ export function Threat() {
           viewport={{ once: true }}
           className="text-center mb-12 lg:mb-16"
         >
-          <span className="text-[10px] md:text-[12px] lg:text-[15px] border border-gold bg-black p-2 rounded-full font-black text-gold uppercase tracking-[0.4em] mb-4">Structural Failure Modes</span>
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 text-gold font-black leading-[1.1] mb-6 text-balance">
             Why things go wrong
           </h2>
           <div className="flex flex-col items-center gap-4">
+            <span className="text-[10px] md:text-[12px] lg:text-[15px] border border-gold bg-black p-2 rounded-full font-black text-gold uppercase tracking-[0.4em] mb-4">Structural Failure Modes</span>
             <div className="h-1 w-16 bg-gold/30 rounded-full" />
             <p className="text-xl text-warm-gray-light max-w-2xl font-serif italic">
               Because surface fixes get rewarded.
@@ -290,10 +290,7 @@ export function Threat() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="inline-flex items-center gap-3 px-4 py-2 bg-gold/10 rounded-full border border-gold/20 mb-4">
-                  <Zap className="w-4 h-4 text-gold" />
-                  <span className="text-[12px] font-bold text-gold uppercase tracking-widest">The Optical Illusion</span>
-                </div>
+
                 <h3 className="text-2xl lg:text-3xl font-serif text-warm-gray mb-6">What gets rewarded</h3>
 
                 <div className="space-y-4">
@@ -325,10 +322,7 @@ export function Threat() {
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true, margin: "-100px" }}
               >
-                <div className="inline-flex items-center gap-3 px-4 py-2 bg-warm-gray/5 rounded-full border border-warm-gray/10 mb-4">
-                  <Network className="w-4 h-4 text-warm-gray" />
-                  <span className="text-[12px] font-bold text-warm-gray-light uppercase tracking-widest">The Real Foundation</span>
-                </div>
+
                 <h3 className="text-2xl lg:text-3xl font-serif text-warm-gray mb-6">But the truth is messy</h3>
 
                 <div className="space-y-4">
@@ -350,11 +344,11 @@ export function Threat() {
               </motion.div>
             </div>
           </div>
+          <div className="h-1 w-full bg-gold/30 rounded-full" />
           {/* Step 3: The Critical Difference (Center Integrated) */}
-          <div className="space-y-12">
+          <div className="space-y-12 mt-10">
             <div className="text-center max-w-3xl mx-auto">
-              <h3 className="text-2xl font-serif text-warm-gray mb-4">Why this happens</h3>
-              <p className="text-warm-gray-light text-md italic">The gap between intent and improvisation.</p>
+              <h3 className="text-5xl font-serif font-black text-gold mb-4">This happens because of the gap between intent and improvisation.</h3>
             </div>
 
             <motion.div
@@ -411,31 +405,31 @@ export function Threat() {
                   </div>
                 </div>
               </div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1.2 }}
+                viewport={{ once: true }}
+                className="mt-18 lg:mt-18 text-center relative"
+              >
+                {/* Spotlight Glow */}
+                <div className="absolute inset-0 bg-gold/20 blur-[120px] rounded-full scale-50" />
+
+                <div className="relative z-10 space-y-6">
+                  <h4 className="text-3xl md:text-4xl lg:text-5xl font-serif text-warm-gray leading-tight text-balance">
+                    That is why this problem is <span className="text-gold italic underline decoration-gold/30">structural</span>.
+                  </h4>
+                  <p className="text-xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
+                    And why it only shows up once the bot starts sounding good.
+                  </p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
 
         {/* Conclusion Final Impact */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          viewport={{ once: true }}
-          className="mt-18 lg:mt-18 text-center relative"
-        >
-          {/* Spotlight Glow */}
-          <div className="absolute inset-0 bg-gold/20 blur-[120px] rounded-full scale-50" />
 
-          <div className="relative z-10 space-y-6">
-            <h4 className="text-3xl md:text-4xl lg:text-5xl font-serif text-warm-gray leading-tight text-balance">
-              That is why this problem is <span className="text-gold italic underline decoration-gold/30">structural</span>.
-            </h4>
-            <div className="h-10 w-px bg-gold/30 mx-auto" />
-            <p className="text-xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
-              And why it only shows up once the bot starts sounding good.
-            </p>
-          </div>
-        </motion.div>
 
         <div className="relative py-20 px-8 lg:px-12 bg-[#1a1a1a] rounded-[0rem] text-center overflow-hidden shadow-2xl mb-12 mt-16">
           {/* Matrix Background */}
@@ -457,7 +451,7 @@ export function Threat() {
               <h3 className="text-3xl md:text-5xl font-serif font-black text-white mb-6">We design voice AI systems that:</h3>
               <div className="w-32 h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
             </div>
-        
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {solutions.map((solution, index) => (
                 <motion.div
@@ -478,7 +472,7 @@ export function Threat() {
               ))}
             </div>
           </div>
-        </div>  
+        </div>
       </div>
     </section>
   )

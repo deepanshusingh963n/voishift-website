@@ -30,10 +30,10 @@ export default function PaymentModel() {
   return (
     <section id="pricing" className="bg-cream-dark py-24 lg:py-32 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-        
+
         <div className="max-w-3xl mx-auto space-y-8 mb-20 animate-fade-in">
           <span className="text-[15px] border border-gold rounded-full px-4 py-1 bg-black font-black text-gold uppercase tracking-[0.4em]">Our Economic Model</span>
-          <h2 className="text-4xl lg:text-6xl font-serif text-gold font-black leading-tight">
+          <h2 className="text-4xl lg:text-6xl font-serif text-gold font-black leading-tight mt-5">
             How we <span className="text-gold italic">get paid</span>
           </h2>
           <p className="text-xl text-warm-gray-light font-serif leading-relaxed italic">
@@ -43,7 +43,7 @@ export default function PaymentModel() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {comparisons.map((item, i) => (
-            <motion.div 
+            <motion.div
               key={i}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -79,10 +79,10 @@ export default function PaymentModel() {
           ))}
         </div>
 
-        <div className="mt-20 max-w-2xl mx-auto p-8 border border-gold/20 rounded-2xl bg-gold/5 backdrop-blur-sm">
-           <p className="text-sm text-warm-gray italic font-serif leading-relaxed">
-             "Proof does not come from demos. It comes from your <span className="text-gold font-bold">real calls</span>, your <span className="text-gold font-bold">actual workflows</span>, and your most <span className="text-gold font-bold">messy edge cases</span>."
-           </p>
+        <div className="mt-20 max-w-7xl mx-auto p-8 border border-gold/20 rounded-2xl bg-gold/5 backdrop-blur-sm">
+          <p className="text-lg text-warm-gray italic font-serif leading-relaxed">
+            "Proof does not come from demos. It comes from your <span className="text-gold font-bold">real calls</span>, your <span className="text-gold font-bold">actual workflows</span>, and your most <span className="text-gold font-bold">messy edge cases</span>."
+          </p>
         </div>
 
       </div>

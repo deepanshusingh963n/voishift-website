@@ -128,8 +128,8 @@ export function BuiltForTeams() {
 
             <div className="max-w-7xl mx-auto px-6 relative z-10">
 
-                <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center mb-20">
-                    {/* Section Header */}
+                <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-24 items-center mb-10">
+
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -146,20 +146,7 @@ export function BuiltForTeams() {
                         <p className="text-xl md:text-2xl text-warm-gray-light max-w-3xl leading-relaxed font-serif italic mb-10">
                             We build for teams where <span className="not-italic font-bold">wrong actions cost more than slow answers.</span> Used inside environments where voice AI touches live workflows, changing rules, and real consequences.
                         </p>
-
-                        <div className="flex items-center gap-4 py-6 border-t border-sand">
-                            <div className="flex -space-x-3">
-                                {[...Array(4)].map((_, i) => (
-                                    <div key={i} className="w-10 h-10 rounded-full border-2 border-white bg-sand flex items-center justify-center">
-                                        <Database className="w-4 h-4 text-warm-gray/30" />
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="h-4 w-px bg-sand mx-2" />
-                            <p className="text-sm font-bold text-warm-gray/60 uppercase tracking-widest">Enterprise Ready Infrastructure</p>
-                        </div>
                     </motion.div>
-
                     {/* Path of Veracity Visual Area */}
                     <div className="relative">
                         <PathOfVeracity />
@@ -190,51 +177,12 @@ export function BuiltForTeams() {
                             </div>
                         </div>
                     </div>
+
                 </div>
+                <div className="h-1 w-full bg-sand" />
 
-                <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center mb-20">
 
-                    {/* Visual: Integrated Circuit Path */}
-                    <div className="relative p-8 lg:p-12 bg-[#faf9f6] border border-sand overflow-hidden">
-                        <div className="absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]">
-                            <svg width="100%" height="100%" className="text-gold/20">
-                                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-                                </pattern>
-                                <rect width="100%" height="100%" fill="url(#grid)" />
-                            </svg>
-                        </div>
-
-                        <div className="relative z-10 grid grid-cols-2 gap-4">
-                            {workflowPoints.map((point, index) => (
-                                <motion.div
-                                    key={index}
-                                    initial={{ opacity: 0, scale: 0.9 }}
-                                    whileInView={{ opacity: 1, scale: 1 }}
-                                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className="bg-white p-5 rounded-xl border border-sand shadow-sm hover:shadow-md hover:border-gold/30 transition-all group"
-                                >
-                                    <div className="w-10 h-10 rounded-lg bg-gold/5 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
-                                        <point.icon className="w-5 h-5 text-gold" />
-                                    </div>
-                                    <p className="text-sm font-bold text-warm-gray uppercase tracking-tighter leading-tight">{point.text}</p>
-                                </motion.div>
-                            ))}
-
-                            {/* Animated Circuit Path SVG */}
-                            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ filter: "drop-shadow(0 0 8px gold)" }}>
-                                <motion.path
-                                    d="M 50,50 L 250,50 L 250,200 L 50,200 Z"
-                                    fill="none"
-                                    stroke="#D4AF37"
-                                    strokeWidth="1"
-                                    strokeDasharray="10 5"
-                                    className="opacity-20"
-                                />
-                            </svg>
-                        </div>
-                    </div>
-
+                <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center mb-10 mt-10">
                     <div className="space-y-8 lg:pl-4">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -277,110 +225,46 @@ export function BuiltForTeams() {
                             </motion.div>
                         </motion.div>
                     </div>
-                </div>
-
-                <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-16 items-stretch">
-                    {/* Dashboard Visual Area */}
-                    <div className="relative bg-cream p-10 lg:p-12 border border-sand shadow-inner overflow-hidden">
-                        <div className="absolute top-0 right-0 p-10 opacity-[0.03]">
-                            <Box className="w-40 h-40 text-warm-gray" />
-                        </div>
-
-                        <div className="flex items-center justify-between mb-12 pb-4 border-b border-sand relative z-10">
-                            <h3 className="text-sm font-black text-gold uppercase tracking-[0.4em]">
-                                Early signals we track
-                            </h3>
-                        </div>
-
-                        <div className="grid sm:grid-cols-3 gap-6 relative z-10">
-                            {signals.map((signal, index) => (
-                                <SignalCard key={index} signal={signal} index={index} />
-                            ))}
-                        </div>
-
-                        <div className="mt-12 flex flex-col md:flex-row md:items-center justify-between gap-10">
-                            <motion.p
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                transition={{ delay: 0.8 }}
-                                className="text-warm-gray-light italic text-xl font-serif max-w-sm"
-                            >
-                                Because the agent knows <span className="text-gold font-bold">when not to act.</span>
-                            </motion.p>
-                            <div className="flex gap-4">
-                                <div className="w-12 h-12 rounded-2xl bg-white border border-sand flex items-center justify-center shadow-sm">
-                                    <Zap className="w-6 h-6 text-gold" />
-                                </div>
-                                <div className="w-12 h-12 rounded-2xl bg-white border border-sand flex items-center justify-center shadow-sm">
-                                    <Activity className="w-6 h-6 text-gold" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Crystal Security Vault - Reimagined Light Card */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                        viewport={{ once: true }}
-                        className="group relative bg-white p-10 lg:p-14 border-2 border-gold/30 shadow-2xl overflow-hidden flex flex-col justify-between"
-                    >
-                        {/* Crystal Vault SVG Backdrop */}
-                        <div className="absolute inset-0 opacity-[0.05] group-hover:opacity-[0.1] transition-opacity pointer-events-none">
-                            <svg width="100%" height="100%" viewBox="0 0 200 200">
-                                <motion.path
-                                    d="M 100,20 L 180,60 L 180,140 L 100,180 L 20,140 L 20,60 Z"
-                                    fill="none" stroke="gold" strokeWidth="1"
-                                    animate={{ rotate: 360 }}
-                                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                                />
-                                <circle cx="100" cy="100" r="40" fill="none" stroke="gold" strokeWidth="0.5" />
+                    {/* Visual: Integrated Circuit Path */}
+                    <div className="relative p-8 lg:p-12 bg-[#faf9f6] border border-sand overflow-hidden">
+                        <div className="absolute inset-0 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]">
+                            <svg width="100%" height="100%" className="text-gold/20">
+                                <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
+                                </pattern>
+                                <rect width="100%" height="100%" fill="url(#grid)" />
                             </svg>
                         </div>
 
-                        <div className="relative z-10">
-                            <div className="flex items-center gap-5 mb-10">
-                                <div className="w-16 h-16 rounded-3xl bg-gold/5 flex items-center justify-center border border-gold/20 shadow-[0_0_20px_rgba(212,175,55,0.1)] group-hover:bg-gold/10 transition-colors">
-                                    <Lock className="w-8 h-8 text-gold" />
-                                </div>
-                                <div>
-                                    <h3 className="text-3xl font-serif text-warm-gray">Security First</h3>
-                                    <div className="inline-flex items-center gap-1.5 px-2 py-0.5 bg-gold/10 text-gold rounded font-black text-[10px] uppercase tracking-widest mt-1">
-                                        Tier 0 Infrastructure
-                                    </div>
-                                </div>
-                            </div>
-
-                            <p className="text-xl text-warm-gray-light leading-relaxed mb-12 font-serif italic">
-                                Security, data handling, and audit expectations are treated as <span className="text-warm-gray not-italic font-bold underline decoration-gold/30">constraints from day one</span>, not patches added later.
-                            </p>
-                        </div>
-
-                        <div className="relative z-10">
-                            <div className="p-8 bg-[#faf9f6] border border-sand rounded-xl mb-10 group-hover:border-gold/30 transition-all shadow-inner">
-                                <p className="text-warm-gray/40 text-xs font-bold uppercase tracking-widest mb-6">Internal Documentation & Evidence</p>
-                                <Button
-                                    variant="outline"
-                                    className="w-full py-6 text-2xl bg-gold text-[#1a1a1a] hover:bg-white hover:text-gold rounded-full border-2 border-gold hover:border-gold transition-all duration-500 font-serif active:scale-[0.98] shadow-lg shadow-gold/10"
-                                    asChild
+                        <div className="relative z-10 grid grid-cols-2 gap-4">
+                            {workflowPoints.map((point, index) => (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    whileInView={{ opacity: 1, scale: 1 }}
+                                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                                    className="bg-white p-5 rounded-xl border border-sand shadow-sm hover:shadow-md hover:border-gold/30 transition-all group"
                                 >
-                                    <a href="/case-studies#studies">
-                                        Case Studies
-                                        <ArrowRight className="ml-3 h-8 w-8" />
-                                    </a>
-                                </Button>
-                            </div>
+                                    <div className="w-10 h-10 rounded-lg bg-gold/5 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
+                                        <point.icon className="w-5 h-5 text-gold" />
+                                    </div>
+                                    <p className="text-sm font-bold text-warm-gray uppercase tracking-tighter leading-tight">{point.text}</p>
+                                </motion.div>
+                            ))}
 
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                                    <span className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.4em]">Audit_Status: PASSING</span>
-                                </div>
-                                <Shield className="w-5 h-5 text-gold/20" />
-                            </div>
+                            {/* Animated Circuit Path SVG */}
+                            <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ filter: "drop-shadow(0 0 8px gold)" }}>
+                                <motion.path
+                                    d="M 50,50 L 250,50 L 250,200 L 50,200 Z"
+                                    fill="none"
+                                    stroke="#D4AF37"
+                                    strokeWidth="1"
+                                    strokeDasharray="10 5"
+                                    className="opacity-20"
+                                />
+                            </svg>
                         </div>
-                    </motion.div>
+                    </div>
                 </div>
 
             </div>

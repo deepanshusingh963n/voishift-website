@@ -693,7 +693,7 @@ export function WhoThisHits() {
   }
 
   return (
-    <section id="operators" className="py-24 bg-[#faf9f6] relative overflow-hidden">
+    <section id="operators" className="py-20 bg-[#faf9f6] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <h2 className="text-5xl md:text-7xl font-serif text-gold font-black mb-2">Who this hits.</h2>
@@ -714,7 +714,7 @@ export function WhoThisHits() {
               {canScrollLeft && (
                 <button
                   onClick={() => scrollTabs(-150)}
-                  className="md:hidden absolute left-0 top-0 h-full z-40 flex items-center px-1 bg-gradient-to-r from-white to-transparent pointer-events-auto"
+                  className="md:hidden absolute left-[-8px] top-0 h-full z-40 flex items-center px-1 bg-gradient-to-r from-white to-transparent pointer-events-auto"
                   aria-label="Scroll tabs left"
                 >
                   <ChevronLeft className="w-5 h-5 text-gold" />
@@ -723,7 +723,7 @@ export function WhoThisHits() {
               {canScrollRight && (
                 <button
                   onClick={() => scrollTabs(150)}
-                  className="md:hidden absolute right-0 top-0 h-full z-40 flex items-center px-1 bg-gradient-to-l from-white to-transparent pointer-events-auto"
+                  className="md:hidden absolute right-[-8px] top-0 h-full z-40 flex items-center px-1 bg-gradient-to-l from-white to-transparent pointer-events-auto"
                   aria-label="Scroll tabs right"
                 >
                   <ChevronRight className="w-5 h-5 text-gold" />
@@ -792,7 +792,7 @@ export function WhoThisHits() {
                               "px-4 py-3 rounded-none text-[10px] font-bold transition-all border uppercase tracking-widest text-center",
                               activeIndustry === ind.id
                                 ? "bg-gold/5 text-gold border-gold/40 shadow-sm"
-                                : "bg-sand/10 text-warm-gray-light border-transparent hover:bg-sand/20"
+                                : "bg-sand/10 text-warm-gray-light border-sand/40 hover:bg-sand/20"
                             )}
                           >
                             {ind.short}
@@ -808,7 +808,7 @@ export function WhoThisHits() {
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.4 }}
-                        className="bg-[#FDFCFB] border border-sand/40 p-8 md:p-10 lg:p-12 shadow-inner min-h-[500px] flex flex-col"
+                        className="bg-[#FDFCFB] border border-sand/40 p-8 md:p-10 lg:p-10 shadow-inner min-h-[500px] flex flex-col"
                       >
                         <div className="flex justify-between items-start mb-8">
                           <div className="space-y-6 flex-1">

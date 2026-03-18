@@ -54,7 +54,7 @@ const SystemLayer = ({ children, delay = 0, zIndex = 10, offset = "0px", opacity
 
 export function VoiShiftIntro() {
   return (
-    <section id="governance" className="py-20 lg:py-24 bg-white relative overflow-hidden">
+    <section id="governance" className="py-20 lg:py-24 bg-cream relative overflow-hidden">
       {/* Structural Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gold/5 blur-[120px] -translate-y-1/2 translate-x-1/2" />
@@ -71,24 +71,14 @@ export function VoiShiftIntro() {
               viewport={{ once: true }}
               className="space-y-8"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-black border border-gold/10 rounded-full">
-                <Shield className="w-3.5 h-3.5 text-gold" />
-                <span className="text-[15px] font-black tracking-widest text-gold uppercase">Logic Infrastructure</span>
-              </div>
-
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-black text-warm-gray leading-[1.1] text-balance">
                 VoiShift turns voice AI from a speaking layer into a <span className="text-gold italic font-black">business system that holds up when conditions are not clean.</span>
               </h2>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-2 bg-white border border-sand shadow-sm hover:border-gold/30 transition-colors text-center">
-                  <p className="text-lg font-serif text-warm-gray italic mb-1">
-                    You can rent a voice.
-                  </p>
-                </div>
+              <div className="gap-4">
                 <div className="p-2 bg-[#2a2a2a] border border-gold shadow-xl text-center">
                   <p className="text-lg font-serif text-gold font-bold">
-                    You cannot rent ownership of what is true.
+                    You can rent a voice, but you cannot rent ownership of what is true.
                   </p>
                 </div>
               </div>

@@ -18,7 +18,7 @@ export default function WhoForHero() {
   ]
 
   return (
-    <section id="hero" className="relative pt-24 pb-16 lg:pt-48 lg:pb-32 overflow-hidden bg-white">
+    <section id="hero" className="relative pt-24 pb-16 lg:pt-40 lg:pb-32 overflow-hidden bg-white">
       {/* Background Decorative Grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]">
         <svg width="100%" height="100%">
@@ -30,7 +30,7 @@ export default function WhoForHero() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 lg:px-6 relative z-10">
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-24 items-start">
+        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-10 lg:gap-24 items-center">
 
           <div>
 
@@ -39,7 +39,7 @@ export default function WhoForHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-serif text-gold font-black leading-[1.05] tracking-tight mb-8 text-center lg:text-left lg:mt-12"
+              className="text-5xl md:text-6xl lg:text-7xl font-serif text-gold font-black leading-[1.05] tracking-tight mb-8 text-center lg:text-left"
             >
               Who is this for
             </motion.h1>
@@ -108,7 +108,7 @@ export default function WhoForHero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="bg-[#1a1a1a] p-1 lg:p-12 border-2 border-gold/30 shadow-2xl rounded-none relative overflow-hidden">
+            <div className="bg-[#1a1a1a] p-10 lg:p-12 border-2 border-gold/30 shadow-2xl rounded-none relative overflow-hidden">
               {/* Animated HUD Detail */}
               <div className="absolute top-0 right-0 p-4 lg:p-6 flex gap-2">
                 <div className="w-2 h-2 rounded-none bg-gold animate-pulse" />
@@ -134,19 +134,6 @@ export default function WhoForHero() {
                     </span>
                   </motion.div>
                 ))}
-              </div>
-
-              <div className="mt-8 pt-8 lg:mt-12 lg:pt-12 border-t border-white/10">
-                <div className="flex justify-between items-end">
-                  <div>
-                    <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] mb-2">Operational_Fit</p>
-                    <p className="text-2xl font-serif text-gold">High_Risk_Hardened</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-[10px] font-black text-white/30 uppercase tracking-[0.4em] mb-2">Integrity_Check</p>
-                    <p className="text-2xl font-serif text-white">READY</p>
-                  </div>
-                </div>
               </div>
 
               {/* Scanning Line */}

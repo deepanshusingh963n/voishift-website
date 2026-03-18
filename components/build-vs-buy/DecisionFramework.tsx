@@ -19,7 +19,7 @@ export default function DecisionFramework() {
             <div className="space-y-6">
               <span className="bg-black border border-gold/20 px-4 py-2 rounded-2xl text-[15px] font-black text-gold uppercase tracking-[0.5em]">The Conclusion</span>
 
-              <h2 className="text-4xl lg:text-6xl font-serif text-gold font-black leading-tight mt-2">
+              <h2 className="text-4xl lg:text-6xl font-serif text-gold font-black leading-tight mt-10">
                 One question decides <br />
                 <span className="text-gold italic">build vs buy.</span>
               </h2>
@@ -52,7 +52,7 @@ export default function DecisionFramework() {
                 <Scale className="w-48 h-48 text-warm-gray" />
               </div>
 
-              <h3 className="text-xl font-black text-warm-gray uppercase tracking-[0.4em] mb-12 flex items-center gap-4">
+              <h3 className="text-xl font-black text-warm-gray uppercase mb-12 flex items-center gap-4 bg-gold/10 p-2">
                 <ShieldCheck className="w-5 h-5 text-gold" />
                 A QUICK WAY TO SELF-CHECK
               </h3>
@@ -82,13 +82,6 @@ export default function DecisionFramework() {
                   <p className="text-xl font-serif text-warm-gray leading-tight font-bold">
                     If the bot being wrong creates follow-ups, escalations, refunds, policy issues, or trust damage, you will eventually want ownership.
                   </p>
-                </div>
-              </div>
-
-              <div className="mt-16 flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-warm-gray/40">
-                <span>Logic_Validation_Checked</span>
-                <div className="flex gap-1">
-                  {[1, 2, 3].map(i => <div key={i} className="w-6 h-1 bg-gold/30" />)}
                 </div>
               </div>
             </div>

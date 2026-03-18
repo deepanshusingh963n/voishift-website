@@ -18,10 +18,10 @@ export default function BuildingIsOwning() {
     <section id="owning" className="py-24 bg-cream relative overflow-hidden">
       {/* Background HUD Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-none blur-[120px] -translate-y-1/2 translate-x-1/2" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          
+
           <div className="space-y-12">
             <div className="relative">
               <h2 className="text-4xl lg:text-5xl font-serif font-black text-gold leading-tight">
@@ -35,7 +35,7 @@ export default function BuildingIsOwning() {
                 { label: "STRUCTURE", action: "You can move walls." },
                 { label: "INTEGRITY", action: "You can rebuild what is broken." },
               ].map((item, i) => (
-                <div key={i} className="flex items-center justify-between p-6 border border-gold/30 bg-white/50 hover:bg-white transition-all group rounded-none">
+                <div key={i} className="flex items-center justify-between p-6 border border-gold/30 bg-white/70 hover:bg-white transition-all group rounded-none">
                   <div className="space-y-1">
                     <p className="text-[9px] font-black text-gold uppercase tracking-widest">{item.label}</p>
                     <p className="text-xl font-serif text-warm-gray">{item.action}</p>
@@ -43,11 +43,11 @@ export default function BuildingIsOwning() {
                   <Hammer className="w-6 h-6 text-gold/30 group-hover:text-gold transition-colors" />
                 </div>
               ))}
-              
+
               <div className="p-8 bg-gold text-warm-gray rounded-none mt-4 shadow-xl">
-                 <p className="text-xl font-serif font-bold italic text-center">
-                   "You can fix the real problem, not just cover it up."
-                 </p>
+                <p className="text-xl font-serif font-bold italic text-center">
+                  "You can fix the real problem, not just cover it up."
+                </p>
               </div>
             </div>
           </div>
@@ -62,10 +62,10 @@ export default function BuildingIsOwning() {
                 <ShieldCheck className="w-5 h-5 text-gold" />
                 <span className="text-[15px] font-black text-warm-gray uppercase tracking-widest">Ownership_Parameters</span>
               </div>
-              
+
               <div className="space-y-6">
                 {points.map((point, i) => (
-                  <motion.div 
+                  <motion.div
                     key={i}
                     initial={{ opacity: 0, x: 20 }}
                     whileInView={{ opacity: 1, x: 0 }}
@@ -81,7 +81,7 @@ export default function BuildingIsOwning() {
               </div>
             </div>
 
-            <div className="p-8 border border-sand bg-white/30 rounded-none text-center italic font-serif text-warm-gray-light">
+            <div className="text-lg p-8 border border-sand bg-white/70 rounded-none text-center italic font-serif text-warm-gray-light">
               "When you build, you own the behavior. You own the world."
             </div>
           </div>

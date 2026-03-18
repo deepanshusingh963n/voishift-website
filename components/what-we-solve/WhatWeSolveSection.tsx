@@ -61,7 +61,7 @@ export const WhatWeSolveSection = () => {
             <p className="text-xl text-warm-gray-light font-serif italic leading-relaxed">
               The problem that appears <br />
               <span className="not-italic font-black">
-                after the bot starts sounding good.
+                after the AI/Voice-AI bot starts sounding good.
               </span>
             </p>
 
@@ -74,7 +74,7 @@ export const WhatWeSolveSection = () => {
             >
               <Button
                 onClick={() => openModal()}
-                className="bg-gold text-[#1a1a1a] hover:bg-gold-dark hover:text-white px-8 py-6 rounded-full font-serif text-lg transition-all duration-500 group shadow-xl"
+                className="bg-gold text-[#1a1a1a] hover:bg-black hover:text-white px-8 py-6 rounded-4xl font-serif text-lg transition-all duration-500 group shadow-xl"
               >
                 Design My System
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-2 transition-transform" />
@@ -92,12 +92,12 @@ export const WhatWeSolveSection = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group relative p-8 border border-sand bg-cream hover:border-gold/30 hover:shadow-2xl transition-all duration-700 overflow-hidden"
+                className="group relative p-8 border border-sand bg-cream hover:border-gold/30 shadow-lg hover:shadow-2xl transition-all duration-700 overflow-hidden"
               >
 
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-12">
-                    <div className="w-12 h-12 bg-gold rounded-2xl border border-sand flex items-center justify-center shadow-inner group-hover:bg-gold-dark group-hover:text-white transition-all duration-500">
+                    <div className="w-12 h-12 bg-gold rounded-2xl border border-sand flex items-center justify-center shadow-inner group-hover:bg-black group-hover:text-white transition-all duration-500">
                       <problem.icon className="w-6 h-6" />
                     </div>
                   </div>

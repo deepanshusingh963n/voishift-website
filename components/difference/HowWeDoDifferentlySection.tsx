@@ -77,7 +77,7 @@ const FixCard = ({ failure, why, fix, result, details }: any) => (
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
-    className="group relative grid lg:grid-cols-[1fr_1.5fr] gap-px bg-gold overflow-hidden border border-sand transition-all duration-500 hover:shadow-2xl"
+    className="group relative grid lg:grid-cols-[1fr_1.5fr] gap-px bg-gold overflow-hidden border border-sand transition-all duration-500 shadow-lg hover:shadow-2xl"
   >
     <div className="bg-white p-8 relative flex flex-col justify-center">
       <div className="flex items-center gap-2 text-destructive font-black text-[10px] uppercase tracking-widest mb-4">
@@ -309,12 +309,7 @@ export const HowWeDoDifferentlySection = () => {
 
                 <div className="relative bg-[#faf9f6] p-4 rounded-none border border-sand mb-8 group-hover:border-gold-dark transition-colors z-10 shadow-sm">
                   <div className="w-16 h-16 bg-white rounded-none flex items-center justify-center border border-sand group-hover:bg-gold-dark group-hover:text-white transition-all duration-500 shadow-inner overflow-hidden">
-                    <motion.div
-                      animate={{
-                        scale: hoveredIndex === index ? 1.2 : 1,
-                        rotate: hoveredIndex === index ? (index % 2 === 0 ? 90 : -90) : 0
-                      }}
-                    >
+                    <motion.div>
                       <item.icon className="w-7 h-7 text-gold group-hover:text-white" />
                     </motion.div>
                   </div>
@@ -346,11 +341,11 @@ export const HowWeDoDifferentlySection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
-          className="mt-24 text-center"
+          className="mt-8 mb-14 text-center"
         >
           <div className="inline-block p-1 bg-sand/30 rounded-none mb-6">
             <div className="px-6 py-2 bg-white border border-sand rounded-none shadow-sm">
-              <p className="text-sm font-serif italic text-warm-gray-light">
+              <p className="text-md font-serif italic text-warm-gray-light">
                 Same tools. Same models. <span className="not-italic font-black text-gold uppercase tracking-widest ml-1">A very different outcome.</span>
               </p>
             </div>
@@ -358,107 +353,107 @@ export const HowWeDoDifferentlySection = () => {
         </motion.div>
 
         {/* Anatomy of a Fix */}
-        <div className="bg-white py-16 md:py-24">
-  <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <div className="bg-white py-10 md:py-14">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
-    {/* ===== Section: Anatomy of a Fix ===== */}
-    <div className="text-center mb-16 md:mb-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-      >
-        <h2 className="text-3xl md:text-4xl font-serif text-warm-gray mb-4">
-          The Anatomy of a Fix
-        </h2>
-        <p className="text-warm-gray-light leading-relaxed max-w-2xl mx-auto">
-          Closing the gap between model potential and business reality.
-        </p>
-      </motion.div>
-    </div>
-
-    <div className="space-y-6 max-w-4xl mx-auto">
-      <FixCard
-        failure='"I can offer you a full refund."'
-        why="LLM hallucinated policy based on training data overlap."
-        fix="Deterministic Policy Layer"
-        details="RAG + Hard Rules"
-        result="0% unauthorized refund rate."
-      />
-      <FixCard
-        failure='Bot looping "I didn&apos;t catch that."'
-        why="Timeout settings too aggressive for elderly callers."
-        fix="Adaptive Listening Duration"
-        result="40% drop in hang-ups."
-      />
-    </div>
-
-    {/* ===== Divider Space ===== */}
-    <div className="mt-20 md:mt-28" />
-
-    {/* ===== Scale Section ===== */}
-    <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
-      
-      <div className="flex justify-center lg:justify-start">
-        <ScaleOrbit />
-      </div>
-
-      <div className="space-y-12">
-
-        <motion.div
-          initial={{ opacity: 0, x: 30 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h3 className="text-2xl md:text-3xl font-serif text-warm-gray mb-8">
-            How this stays sane at scale
-          </h3>
-
-          <div className="grid sm:grid-cols-2 gap-5">
-            {scaleSteps.map((step, i) => (
-              <div
-                key={i}
-                className="p-6 bg-[#faf9f6] border border-sand hover:border-gold/30 transition-all group"
+            {/* ===== Section: Anatomy of a Fix ===== */}
+            <div className="text-center mb-16 md:mb-20">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
               >
-                <div className="w-10 h-10 bg-white border border-sand flex items-center justify-center shadow-sm">
-                  <Activity className="w-5 h-5 text-gold" />
-                </div>
-                <p className="text-sm font-medium text-warm-gray-light leading-relaxed mt-4">
-                  {step.text}
+                <h2 className="text-4xl md:text-5xl font-serif font-black text-gold mb-4">
+                  The Anatomy of a Fix
+                </h2>
+                <p className="text-warm-gray-light leading-relaxed max-w-2xl mx-auto">
+                  Closing the gap between model potential and business reality.
                 </p>
+              </motion.div>
+            </div>
+
+            <div className="space-y-6 max-w-4xl mx-auto">
+              <FixCard
+                failure='"I can offer you a full refund."'
+                why="LLM hallucinated policy based on training data overlap."
+                fix="Deterministic Policy Layer"
+                details="RAG + Hard Rules"
+                result="0% unauthorized refund rate."
+              />
+              <FixCard
+                failure='Bot looping "I didn&apos;t catch that."'
+                why="Timeout settings too aggressive for elderly callers."
+                fix="Adaptive Listening Duration"
+                result="40% drop in hang-ups."
+              />
+            </div>
+
+            {/* ===== Divider Space ===== */}
+            <div className="mt-20 md:mt-28" />
+
+            {/* ===== Scale Section ===== */}
+            <div className="grid lg:grid-cols-[1fr_1.2fr] gap-12 lg:gap-20 items-center">
+
+              <div className="flex justify-center lg:justify-start">
+                <ScaleOrbit />
               </div>
-            ))}
-          </div>
-        </motion.div>
 
-        <div className="h-px w-full bg-gradient-to-r from-sand to-transparent" />
+              <div className="space-y-12">
 
-        <div className="grid sm:grid-cols-2 gap-8">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-gold font-black text-[10px] uppercase tracking-widest">
-              <RotateCcw className="w-4 h-4" />
-              System Lifecycle
+                <motion.div
+                  initial={{ opacity: 0, x: 30 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8 }}
+                >
+                  <h3 className="text-2xl md:text-3xl font-serif text-warm-gray mb-8">
+                    How this stays sane at scale
+                  </h3>
+
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    {scaleSteps.map((step, i) => (
+                      <div
+                        key={i}
+                        className="flex items-center gap-4 p-6 bg-[#faf9f6] border border-sand hover:border-gold/30 transition-all group"
+                      >
+                        <div className="w-10 h-10 shrink-0 bg-white border border-sand flex items-center justify-center shadow-sm">
+                          <Activity className="w-5 h-5 text-gold" />
+                        </div>
+                        <p className="text-sm font-medium text-warm-gray-light leading-relaxed">
+                          {step.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+
+                <div className="h-px w-full bg-gradient-to-r from-sand to-transparent" />
+
+                <div className="grid sm:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2 text-gold font-black text-[10px] uppercase tracking-widest">
+                      <RotateCcw className="w-4 h-4" />
+                      System Lifecycle
+                    </div>
+                    <p className="text-base text-warm-gray-light italic leading-relaxed">
+                      Voice AI is reviewed like a system, not shipped like a feature.
+                    </p>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-2 text-gold font-black text-[10px] uppercase tracking-widest">
+                      <Plug className="w-4 h-4" />
+                      Infrastructure Fit
+                    </div>
+                    <p className="text-base text-warm-gray-light leading-relaxed">
+                      Every action can be replayed and explained across your existing stack.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
             </div>
-            <p className="text-base text-warm-gray-light italic leading-relaxed">
-              Voice AI is reviewed like a system, not shipped like a feature.
-            </p>
-          </div>
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-gold font-black text-[10px] uppercase tracking-widest">
-              <Plug className="w-4 h-4" />
-              Infrastructure Fit
-            </div>
-            <p className="text-base text-warm-gray-light leading-relaxed">
-              Every action can be replayed and explained across your existing stack.
-            </p>
           </div>
         </div>
-
-      </div>
-    </div>
-
-  </div>
-</div>
 
 
       </div>

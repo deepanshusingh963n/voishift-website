@@ -47,11 +47,6 @@ export const AboutHeroSection = () => {
 
       <DecisionLattice />
 
-      {/* Blueprint Stamps */}
-      <div className="absolute bottom-12 right-12 opacity-[0.03] pointer-events-none">
-        <div className="text-sm font-mono font-black tracking-[1em] rotate-90 origin-right uppercase">System_Logic_Integrity</div>
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="max-w-7xl mx-auto">
           <motion.div

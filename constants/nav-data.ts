@@ -42,6 +42,92 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { label: "Home", href: "/" },
   {
+    label: "What We Solve",
+    href: "/what-we-solve",
+    sections: [
+      { title: "Specific Challenges", description: "Solving for revenue and ops efficiency.", icon: Target, href: "/what-we-solve#solve" },
+      { title: "The Threat", description: "Why black-box AI is a liability.", icon: CheckCircle, href: "/what-we-solve#threat" },
+      { title: "Built for", description: "Enterprise-grade safety features.", icon: Users, href: "/what-we-solve#teams" },
+    ],
+    sidebarContent: {
+      title: "Core Services",
+      icon: Target,
+      description: "See how our controlled systems resolve common voice AI failures and hallucinations.",
+      footerText: "What We Solve",
+      footerLink: "/what-we-solve",
+      footerLabel: "Explore"
+    }
+  },
+  {
+    label: "Our Difference",
+    href: "/difference",
+    sections: [
+      { title: "Differentiation", description: "Why we focus on systems, not agents.", icon: Zap, href: "/difference#differentiation" },
+      { title: "Our Methodology", description: "How we solve for edge cases reliably.", icon: Repeat, href: "/difference#methodology" },
+      { title: "Proof & Metrics", description: "Verification gated by rules and data.", icon: ShieldCheck, href: "/difference#proof" },
+    ],
+    sidebarContent: {
+      title: "The Advantage",
+      icon: Zap,
+      description: "See why VoiShift succeeds where black-box agents fail in high-stakes ops.",
+      footerText: "Predictable by design",
+      footerLink: "/difference",
+      footerLabel: "Learn More"
+    }
+  },
+  {
+    label: "How It Works",
+    href: "/how-it-works",
+    sections: [
+      { title: "Phase 1: Mapping", description: "Opportunity mapping and strategy.", icon: Map, href: "/how-it-works#discovery" },
+      { title: "Phase 2: Sandbox", description: "Validation and testing environment.", icon: Layout, href: "/how-it-works#sandbox" },
+      { title: "Phase 3: Rollout", description: "Proof gated production launch.", icon: Zap, href: "/how-it-works#rollout" },
+      { title: "Payment Model", description: "Performance-based results.", icon: CreditCard, href: "/how-it-works#payment" },
+    ],
+    sidebarContent: {
+      title: "The Process",
+      icon: Map,
+      description: "Our gated methodology ensures zero hallucination and maximum ROI.",
+      footerText: "Gated by proof",
+      footerLink: "/how-it-works",
+      footerLabel: "Go to Page"
+    }
+  },
+  {
+    label: "Who It's For",
+    href: "/who-is-this-for",
+    sections: [
+      { title: "Operator Filter", description: "Why we focus on operators, not just owners.", icon: Filter, href: "/who-is-this-for#filter" },
+      { title: "Market Fit", description: "Industries where reliability is non-negotiable.", icon: Target, href: "/who-is-this-for#hits" },
+      { title: "Use Cases", description: "Real-world scenarios we handle daily.", icon: Search, href: "/who-is-this-for#for" },
+    ],
+    sidebarContent: {
+      title: "Strategic Fit",
+      icon: Filter,
+      description: "Our solutions are designed for teams that require predictable outcomes.",
+      footerText: "For professionals only",
+      footerLink: "/who-is-this-for",
+      footerLabel: "Check Fit"
+    }
+  },
+  {
+    label: "Build Vs Buy",
+    href: "/build-vs-buy",
+    sections: [
+      { title: "Renting vs Owning", description: "Why renting AI is a short-term trap.", icon: Rocket, href: "/build-vs-buy#renting" },
+      { title: "Pain Points", description: "Identifying the gaps in generic AI bots.", icon: ShieldAlert, href: "/build-vs-buy#pain-points" },
+      { title: "Decision Framework", description: "A guide for ROI-focused leaders.", icon: FileText, href: "/build-vs-buy#framework" },
+    ],
+    sidebarContent: {
+      title: "Case Analysis",
+      icon: Rocket,
+      description: "Understand why building internal assets is the only way to scale voice AI reliably.",
+      footerText: "Ownership over rental",
+      footerLink: "/build-vs-buy",
+      footerLabel: "Visit Page"
+    }
+  },
+  {
     label: "About Us",
     href: "/about",
     sections: [
@@ -82,90 +168,4 @@ export const navLinks: NavLink[] = [
       footerLabel: "View All"
     }
   },
-  {
-    label: "How It Works",
-    href: "/how-it-works",
-    sections: [
-      { title: "Phase 1: Mapping", description: "Opportunity mapping and strategy.", icon: Map, href: "/how-it-works#discovery" },
-      { title: "Phase 2: Sandbox", description: "Validation and testing environment.", icon: Layout, href: "/how-it-works#sandbox" },
-      { title: "Phase 3: Rollout", description: "Proof gated production launch.", icon: Zap, href: "/how-it-works#rollout" },
-      { title: "Payment Model", description: "Performance-based results.", icon: CreditCard, href: "/how-it-works#payment" },
-    ],
-    sidebarContent: {
-      title: "The Process",
-      icon: Map,
-      description: "Our gated methodology ensures zero hallucination and maximum ROI.",
-      footerText: "Gated by proof",
-      footerLink: "/how-it-works",
-      footerLabel: "Go to Page"
-    }
-  },
-  {
-    label: "Our Difference",
-    href: "/difference",
-    sections: [
-      { title: "Differentiation", description: "Why we focus on systems, not agents.", icon: Zap, href: "/difference#differentiation" },
-      { title: "Our Methodology", description: "How we solve for edge cases reliably.", icon: Repeat, href: "/difference#methodology" },
-      { title: "Proof & Metrics", description: "Verification gated by rules and data.", icon: ShieldCheck, href: "/difference#proof" },
-    ],
-    sidebarContent: {
-      title: "The Advantage",
-      icon: Zap,
-      description: "See why VoiShift succeeds where black-box agents fail in high-stakes ops.",
-      footerText: "Predictable by design",
-      footerLink: "/difference",
-      footerLabel: "Learn More"
-    }
-  },
-  {
-    label: "Build Vs Buy",
-    href: "/build-vs-buy",
-    sections: [
-      { title: "Renting vs Owning", description: "Why renting AI is a short-term trap.", icon: Rocket, href: "/build-vs-buy#renting" },
-      { title: "Pain Points", description: "Identifying the gaps in generic AI bots.", icon: ShieldAlert, href: "/build-vs-buy#pain-points" },
-      { title: "Decision Framework", description: "A guide for ROI-focused leaders.", icon: FileText, href: "/build-vs-buy#framework" },
-    ],
-    sidebarContent: {
-      title: "Case Analysis",
-      icon: Rocket,
-      description: "Understand why building internal assets is the only way to scale voice AI reliably.",
-      footerText: "Ownership over rental",
-      footerLink: "/build-vs-buy",
-      footerLabel: "Visit Page"
-    }
-  },
-  {
-    label: "What We Solve",
-    href: "/what-we-solve",
-    sections: [
-      { title: "Specific Challenges", description: "Solving for revenue and ops efficiency.", icon: Target, href: "/what-we-solve#solve" },
-      { title: "The Threat", description: "Why black-box AI is a liability.", icon: CheckCircle, href: "/what-we-solve#threat" },
-      { title: "Built for Teams", description: "Enterprise-grade safety features.", icon: Users, href: "/what-we-solve#teams" },
-    ],
-    sidebarContent: {
-      title: "Core Platform",
-      icon: Target,
-      description: "See how our gated systems resolve common voice AI failures and hallucinations.",
-      footerText: "Built for teams",
-      footerLink: "/what-we-solve",
-      footerLabel: "Explore"
-    }
-  },
-  {
-    label: "Who It's For",
-    href: "/who-is-this-for",
-    sections: [
-      { title: "Operator Filter", description: "Why we focus on operators, not just owners.", icon: Filter, href: "/who-is-this-for#filter" },
-      { title: "Market Fit", description: "Industries where reliability is non-negotiable.", icon: Target, href: "/who-is-this-for#hits" },
-      { title: "Use Cases", description: "Real-world scenarios we handle daily.", icon: Search, href: "/who-is-this-for#for" },
-    ],
-    sidebarContent: {
-      title: "Strategic Fit",
-      icon: Filter,
-      description: "Our platform is built specifically for teams that require predictable outcomes.",
-      footerText: "For professionals only",
-      footerLink: "/who-is-this-for",
-      footerLabel: "Check Fit"
-    }
-  }
 ];

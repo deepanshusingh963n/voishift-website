@@ -78,7 +78,7 @@ export default function HowHero() {
           </div>
 
           {/* RIGHT SIDE — NEW 3-PHASE VISUAL SYSTEM */}
-          <div className="mt-20 lg:mt-0 relative">
+          <div className="hidden lg:block mt-20 lg:mt-0 relative">
 
             <div className="relative bg-white/40 backdrop-blur-sm border border-sand rounded-[2rem] p-8 shadow-2xl">
 
@@ -115,7 +115,7 @@ export default function HowHero() {
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6 }}
-                  className="relative bg-cream-dark border border-sand rounded-xl p-6 shadow-md"
+                  className="relative bg-cream-dark border border-sand rounded-xl p-6 shadow-md hover:scale-105 transition-transform duration-700"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
@@ -137,7 +137,7 @@ export default function HowHero() {
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.15 }}
-                  className="relative bg-cream-dark border border-sand rounded-xl p-6 shadow-md"
+                  className="relative bg-cream-dark border border-sand rounded-xl p-6 shadow-md hover:scale-105 transition-transform duration-700"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">
@@ -159,7 +159,7 @@ export default function HowHero() {
                   initial={{ opacity: 0, x: 30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, delay: 0.3 }}
-                  className="relative bg-cream-dark border border-sand rounded-xl p-6 shadow-md"
+                  className="relative bg-cream-dark border border-sand rounded-xl p-6 shadow-md hover:scale-105 transition-transform duration-700"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-10 h-10 rounded-lg bg-gold/10 flex items-center justify-center">

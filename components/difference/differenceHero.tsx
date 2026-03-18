@@ -65,11 +65,10 @@ export default function DifferenceHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-col lg:flex-row gap-4"
             >
               <Button
                 variant="hero"
-                size="lg"
                 onClick={() => openModal()}
                 className="rounded-none px-8 py-7 text-lg group hover:bg-black hover:text-white transition-colors shadow-xl"
               >
@@ -78,7 +77,6 @@ export default function DifferenceHero() {
               </Button>
               <Button
                 variant="heroSecondary"
-                size="lg"
                 asChild
                 className="rounded-none px-8 py-7 text-lg group hover:bg-gold hover:text-white border-2 shadow-xl"
               >

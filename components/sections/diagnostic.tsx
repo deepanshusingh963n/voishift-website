@@ -139,9 +139,9 @@ export function Diagnostic() {
           <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-gold font-black leading-[0.95] mb-8 text-balance max-w-5xl mx-auto tracking-tighter">
             A quick reality check
           </h2>
-          <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-4xl mx-auto">
-            Before you decide whether to keep reading or move on, answer these. <br className="hidden md:block" />
-            <span className="text-warm-gray not-italic font-black uppercase tracking-tighter decoration-gold/20">About what it takes today to get one decision right and one workflow finished.</span>
+          <p className="text-xl md:text-2xl text-warm-gray uppercase font-serif font-black max-w-4xl mx-auto">
+            Before you stay or move on, check this: <br className="hidden md:block" />
+            <span className="text-warm-gray-light italic font-serif normal-case font-light tracking-tighter decoration-gold/20">how many steps, tabs, and follow-ups does it take to explain what happened, decide what to do, and get it done?</span>
           </p>
         </motion.div>
 
@@ -195,45 +195,6 @@ export function Diagnostic() {
             If a few of these felt familiar, <br className="hidden md:block" />
             <span className="text-warm-gray not-italic font-black uppercase tracking-tighter text-4xl md:text-5xl">good. That is the point.</span>
           </p>
-
-          <div className="max-w-xl mx-auto group" onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}>
-            <Button
-              size="lg"
-              className="w-full py-12 text-2xl md:text-3xl bg-[#1a1a1a] text-white hover:bg-white hover:text-[#1a1a1a] border-2 border-[#1a1a1a] rounded-[3rem] shadow-2xl active:scale-[0.97] transition-all duration-700 font-serif relative overflow-hidden"
-              onClick={() => openModal()}
-            >
-              <AnimatePresence mode="wait">
-                {isHovered ? (
-                  <motion.div
-                    key="init"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="flex items-center gap-4"
-                  >
-                    <Zap className="w-8 h-8 text-gold animate-pulse" />
-                    Initialize Diagnostic
-                  </motion.div>
-                ) : (
-                  <motion.div
-                    key="default"
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="flex items-center gap-4"
-                  >
-                    Continue to Diagnostic
-                    <ArrowRight className="w-8 h-8 text-gold transition-transform group-hover:translate-x-3" />
-                  </motion.div>
-                )}
-              </AnimatePresence>
-              <motion.div
-                animate={{ x: ["-100%", "200%"] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12"
-              />
-            </Button>
-          </div>
         </motion.div>
       </div>
     </section>

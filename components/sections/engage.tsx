@@ -146,6 +146,16 @@ export function Engage() {
           >
             <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/fabric-of-squares.png')]" />
 
+            <div className="relative z-10 mt-auto mb-20">
+              <Button
+                className="w-full py-10 text-md font-serif bg-gold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white border-2 border-gold hover:border-[#1a1a1a] rounded-[2.5rem] transition-all duration-500 shadow-xl group/btn active:scale-95"
+                onClick={() => openModal()}
+              >
+                Book the strategy session
+                <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
+              </Button>
+            </div>
+
             <div className="relative z-10 flex-grow">
               <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-12">
                 <div className="w-32 sm:w-40 lg:w-48 shrink-0">
@@ -176,16 +186,6 @@ export function Engage() {
                 </p>
               </div>
             </div>
-
-            <div className="relative z-10 mt-auto">
-              <Button
-                className="w-full py-10 text-md font-serif bg-gold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white border-2 border-gold hover:border-[#1a1a1a] rounded-[2.5rem] transition-all duration-500 shadow-xl group/btn active:scale-95"
-                onClick={() => openModal()}
-              >
-                Book the strategy session
-                <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
-              </Button>
-            </div>
           </motion.div>
 
           {/* PATH 2: ALREADY LIVE */}
@@ -197,6 +197,16 @@ export function Engage() {
             className="flex flex-col h-full bg-[#faf9f6]/90 backdrop-blur border-2 border-gold/50 p-10 lg:p-14 shadow-2xl relative overflow-hidden group"
           >
             <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
+            <div className="relative z-10 mt-auto mb-20">
+              <Button
+                variant="outline"
+                className="w-full py-10 text-md font-serif text-warm-gray bg-gold hover:bg-warm-gray hover:text-white rounded-[2.5rem] transition-all duration-500 shadow-xl group/btn active:scale-95"
+                onClick={() => openModal()}
+              >
+                Stress test my current build
+                <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
+              </Button>
+            </div>
 
             <div className="relative z-10 flex-grow">
               <div className="flex flex-col sm:flex-row items-center gap-8 lg:gap-10 mb-12">
@@ -227,17 +237,6 @@ export function Engage() {
                   "This is for teams asking <span className="text-warm-gray not-italic font-bold">Is this actually safe to scale?</span>"
                 </p>
               </div>
-            </div>
-
-            <div className="relative z-10 mt-auto">
-              <Button
-                variant="outline"
-                className="w-full py-10 text-md font-serif border-2 border-warm-gray/20 text-warm-gray bg-cream hover:bg-warm-gray hover:text-white rounded-[2.5rem] transition-all duration-500 shadow-md group/btn active:scale-95"
-                onClick={() => openModal()}
-              >
-                Stress test my current build
-                <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
-              </Button>
             </div>
           </motion.div>
         </div>
