@@ -1,7 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ShieldCheck, Bug, FileText, AlertCircle, HardHat, Gauge, CheckCircle2, FlaskConical } from "lucide-react"
+import { ShieldCheck, Bug, FileText, AlertCircle, HardHat, Gauge, CheckCircle2, FlaskConical, ArrowRight } from "lucide-react"
+import { useModal } from "@/context/modal-context"
+import { Button } from "@/components/ui/button"
 
 const outputs = [
   "Controlled MVP plan (tight scope, rollout method)",
@@ -16,30 +18,31 @@ const outputs = [
 ]
 
 export default function PhaseTwoSandbox() {
+  const { openModal } = useModal()
   return (
     <section id="phase-2" className="bg-cream-dark py-24 lg:py-32 relative overflow-hidden">
       {/* Background Section Decor */}
       <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-white to-transparent" />
-      
+
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-2 gap-20 items-start">
-          
+
           {/* Left Side: "What You Get" Deck (Flipped for Layout Variety) */}
           <div className="order-2 lg:order-1 bg-white border-2 border-sand p-8 lg:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-8 opacity-[0.03] group-hover:scale-110 transition-transform duration-700">
               <FlaskConical className="w-48 h-48 text-warm-gray" />
             </div>
-            
-            <h3 className="text-2xl font-serif text-warm-gray italic mb-10">System Output Pack: Validation</h3>
-            
+
+            <h3 className="text-2xl font-serif font-black text-gold italic mb-10">Validation Sandbox: <span className="font-normal text-warm-gray">What You Get</span></h3>
+
             <div className="space-y-4">
               {outputs.map((item, i) => (
-                <motion.div 
-                   key={i}
-                   initial={{ opacity: 0, x: -20 }}
-                   whileInView={{ opacity: 1, x: 0 }}
-                   transition={{ delay: i * 0.05 }}
-                   className="flex items-center gap-4 bg-cream-dark/50 border border-sand/30 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all cursor-default group"
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  className="flex items-center gap-4 bg-cream-dark/50 border border-sand/30 p-4 rounded-xl hover:bg-white hover:shadow-md transition-all cursor-default group"
                 >
                   <div className="w-6 h-6 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
                     <CheckCircle2 className="w-3.5 h-3.5 text-gold" />
@@ -66,50 +69,50 @@ export default function PhaseTwoSandbox() {
 
             {/* Stress Test Visual HUD */}
             <div className="bg-[#1a1a1a] p-8 rounded-2xl shadow-2xl border-t-4 border-gold relative overflow-hidden">
-               <div className="flex justify-between items-center mb-8">
-                 <div className="flex items-center gap-3">
-                   <AlertCircle className="w-4 h-4 text-gold animate-pulse" />
-                   <span className="text-[10px] font-black text-white uppercase tracking-widest">Stress_Test_Live</span>
-                 </div>
-                 <span className="text-[10px] font-mono text-gold underline underline-offset-4">0x77_SIMULATION_ACTIVE</span>
-               </div>
+              <div className="flex justify-between items-center mb-8">
+                <div className="flex items-center gap-3">
+                  <AlertCircle className="w-4 h-4 text-gold animate-pulse" />
+                  <span className="text-[10px] font-black text-white uppercase tracking-widest">Stress_Test_Live</span>
+                </div>
+                <span className="text-[10px] font-mono text-gold underline underline-offset-4">0x77_SIMULATION_ACTIVE</span>
+              </div>
 
-               <div className="space-y-6">
-                 {/* Test Case Interface */}
-                 <div className="p-4 bg-white/5 border border-white/10 rounded-lg space-y-3">
-                    <div className="flex justify-between text-[10px] font-mono">
-                      <span className="text-white/40">Input Complexity</span>
-                      <span className="text-gold">94%_CRITICAL</span>
-                    </div>
-                    <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                      <motion.div 
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "94%" }}
-                        transition={{ duration: 1.5, ease: "easeOut" }}
-                        className="h-full bg-gold " 
-                      />
-                    </div>
-                 </div>
+              <div className="space-y-6">
+                {/* Test Case Interface */}
+                <div className="p-4 bg-white/5 border border-white/10 rounded-lg space-y-3">
+                  <div className="flex justify-between text-[10px] font-mono">
+                    <span className="text-white/40">Input Complexity</span>
+                    <span className="text-gold">94%_CRITICAL</span>
+                  </div>
+                  <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                    <motion.div
+                      initial={{ width: 0 }}
+                      whileInView={{ width: "94%" }}
+                      transition={{ duration: 1.5, ease: "easeOut" }}
+                      className="h-full bg-gold "
+                    />
+                  </div>
+                </div>
 
-                 <div className="grid grid-cols-2 gap-4">
-                   <div className="p-4 bg-gold/5 border border-gold/10 rounded-lg">
-                      <Bug className="w-4 h-4 text-gold mb-2" />
-                      <p className="text-[10px] font-black text-white/60 uppercase mb-1">Corner Cases</p>
-                      <p className="text-xl font-mono text-white">412</p>
-                   </div>
-                   <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
-                      <ShieldCheck className="w-4 h-4 text-white mb-2" />
-                      <p className="text-[10px] font-black text-white/60 uppercase mb-1">Guardrails Locked</p>
-                      <p className="text-xl font-mono text-white">12/12</p>
-                   </div>
-                 </div>
-               </div>
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="p-4 bg-gold/5 border border-gold/10 rounded-lg">
+                    <Bug className="w-4 h-4 text-gold mb-2" />
+                    <p className="text-[10px] font-black text-white/60 uppercase mb-1">Corner Cases</p>
+                    <p className="text-xl font-mono text-white">412</p>
+                  </div>
+                  <div className="p-4 bg-white/5 border border-white/10 rounded-lg">
+                    <ShieldCheck className="w-4 h-4 text-white mb-2" />
+                    <p className="text-[10px] font-black text-white/60 uppercase mb-1">Guardrails Locked</p>
+                    <p className="text-xl font-mono text-white">12/12</p>
+                  </div>
+                </div>
+              </div>
 
-               <div className="mt-8 pt-6 border-t border-white/10 text-center">
-                 <p className="text-[10px] text-white/40 font-serif italic tracking-wider">
-                   "VoiShift validation proves behavior, not just uptime."
-                 </p>
-               </div>
+              <div className="mt-8 pt-6 border-t border-white/10 text-center">
+                <p className="text-[10px] text-white/40 font-serif italic tracking-wider">
+                  "VoiShift validation proves behavior, not just uptime."
+                </p>
+              </div>
             </div>
 
             {/* Philosophy Note */}
@@ -122,6 +125,27 @@ export default function PhaseTwoSandbox() {
           </div>
 
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <p className="text-warm-gray-light font-serif italic text-lg mb-6">
+            Ready to stress-test your workflow before it reaches production?
+          </p>
+          <Button
+            onClick={() => openModal()}
+            className="bg-gold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white border-2 border-gold hover:border-[#1a1a1a] px-10 py-6 text-base font-black uppercase tracking-widest rounded-none transition-all duration-500 shadow-xl group"
+          >
+            Get Started
+            <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+
       </div>
     </section>
   )

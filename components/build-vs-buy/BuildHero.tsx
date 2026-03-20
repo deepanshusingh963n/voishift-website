@@ -1,9 +1,12 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Cloud, KeyRound } from "lucide-react"
+import { Cloud, KeyRound, ArrowRight } from "lucide-react"
+import { useModal } from "@/context/modal-context"
+import { Button } from "@/components/ui/button"
 
 export default function BuildHero() {
+  const { openModal } = useModal()
   return (
     <section id="hero" className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-cream-dark">
 
@@ -56,6 +59,22 @@ export default function BuildHero() {
                 Buying a ready-made AI bot is like renting. Building is owning.
               </p>
             </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.35 }}
+              className="pt-4"
+            >
+              <Button
+                onClick={() => openModal()}
+                className="bg-gold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white border-2 border-gold hover:border-[#1a1a1a] px-10 py-6 text-sm font-black uppercase tracking-widest rounded-none transition-all duration-500 shadow-xl group mt-10"
+              >
+                Book a Strategy Session
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </motion.div>
+
           </div>
 
           {/* RIGHT SIDE — CINEMATIC METAPHOR VISUAL */}

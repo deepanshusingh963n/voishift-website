@@ -41,15 +41,8 @@ export default function HowClosingCTA() {
                   className="bg-gold hover:bg-cream-dark hover:text-black text-warm-gray px-10 py-5 text-xl rounded-2xl h-auto transition-transform hover:scale-105"
                   onClick={() => openModal()}
                 >
-                  Get Started
+                  Book a Strategy Session
                   <ArrowRight className="ml-3 w-6 h-6" />
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white/20 text-white hover:bg-gold px-10 py-5 text-xl rounded-2xl h-auto bg-transparent"
-                  onClick={() => openModal()}
-                >
-                  Stress Test My Build
                 </Button>
               </div>
             </div>

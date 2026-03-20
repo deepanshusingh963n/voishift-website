@@ -232,7 +232,7 @@ export const HowWeDoDifferentlySection = () => {
               ))}
             </div>
 
-            <p className="mt-12 text-xs font-serif italic text-warm-gray-light">
+            <p className="mt-12 text-xl font-serif italic text-warm-gray-light">
               Focusing on the interface before the operational logic.
             </p>
           </motion.div>
@@ -276,8 +276,8 @@ export const HowWeDoDifferentlySection = () => {
             </div>
 
             <div className="mt-12 p-6 bg-gold/5 border border-gold/10 rounded-none border-dashed">
-              <p className="text-sm font-serif italic text-gold text-center">
-                "Those moments are what voice AI will copy—<span className="not-italic font-black uppercase tracking-widest ml-2">at speed.</span>"
+              <p className="text-xl font-serif italic text-gold text-center">
+                "Those moments are what voice AI will copy,<span className="not-italic font-black uppercase tracking-widest ml-2">at speed.</span>"
               </p>
             </div>
           </motion.div>
@@ -286,7 +286,7 @@ export const HowWeDoDifferentlySection = () => {
         {/* Structural Foundations */}
         <div>
           <div className="text-center mb-16">
-            <h3 className="text-[10px] font-black text-warm-gray/30 uppercase tracking-[0.5em] mb-4">
+            <h3 className="text-[10px] font-black text-gold uppercase tracking-[0.5em] mb-4">
               Operational Architecture
             </h3>
             <p className="text-2xl font-serif font-black text-warm-gray">So instead of optimizing responses, we design:</p>

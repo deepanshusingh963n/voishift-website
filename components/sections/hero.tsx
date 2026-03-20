@@ -138,10 +138,12 @@ export function Hero() {
                 variant="outline"
                 size="sm"
                 className="w-full sm:w-auto py-6 px-10 text-sm font-serif border-2 border-gold text-warm-gray hover:bg-gold/50 transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/70"
-                onClick={() => openModal()}
               >
-                <Shield className="mr-3 h-7 w-7 text-gold" />
-                Stress Test My Current Build
+                <a href="/how-it-works">
+                  How It Works
+                </a>
+                <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
+
               </Button>
 
             </motion.div>

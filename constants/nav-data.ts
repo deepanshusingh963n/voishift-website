@@ -87,7 +87,7 @@ export const navLinks: NavLink[] = [
     sidebarContent: {
       title: "The Process",
       icon: Map,
-      description: "Our gated methodology ensures zero hallucination and maximum ROI.",
+      description: "Milestone-based payments are outdated. You pay for business outcomes, not just completed steps.",
       footerText: "Gated by proof",
       footerLink: "/how-it-works",
       footerLabel: "Go to Page"
@@ -136,7 +136,7 @@ export const navLinks: NavLink[] = [
       { title: "Financial Model", description: "Transparency on how we get paid.", icon: CreditCard, href: "/about#model" },
     ],
     sidebarContent: {
-      title: "Navigating",
+      title: "About Us",
       icon: Info,
       description: "Explore the internal sections of our About page to learn more about our origins and values.",
       footerText: "Built for reliability",

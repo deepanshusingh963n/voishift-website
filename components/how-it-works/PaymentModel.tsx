@@ -37,7 +37,7 @@ export default function PaymentModel() {
             How we <span className="text-gold italic">get paid</span>
           </h2>
           <p className="text-xl text-warm-gray-light font-serif leading-relaxed italic">
-            Not for activity, but for evidence. We've shifted our incentives to align with your operational safety, not just your vendor budget.
+            Not for activity, but for evidence. We've shifted our incentives to align with your business outcomes, not just your vendor budget.
           </p>
         </div>
 

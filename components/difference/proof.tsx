@@ -149,7 +149,7 @@ export function Proof() {
           </h2>
           <p className="text-xl md:text-2xl text-warm-gray-light font-serif italic max-w-2xl mx-auto">
             We do not bring opinions. <br className="hidden md:block" />
-            <span className="text-warm-gray not-italic font-bold underline decoration-gold/30">We bring evidence from your own reality.</span>
+            <span className="text-warm-gray not-italic font-bold underline decoration-gold/30">We bring evidence from <span className="not-italic font-black text-gold uppercase tracking-[0.15rem]"> your own </span>reality.</span>
           </p>
         </motion.div>
 
@@ -216,8 +216,8 @@ export function Proof() {
               <div className="p-8 bg-gold/5 border border-gold/20 flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-none bg-white border border-sand flex items-center justify-center shadow-sm relative z-10">
-                <Activity className="w-6 h-6 text-gold" />
-            </div>
+                    <Activity className="w-6 h-6 text-gold" />
+                  </div>
                   <span className="text-[10px] font-black text-gold uppercase tracking-widest">Resolution</span>
                 </div>
                 <ul className="space-y-4">

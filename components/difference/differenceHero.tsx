@@ -47,7 +47,7 @@ export default function DifferenceHero() {
               className="text-xl lg:text-2xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
             >
               We do not build voice agents. <br />
-              <span className="italic text-gold/90">We build voice systems.</span>
+              <span className="italic text-gold/90">We build voice <span className="not-italic font-black uppercase tracking-[0.15rem]"> systems.</span></span>
             </motion.h1>
 
             <motion.div
@@ -72,7 +72,7 @@ export default function DifferenceHero() {
                 onClick={() => openModal()}
                 className="rounded-none px-8 py-7 text-lg group hover:bg-black hover:text-white transition-colors shadow-xl"
               >
-                Design My System
+                Book a Strategy Session
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button

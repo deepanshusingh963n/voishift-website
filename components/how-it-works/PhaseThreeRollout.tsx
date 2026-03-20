@@ -2,7 +2,9 @@
 
 import React from "react"
 import { motion } from "framer-motion"
-import { ShieldCheck, TrendingUp, MonitorCheck, Lock, Layers, History, CheckCircle2, Activity } from "lucide-react"
+import { ShieldCheck, TrendingUp, MonitorCheck, Lock, Layers, History, CheckCircle2, Activity, ArrowRight } from "lucide-react"
+import { useModal } from "@/context/modal-context"
+import { Button } from "@/components/ui/button"
 
 const outputs = [
   "Phase-wise production rollout, one workflow at a time",
@@ -16,6 +18,7 @@ const outputs = [
 ]
 
 export default function PhaseThreeRollout() {
+  const { openModal } = useModal()
   const [mounted, setMounted] = React.useState(false)
   React.useEffect(() => {
     setMounted(true)
@@ -110,7 +113,7 @@ export default function PhaseThreeRollout() {
               <History className="w-48 h-48 text-warm-gray" />
             </div>
 
-            <h3 className="text-2xl font-serif text-warm-gray italic mb-10">System Output Pack: Production</h3>
+            <h3 className="text-2xl font-serif font-black text-gold italic mb-10">Production: <span className="font-normal text-warm-gray">What You Get</span></h3>
 
             <div className="space-y-4">
               {outputs.map((item, i) => (
@@ -131,6 +134,27 @@ export default function PhaseThreeRollout() {
           </div>
 
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="mt-20 text-center"
+        >
+          <p className="text-warm-gray-light font-serif italic text-lg mb-6">
+            Your validation passed. Time to move to production — with proof gates active.
+          </p>
+          <Button
+            onClick={() => openModal()}
+            className="bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] border-2 border-[#1a1a1a] hover:border-gold px-10 py-6 text-base font-black uppercase tracking-widest rounded-none transition-all duration-500 shadow-xl group"
+          >
+            Book a Strategy Session
+            <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </Button>
+        </motion.div>
+
       </div>
     </section>
   )

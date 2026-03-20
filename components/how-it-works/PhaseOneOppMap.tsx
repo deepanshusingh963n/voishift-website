@@ -108,7 +108,7 @@ export default function PhaseOneOppMap() {
               <Zap className="w-10 h-10" />
             </div>
 
-            <h3 className="text-2xl font-serif text-warm-gray italic mb-10">System Output Pack: OppMap</h3>
+            <h3 className="text-2xl font-serif font-black text-gold italic mb-10">OppMap: <span className="font-normal text-warm-gray">What You Get</span></h3>
 
             <div className="space-y-5">
               {outputs.map((item, i) => (

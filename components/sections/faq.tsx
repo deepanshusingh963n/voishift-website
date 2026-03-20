@@ -113,7 +113,7 @@ const ProtocolCard = ({
 }
 
 export function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [speakingId, setSpeakingId] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState(false);
   const [currentCharIndex, setCurrentCharIndex] = useState<number | null>(null);

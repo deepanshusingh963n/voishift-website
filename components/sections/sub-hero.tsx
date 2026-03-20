@@ -391,7 +391,7 @@ export function SubHero() {
                       className="bg-gold hover:bg-black hover:text-gold text-warm-gray rounded-lg transition-all duration-300 w-full sm:w-auto"
                       onClick={() => openModal()}
                     >
-                      I need a system, not a bot
+                      Book a Strategy Session
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
 
@@ -401,7 +401,10 @@ export function SubHero() {
                       className="border-gold/40 text-gold bg-black rounded-lg transition-all duration-300 w-full sm:w-auto"
                       onClick={() => openModal()}
                     >
-                      Stress test my current build
+                      <a href="/how-it-works">
+                        How It Works
+                      </a>
+                      <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </div>
                 )}
