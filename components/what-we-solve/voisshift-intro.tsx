@@ -54,7 +54,7 @@ const SystemLayer = ({ children, delay = 0, zIndex = 10, offset = "0px", opacity
 
 export function VoiShiftIntro() {
   return (
-    <section id="governance" className="py-20 lg:py-24 bg-cream relative overflow-hidden">
+    <section id="governance" className="py-20 lg:py-24 lg:text-left text-center bg-cream relative overflow-hidden">
       {/* Structural Background Pattern */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
       <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-gold/5 blur-[120px] -translate-y-1/2 translate-x-1/2" />

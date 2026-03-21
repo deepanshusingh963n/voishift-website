@@ -34,7 +34,7 @@ export const WhatWeSolveSection = () => {
   const { openModal } = useModal();
 
   return (
-    <section id="hero" className="py-40 pb-12 bg-white relative overflow-hidden">
+    <section id="hero" className="py-40 pb-12 bg-white lg:text-left text-center relative overflow-hidden">
       {/* Structural Background */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(#e5dbba_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.1]" />
@@ -54,7 +54,7 @@ export const WhatWeSolveSection = () => {
             viewport={{ once: true }}
             className="max-w-xl"
           >
-            <h2 className="text-5xl md:text-7xl font-serif font-black text-gold leading-[1.05] tracking-tight mb-8">
+            <h2 className="text-6xl md:text-7xl font-serif font-black text-gold leading-[1.05] tracking-tight mb-8">
               What We <br /> <span className="text-gold italic">Solve</span>
             </h2>
 
@@ -95,8 +95,8 @@ export const WhatWeSolveSection = () => {
                 className="group relative p-8 border border-sand bg-cream hover:border-gold/30 shadow-lg hover:shadow-2xl transition-all duration-700 overflow-hidden"
               >
 
-                <div className="relative z-10">
-                  <div className="flex justify-between items-start mb-12">
+                <div className="relative z-10 flex flex-col items-center text-center sm:items-start sm:text-left">
+                  <div className="flex justify-center sm:justify-start w-full mb-6 sm:mb-12">
                     <div className="w-12 h-12 bg-gold rounded-2xl border border-sand flex items-center justify-center shadow-inner group-hover:bg-black group-hover:text-white transition-all duration-500">
                       <problem.icon className="w-6 h-6" />
                     </div>
@@ -106,7 +106,7 @@ export const WhatWeSolveSection = () => {
                     {problem.text}
                   </h3>
 
-                  <div className="h-px w-full bg-sand/30 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
+                  <div className="h-px w-full bg-sand/30 transform origin-center sm:origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700" />
                 </div>
               </motion.div>
             ))}

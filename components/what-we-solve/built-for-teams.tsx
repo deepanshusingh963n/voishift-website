@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Shield, RefreshCcw, AlertTriangle, Lock, ArrowRight, Activity, Database, CheckCircle, Smartphone, Zap, Box, Eye, FileQuestion, UserCheck, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useModal } from "@/context/modal-context"
 
 const signals = [
     { text: "Fewer repeat calls", icon: RefreshCcw, trend: [20, 40, 30, 50, 45, 60], level: 0.6 },
@@ -120,8 +121,9 @@ const PathOfVeracity = () => (
 )
 
 export function BuiltForTeams() {
+    const { openModal } = useModal();
     return (
-        <section id="teams" className="py-24 bg-white relative overflow-hidden">
+        <section id="teams" className="py-24 bg-white relative text-center lg:text-left overflow-hidden">
             {/* Background Decorative Elements */}
             <div className="absolute inset-0 opacity-[0.01] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/asfalt-light.png')]" />
             <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-gold/5 blur-[120px] rounded-full -translate-y-1/3 translate-x-1/3" />
@@ -146,6 +148,30 @@ export function BuiltForTeams() {
                         <p className="text-xl md:text-2xl text-warm-gray-light max-w-3xl leading-relaxed font-serif italic mb-10">
                             We build for teams where <span className="not-italic font-bold">wrong actions cost more than slow answers.</span> Used inside environments where voice AI touches live workflows, changing rules, and real consequences.
                         </p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="flex flex-col lg:flex-row gap-4"
+                        >
+                            <Button
+                                variant="hero"
+                                onClick={() => openModal()}
+                                className="rounded-none px-8 py-7 text-lg group hover:bg-black hover:text-white transition-colors shadow-xl"
+                            >
+                                Book a Strategy Session
+                                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                            </Button>
+                            <Button
+                                variant="heroSecondary"
+                                asChild
+                                className="rounded-none px-8 py-7 text-lg group hover:bg-gold hover:text-white border-2 shadow-xl"
+                            >
+                                <a href="/how-it-works">
+                                    How It Works
+                                </a>
+                            </Button>
+                        </motion.div>
                     </motion.div>
                     {/* Path of Veracity Visual Area */}
                     <div className="relative">
@@ -243,7 +269,7 @@ export function BuiltForTeams() {
                                     initial={{ opacity: 0, scale: 0.9 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                                    className="bg-white p-5 rounded-xl border border-sand shadow-sm hover:shadow-md hover:border-gold/30 transition-all group"
+                                    className="bg-white p-5 rounded-xl border border-sand shadow-sm hover:shadow-md hover:border-gold/30 transition-all group flex flex-col items-center text-center sm:items-start sm:text-left"
                                 >
                                     <div className="w-10 h-10 rounded-lg bg-gold/5 flex items-center justify-center mb-4 group-hover:bg-gold/10 transition-colors">
                                         <point.icon className="w-5 h-5 text-gold" />

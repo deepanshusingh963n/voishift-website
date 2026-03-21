@@ -56,17 +56,6 @@ export function Hero() {
 
   return (
     <section ref={targetRef} className="relative min-h-screen flex items-center bg-warm-gray overflow-hidden pt-20">
-
-      {/* Background Architectural Markings 
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03]">
-        <div className="absolute top-1/4 left-0 w-full h-px bg-charcoal" />
-        <div className="absolute top-1/2 left-0 w-full h-px bg-charcoal" />
-        <div className="absolute top-3/4 left-0 w-full h-px bg-charcoal" />
-        <div className="absolute left-1/4 top-0 h-full w-px bg-charcoal" />
-        <div className="absolute left-1/2 top-0 h-full w-px bg-charcoal" />
-        <div className="absolute left-3/4 top-0 h-full w-px bg-charcoal" />
-      </div>*/}
-
       {/* Atmospheric Video (Low Opacity) */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         <video
@@ -126,26 +115,13 @@ export function Hero() {
               className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full"
             >
               <Button
-                size="sm"
-                className="w-full sm:w-auto py-6 px-10 text-sm font-serif bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] transition-all duration-500 shadow-2xl group/btn active:scale-95 border-2 border-[#1a1a1a]"
+                size="xl"
+                className="w-full sm:w-auto py-6 px-10 text-md font-serif bg-white/70 text-warm-gray hover:bg-gold hover:text-[#1a1a1a] transition-all duration-500 shadow-2xl group/btn active:scale-95 border-2 border-[#1a1a1a]"
                 onClick={() => openModal()}
               >
                 I need a system, not a bot
                 <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
               </Button>
-
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full sm:w-auto py-6 px-10 text-sm font-serif border-2 border-gold text-warm-gray hover:bg-gold/50 transition-all duration-500 shadow-lg group/btn-sec active:scale-95 bg-white/70"
-              >
-                <a href="/how-it-works">
-                  How It Works
-                </a>
-                <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
-
-              </Button>
-
             </motion.div>
           </motion.div>
         </div>
