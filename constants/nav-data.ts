@@ -45,9 +45,9 @@ export const navLinks: NavLink[] = [
     label: "What We Solve",
     href: "/what-we-solve",
     sections: [
-      { title: "Specific Challenges", description: "Solving for revenue and ops efficiency.", icon: Target, href: "/what-we-solve#solve" },
-      { title: "The Threat", description: "Why black-box AI is a liability.", icon: CheckCircle, href: "/what-we-solve#threat" },
-      { title: "Built for", description: "Enterprise-grade safety features.", icon: Users, href: "/what-we-solve#teams" },
+      { title: "Specific Challenges", description: "Solving for revenue and ops efficiency.", icon: Target, href: "/what-we-solve#challenges" },
+      { title: "The Threat", description: "Why black-box AI is a liability.", icon: CheckCircle, href: "/what-we-solve#teams" },
+      { title: "Built for", description: "Enterprise-grade safety features.", icon: Users, href: "/what-we-solve#governance" },
     ],
     sidebarContent: {
       title: "Core Services",
@@ -88,11 +88,12 @@ export const navLinks: NavLink[] = [
       title: "The Process",
       icon: Map,
       description: "Milestone-based payments are outdated. You pay for business outcomes, not just completed steps.",
-      footerText: "Gated by proof",
+      footerText: "You Pay for What Works",
       footerLink: "/how-it-works",
       footerLabel: "Go to Page"
     }
   },
+  /*
   {
     label: "Who It's For",
     href: "/who-is-this-for",
@@ -127,6 +128,7 @@ export const navLinks: NavLink[] = [
       footerLabel: "Visit Page"
     }
   },
+  */
   {
     label: "About Us",
     href: "/about",
