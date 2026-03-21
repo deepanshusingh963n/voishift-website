@@ -45,9 +45,9 @@ export const navLinks: NavLink[] = [
     label: "What We Solve",
     href: "/what-we-solve",
     sections: [
-      { title: "Specific Challenges", description: "Solving for revenue and ops efficiency.", icon: Target, href: "/what-we-solve#challenges" },
-      { title: "The Threat", description: "Why black-box AI is a liability.", icon: CheckCircle, href: "/what-we-solve#teams" },
-      { title: "Built for", description: "Enterprise-grade safety features.", icon: Users, href: "/what-we-solve#governance" },
+      { title: "The Threat", description: "Why black-box AI is a liability.", icon: ShieldAlert, href: "/what-we-solve#challenges" },
+      { title: "Built for Teams", description: "Designed for operations engineering.", icon: Users, href: "/what-we-solve#teams" },
+      { title: "System Governance", description: "Enterprise-grade safety features.", icon: ShieldCheck, href: "/what-we-solve#governance" },
     ],
     sidebarContent: {
       title: "Core Services",
@@ -62,8 +62,8 @@ export const navLinks: NavLink[] = [
     label: "Our Difference",
     href: "/difference",
     sections: [
-      { title: "Differentiation", description: "Why we focus on systems, not agents.", icon: Zap, href: "/difference#differentiation" },
-      { title: "Our Methodology", description: "How we solve for edge cases reliably.", icon: Repeat, href: "/difference#methodology" },
+      { title: "Differentiation", description: "Why we focus on systems, not agents.", icon: Zap, href: "/difference#disciplines" },
+      { title: "Our Methodology", description: "How we solve for edge cases reliably.", icon: Repeat, href: "/difference#approach" },
       { title: "Proof & Metrics", description: "Verification gated by rules and data.", icon: ShieldCheck, href: "/difference#proof" },
     ],
     sidebarContent: {
@@ -79,10 +79,10 @@ export const navLinks: NavLink[] = [
     label: "How It Works",
     href: "/how-it-works",
     sections: [
-      { title: "Phase 1: Mapping", description: "Opportunity mapping and strategy.", icon: Map, href: "/how-it-works#discovery" },
-      { title: "Phase 2: Sandbox", description: "Validation and testing environment.", icon: Layout, href: "/how-it-works#sandbox" },
-      { title: "Phase 3: Rollout", description: "Proof gated production launch.", icon: Zap, href: "/how-it-works#rollout" },
-      { title: "Payment Model", description: "Performance-based results.", icon: CreditCard, href: "/how-it-works#payment" },
+      { title: "Phase 1: Mapping", description: "Opportunity mapping and strategy.", icon: Map, href: "/how-it-works#phase-1" },
+      { title: "Phase 2: Sandbox", description: "Validation and testing environment.", icon: Layout, href: "/how-it-works#phase-2" },
+      { title: "Phase 3: Rollout", description: "Proof gated production launch.", icon: Zap, href: "/how-it-works#phase-3" },
+      { title: "Payment Model", description: "Performance-based results.", icon: CreditCard, href: "/how-it-works#pricing" },
     ],
     sidebarContent: {
       title: "The Process",
@@ -133,9 +133,9 @@ export const navLinks: NavLink[] = [
     label: "About Us",
     href: "/about",
     sections: [
-      { title: "Our Story", description: "The evolution of VoiShift and our mission.", icon: Info, href: "/about#story" },
-      { title: "The Team", description: "Meet the experts building reliable voice AI.", icon: Users, href: "/about#team" },
-      { title: "Financial Model", description: "Transparency on how we get paid.", icon: CreditCard, href: "/about#model" },
+      { title: "Our Story", description: "The evolution of VoiShift and our mission.", icon: Info, href: "/about#why-we-exist" },
+      { title: "The Team", description: "Meet the experts building reliable voice AI.", icon: Users, href: "/about#leadership" },
+      { title: "Careers", description: "Join our mission to build reliable AI.", icon: Briefcase, href: "/about#careers" },
     ],
     sidebarContent: {
       title: "About Us",
@@ -159,7 +159,7 @@ export const navLinks: NavLink[] = [
       { title: "Real Outcomes", description: "Hard metrics from real-world deployments.", icon: BarChart, href: "/case-studies#hero" },
       { title: "Expert Ebooks", description: "Deep dives into voice AI strategy.", icon: BookOpen, href: "/case-studies#ebooks" },
       { title: "Whitepapers", description: "Technical research and industry findings.", icon: FileText, href: "/case-studies#whitepapers" },
-      { title: "Success Stories", description: "How teams hit 98% accuracy.", icon: Trophy, href: "/case-studies#grid" },
+      { title: "Success Stories", description: "How teams hit 98% accuracy.", icon: Trophy, href: "/case-studies#studies" },
     ],
     sidebarContent: {
       title: "Learning Center",
