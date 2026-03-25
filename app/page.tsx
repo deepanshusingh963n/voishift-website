@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/sections/navbar"
 import { Hero } from "@/components/sections/hero"
 import { SubHero } from "@/components/sections/sub-hero"
+import { WhoThisHits2 } from "@/components/sections/who-this-hits2"
 import { LogoStrip } from "@/components/sections/logo-strip"
 import { WhatWeDo } from "@/components/sections/what-we-do"
 import { CaseStudies } from "@/components/sections/case-studies"
@@ -18,6 +19,8 @@ export default function Home() {
       <Hero />
 
       <SubHero />
+
+      <WhoThisHits2 />
 
       <WhatWeDo />
 

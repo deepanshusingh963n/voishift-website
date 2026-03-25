@@ -30,6 +30,10 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const bgColor = isScrolled 
+  ? "bg-cream/80" 
+  : (isHomePage ? "bg-black/50" : "bg-white/50");
+
   const textColor = isScrolled
     ? "text-warm-gray"
     : (isHomePage ? "text-white" : "text-black");
@@ -38,15 +42,16 @@ export const Navbar = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? "bg-cream/95 backdrop-blur-md shadow-sm border-b border-border"
-        : "bg-transparent"
-        } ${textColor}`}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={`fixed z-50 transition-all duration-500 left-1/2 -translate-x-1/2
+        ${isScrolled 
+          ? "top-4 w-[95%] md:w-[90%] lg:w-[85%] max-w-7xl rounded-full backdrop-blur-2xl shadow-2xl border border-border/50 py-1" 
+          : "top-4 w-[95%] md:w-[90%] lg:w-[85%] max-w-7xl rounded-full backdrop-blur-xl md:backdrop-blur-none border border-white/10 py-1"
+        } ${bgColor} ${textColor}`}
       suppressHydrationWarning
     >
-      <div className="max-w-7xl mx-auto px-1">
-        <nav className="flex items-center justify-between h-20">
+      <div className="w-full px-6 md:px-10">
+        <nav className="relative flex items-center justify-between h-16">
           {/* Logo */}
           <a href="/" className="flex items-center gap-3">
             <Image
@@ -54,17 +59,22 @@ export const Navbar = () => {
               alt="VoiShift Voice AI Platform Logo"
               width={120}
               height={40}
-              className="h-16 w-auto"
+              className="h-12 w-auto"
               priority
             />
           </a>
+
+          {/* Centered Mobile Title */}
+          <div className="absolute left-1/2 -translate-x-1/2 lg:hidden">
+            <span className="text-xl md:text-2xl tracking-[0.2rem] uppercase font-serif text-gold">VoiShift</span>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6 xl:gap-10" suppressHydrationWarning>
             {navLinks.map((link) => (
               <div
                 key={link.href}
-                className="relative h-20 flex items-center"
+                className="relative h-16 flex items-center"
                 onMouseEnter={() => setActiveHover(link.label)}
                 onMouseLeave={() => setActiveHover(null)}
               >
@@ -86,7 +96,7 @@ export const Navbar = () => {
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 10 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-20 left-1/2 -translate-x-1/2 w-[540px] bg-white border border-border shadow-xl rounded-xl overflow-hidden z-[60]"
+                        className="absolute top-16 left-1/2 -translate-x-1/2 w-[540px] bg-white border border-border shadow-xl rounded-xl overflow-hidden z-[60]"
                       >
                         <div className="flex">
                           {/* Sidebar Section */}
@@ -181,7 +191,7 @@ export const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-warm-gray hover:text-gold transition-colors"
+            className="lg:hidden p-2 text-gold transition-colors"
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>

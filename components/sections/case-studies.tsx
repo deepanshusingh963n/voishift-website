@@ -5,12 +5,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useModal } from "@/context/modal-context"
 import {
-  Truck,
-  Factory,
-  Stethoscope,
   ArrowRight,
   MousePointer2,
-  Activity
 } from "lucide-react"
 
 const caseStudies = [

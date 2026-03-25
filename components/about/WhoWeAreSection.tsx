@@ -1,7 +1,5 @@
 import { motion } from "framer-motion";
 import { Cpu, Briefcase, Scale, Zap, CheckCircle, ArrowRight, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useModal } from "@/context/modal-context";
 
 const betweenItems = [
   { left: "AI capability", right: "operational reality", icon: Cpu },
@@ -95,7 +93,7 @@ const EquilibriumBridge = () => (
 
 export const WhoWeAreSection = () => {
   return (
-    <section id="who-we-are" className="py-20 bg-white relative overflow-hidden">
+    <section id="who-we-are" className="py-20 bg-sand/50 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-[1fr_1.2fr] gap-16 lg:gap-24 items-center mb-12">
           {/* Headline & Narrative - Left */}
@@ -105,7 +103,7 @@ export const WhoWeAreSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif font-black text-gold leading-[1.1] tracking-tight mb-8">
+            <h2 className="text-4xl md:text-6xl font-serif font-black text-gold leading-[1.1] tracking-tight mb-8">
               Who We Are
             </h2>
             <p className="text-2xl font-serif font-black text-warm-gray leading-tight mb-6">

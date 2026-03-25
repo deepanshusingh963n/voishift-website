@@ -37,18 +37,19 @@ export default function DifferenceHero() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-8"
             >
-              <span className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[0.15em] text-gold">The VoiShift Difference</span>
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[0.15em] text-gold">The VoiShift Difference</h1>
             </motion.div>
 
-            <motion.h1
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl lg:text-2xl font-serif text-warm-gray leading-[1.05] tracking-tight mb-8"
+              className="text-xl lg:text-2xl font-serif text-warm-gray leading-[1.25] tracking-tight mb-8"
             >
               We do not build voice agents. <br />
-              <span className="italic text-gold/90">We build voice <span className="not-italic font-black uppercase tracking-[0.15rem]"> systems.</span></span>
-            </motion.h1>
+              <span className="italic text-gold/90">We build voice <span className="not-italic font-black uppercase tracking-[0.15rem]"> systems.</span></span><br />
+              Edge-case first. Rule-governed. Measured in production.
+            </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +73,7 @@ export default function DifferenceHero() {
                 onClick={() => openModal()}
                 className="rounded-none px-8 py-7 text-lg group hover:bg-black hover:text-white transition-colors shadow-xl"
               >
-                Book a Strategy Session
+                Request an Architecture Review
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               <Button
@@ -212,7 +213,7 @@ export default function DifferenceHero() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] font-mono tracking-[0.18em] text-gold/80 uppercase mb-0.5">Layer 03</p>
-                  <p className="text-xs font-bold text-warm-gray truncate">Real Evaluation</p>
+                  <p className="text-xs font-bold text-warm-gray truncate">Proof-Gated Actions</p>
                 </div>
                 <motion.div
                   animate={{ opacity: [0.4, 1, 0.4] }}
@@ -246,7 +247,7 @@ export default function DifferenceHero() {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-[10px] font-mono tracking-[0.18em] text-gold/80 uppercase mb-0.5">Layer 04</p>
-                  <p className="text-xs font-bold text-warm-gray truncate">Long-tail First</p>
+                  <p className="text-xs font-bold text-warm-gray truncate">Replayable Audit Trail</p>
                 </div>
                 <motion.div
                   animate={{ opacity: [0.4, 1, 0.4] }}
@@ -279,7 +280,7 @@ export default function DifferenceHero() {
                     transition={{ duration: 1.8, repeat: Infinity }}
                     className="w-2 h-2 rounded-full bg-gold flex-shrink-0"
                   />
-                  <span className="text-[10px] font-mono tracking-[0.2em] text-gold uppercase">Measured. Governed. Replayable.</span>
+                  <span className="text-[10px] font-mono tracking-[0.2em] text-gold uppercase">Measured. Provable. Replayable.</span>
                 </div>
               </motion.div>
 

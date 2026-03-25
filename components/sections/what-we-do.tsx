@@ -15,7 +15,6 @@ const pillars = [
   {
     title: "Voice layer for decisions and action",
     icon: Mic2,
-    //description: "We design and deploy voice agents that can handle real conversations, not just scripted flows.",
     examples: [
       "Ask by voice instead of hunting across dashboards, reports, and tabs",
       "Use voice anywhere, on mobile, on the floor, in the field, or at a desk",
@@ -27,7 +26,6 @@ const pillars = [
   {
     title: "Defensible answers from rules, data, and required context",
     icon: BrainCircuit,
-    //description: "We convert calls into usable work artifacts, automatically.",
     examples: [
       "Answer “what applies” using approved SOPs, policies, and live system data",
       "Ask only for the missing detail that changes the decision",
@@ -38,7 +36,6 @@ const pillars = [
   {
     title: "Turn conversations, updates, and events into owned work that closes",
     icon: ShieldAlert,
-    //description: "Voice AI is high impact and high risk. We build guardrails so the system behaves under pressure.",
     examples: [
       "Convert meeting questions and cross-team requests into owned work items with proof gates",
       "Capture incidents, safety events, inspections, and proof-of-work as structured entries with follow-ups",
@@ -50,7 +47,6 @@ const pillars = [
   {
     title: "Control layer that holds up under pressure and over time",
     icon: Workflow,
-    //description: "Voice agents only work when the surrounding workflow works. We connect the full loop.",
     examples: [
       "Define what the system can do, cannot do, and when a human must decide",
       "Log every step so you can prove who decided what, when, and why",
@@ -180,7 +176,7 @@ export function WhatWeDo() {
             viewport={{ once: true }}
           >
             <div className="font-serif text-2xl md:text-4xl text-warm-gray-light leading-[1.1] mb-8">
-              <span className="font-black text-warm-gray">VoiShift</span> is a <span className="text-gold"> Voice-first, Anything-AI </span> execution partner that helps enterprises run work, not chase it or firefight it.
+              <span className="font-black text-warm-gray">VoiShift</span> is a <span className="text-gold"> Voice-first </span> execution partner that helps enterprises run work, not chase it or firefight it.
             </div>
             <div className="space-y-3 text-lg md:text-xl text-warm-gray-light font-serif leading-relaxed max-w-2xl border-l-4 border-gold pl-8 py-1">
               <p>

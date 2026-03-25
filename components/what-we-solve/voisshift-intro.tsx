@@ -3,12 +3,6 @@
 import { motion } from "framer-motion"
 import { Eye, Zap, FileQuestion, UserCheck, AlertCircle, Shield, Globe, Database, ArrowRight, Activity } from "lucide-react"
 
-const workflowPoints = [
-  { text: "Where they pause", icon: Eye },
-  { text: "Where they double-check", icon: FileQuestion },
-  { text: "Where they ask someone", icon: UserCheck },
-  { text: "Where they make an exception", icon: AlertCircle },
-]
 
 /* --- Advanced Glassmorphism Components --- */
 

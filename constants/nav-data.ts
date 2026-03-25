@@ -45,9 +45,9 @@ export const navLinks: NavLink[] = [
     label: "What We Solve",
     href: "/what-we-solve",
     sections: [
-      { title: "The Threat", description: "Why black-box AI is a liability.", icon: ShieldAlert, href: "/what-we-solve#challenges" },
-      { title: "Built for Teams", description: "Designed for operations engineering.", icon: Users, href: "/what-we-solve#teams" },
-      { title: "System Governance", description: "Enterprise-grade safety features.", icon: ShieldCheck, href: "/what-we-solve#governance" },
+      { title: "Why Things Go Wrong", description: "The reality of Bot-in-a-Box failures.", icon: ShieldAlert, href: "/what-we-solve#challenges" },
+      { title: "Built For Operations", description: "Engineering the Path of Veracity for real teams.", icon: Users, href: "/what-we-solve#teams" },
+      { title: "System Governance", description: "Controlled truth and designed refusal.", icon: ShieldCheck, href: "/what-we-solve#governance" },
     ],
     sidebarContent: {
       title: "Core Services",
@@ -62,9 +62,9 @@ export const navLinks: NavLink[] = [
     label: "Our Difference",
     href: "/difference",
     sections: [
-      { title: "Differentiation", description: "Why we focus on systems, not agents.", icon: Zap, href: "/difference#disciplines" },
-      { title: "Our Methodology", description: "How we solve for edge cases reliably.", icon: Repeat, href: "/difference#approach" },
-      { title: "Proof & Metrics", description: "Verification gated by rules and data.", icon: ShieldCheck, href: "/difference#proof" },
+      { title: "Core Disciplines", description: "Controlled truth, designed refusal, proof-gated evaluation.", icon: Zap, href: "/difference#disciplines" },
+      { title: "How We Start", description: "Starting with behavior, not prompts and models.", icon: Repeat, href: "/difference#approach" },
+      { title: "Proof That Holds Up", description: "We bring evidence from your own reality.", icon: ShieldCheck, href: "/difference#proof" },
     ],
     sidebarContent: {
       title: "The Advantage",
@@ -79,10 +79,10 @@ export const navLinks: NavLink[] = [
     label: "How It Works",
     href: "/how-it-works",
     sections: [
-      { title: "Phase 1: Mapping", description: "Opportunity mapping and strategy.", icon: Map, href: "/how-it-works#phase-1" },
-      { title: "Phase 2: Sandbox", description: "Validation and testing environment.", icon: Layout, href: "/how-it-works#phase-2" },
-      { title: "Phase 3: Rollout", description: "Proof gated production launch.", icon: Zap, href: "/how-it-works#phase-3" },
-      { title: "Payment Model", description: "Performance-based results.", icon: CreditCard, href: "/how-it-works#pricing" },
+      { title: "Phase 1: OppMap", description: "Opportunity Mapping + WSJF Prioritization.", icon: Map, href: "/how-it-works#phase-1" },
+      { title: "Phase 2: Sandbox", description: "Edge-Case Testing + Guardrails Verified.", icon: Layout, href: "/how-it-works#phase-2" },
+      { title: "Phase 3: Rollout", description: "Mini Rollout + Production Hardening + Drift Monitoring.", icon: Zap, href: "/how-it-works#phase-3" },
+      { title: "How We Get Paid", description: "Not for activity, but for evidence.", icon: CreditCard, href: "/how-it-works#pricing" },
     ],
     sidebarContent: {
       title: "The Process",
@@ -98,14 +98,13 @@ export const navLinks: NavLink[] = [
     label: "Who It's For",
     href: "/who-is-this-for",
     sections: [
-      { title: "Operator Filter", description: "Why we focus on operators, not just owners.", icon: Filter, href: "/who-is-this-for#filter" },
-      { title: "Market Fit", description: "Industries where reliability is non-negotiable.", icon: Target, href: "/who-is-this-for#hits" },
-      { title: "Use Cases", description: "Real-world scenarios we handle daily.", icon: Search, href: "/who-is-this-for#for" },
+      { title: "Who This Hits", description: "Different roles. Same structural fragility.", icon: Filter, href: "/who-is-this-for#operators" },
+      { title: "Decision Criteria", description: "Voice AI as a system of record, not an interface.", icon: Target, href: "/who-is-this-for#criteria" },
     ],
     sidebarContent: {
       title: "Strategic Fit",
       icon: Filter,
-      description: "Our solutions are designed for teams that require predictable outcomes.",
+      description: "Our solutions are designed for teams that need outcomes, not just answers.",
       footerText: "For professionals only",
       footerLink: "/who-is-this-for",
       footerLabel: "Check Fit"
@@ -115,9 +114,10 @@ export const navLinks: NavLink[] = [
     label: "Build Vs Buy",
     href: "/build-vs-buy",
     sections: [
-      { title: "Renting vs Owning", description: "Why renting AI is a short-term trap.", icon: Rocket, href: "/build-vs-buy#renting" },
-      { title: "Pain Points", description: "Identifying the gaps in generic AI bots.", icon: ShieldAlert, href: "/build-vs-buy#pain-points" },
-      { title: "Decision Framework", description: "A guide for ROI-focused leaders.", icon: FileText, href: "/build-vs-buy#framework" },
+      { title: "Renting AI", description: "What renting AI looks like.", icon: Rocket, href: "/build-vs-buy#renting" },
+      { title: "Building is Owning", description: "When you build, you own how it behaves.", icon: ShieldCheck, href: "/build-vs-buy#owning" },
+      { title: "The Turning Point", description: "The moment renting starts to hurt.", icon: ShieldAlert, href: "/build-vs-buy#pain-points" },
+      { title: "Decision Framework", description: "One question decides build vs buy.", icon: FileText, href: "/build-vs-buy#framework" },
     ],
     sidebarContent: {
       title: "Case Analysis",
@@ -133,9 +133,10 @@ export const navLinks: NavLink[] = [
     label: "About Us",
     href: "/about",
     sections: [
-      { title: "Our Story", description: "The evolution of VoiShift and our mission.", icon: Info, href: "/about#why-we-exist" },
-      { title: "The Team", description: "Meet the experts building reliable voice AI.", icon: Users, href: "/about#leadership" },
-      { title: "Careers", description: "Join our mission to build reliable AI.", icon: Briefcase, href: "/about#careers" },
+      { title: "Who We Are", description: "Replacing guesswork with structure.", icon: Users, href: "/about#who-we-are" },
+      { title: "Our Mission", description: "Replacing guesswork with structure.", icon: Info, href: "/about#why-we-exist" },
+      { title: "Our Leadership", description: "Systems holding up under pressure.", icon: Users, href: "/about#leadership" },
+      { title: "Careers", description: "Torchbearers with skin in.", icon: Briefcase, href: "/about#careers" },
     ],
     sidebarContent: {
       title: "About Us",
@@ -156,10 +157,10 @@ export const navLinks: NavLink[] = [
     label: "Resources",
     href: "/case-studies",
     sections: [
-      { title: "Real Outcomes", description: "Hard metrics from real-world deployments.", icon: BarChart, href: "/case-studies#hero" },
-      { title: "Expert Ebooks", description: "Deep dives into voice AI strategy.", icon: BookOpen, href: "/case-studies#ebooks" },
-      { title: "Whitepapers", description: "Technical research and industry findings.", icon: FileText, href: "/case-studies#whitepapers" },
-      { title: "Success Stories", description: "How teams hit 98% accuracy.", icon: Trophy, href: "/case-studies#studies" },
+      { title: "Voices That Build Clarity", description: "Real outcomes. Real challenges. Real solutions.", icon: BarChart, href: "/case-studies#hero" },
+      { title: "eBooks", description: "Operator field manuals. Clear steps and examples.", icon: BookOpen, href: "/case-studies#ebooks" },
+      { title: "Whitepapers", description: "Peer-reviewed research practical takeaways.", icon: FileText, href: "/case-studies#whitepapers" },
+      { title: "Case Studies", description: "An exposé of our work, including the parts we got wrong.", icon: Trophy, href: "/case-studies#studies" },
     ],
     sidebarContent: {
       title: "Learning Center",

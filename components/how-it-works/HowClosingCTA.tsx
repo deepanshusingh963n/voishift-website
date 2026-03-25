@@ -32,7 +32,7 @@ export default function HowClosingCTA() {
                   <span className="text-gold italic">System.</span>
                 </h2>
                 <p className="text-xl text-white/60 font-serif italic max-w-lg">
-                  Stop hoping your voice AI works. Start proving it. We build the architecture that ensures your agents never "fly blind."
+                  Stop hoping your voice AI works. Start proving it. We build the architecture that ensures your operations never "fly blind."
                 </p>
               </div>
 
@@ -41,7 +41,7 @@ export default function HowClosingCTA() {
                   className="bg-gold hover:bg-cream-dark hover:text-black text-warm-gray px-10 py-5 text-xl rounded-2xl h-auto transition-transform hover:scale-105"
                   onClick={() => openModal()}
                 >
-                  Book a Strategy Session
+                  Start Architecture Review
                   <ArrowRight className="ml-3 w-6 h-6" />
                 </Button>
               </div>

@@ -25,12 +25,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.9,
         },
         {
-            url: `${baseUrl}/build-vs-buy`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.7,
-        },
-        {
             url: `${baseUrl}/difference`,
             lastModified: new Date(),
             changeFrequency: 'weekly',
@@ -53,12 +47,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
             lastModified: new Date(),
             changeFrequency: 'weekly',
             priority: 0.8,
-        },
-        {
-            url: `${baseUrl}/who-is-this-for`,
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.7,
         },
         {
             url: `${baseUrl}/privacy`,

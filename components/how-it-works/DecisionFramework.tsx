@@ -1,6 +1,5 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { HelpCircle, CheckCircle2, XCircle, ShieldCheck, Scale, ArrowRight } from "lucide-react"
 import { useModal } from "@/context/modal-context"
 

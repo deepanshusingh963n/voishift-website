@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ShieldCheck, Bug, FileText, AlertCircle, HardHat, Gauge, CheckCircle2, FlaskConical, ArrowRight } from "lucide-react"
+import { ShieldCheck, Bug, AlertCircle, HardHat, CheckCircle2, FlaskConical, ArrowRight } from "lucide-react"
 import { useModal } from "@/context/modal-context"
 import { Button } from "@/components/ui/button"
 

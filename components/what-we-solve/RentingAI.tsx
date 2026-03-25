@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Home, UserMinus, Settings2, Unlock } from "lucide-react"
+import { Settings2, Unlock } from "lucide-react"
 
 export default function RentingAI() {
   const points = [

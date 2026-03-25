@@ -282,7 +282,7 @@ function VisualPanel({ active }: { active: number }) {
                 <circle cx="194" cy="138" r="9" fill="none" stroke="#d4af37" strokeWidth="1.5" />
                 <circle cx="206" cy="138" r="9" fill="none" stroke="#d4af37" strokeWidth="1.5" />
                 <line x1="194" y1="147" x2="206" y2="147" stroke="#d4af37" strokeWidth="1.5" strokeLinecap="round" />
-                <text x="200" y="174" textAnchor="middle" fill="rgba(212,175,55,0.7)" fontSize="10" fontWeight="500">Enterprise AI layer</text>
+                <text x="200" y="174" textAnchor="middle" fill="rgba(212,175,55,0.7)" fontSize="10" fontWeight="500">Deterministic Voice Layer</text>
 
                 {/* Arrows: AI → systems (3 animated dashed lines) */}
                 <line x1="174" y1="164" x2="64" y2="196" stroke="rgba(212,175,55,0.3)" strokeWidth="1" markerEnd="url(#arr-gold)" strokeDasharray="5 3" />
@@ -391,7 +391,7 @@ export function SubHero() {
                       className="bg-gold hover:bg-black hover:text-gold text-warm-gray rounded-lg transition-all duration-300 w-full sm:w-auto"
                       onClick={() => openModal()}
                     >
-                      Book a Strategy Session
+                      Request an Architecture Review
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
 

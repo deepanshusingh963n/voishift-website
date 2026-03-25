@@ -23,9 +23,9 @@ export default function CaseStudiesPage() {
     <main className="min-h-screen">
       <Navbar />
       <CaseStudiesHero />
+      <CaseStudyGrid />
       <EBooksSection />
       <WhitepapersSection />
-      <CaseStudyGrid />
       <CaseStudiesCTA />
       <Footer />
     </main>

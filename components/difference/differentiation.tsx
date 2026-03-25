@@ -6,25 +6,25 @@ import { Lock, ShieldOff, TestTube, Zap } from "lucide-react"
 const disciplines = [
   {
     title: "Controlled truth",
-    description: "The agent speaks only from sources the business has actually approved. No guessing. No helpful improvisation.",
+    description: "The system speaks only from approved sources and current state. No guessing. No stitched answers that fall apart later.",
     icon: Lock,
     color: "#D4AF37"
   },
   {
     title: "Designed refusal",
-    description: "Refusal is planned upfront, not patched later. If it cannot be sure, it stops cleanly.",
+    description: "Refusal is planned upfront, not patched later. It does not “push through” uncertainty. - it stops, asks, or escalates, on purpose.",
     icon: ShieldOff,
     color: "#D4AF37"
   },
   {
-    title: "Real evaluation",
-    description: "We test against your calls, your tickets, your edge cases. Not demos. Not benchmarks.",
+    title: "Proof-gated Evaluation",
+    description: "We test it on your real workflows, your real edge cases, and the moments that cause escalations, not on demo scripts.",
     icon: TestTube,
     color: "#D4AF37"
   },
   {
-    title: "Long-tail first",
-    description: "The rare cases are treated as the main job. That is where trust usually breaks.",
+    title: "Edge-case first",
+    description: "We treat rare exceptions as the real job, because that is where money leaks, incidents happen, and trust breaks first.",
     icon: Zap,
     color: "#D4AF37"
   },
@@ -140,7 +140,7 @@ export function Differentiation() {
           </h2>
           <p className="text-xl md:text-2xl text-warm-gray-light max-w-3xl mx-auto font-serif italic">
             Most teams make voice AI sound smart. <br className="hidden md:block" />
-            <span className="text-warm-gray not-italic font-bold">We make it behave safely when things break.</span>
+            <span className="text-warm-gray not-italic font-bold">We make it hold up under exceptions and pressure.</span>
           </p>
         </motion.div>
 

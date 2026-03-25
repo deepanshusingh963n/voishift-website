@@ -32,7 +32,7 @@ const DecisionLattice = () => (
 
 export const AboutHeroSection = () => {
   return (
-    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-white">
+    <section id="hero" className="relative min-h-[90vh] flex items-center pt-32 pb-24 overflow-hidden bg-warm-gray">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -40,7 +40,7 @@ export const AboutHeroSection = () => {
           alt="Technical blueprint structure representing VoiShift system design"
           fill
           priority
-          className="object-cover opacity-[0.4]"
+          className="object-cover opacity-[0.9]"
         />
         <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
       </div>
@@ -98,7 +98,7 @@ export const AboutHeroSection = () => {
                 {
                   icon: Target,
                   title: "Not optimizing confidence",
-                  description: "We don't optimize how confident the agent sounds",
+                  description: "We don't optimize how confident the voice layer sounds",
                 },
                 {
                   icon: Shield,

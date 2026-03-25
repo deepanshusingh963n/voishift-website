@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 
 const scaleSteps = [
-  { text: "Define what the agent can do, confirm, refuse, escalate", icon: Settings },
+  { text: "Define what the architecture can do, confirm, refuse, escalate", icon: Settings },
   { text: "Measure what it actually did in real situations", icon: BarChart3 },
   { text: "Review drift, changes, and new failure paths", icon: RefreshCw },
   { text: "Own corrections before they hit customers or teams", icon: Users },
@@ -141,7 +141,7 @@ const whatWeDesign = [
   {
     icon: Hand,
     title: "Designed refusal",
-    description: "When the agent must stop",
+    description: "When the system must stop",
   },
   {
     icon: Users,

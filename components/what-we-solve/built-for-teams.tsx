@@ -1,15 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Shield, RefreshCcw, AlertTriangle, Lock, ArrowRight, Activity, Database, CheckCircle, Smartphone, Zap, Box, Eye, FileQuestion, UserCheck, AlertCircle } from "lucide-react"
+import { Lock, ArrowRight, Activity, Database, CheckCircle, Smartphone, Eye, FileQuestion, UserCheck, AlertCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useModal } from "@/context/modal-context"
-
-const signals = [
-    { text: "Fewer repeat calls", icon: RefreshCcw, trend: [20, 40, 30, 50, 45, 60], level: 0.6 },
-    { text: "Less cleanup work", icon: AlertTriangle, trend: [60, 45, 50, 30, 35, 20], level: 0.2 },
-    { text: "Fewer \"why did it do that?\" moments", icon: Shield, trend: [80, 60, 40, 30, 20, 10], level: 0.1 },
-]
 
 const workflowPoints = [
     { text: "Where they pause", icon: Eye },
@@ -17,60 +11,6 @@ const workflowPoints = [
     { text: "Where they ask someone", icon: UserCheck },
     { text: "Where they make an exception", icon: AlertCircle },
 ]
-
-/* --- Advanced Dashboard Components --- */
-
-const HolographicPillar = ({ level, delay }: { level: number, delay: number }) => (
-    <div className="relative w-4 h-24 bg-gold/5 rounded-full overflow-hidden border border-gold/10">
-        <motion.div
-            initial={{ height: 0 }}
-            whileInView={{ height: `${level * 100}%` }}
-            transition={{ duration: 2, delay, ease: "easeOut" }}
-            className="absolute bottom-0 w-full bg-gradient-to-t from-gold via-gold/50 to-gold/30 shadow-[0_0_15px_rgba(212,175,55,0.3)]"
-        />
-        {/* Glow Sweep */}
-        <motion.div
-            animate={{ y: ["100%", "-100%"] }}
-            transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-x-0 h-4 bg-white/20 blur-sm"
-        />
-    </div>
-)
-
-const SignalCard = ({ signal, index }: { signal: any, index: number }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-        viewport={{ once: true }}
-        className="group relative bg-white rounded-xl border border-sand p-6 shadow-sm hover:shadow-xl hover:border-gold/30 transition-all duration-500 overflow-hidden"
-    >
-        {/* Subtle Background Pattern */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-            <svg width="100%" height="100%">
-                <pattern id={`pattern-${index}`} width="20" height="20" patternUnits="userSpaceOnUse">
-                    <circle cx="2" cy="2" r="1" fill="currentColor" className="text-gold" />
-                </pattern>
-                <rect width="100%" height="100%" fill={`url(#pattern-${index})`} />
-            </svg>
-        </div>
-
-        <div className="flex items-start justify-between mb-8 relative z-10">
-            <div className="w-10 h-10 rounded-xl bg-gold/5 flex items-center justify-center group-hover:bg-gold/10 transition-colors border border-gold/10">
-                <signal.icon className="w-5 h-5 text-gold" />
-            </div>
-            <HolographicPillar level={signal.level} delay={index * 0.2} />
-        </div>
-
-        <div className="relative z-10">
-            <h3 className="text-warm-gray font-bold text-md mb-2 leading-tight">{signal.text}</h3>
-            <div className="flex items-center gap-1.5 ">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-[9px] font-black text-warm-gray/40 uppercase tracking-widest">Signal_Optimized</span>
-            </div>
-        </div>
-    </motion.div>
-)
 
 const PathOfVeracity = () => (
     <div className="relative w-full h-40 bg-cream border border-sand overflow-hidden p-6 mb-8">
@@ -159,7 +99,7 @@ export function BuiltForTeams() {
                                 onClick={() => openModal()}
                                 className="rounded-none px-8 py-7 text-lg group hover:bg-black hover:text-white transition-colors shadow-xl"
                             >
-                                Book a Strategy Session
+                                Discuss Your Architecture
                                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                             </Button>
                             <Button

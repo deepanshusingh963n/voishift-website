@@ -1,8 +1,8 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { X, CheckCircle2, Loader2, Check } from "lucide-react"
+import { X, CheckCircle2, Loader2, Check, ChevronDown } from "lucide-react"
 import { InlineWidget } from "react-calendly"
 import { useModal } from "@/context/modal-context"
 import { Button } from "@/components/ui/button"
@@ -14,6 +14,99 @@ import PhoneInput from "react-phone-number-input"
 import type { E164Number } from "libphonenumber-js/core"
 import "react-phone-number-input/style.css"
 
+const requirementOptions = [
+    { label: "Voice AI System", value: "Voice AI System" },
+    { label: "Customer Service Voice Automation", value: "Customer Service Voice Automation" },
+    { label: "AI Development", value: "AI Development" },
+    { label: "Product Development", value: "Product Development" },
+    { label: "SaaS Development", value: "SaaS Development" },
+    { label: "MVP Development", value: "MVP Development" },
+    { label: "IoT Development", value: "IoT Development" },
+    { label: "Enterprise Software Development", value: "Enterprise Software Development" },
+    { label: "Cloud & DevOps", value: "Cloud & DevOps" },
+    { label: "Hire Dedicated Developers", value: "Hire Dedicated Developers" },
+    { label: "Full Stack Application", value: "Full Stack Application" },
+    { label: "Software Outsourcing", value: "Software Outsourcing" },
+]
+
+function FormSelect({ label, value, onChange, options, placeholder, required }: { label: string, value: string, onChange: (v: string) => void, options: {label: string, value: string}[], placeholder: string, required?: boolean }) {
+    const [isOpen, setIsOpen] = useState(false)
+    const containerRef = useRef<HTMLDivElement>(null)
+    const selectedOption = options.find(opt => opt.value === value)
+
+    useEffect(() => {
+        const handleClickOutside = (event: MouseEvent) => {
+            if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+                setIsOpen(false)
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside)
+        return () => document.removeEventListener("mousedown", handleClickOutside)
+    }, [])
+
+    return (
+        <div className="space-y-2 relative" ref={containerRef}>
+            <Label className="text-warm-gray">{label}</Label>
+            <button
+                type="button"
+                onClick={() => setIsOpen(!isOpen)}
+                className={cn(
+                    "flex h-10 w-full rounded-md border px-3 py-2 text-sm text-left items-center justify-between focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/20 focus-visible:ring-offset-2 transition-all cursor-pointer",
+                    isOpen ? "border-gold ring-1 ring-gold/20 shadow-lg bg-white/5" : "border-gold/20 bg-transparent focus:border-gold hover:border-gold/50"
+                )}
+            >
+                <span className={cn(value ? "text-warm-gray" : "text-muted-foreground w-full truncate border-r border-transparent")}>
+                    {selectedOption ? selectedOption.label : placeholder}
+                </span>
+                <ChevronDown className={cn("w-4 h-4 shrink-0 opacity-50 transition-transform duration-300", isOpen && "rotate-180 text-gold opacity-100")} />
+            </button>
+
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                        className="absolute z-50 w-full mt-2 bg-cream-light/95 backdrop-blur-md border border-gold/20 rounded-xl shadow-2xl overflow-hidden"
+                    >
+                        <div className="max-h-60 overflow-y-auto py-1 custom-scrollbar">
+                            {options.map((option) => (
+                                <button
+                                    key={option.value}
+                                    type="button"
+                                    onClick={() => {
+                                        onChange(option.value)
+                                        setIsOpen(false)
+                                    }}
+                                    className={cn(
+                                        "w-full text-left px-4 py-2.5 text-sm transition-colors flex items-center justify-between group",
+                                        value === option.value ? "bg-gold/10 text-warm-gray font-medium" : "text-warm-gray hover:bg-gold/5 hover:text-gold"
+                                    )}
+                                >
+                                    <span className="truncate pr-4">{option.label}</span>
+                                    {value === option.value && <Check className="w-4 h-4 shrink-0 text-gold" />}
+                                </button>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
+            {required && (
+                <input
+                    tabIndex={-1}
+                    autoComplete="off"
+                    style={{ opacity: 0, position: 'absolute', height: 0, width: 0 }}
+                    value={value}
+                    required
+                    readOnly
+                />
+            )}
+        </div>
+    )
+}
+
 export function CTAFormModal() {
     const { isOpen, closeModal, modalType, resourceData, openPrivacyModal } = useModal()
     const [formStep, setFormStep] = useState<"form" | "loading" | "calendly">("form")
@@ -23,6 +116,7 @@ export function CTAFormModal() {
     const [phone, setPhone] = useState<E164Number | undefined>(undefined)
     const [company, setCompany] = useState("")
     const [jobTitle, setJobTitle] = useState("")
+    const [requirement, setRequirement] = useState("")
     const [message, setMessage] = useState("")
 
     const handleSubmit = async (e: React.FormEvent) => {
@@ -30,7 +124,7 @@ export function CTAFormModal() {
         setIsLoading(true)
 
         try {
-            await fetch("https://script.google.com/macros/s/AKfycbzjvQiRxKf_5RgXZI1d2Tfvogo_SwgaJXoTRwRyDRyZvXUfL_eEqkqi1j0cGSJTTMXOcw/exec", {
+            await fetch("https://script.google.com/macros/s/AKfycbwYjNM48gBmpzmCxBqXhvneAvaiKtABM_W1Xd2CdwTpnuuwiPgA-ARQB1UlmSbyv2z2Jg/exec", {
                 method: "POST",
                 mode: "no-cors",
                 headers: {
@@ -42,6 +136,7 @@ export function CTAFormModal() {
                     phone: phone || "",
                     company,
                     jobTitle,
+                    requirement,
                     message
                 }),
             })
@@ -173,15 +268,26 @@ export function CTAFormModal() {
                                                         </div>
                                                     </div>
 
-                                                    <div className="space-y-2">
-                                                        <Label htmlFor="jobTitle" className="text-warm-gray">Job Title</Label>
-                                                        <Input
-                                                            id="jobTitle"
-                                                            placeholder="Director of Operations"
+                                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                                        <div className="space-y-2">
+                                                            <Label htmlFor="jobTitle" className="text-warm-gray">Job Title</Label>
+                                                            <Input
+                                                                id="jobTitle"
+                                                                placeholder="Director of Operations"
+                                                                required
+                                                                value={jobTitle}
+                                                                onChange={(e) => setJobTitle(e.target.value)}
+                                                                className="bg-transparent border-gold/20 focus:border-gold transition-all"
+                                                            />
+                                                        </div>
+
+                                                        <FormSelect
+                                                            label="Requirement"
+                                                            value={requirement}
+                                                            onChange={setRequirement}
+                                                            options={requirementOptions}
+                                                            placeholder="Select your requirement"
                                                             required
-                                                            value={jobTitle}
-                                                            onChange={(e) => setJobTitle(e.target.value)}
-                                                            className="bg-transparent border-gold/20 focus:border-gold transition-all"
                                                         />
                                                     </div>
 

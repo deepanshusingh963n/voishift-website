@@ -150,7 +150,7 @@ export default function PhaseThreeRollout() {
             onClick={() => openModal()}
             className="bg-[#1a1a1a] text-white hover:bg-gold hover:text-[#1a1a1a] border-2 border-[#1a1a1a] hover:border-gold px-10 py-6 text-base font-black uppercase tracking-widest rounded-none transition-all duration-500 shadow-xl group"
           >
-            Book a Strategy Session
+            Plan Your Rollout
             <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </Button>
         </motion.div>

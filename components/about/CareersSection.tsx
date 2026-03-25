@@ -1,38 +1,13 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { useModal } from "@/context/modal-context";
+
 import {
   ChevronDown,
   ChevronUp,
-  Brain,
-  AlertTriangle,
-  Zap,
-  Target,
-  Handshake,
-  GitBranch,
-  Users,
-  MessageSquare,
-  Mail,
   Linkedin
 } from "lucide-react";
 
-const youFitIf = [
-  { icon: Brain, text: "Think beyond features and ask how systems actually behave" },
-  { icon: AlertTriangle, text: "Challenge assumptions when they slow things down or hide risk" },
-  { icon: Zap, text: "Care about efficiency, clarity, and long-term impact" },
-  { icon: Target, text: "Take ownership of outcomes, not just tasks" },
-];
-
-const thatMeans = [
-  { icon: Target, text: "You decide what deserves focus" },
-  { icon: GitBranch, text: "You align your work with the company's goals" },
-  { icon: Users, text: "You bring the right people along early" },
-  { icon: MessageSquare, text: "You seek feedback, course-correct fast, and keep moving" },
-];
-
 export const CareersSection = () => {
-  const { openModal } = useModal();
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (

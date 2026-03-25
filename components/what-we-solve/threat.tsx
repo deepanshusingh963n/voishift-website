@@ -30,155 +30,14 @@ const notCopies = [
 ]
 
 const solutions = [
-  { icon: Lock, text: "Act only on approved truth" },
-  { icon: Hand, text: "Refuse cleanly when certainty is missing" },
-  { icon: ArrowUpRight, text: "Escalate instead of improvising" },
-  { icon: RotateCcw, text: "Can be replayed, reviewed, and corrected" },
+  { icon: Lock, text: "Don’t speak past policy conflicts" },
+  { icon: Hand, text: "Don’t “complete” actions without checks" },
+  { icon: ArrowUpRight, text: "Don’t improvise exceptions to keep the flow" },
+  { icon: RotateCcw, text: "Produce replayable decisions, not vague logs" },
 ];
 
 /* --- Enhanced 3D Illustration Components --- */
 
-const FloatingCard = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
-  <motion.div
-    whileHover={{ rotateX: 5, rotateY: -5, translateZ: 20 }}
-    style={{ transformStyle: "preserve-3d" }}
-    className={`relative transition-all duration-500 ${className}`}
-  >
-    {children}
-  </motion.div>
-)
-
-const SurfaceIllustration = () => (
-  <FloatingCard className="w-full max-w-md mx-auto">
-    <div className="relative aspect-[1.6/1] bg-white rounded-2xl border border-gold/40 shadow-[0_20px_50px_rgba(212,175,55,0.15)] overflow-hidden group">
-      {/* Header */}
-      <div className="h-8 bg-sand/20 border-b border-sand flex items-center px-4 justify-between">
-        <div className="flex gap-1.5">
-          <div className="w-2 h-2 rounded-full bg-red-400" />
-          <div className="w-2 h-2 rounded-full bg-amber-400" />
-          <div className="w-2 h-2 rounded-full bg-green-400" />
-        </div>
-        <div className="text-[9px] font-black text-warm-gray tracking-widest uppercase">system_v4.0.1</div>
-      </div>
-
-      {/* Content area */}
-      <div className="p-6 flex flex-col h-full">
-        <div className="flex-1 flex items-center justify-center relative">
-          {/* Animated Waveform */}
-          <div className="flex items-end gap-1 h-16">
-            {[...Array(15)].map((_, i) => {
-              // Deterministic height based on index for SSR compatibility
-              const baseHeight = 10 + (i % 3) * 10 + ((i * 7) % 20);
-              return (
-                <motion.div
-                  key={i}
-                  animate={{ height: [10, baseHeight, 10] }}
-                  transition={{ duration: 1.2, repeat: Infinity, ease: "easeInOut", delay: i * 0.05 }}
-                  className="w-1.5 bg-gold rounded-full shadow-[0_0_8px_rgba(212,175,55,0.5)]"
-                  style={{ transformOrigin: "bottom" }}
-                />
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Confidence Badge */}
-        <div className="absolute top-12 right-6 bg-green-500/10 border border-green-500/20 rounded-full px-3 py-1 flex items-center gap-2">
-          <Zap className="w-3 h-3 text-green-600 animate-pulse" />
-          <span className="text-[10px] font-bold text-green-700 tracking-tight">HIGH CONFIDENCE</span>
-        </div>
-
-        {/* Bottom Stats */}
-        <div className="grid grid-cols-3 gap-3">
-          <div className="h-2 bg-sand/30 rounded" />
-          <div className="h-2 bg-sand/30 rounded col-span-2" />
-          <div className="h-2 bg-sand/30 rounded col-span-2" />
-          <div className="h-2 bg-gold/20 rounded" />
-        </div>
-      </div>
-
-      {/* X-Ray Reveal Text (shows on hover) */}
-      <div className="absolute inset-0 bg-warm-gray opacity-0 group-hover:opacity-95 transition-opacity duration-500 flex flex-col items-center justify-center p-8 text-center">
-        <AlertTriangle className="w-8 h-8 text-gold mb-3 animate-bounce" />
-        <p className="text-white text-sm font-serif italic mb-2">Fluency is just a veil.</p>
-        <div className="w-12 h-px bg-gold/50" />
-      </div>
-    </div>
-  </FloatingCard>
-)
-
-const FoundationIllustration = () => (
-  <FloatingCard className="w-full max-w-md mx-auto">
-    <div className="relative aspect-[1.6/1] bg-warm-gray rounded-2xl border border-white/10 shadow-2xl p-6 overflow-hidden">
-      {/* Background Grain/Grid */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]" />
-
-      {/* Intricate Network */}
-      <div className="absolute inset-0">
-        <svg className="w-full h-full">
-          {[...Array(8)].map((_, i) => {
-            // Deterministic seeded values for SSR compatibility
-            const seed = i * 137.5;
-            const x1 = ((seed * 1.1) % 400);
-            const y1 = ((seed * 0.7) % 250);
-            const cx = ((seed * 1.3) % 400);
-            const cy = ((seed * 0.9) % 250);
-            const x2 = ((seed * 1.7) % 400);
-            const y2 = ((seed * 1.1) % 250);
-
-            return (
-              <motion.path
-                key={i}
-                d={`M ${x1},${y1} Q ${cx},${cy} ${x2},${y2}`}
-                fill="none"
-                stroke={i % 2 === 0 ? "#D4AF37" : "#FFFFFF"}
-                strokeWidth="0.5"
-                strokeOpacity="0.2"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 4 + i, repeat: Infinity, ease: "linear" }}
-              />
-            );
-          })}
-        </svg>
-      </div>
-
-      <div className="relative z-10 h-full flex flex-col gap-4">
-        <div className="flex justify-between items-start">
-          <div className="p-2 bg-white/5 border border-white/10 rounded flex items-center gap-2">
-            <FileText className="w-3 h-3 text-gold" />
-            <span className="text-[8px] text-white/40 uppercase tracking-widest">Knowledge Base</span>
-          </div>
-        </div>
-
-        <div className="flex-1 grid grid-cols-2 gap-3">
-          <div className="border border-gold/20 rounded-lg p-3 flex flex-col gap-2 bg-gold/5">
-            <Users className="w-4 h-4 text-gold/60" />
-            <div className="space-y-1">
-              <div className="h-1 w-full bg-white/10 rounded" />
-              <div className="h-1 w-2/3 bg-white/10 rounded" />
-            </div>
-          </div>
-          <div className="border border-dashed border-white/10 rounded-lg p-3 flex flex-col justify-end">
-            <div className="flex gap-1">
-              <div className="w-1 h-1 rounded-full bg-destructive/60" />
-              <div className="w-1 h-1 rounded-full bg-white/20" />
-            </div>
-            <span className="text-[8px] text-destructive/60 font-bold uppercase mt-1">Logic Gap</span>
-          </div>
-        </div>
-
-        <div className="p-2 border border-white/10 bg-white/5 rounded flex items-center justify-between">
-          <div className="flex gap-2 items-center">
-            <div className="w-2 h-2 rounded-full bg-gold/50 shadow-[0_0_8px_gold]" />
-            <span className="text-[8px] text-white/60">TRUTH VECTOR</span>
-          </div>
-          <Shuffle className="w-3 h-3 text-white/20" />
-        </div>
-      </div>
-    </div>
-  </FloatingCard>
-)
 
 const GlitchedBridge = () => (
   <div className="relative w-full py-12 px-6 bg-[#2a2a2a] rounded-2xl overflow-hidden border border-white/5 group">
@@ -267,7 +126,7 @@ export function Threat() {
           className="text-center mb-12 lg:mb-16"
         >
           <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mt-4 text-gold font-black leading-[1.1] mb-6 text-balance">
-            Why things go wrong
+            Why things go wrong with a <span className="italic">Bot-in-a-Box</span>
           </h2>
           <div className="flex flex-col items-center gap-4">
             <span className="text-[10px] md:text-[12px] lg:text-[15px] border border-gold bg-black p-2 rounded-full font-black text-gold uppercase tracking-[0.4em] mb-4">Structural Failure Modes</span>
@@ -376,7 +235,7 @@ export function Threat() {
                     <Copy className="w-8 h-8 text-gold" />
                   </div>
                   <h3 className="text-3xl lg:text-4xl font-serif text-warm-gray leading-tight">
-                    The BOT faulters becuase it copies
+                    The BOT falters because it copies
                   </h3>
                   <div className="h-0.5 w-10 bg-gold" />
                 </div>

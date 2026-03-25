@@ -151,7 +151,7 @@ export function Engage() {
                 className="w-full py-10 text-md font-serif bg-gold text-[#1a1a1a] hover:bg-[#1a1a1a] hover:text-white border-2 border-gold hover:border-[#1a1a1a] rounded-[2.5rem] transition-all duration-500 shadow-xl group/btn active:scale-95"
                 onClick={() => openModal()}
               >
-                Book the strategy session
+                Start the architecture review
                 <ArrowRight className="ml-3 h-8 w-8 group-hover/btn:translate-x-3 transition-transform" />
               </Button>
             </div>
@@ -164,7 +164,7 @@ export function Engage() {
                 <div className="flex items-center gap-4">
                   <div>
                     <p className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.2em] mb-1">I am starting fresh</p>
-                    <h3 className="text-2xl font-serif font-black text-warm-gray leading-tight">Voice AI Strategy Session</h3>
+                    <h3 className="text-2xl font-serif font-black text-warm-gray leading-tight">Voice AI Architecture Review</h3>
                   </div>
                 </div>
               </div>

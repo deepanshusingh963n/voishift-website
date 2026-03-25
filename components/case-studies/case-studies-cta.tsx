@@ -1,9 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Cpu, Zap, ShieldCheck, Activity, Terminal } from "lucide-react"
-import React from "react"
-import { cn } from "@/lib/utils"
+import { ArrowRight, ShieldCheck, Activity } from "lucide-react"
 import { useModal } from "@/context/modal-context"
 
 const VoiceAISimulation = () => {
@@ -179,7 +177,7 @@ export function CaseStudiesCTA() {
                   className="group relative flex flex-col items-center justify-center gap-1 px-8 py-5 bg-[#1a1a1a] text-white rounded-2xl transition-all duration-500 hover:bg-gold hover:text-[#1a1a1a] overflow-hidden"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="font-black uppercase tracking-widest text-sm">Strategy Session</span>
+                    <span className="font-black uppercase tracking-widest text-sm">Architecture Review</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-2 transition-transform" />
                   </div>
                   {/* Glow Effect */}

@@ -17,30 +17,18 @@ import { Button } from "@/components/ui/button";
 import { useModal } from "@/context/modal-context";
 
 const problems = [
-  { icon: AlertTriangle, text: "When rules disagree" },
-  { icon: FileQuestion, text: "When exceptions are undocumented" },
-  { icon: ShieldAlert, text: "When confidence hides missing checks" },
-  { icon: HelpCircle, text: "When no one can explain why the agent did what it did" },
+  { icon: AlertTriangle, text: "When policies conflict across systems." },
+  { icon: FileQuestion, text: "When exceptions get handled but never logged." },
+  { icon: ShieldAlert, text: "When it sounds certain, but skipped the checks." },
+  { icon: HelpCircle, text: "When the log text differs from spoken playback." },
 ];
 
-const solutions = [
-  { icon: Lock, text: "Act only on approved truth" },
-  { icon: Hand, text: "Refuse cleanly when certainty is missing" },
-  { icon: ArrowUpRight, text: "Escalate instead of improvising" },
-  { icon: RotateCcw, text: "Can be replayed, reviewed, and corrected" },
-];
 
 export const WhatWeSolveSection = () => {
   const { openModal } = useModal();
 
   return (
     <section id="hero" className="py-40 pb-12 bg-white lg:text-left text-center relative overflow-hidden">
-      {/* Structural Background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(#e5dbba_1px,transparent_1px)] bg-[size:32px_32px] opacity-[0.1]" />
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sand to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-sand to-transparent" />
-      </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -59,9 +47,9 @@ export const WhatWeSolveSection = () => {
             </h2>
 
             <p className="text-xl text-warm-gray-light font-serif italic leading-relaxed">
-              The problem that appears <br />
+              The problems that show up after deployment. <br />
               <span className="not-italic font-black">
-                after the AI/Voice-AI bot starts sounding good.
+                The gap between “talks well” and “works well.”
               </span>
             </p>
 

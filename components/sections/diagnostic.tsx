@@ -2,8 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ClipboardCheck, AlertTriangle, Target, Shield, DollarSign, ArrowRight, Map, Gauge, Activity, Cpu, Search, Layers, Clock, Lock, Share2, Binary, Database, Zap } from "lucide-react"
+import { AlertTriangle, Target, Shield, ArrowRight, Map, Gauge, Activity, Cpu, Search, Clock, Lock, Share2, Zap } from "lucide-react"
 import { useModal } from "@/context/modal-context"
 
 const questionTopics = [

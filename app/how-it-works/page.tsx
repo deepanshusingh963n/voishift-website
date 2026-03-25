@@ -2,6 +2,7 @@ import HowHero from "@/components/how-it-works/HowHero"
 import PhaseOneOppMap from "@/components/how-it-works/PhaseOneOppMap"
 import PhaseTwoSandbox from "@/components/how-it-works/PhaseTwoSandbox"
 import PhaseThreeRollout from "@/components/how-it-works/PhaseThreeRollout"
+import DecisionFramework from "@/components/how-it-works/DecisionFramework"
 import PaymentModel from "@/components/how-it-works/PaymentModel"
 import HowClosingCTA from "@/components/how-it-works/HowClosingCTA"
 import { Navbar } from "@/components/sections/navbar"
@@ -20,6 +21,7 @@ export default function HowItWorksPage() {
       <PhaseOneOppMap />
       <PhaseTwoSandbox />
       <PhaseThreeRollout />
+      <DecisionFramework />
       <PaymentModel />
       <HowClosingCTA />
       <Footer />

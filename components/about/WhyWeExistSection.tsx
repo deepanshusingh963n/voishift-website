@@ -55,7 +55,7 @@ export const WhyWeExistSection = () => {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 items-center mb-16">
-          <div className="h-px bg-sand flex-1" />
+          <div className="h-px bg-gold flex-1" />
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -66,7 +66,7 @@ export const WhyWeExistSection = () => {
               Our Mission
             </h2>
           </motion.div>
-          <div className="h-px bg-sand flex-1" />
+          <div className="h-px bg-gold flex-1" />
         </div>
 
         <div className="text-center mb-16">

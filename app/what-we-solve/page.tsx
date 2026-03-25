@@ -2,6 +2,8 @@ import { Metadata } from 'next'
 import { Navbar } from "@/components/sections/navbar"
 import { WhatWeSolveSection } from "@/components/what-we-solve/WhatWeSolveSection"
 import { Threat } from "@/components/what-we-solve/threat"
+import RentingAI from "@/components/what-we-solve/RentingAI"
+import BuildingIsOwning from "@/components/what-we-solve/BuildingIsOwning"
 import { VoiShiftIntro } from "@/components/what-we-solve/voisshift-intro"
 import { Footer } from "@/components/sections/footer"
 import { BuiltForTeams } from "@/components/what-we-solve/built-for-teams"
@@ -20,6 +22,10 @@ export default function WhatWeSolve() {
       <WhatWeSolveSection />
 
       <Threat />
+
+      <RentingAI />
+
+      <BuildingIsOwning />
 
       <BuiltForTeams />
 
