@@ -64,7 +64,7 @@ export const AboutHeroSection = () => {
               className="mb-10"
             >
               <div className="inline-flex items-center gap-2 mb-8">
-                <span className="text-5xl md:text-7xl font-bold text-gold uppercase tracking-[0.2em]">What We Stand For</span>
+                <span className="text-5xl md:text-8xl text-white font-black uppercase leading-[1.05]">What We <span className="text-gold italic">Stand</span> For</span>
               </div>
 
               <h1 className="text-xl md:text-2xl lg:text-3xl font-serif font-black text-white leading-[1.1] tracking-tight mb-8 transform-none">
@@ -138,11 +138,11 @@ export const AboutHeroSection = () => {
                     />
 
                     <div className="flex-shrink-0 w-10 h-10 md:w-12 md:h-12 border border-white/20 bg-black flex items-center justify-center relative shadow-[inset_0_0_10px_rgba(0,0,0,1)] group-hover:border-gold/60 transition-colors duration-500">
-                       <motion.div 
-                          animate={{ y: ['-100%', '100%'] }} 
-                          transition={{ duration: 2, repeat: Infinity, delay: index * 0.4, ease: "linear" }}
-                          className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/20 to-transparent pointer-events-none"
-                        />
+                      <motion.div
+                        animate={{ y: ['-100%', '100%'] }}
+                        transition={{ duration: 2, repeat: Infinity, delay: index * 0.4, ease: "linear" }}
+                        className="absolute inset-0 bg-gradient-to-b from-transparent via-gold/20 to-transparent pointer-events-none"
+                      />
                       <item.icon className="w-4 h-4 md:w-5 md:h-5 text-gold relative z-10" />
                     </div>
 
@@ -151,7 +151,7 @@ export const AboutHeroSection = () => {
                         <span className="text-[10px] md:text-[11px] font-mono tracking-[0.2em] text-white/40 uppercase">
                           Rule {item.phase}
                         </span>
-                        
+
                         {/* Live verification dot */}
                         <motion.div
                           animate={{ opacity: [0.4, 1, 0.4] }}

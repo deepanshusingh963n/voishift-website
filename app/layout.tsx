@@ -17,23 +17,38 @@ export const metadata: Metadata = {
   keywords: ['voice AI', 'voice automation', 'AI system', 'voice bot', 'enterprise AI', 'AI safety'],
   authors: [{ name: 'VoiShift' }],
   metadataBase: new URL('https://voishiftai.com'),
-  icons: {
-    icon: '/voishift.png',
+  alternates: {
+    canonical: '/',
   },
+  icons: {
+    icon: [
+      { url: '/voishift.png', sizes: '32x32' },
+      { url: '/voishift.png', sizes: '16x16' },
+    ],
+    apple: '/voishift.png',
+  },
+  manifest: '/site.webmanifest',
 
   openGraph: {
     title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
     description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.',
     type: 'website',
     siteName: 'VoiShift',
-    images: [image],
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
+      },
+    ],
     url: 'https://voishiftai.com',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
     description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.',
-    images: [image],
+    images: ['/og-image.png'],
   },
 };
 
@@ -63,18 +78,62 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              "name": "VoiShift",
-              "url": "https://voishiftai.com",
-              "logo": "https://voishiftai.com/voishift.png",
-              "description": "VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.",
-              "sameAs": [
-                "https://twitter.com/voishift",
-                "https://linkedin.com/company/voishift"
-              ]
-            })
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "VoiShift",
+                "url": "https://voishiftai.com",
+                "logo": "https://voishiftai.com/voishift.png",
+                "description": "VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.",
+                "sameAs": [
+                  "https://twitter.com/voishift",
+                  "https://linkedin.com/company/voishift"
+                ]
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "VoiShift",
+                "url": "https://voishiftai.com",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://voishiftai.com/?s={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "Service",
+                "name": "VoiShift Enterprise Voice AI",
+                "provider": {
+                  "@type": "Organization",
+                  "name": "VoiShift"
+                },
+                "description": "System-first voice AI designed for reliability and safety in complex business environments.",
+                "areaServed": "Worldwide",
+                "hasOfferCatalog": {
+                  "@type": "OfferCatalog",
+                  "name": "VoiShift Services",
+                  "itemListElement": [
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Voice AI Architecture Review"
+                      }
+                    },
+                    {
+                      "@type": "Offer",
+                      "itemOffered": {
+                        "@type": "Service",
+                        "name": "Custom Voice AI System Implementation"
+                      }
+                    }
+                  ]
+                }
+              }
+            ])
           }}
         />
         <ModalProvider>

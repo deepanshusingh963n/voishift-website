@@ -11,6 +11,9 @@ export const metadata: Metadata = {
         title: "Privacy & Data Protocol | VoiShift",
         description: "VoiShift Privacy Policy & Data Protocol. Global compliance notice.",
     },
+    alternates: {
+        canonical: "/privacy",
+    },
     twitter: {
         title: "Privacy & Data Protocol | VoiShift",
         description: "VoiShift Privacy Policy & Data Protocol. Global compliance notice.",
@@ -20,6 +23,29 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
     return (
         <div className="min-h-screen bg-background flex flex-col">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://voishiftai.com"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Privacy",
+                                "item": "https://voishiftai.com/privacy"
+                            }
+                        ]
+                    })
+                }}
+            />
             <Navbar />
             <main className="flex-1 pt-32 pb-20 px-6 max-w-4xl mx-auto w-full">
                 <div className="bg-cream border border-sand shadow-2xl overflow-hidden flex flex-col rounded-xl">

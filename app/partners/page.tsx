@@ -13,6 +13,9 @@ export const metadata: Metadata = {
         title: 'Partners | VoiShift',
         description: 'Join the VoiShift Partner Network to deliver generative voice AI solutions that drive growth for your clients and your business.',
     },
+    alternates: {
+        canonical: '/partners',
+    },
     twitter: {
         title: 'Partners | VoiShift',
         description: 'Join the VoiShift Partner Network to deliver generative voice AI solutions that drive growth for your clients and your business.',
@@ -22,6 +25,29 @@ export const metadata: Metadata = {
 export default function PartnersPage() {
     return (
         <main className="min-h-screen bg-background pt-24 font-sans">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify({
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Home",
+                                "item": "https://voishiftai.com"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Partners",
+                                "item": "https://voishiftai.com/partners"
+                            }
+                        ]
+                    })
+                }}
+            />
             <Navbar />
             <PartnersHeroSection />
             <PartnerProgramsSection />

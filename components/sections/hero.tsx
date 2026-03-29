@@ -149,7 +149,7 @@ export function Hero() {
                 onClick={() => openModal()}
               >
                 I need a system, not a bot
-                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" />
+                <ArrowRight className="ml-3 h-5 w-5 group-hover:translate-x-2 transition-transform" aria-hidden="true" />
               </Button>
             </motion.div>
           </motion.div>

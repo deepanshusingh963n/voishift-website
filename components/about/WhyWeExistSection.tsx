@@ -92,7 +92,7 @@ export const WhyWeExistSection = () => {
                   >
                     <div className={`w-8 h-8 rounded-lg flex items-center justify-center transition-colors ${activePath === path.id ? "bg-gold text-white" : "bg-white border border-sand text-warm-gray/30 group-hover:bg-gold/5"
                       }`}>
-                      <path.icon className="w-4 h-4" />
+                      <path.icon className="w-4 h-4" aria-hidden="true" />
                     </div>
                     <div className="text-left">
                       <p className={`text-[10px] font-black uppercase tracking-widest ${activePath === path.id ? "text-warm-gray" : "text-warm-gray/50"
@@ -116,7 +116,7 @@ export const WhyWeExistSection = () => {
               <div className="bg-white p-8 lg:p-10 shadow-sm transition-shadow duration-500 overflow-hidden">
                 {/* Pattern overlay */}
                 <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
-                  <svg width="100%" height="100%">
+                  <svg width="100%" height="100%" aria-hidden="true">
                     <pattern id="card-pattern" width="40" height="40" patternUnits="userSpaceOnUse">
                       <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
                     </pattern>
@@ -187,7 +187,7 @@ export const WhyWeExistSection = () => {
                 <div className="flex items-center justify-center gap-8 lg:gap-12 mb-10">
                   <div className="text-center group/item">
                     <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 transition-colors group-hover/item:border-gold/50">
-                      <RefreshCw className="w-6 h-6 text-white/70" />
+                      <RefreshCw className="w-6 h-6 text-white/70" aria-hidden="true" />
                     </div>
                     <p className="text-[7px] font-black text-white/70 uppercase tracking-widest">Stuck Rebuilding</p>
                   </div>
@@ -200,7 +200,7 @@ export const WhyWeExistSection = () => {
 
                   <div className="text-center group/item">
                     <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center mb-4 transition-colors group-hover/item:border-gold/50">
-                      <Clock className="w-6 h-6 text-white/70" />
+                      <Clock className="w-6 h-6 text-white/70" aria-hidden="true" />
                     </div>
                     <p className="text-[7px] font-black text-white/70 uppercase tracking-widest">Stuck Waiting</p>
                   </div>

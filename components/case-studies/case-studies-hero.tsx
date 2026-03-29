@@ -29,7 +29,7 @@ export function CaseStudiesHero() {
               }}
               transition={{ duration: 15, repeat: Infinity, ease: "easeInOut" }}
             />
-            
+
             {/* Wave 2 - Midground Gold */}
             <motion.path
               d="M0,450 C320,350 420,550 720,450 C1020,350 1120,550 1440,450 L1440,800 L0,800 Z"
@@ -99,11 +99,11 @@ export function CaseStudiesHero() {
             </div>
           </div>
 
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[0.9] tracking-tighter mb-10 text-balance">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-white leading-[1.05] uppercase font-black mb-10 text-balance">
             Voices That <br /> <span className="text-gold italic">Build</span> Clarity
           </h1>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}

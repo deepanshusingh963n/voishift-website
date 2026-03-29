@@ -1,0 +1,21 @@
+{
+  "name": "VoiShift",
+  "short_name": "VoiShift",
+  "description": "VoiShift turns voice AI from a speaking layer into a business system that holds up when reality gets messy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#E2A746",
+  "icons": [
+    {
+      "src": "/voishift.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/voishift.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

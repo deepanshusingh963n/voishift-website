@@ -15,7 +15,7 @@ export default function HowHero() {
         {/* Ambient Glows */}
         <div className="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-gold/30 rounded-full blur-[140px]" />
         <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-gold/30 rounded-full blur-[140px]" />
-        
+
         {/* Ambient Voice Pulse (Concentric Rings) */}
         <div className="absolute top-1/2 left-[45%] md:left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] flex items-center justify-center pointer-events-none z-0">
           <motion.div
@@ -55,8 +55,8 @@ export default function HowHero() {
               transition={{ duration: 0.6 }}
               className="flex items-center gap-3 mb-8"
             >
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-[0.1em] text-white leading-[1.05]">
-                The VoiShift <span className="text-gold">Process</span>
+              <h1 className="text-5xl lg:text-8xl font-black uppercase text-white leading-[1.05]">
+                The VoiShift <span className="text-gold italic">Process</span>
               </h1>
             </motion.div>
             <motion.h2

@@ -27,7 +27,7 @@ const problems = [
 
 export const WhatWeSolveSection = () => {
   const { openModal } = useModal();
-  
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -72,7 +72,7 @@ export const WhatWeSolveSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="max-w-xl"
           >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif font-black text-white leading-[1] tracking-tight mb-8">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif uppercase font-black text-white leading-[1.05] tracking-tight mb-8">
               What We <br /> <span className="text-gold italic">Solve</span>
             </h1>
 
@@ -104,7 +104,7 @@ export const WhatWeSolveSection = () => {
           </motion.div>
 
           {/* RIGHT SIDE: Technical Problem Grid */}
-          <motion.div 
+          <motion.div
             variants={container}
             initial="hidden"
             whileInView="show"
@@ -146,4 +146,4 @@ export const WhatWeSolveSection = () => {
       </div>
     </section>
   );
-};
+};

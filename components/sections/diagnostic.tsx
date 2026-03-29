@@ -154,7 +154,7 @@ export function Diagnostic() {
             {questionTopics.slice(0, 4).map((topic, index) => (
               <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-cream-dark transition-colors group">
                 <div className="w-8 h-8 bg-white flex items-center justify-center shrink-0 mt-1 group-hover:bg-gold transition-colors duration-500">
-                  <topic.icon className="w-4 h-4 text-gold group-hover:text-white transition-colors" />
+                  <topic.icon className="w-4 h-4 text-gold group-hover:text-white transition-colors" aria-hidden="true" />
                 </div>
                 <div className="flex-1 space-y-2">
                   <p className="text-md font-medium text-warm-gray leading-snug">{topic.text}</p>
@@ -173,7 +173,7 @@ export function Diagnostic() {
             {questionTopics.slice(4, 8).map((topic, index) => (
               <div key={index} className="flex items-start gap-4 p-4 rounded-xl bg-cream-dark transition-colors group">
                 <div className="w-8 h-8 bg-white flex items-center justify-center shrink-0 mt-1 group-hover:bg-gold transition-colors duration-500">
-                  <topic.icon className="w-4 h-4 text-gold group-hover:text-white transition-colors" />
+                  <topic.icon className="w-4 h-4 text-gold group-hover:text-white transition-colors" aria-hidden="true" />
                 </div>
                 <div className="flex-1 space-y-2">
                   <p className="text-md font-medium text-warm-gray leading-snug">{topic.text}</p>

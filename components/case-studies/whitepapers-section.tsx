@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { ChevronDown, FileText, ExternalLink } from "lucide-react"
+import { ChevronDown, Download } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { useModal } from "@/context/modal-context"
@@ -117,7 +117,7 @@ function WhitepaperCover({ paper }: { paper: Whitepaper }) {
 }
 
 export function WhitepapersSection() {
-    const [openId, setOpenId] = useState<string | null>(null)
+    const [openId, setOpenId] = useState<string | null>("1")
     const { openModal } = useModal()
 
     const toggle = (id: string) => {
@@ -321,12 +321,12 @@ export function WhitepapersSection() {
                                                             */}
 
                                                             {/* CTA */}
-                                                            <button 
+                                                            <button
                                                                 onClick={() => openModal("resource", { name: paper.title, type: "Whitepaper" })}
                                                                 className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-warm-gray text-warm-gray rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-warm-gray hover:text-white hover:shadow-lg group/btn"
                                                             >
-                                                                <ExternalLink className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
-                                                                Read Whitepaper
+                                                                <Download className="w-3.5 h-3.5 transition-transform duration-300 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5" />
+                                                                Download Whitepaper
                                                             </button>
                                                         </div>
                                                     </div>

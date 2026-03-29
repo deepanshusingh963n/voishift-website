@@ -54,7 +54,7 @@ const ProtocolCard = ({
           onClick={onClick}
           className="flex-1 px-8 py-7 flex items-center justify-between text-left relative z-10"
         >
-          <span className="text-[17px] font-black text-warm-gray leading-tight tracking-tight pr-4">{faq.question}</span>
+          <span className="text-[17px] text-warm-gray leading-tight tracking-tight pr-4">{faq.question}</span>
           <ChevronDown className={`w-6 h-6 text-gold transition-transform duration-700 shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
         </button>
 

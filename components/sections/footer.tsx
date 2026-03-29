@@ -2,13 +2,14 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
-import { Shield, Lock, Mail, Users } from "lucide-react"
+import { Shield, Lock, Mail, Users, Linkedin } from "lucide-react"
 import { useModal } from "@/context/modal-context"
 
 const links = [
   { label: "Resources", href: "/case-studies", icon: Shield },
   { label: "Privacy Policy", href: "/privacy", icon: Lock },
   { label: "Contact", href: "#", icon: Mail, isModalTrigger: true },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/klyrr/", icon: Linkedin },
   //{ label: "Partners", href: "/partners", icon: Users },
 ]
 
@@ -52,9 +53,6 @@ export function Footer() {
             className="flex flex-col sm:flex-row gap-12 lg:gap-16 shrink-0"
           >
             <div>
-              <h3 className="text-[10px] font-black text-warm-gray/40 uppercase tracking-[0.3em] mb-6">
-                Resources
-              </h3>
               <div className="flex flex-col gap-3">
                 {links.map((link, index) => {
                   if (link.isModalTrigger) {
@@ -64,7 +62,7 @@ export function Footer() {
                         onClick={() => openModal()}
                         className="text-sm text-warm-gray hover:text-gold transition-colors duration-200 flex items-center gap-2 group text-left"
                       >
-                        <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" />
+                        <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" aria-hidden="true" />
                         <span>{link.label}</span>
                       </button>
                     )
@@ -76,7 +74,7 @@ export function Footer() {
                       href={link.href}
                       className="text-sm text-warm-gray hover:text-gold transition-colors duration-200 flex items-center gap-2 group"
                     >
-                      <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" />
+                      <link.icon className="w-3.5 h-3.5 text-sand-dark group-hover:text-gold transition-colors" aria-hidden="true" />
                       <span>{link.label}</span>
                     </a>
                   )

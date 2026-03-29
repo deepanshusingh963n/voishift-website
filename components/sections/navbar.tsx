@@ -146,7 +146,7 @@ export const Navbar = () => {
                                 className="group flex items-start gap-4 p-3 rounded-lg hover:bg-cream/50 transition-all duration-200"
                               >
                                 <div className="mt-1 p-2 bg-cream group-hover:bg-white rounded-md text-gold transition-colors">
-                                  <section.icon size={18} />
+                                  <section.icon size={18} aria-hidden="true" />
                                 </div>
                                 <div>
                                   <div className="text-sm font-bold text-black border-none group-hover:text-gold transition-colors">
@@ -166,7 +166,7 @@ export const Navbar = () => {
                           <div className="bg-cream/50 p-4 border-t border-border flex justify-between items-center">
                             <span className="text-[10px] text-warm-gray font-medium uppercase tracking-widest">{link.sidebarContent.footerText}</span>
                             <Link href={link.sidebarContent.footerLink} className="text-xs font-bold text-gold hover:underline flex items-center gap-1">
-                              {link.sidebarContent.footerLabel} <ChevronDown size={12} className="-rotate-90" />
+                             {link.sidebarContent.footerLabel} <ChevronDown size={12} className="-rotate-90" aria-hidden="true" />
                             </Link>
                           </div>
                         )}
@@ -194,8 +194,9 @@ export const Navbar = () => {
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="lg:hidden p-2 text-gold transition-colors"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </nav>
       </div>

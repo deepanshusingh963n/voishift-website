@@ -259,9 +259,9 @@ export function CaseStudyGrid() {
 
             {/* Right Column: Narrative Content */}
             <div className="space-y-6 text-left max-w-2xl">
-              <p className="text-warm-gray font-serif text-xl md:text-2xl leading-relaxed">
+              <p className="text-gold font-serif text-xl md:text-[25px] leading-relaxed">
                 These are not{" "}
-                <span className="text-warm-gray font-bold">&ldquo;look how great we are&rdquo;</span>{" "}
+                <span className="font-bold">&ldquo;look how great we are&rdquo;</span>{" "}
                 case studies.
               </p>
 
@@ -496,7 +496,7 @@ export function CaseStudyGrid() {
             className="mt-16 flex justify-center"
           >
             <button
-               onClick={handleToggle}
+              onClick={handleToggle}
               className="group relative px-10 py-4 bg-white border border-sand hover:border-gold transition-all duration-500 overflow-hidden shadow-sm"
             >
               <div className="absolute inset-x-0 bottom-0 h-0.5 bg-gold transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />

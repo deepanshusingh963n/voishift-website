@@ -39,8 +39,8 @@ export default function DifferenceHero() {
               transition={{ duration: 0.6 }}
               className="mb-8"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-[0.12em] text-white leading-[1.05]">
-                The VoiShift <span className="text-gold">Difference</span>
+              <h1 className="text-4xl md:text-5xl lg:text-8xl font-black uppercase text-white leading-[1.05]">
+                The VoiShift <span className="text-gold italic">Difference</span>
               </h1>
             </motion.div>
 

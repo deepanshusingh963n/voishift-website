@@ -48,290 +48,290 @@ const roles = [
 const industryData: Record<string, any> = {
   logistics: {
     cto: {
-      symptom: "Warehouse scans and ETAs conflict across systems, leading to duplicate records and connection gaps.",
-      diagnosis: "Fragmented source of truth. Connection gaps scramble the timing of updates, creating doubled-up event records.",
-      remedy: "One unified event sequence with a single 'Source of Truth'."
+      symptom: "Warehouse scans and delivery ETAs don't match across systems, creating duplicate records and missing updates.",
+      diagnosis: "No single source of truth. Sync delays cause the same event to be logged more than once.",
+      remedy: "One unified event log with a single source of truth."
     },
     coo: {
-      symptom: "Operational details vanish at shift changes. Teams moved on old shipment data, leading to detention fee spikes.",
-      diagnosis: "The system summarizes 'what happened' but drops the 'why'. Monitoring lacks a clear timeline of instructions.",
-      remedy: "Verifiable instruction logs that never lose the 'Why'."
+      symptom: "Key details disappear at shift handoffs. Teams act on outdated shipment info, triggering avoidable detention fees.",
+      diagnosis: "The system records what happened but not why. There's no clear log of who gave which instruction.",
+      remedy: "Verified instruction logs that always preserve the 'why'."
     },
     cfo: {
-      symptom: "Invoicing and fees differ by system. Credits get applied inconsistently across different customer touchpoints.",
-      diagnosis: "The system forgets what was already done and repeats it. No turn-by-turn evidence to defend a charge.",
-      remedy: "Audio-to-ledger reconciliation with audit-ready evidence."
+      symptom: "Invoices and fees don't match across systems. Credits are applied differently depending on where the customer calls from.",
+      diagnosis: "The system loses track of what's already been processed and repeats it. There's no clear evidence trail to justify a charge.",
+      remedy: "Voice-to-ledger reconciliation with audit-ready proof."
     },
     cco: {
-      symptom: "Status changes hourly across scanning systems. Confident but wrong ETA answers lead to frustrated repeat calls.",
-      diagnosis: "The system uses yesterday's truth for an hour-by-hour operational reality.",
-      remedy: "Real-time sync between voice and operational reality."
+      symptom: "Shipment status updates every hour. Giving confident but wrong ETAs leads to frustrated customers calling back repeatedly.",
+      diagnosis: "The system is answering with yesterday's data in a real-time operation.",
+      remedy: "Live sync between what's said on the call and what's happening in the field."
     },
     cro: {
-      symptom: "Surcharges and rates get captured incorrectly. Agreement details get simplified in recaps, causing margin leakage.",
-      diagnosis: "The system misses numeric nuances (rates, dates). Critical agreement terms are 'summarized' into generic ones.",
-      remedy: "Constraint-first capture that never rounds off the details."
+      symptom: "Surcharges and rates are logged wrong. Key agreement details get watered down in call summaries, causing revenue leakage.",
+      diagnosis: "The system misses specific numbers and dates. Important terms get replaced with vague, generic ones during recap.",
+      remedy: "Exact capture of every rate and condition — no rounding, no paraphrasing."
     },
     chro: {
-      symptom: "The reason for a routing decision is lost. Shift changes repeat the same errors because the proof of training is missing.",
-      diagnosis: "The system confuses context across turns. No way to replay a failure to see where the training broke down.",
-      remedy: "Replayable operational traces to standardize standard work."
+      symptom: "No one knows why a routing call was made. Shift handoffs repeat the same mistakes because training can't be verified.",
+      diagnosis: "The system loses track of context across a conversation. There's no way to replay what went wrong in training.",
+      remedy: "Replayable call traces that make it easy to spot where things broke down."
     }
   },
   manufacturing: {
     cto: {
-      symptom: "Plant noise triggers the system incorrectly. It works in the office but fails on the loud factory floor.",
-      diagnosis: "The system cannot distinguish floor noise from a command. It is statically tuned for a quiet environment.",
-      remedy: "Environment-aware listening that tunes out the noise."
+      symptom: "Factory floor noise causes false triggers. The system that works in a quiet office fails completely on the shop floor.",
+      diagnosis: "The system can't tell the difference between background noise and an actual command. It's tuned for silence, not real environments.",
+      remedy: "Noise-aware listening that only responds to intentional commands."
     },
     coo: {
-      symptom: "Lead times shift without warning. Orders are processed on old plans because the 'exception' stayed in someone's head.",
-      diagnosis: "Tracking breaks when operators jump between topics. The system forgets the previous state too quickly.",
-      remedy: "Persistent memory that handles multi-topic conversations without drift."
+      symptom: "Lead times change without warning. Orders get processed on outdated plans because exceptions stay in people's heads, not in the system.",
+      diagnosis: "Context gets lost when operators switch topics mid-conversation. The system moves on too fast.",
+      remedy: "Persistent memory that tracks multiple topics without losing context."
     },
     cfo: {
-      symptom: "Expedite spend is approved on voice but never shows up in the ledger. Costs stay hidden in 'exceptions'.",
-      diagnosis: "The system skips the final confirmation. Financial commitments are 'summarized' instead of strictly verified.",
-      remedy: "Forced 'Decision Gates' for every financial commitment."
+      symptom: "Expedite spend gets approved verbally but never makes it into the books. Costs stay buried under 'exceptions'.",
+      diagnosis: "The system skips the final confirmation step. Financial commitments get summarized instead of verified.",
+      remedy: "Mandatory approval checkpoints for every financial commitment."
     },
     cco: {
-      symptom: "Lead times shift without warning. Customers hear different promises from different systems.",
-      diagnosis: "Industry-specific codes are misheard and mis-mapped. Critical constraints are lost as the call goes on.",
-      remedy: "Code-precision listening that never 'guesses' the meaning."
+      symptom: "Lead times keep changing. Customers get different delivery promises from different systems.",
+      diagnosis: "Industry codes get misheard and incorrectly mapped. Important constraints disappear as the conversation goes on.",
+      remedy: "Precise code recognition that never guesses what a term means."
     },
     cro: {
-      symptom: "Special agreements vanish between calls. Operations later contradicts what sales promised, breaking trust.",
-      diagnosis: "The system is too 'fragile' to capture specific terms. No way to prove what was agreed in the heat of a call.",
-      remedy: "Immutable proof of every sales commitment."
+      symptom: "Custom agreements disappear between calls. Operations undercuts what sales promised, damaging customer trust.",
+      diagnosis: "The system can't reliably capture specific terms. There's no way to verify what was actually agreed during a call.",
+      remedy: "A permanent record of every sales commitment, exactly as it was made."
     },
     chro: {
-      symptom: "Workarounds spread faster than training. Errors repeat under noise and pressure on the floor.",
-      diagnosis: "No standard way to test how the system handles accents or noise. No 'regression' checks for new operational rules.",
-      remedy: "Behavioral testing to ensure everyone follows the same standard."
+      symptom: "Workarounds spread faster than proper training. Errors keep repeating under pressure and noise.",
+      diagnosis: "No standard way to test how the system performs with different accents or in noisy conditions. No checks when operational rules change.",
+      remedy: "Behavioral testing that ensures every team member follows the same process."
     }
   },
   healthcare: {
     cto: {
-      symptom: "Overlapping voices in a clinic confuse the record. The system cannot tell who is talking in a busy environment.",
-      diagnosis: "Diarization is weak. The system cannot separate the doctor from the patient under real clinic noise.",
-      remedy: "Multi-party speaker isolation designed for clinical reality."
+      symptom: "Multiple voices in a clinic confuse the system. It can't reliably tell who's speaking in a busy environment.",
+      diagnosis: "Speaker separation is too weak. The system can't reliably tell the doctor from the patient in real clinic conditions.",
+      remedy: "Speaker isolation built for the noise and complexity of clinical settings."
     },
     coo: {
-      symptom: "Prep instructions vary by department. One handoff drops a detail that leads to a surgical delay.",
-      diagnosis: "Critical patient details are mis-captured. Exceptions don't follow the patient across departments.",
-      remedy: "Patient-first context that travels across the whole operation."
+      symptom: "Prep instructions differ across departments. One missed detail during a handoff causes surgical delays.",
+      diagnosis: "Key patient information gets mis-recorded. Exceptions don't follow the patient as they move between teams.",
+      remedy: "Patient context that stays with the patient across every department."
     },
     cfo: {
-      symptom: "Denials rise from small detail mismatches. Coverage details are mis-captured during busy intake calls.",
-      diagnosis: "The system misinterprets IDs and numeric codes. It fails to keep the context across a long conversation.",
-      remedy: "Field-level validation for every clinical and billing detail."
+      symptom: "Claim denials rise because of small data mismatches. Coverage details get mis-captured on busy intake calls.",
+      diagnosis: "The system misreads IDs and numeric codes. It loses context during longer conversations.",
+      remedy: "Field-by-field validation for every clinical and billing detail."
     },
     cco: {
-      symptom: "Eligibility is unclear to patients. They get guidance that conflicts with their insurance, causing billing stress.",
-      diagnosis: "The system confuses multiple speakers. It cannot handle the complexity of mixed medical terminology.",
-      remedy: "Medical-grade accuracy with multi-speaker clarity."
+      symptom: "Patients don't understand their coverage. They receive guidance that conflicts with their insurance, causing billing confusion.",
+      diagnosis: "The system struggles with multiple speakers and complex medical terminology.",
+      remedy: "Medical-grade accuracy with clear separation between speakers."
     },
     cro: {
-      symptom: "Security and compliance answers drift. Critical procurement rules get lost in the follow-up recaps.",
-      diagnosis: "The system pulls answers from the wrong sources. It simplifies compliance terms into generic ones.",
-      remedy: "Strictly grounded answers that can be traced back to the source."
+      symptom: "Compliance answers vary. Key procurement rules get dropped in follow-up summaries.",
+      diagnosis: "The system retrieves answers from the wrong sources. Compliance terms get replaced with generic ones.",
+      remedy: "Answers grounded in verified sources, with a clear trace back to the original."
     },
     chro: {
-      symptom: "Details get misheard in busy rooms. Staff learns by copying what worked once instead of a standard process.",
-      diagnosis: "The system doesn't ask for confirmation enough. It sounds too confident when it should be checking.",
-      remedy: "Mandatory confirmation loops for every high-stakes clinical action."
+      symptom: "Details get missed in noisy rooms. Staff picks up habits from what worked once, not from a standard process.",
+      diagnosis: "The system doesn't ask enough confirmation questions. It sounds confident when it should be double-checking.",
+      remedy: "Built-in confirmation steps for every high-stakes clinical action."
     }
   },
   telecom: {
     cto: {
-      symptom: "Connection drops and network delays break conversation timing. This causes 'glitches' and cut-off answers.",
-      diagnosis: "The system doesn't handle real-world network lag. Critical updates arrive out of sync with the conversation.",
-      remedy: "Lag-tolerant architecture that never feels out of sync."
+      symptom: "Network drops and latency break the flow of conversations, causing glitches and cut-off responses.",
+      diagnosis: "The system isn't built to handle real-world network lag. Updates arrive out of step with the conversation.",
+      remedy: "An architecture that handles lag gracefully and never feels out of sync."
     },
     coo: {
-      symptom: "The 'truth' about an outage shifts hourly. Different channels give conflicting ETAs, leaving customers confused.",
-      diagnosis: "The knowledge source isn't updated in real-time. The system doesn't handle interruptions well during high-stress calls.",
-      remedy: "Sub-second knowledge updates that stay live with reality."
+      symptom: "Outage status changes every hour. Customers get different ETAs from different channels and no one knows what's true.",
+      diagnosis: "The knowledge base doesn't update in real time. The system struggles to handle interruptions during high-pressure calls.",
+      remedy: "Knowledge that updates in real time and stays accurate across every channel."
     },
     cfo: {
-      symptom: "Plan changes are applied blindly. Revenue leaks through goodwill credits that weren't strictly authorized.",
-      diagnosis: "The system acts on partial information. It bypasses formal checks for the sake of speed.",
-      remedy: "Audit-gated credit checks that never bypass the rule."
+      symptom: "Plan changes go through without review. Revenue leaks because goodwill credits aren't properly authorized.",
+      diagnosis: "The system acts on incomplete information. It skips approval steps in the name of speed.",
+      remedy: "Credit checks tied to an audit trail — no rule gets bypassed."
     },
     cco: {
-      symptom: "Customers get contradictory answers across system and chat. The timing of the answer feels 'off'.",
-      diagnosis: "The system misses the start of sentences due to lag. It responds to half-finished thoughts.",
-      remedy: "Adaptive timing that understands the natural flow of speech."
+      symptom: "Customers get different answers from different channels. Responses feel delayed or off.",
+      diagnosis: "The system misses the beginning of sentences because of lag. It responds before the customer has finished speaking.",
+      remedy: "Timing that adapts to natural speech so responses always feel right."
     },
     cro: {
-      symptom: "Rollout terms get misheard mid-call. Agreements are captured incorrectly when a customer interrupts.",
-      diagnosis: "The system misses talk-over. It doesn't roll back the state when an instruction is cancelled.",
-      remedy: "Interrupt-ready capture with transaction rollbacks."
+      symptom: "Rollout terms get misheard on calls. Agreements get logged incorrectly when a customer interrupts.",
+      diagnosis: "The system can't handle people talking over each other. It doesn't undo a logged instruction when someone corrects themselves.",
+      remedy: "Capture that handles interruptions and rolls back when a customer changes their mind."
     },
     chro: {
-      symptom: "Teams improvise credits to calm callers. Coaching is reactive because the system doesn't record 'why' it happened.",
-      diagnosis: "A lack of real-time knowledge. No way to trace where a policy was intentionally or accidentally bypassed.",
-      remedy: "Traceable coaching logs with built-in policy guards."
+      symptom: "Agents improvise credits to de-escalate calls. Coaching is always reactive because the system never records the reason.",
+      diagnosis: "No real-time knowledge, and no way to trace whether a policy was broken intentionally or by mistake.",
+      remedy: "Coaching logs with a full audit trail and built-in policy enforcement."
     }
   },
   ecommerce: {
     cto: {
-      symptom: "High traffic makes the system lag. Technical actions fail mid-conversation, leaving users with dead air.",
-      diagnosis: "The system lacks a way to handle high concurrency. Duplicate actions are triggered during retries.",
-      remedy: "High-load stability with 'mid-turn' recovery logic."
+      symptom: "Traffic spikes cause the system to slow down. Actions fail mid-conversation, leaving customers with silence.",
+      diagnosis: "The system can't handle many simultaneous conversations. Retry attempts trigger the same action twice.",
+      remedy: "Stable performance at high load, with recovery logic built into every turn."
     },
     coo: {
-      symptom: "A customer changes an order, but the warehouse misses it. Handoffs between nodes drop the critical exceptions.",
-      diagnosis: "Fragmented systems. There is a timing gap between what a user says and what the warehouse sees.",
-      remedy: "Instant synchronization between voice and the fulfillment node."
+      symptom: "A customer updates their order, but the warehouse never gets the memo. Critical exceptions get lost between systems.",
+      diagnosis: "Systems don't talk to each other fast enough. There's always a gap between what the customer said and what the warehouse sees.",
+      remedy: "Real-time sync between the customer's voice and the fulfillment system."
     },
     cfo: {
-      symptom: "Refunds spike. Goodwill credits break reconciliation because the 'reason' behind the refund wasn't recorded properly.",
-      diagnosis: "No grounding in evidence. The system loses the 'Why' during a complex refund decision.",
-      remedy: "Evidence-based decision logs for every dollar credited."
+      symptom: "Refunds pile up. Goodwill credits throw off the books because the reason for the refund was never properly recorded.",
+      diagnosis: "No evidentiary basis for credit decisions. The system loses track of what justified the refund.",
+      remedy: "A decision log with the reason behind every credit, tied to the original conversation."
     },
     cco: {
-      symptom: "Inventory truth varies. Delivery promises keep shifting, leading to customer churn.",
-      diagnosis: "The system acts on half-heard intents. It doesn't clarify when the confidence in a scan is low.",
-      remedy: "Clarification-first logic that never 'guesses' the inventory."
+      symptom: "Inventory data is unreliable. Delivery promises keep shifting, and customers stop trusting the experience.",
+      diagnosis: "The system acts on partially-heard instructions. It doesn't ask for confirmation when it's unsure.",
+      remedy: "Always ask before confirming inventory — never assume."
     },
     cro: {
-      symptom: "Bundle and shipping terms get captured inconsistently. The deal terms shift between the call and the recap email.",
-      diagnosis: "Weak disambiguation between similar terms. Context is lost over long, multi-stage sessions.",
-      remedy: "Multi-stage context that never forgets the original deal."
+      symptom: "Bundle and shipping terms get recorded inconsistently. What was agreed on the call doesn't match the follow-up email.",
+      diagnosis: "Similar-sounding terms get confused. Context fades over long, multi-step conversations.",
+      remedy: "Context that spans the full conversation and never loses what was originally agreed."
     },
     chro: {
-      symptom: "New hires learn habits that leak revenue. Guidance varies wildly across voice, chat, and email.",
-      diagnosis: "Stale knowledge base. The system fails to enforce one consistent policy across all terminals.",
-      remedy: "Unified policy guardrails that apply to every interaction."
+      symptom: "New hires learn unhelpful habits from colleagues. Policy varies across voice, chat, and email, and no one notices.",
+      diagnosis: "The knowledge base is out of date. One consistent policy doesn't get enforced across all channels.",
+      remedy: "Policy guardrails that apply the same rules to every interaction, everywhere."
     }
   },
   bfsi: {
     cto: {
-      symptom: "Account numbers and IDs are captured incorrectly. Audits demand exact proof of consent for high-risk actions.",
-      diagnosis: "Numeric data capture is brittle. The system lacks a timeline of who said what for legal proof.",
-      remedy: "Precision numeric capture with immutable event logs."
+      symptom: "Account numbers and IDs get captured wrong. Audits require exact proof that high-risk actions were properly authorized.",
+      diagnosis: "Numeric capture is unreliable. The system has no timestamped record of who said what.",
+      remedy: "Precise numeric capture with a tamper-proof event log."
     },
     coo: {
-      symptom: "Work resets every time it moves to a new team. Holds and approvals drift because the context is lost.",
-      diagnosis: "Context doesn't travel with the case. The system cannot handle complex, multi-party bank workflows.",
-      remedy: "Persistent case-context that survives every handoff."
+      symptom: "Progress resets every time a case changes hands. Holds and approvals fall through because context isn't passed along.",
+      diagnosis: "Context doesn't travel with the case. The system can't manage the complexity of multi-team banking workflows.",
+      remedy: "Case context that stays intact through every team handoff."
     },
     cfo: {
-      symptom: "Fee language is misinterpreted. High-risk transfers are done without a clear, recorded verbal handshake.",
-      diagnosis: "The system 'normalizes' numbers into the wrong meaning. No audible confirmation is forced on the user.",
-      remedy: "Forced verbal handshakes for all high-risk events."
+      symptom: "Fee terms get misunderstood. High-risk transfers go through without a clear verbal confirmation on record.",
+      diagnosis: "The system distorts numeric meaning during interpretation. It doesn't require the customer to verbally confirm before action.",
+      remedy: "Verbal confirmation required before every high-risk event, with a full audit trail."
     },
     cco: {
-      symptom: "Eligibility rules feel inconsistent. Customers get confident but factually wrong answers about their rates.",
-      diagnosis: "The system rounds off complex rates. It pulls policy from the wrong documents.",
-      remedy: "Source-grounded policy lookups that never round off."
+      symptom: "Eligibility rules feel inconsistent. Customers get confident but incorrect answers about their rates.",
+      diagnosis: "The system approximates complex rates. It pulls from the wrong policy documents.",
+      remedy: "Policy answers sourced directly from verified documents — no rounding, no guessing."
     },
     cro: {
-      symptom: "Risk nuance is guessed instead of confirmed. Audit find the process 'fuzzy' and unprovable.",
-      diagnosis: "Terminology is changed during the recap. The system doesn't ask enough clarifying questions.",
-      remedy: "Nuance-preserving capture with mandatory confirmation."
+      symptom: "Risk details get assumed instead of confirmed. Auditors find the process vague and impossible to verify.",
+      diagnosis: "Terms get changed during recap. The system doesn't ask enough follow-up questions.",
+      remedy: "Exact capture of risk language, with mandatory confirmation before moving on."
     },
     chro: {
-      symptom: "Compliance rules are simplified in training. Reps guess instead of confirming under pressure.",
-      diagnosis: "Critical details vanish in summarization. The system answers too fast without checking the rule.",
-      remedy: "Policy-guided behavior with forced confirmation gates."
+      symptom: "Compliance requirements get oversimplified in training. Staff guess instead of confirm when under pressure.",
+      diagnosis: "Important details disappear in summaries. The system gives answers too quickly without checking the rule.",
+      remedy: "Policy-enforced behavior with mandatory confirmation at every critical step."
     }
   },
   travel: {
     cto: {
-      symptom: "Interruptions break the rebooking process. Cancelling a thought leaves incorrect confirmations in the system.",
-      diagnosis: "The system can't handle talk-over. Cancelling a generation leaves the system state in a mess.",
-      remedy: "Clean-cancel architecture that rolls back failed thoughts."
+      symptom: "Interruptions derail the rebooking flow. Walking back a request leaves incorrect confirmations in the system.",
+      diagnosis: "The system can't handle people talking over each other. A cancelled request puts the system in a broken state.",
+      remedy: "A clean rollback when a request is interrupted or cancelled."
     },
     coo: {
-      symptom: "Rebooking rules drift during disruption. One late update triggers a cascade of wrong flight changes.",
-      diagnosis: "Policy isn't updated fast enough for the crisis. The system traps users in repeat loops.",
-      remedy: "Crisis-ready knowledge injection with loop detection."
+      symptom: "Rebooking rules keep shifting during disruptions. One delayed update causes a chain of incorrect flight changes.",
+      diagnosis: "Policy can't keep up with a fast-moving crisis. The system traps customers in unhelpful loops.",
+      remedy: "Crisis policies that push instantly into the system, with loop detection to break stuck conversations."
     },
     cfo: {
-      symptom: "Liability grows without a trace. Partner refunds misalign because the logic changes by channel.",
-      diagnosis: "System timeouts create dead air. Monitoring lacks the event timeline to prove liability.",
-      remedy: "Instant cross-channel sync designed for liability defense."
+      symptom: "Liability builds with no paper trail. Partner refunds get misaligned because the logic is different across channels.",
+      diagnosis: "System timeouts create awkward silences. There's no event log to determine who's liable for what.",
+      remedy: "Instant cross-channel sync, designed to make liability clear and defensible."
     },
     cco: {
-      symptom: "Rules change mid-crisis. Compensation guidance varies by agent, leading to public customer frustration.",
-      diagnosis: "The system misses interruptions. It fails to handle two people talking at once correctly.",
-      remedy: "Duplex thinking that understands interruptions."
+      symptom: "Rules change mid-disruption. Compensation varies by agent, and customers take complaints public.",
+      diagnosis: "The system misses interruptions and can't handle two people speaking at once.",
+      remedy: "Full-duplex listening that understands interruptions and responds in real time."
     },
     cro: {
-      symptom: "Recaps miss the one critical exception that mattered. Contracts are blocked because they don't match the call.",
-      diagnosis: "Talk-over causes data loss. The system loses rebooking constraints during high volume.",
-      remedy: "Constraint-aware summaries that never miss the 'Unless'."
+      symptom: "Summaries drop the one exception that mattered. Contracts stall because they don't reflect what was said on the call.",
+      diagnosis: "Cross-talk causes data to be lost. Rebooking constraints disappear during high-volume periods.",
+      remedy: "Summaries that always capture the conditions and exceptions, not just the main points."
     },
     chro: {
-      symptom: "Disruption forces improvisation on every shift. Angry customers amplify small mistakes into big incidents.",
-      diagnosis: "Edge cases aren't prioritized. The system misses the emotional tone and doubles down on a mistake.",
-      remedy: "Tone-adaptive logic that understands a crisis."
+      symptom: "Disruptions force every shift to improvise. Stressed customers turn small missteps into major incidents.",
+      diagnosis: "Edge cases aren't built into the training. The system misreads emotional tone and keeps making the same mistake.",
+      remedy: "Tone-aware responses that recognize when a situation is escalating and adjust accordingly."
     }
   },
   tech: {
     cto: {
-      symptom: "Multi-step support workflows lose their place. Lag creates awkward dead air that breaks the experience.",
-      diagnosis: "State tracking is too loose for complex tech help. The response time is slower than a human conversation.",
-      remedy: "Fast-path orchestration with zero-latency fillers."
+      symptom: "Multi-step support flows lose track of where they are. Lag creates awkward silences that undermine the experience.",
+      diagnosis: "State tracking isn't reliable enough for complex troubleshooting. Response times are slower than a normal conversation.",
+      remedy: "Fast, well-structured call flows with instant feedback to keep things moving."
     },
     coo: {
-      symptom: "Critical context is lost in handoffs. Incident status changes but the owner is unaware of the new reality.",
-      diagnosis: "Memory costs grow too fast. Context management fails during long, multi-turn tech sessions.",
-      remedy: "Selective context memory that keeps the 'Must-knows' live."
+      symptom: "Context gets lost when a case changes hands. Incident status updates without the owner knowing.",
+      diagnosis: "Maintaining full context gets too expensive. It breaks down in long, multi-step technical sessions.",
+      remedy: "Selective memory that always keeps the critical context live, regardless of call length."
     },
     cfo: {
-      symptom: "Credits differ by system. Billing disputes escalate because there's no proof of the original tech commitment.",
-      diagnosis: "No evidence for why a credit was given. Monitoring lacks the traces to prove a tech entitlement.",
-      remedy: "Verifiable logs that prove the reason for every credit."
+      symptom: "Credits vary across systems. Billing disputes escalate because there's no proof of what was originally committed.",
+      diagnosis: "No record of why a credit was issued. The system can't trace what entitlement was actually granted.",
+      remedy: "A verifiable log with the reason and justification behind every credit."
     },
     cco: {
-      symptom: "Entitlements differ across systems. Customers get old status explanations for new issues.",
-      diagnosis: "The system fails mid-turn. Lag creates dead air that makes the user hang up.",
-      remedy: "Status-aware logic with sub-second feedback loops."
+      symptom: "Entitlements differ across systems. Customers get outdated explanations for new problems.",
+      diagnosis: "The system breaks mid-turn. Lag creates silence that causes the customer to hang up.",
+      remedy: "Real-time status tracking with instant feedback so customers always feel heard."
     },
     cro: {
-      symptom: "Roadmap talk is mis-captured as a hard promise. The team cannot reconstruct what was actually said.",
-      diagnosis: "The system over-promises instead of confirming. Memory fails over long timelines.",
-      remedy: "Confirmation-first logic for all future commitments."
+      symptom: "Roadmap conversations get recorded as firm commitments. No one can reconstruct what was actually said.",
+      diagnosis: "The system defaults to promising rather than confirming. Memory degrades over long conversations.",
+      remedy: "Every forward-looking statement confirmed before being logged as a commitment."
     },
     chro: {
-      symptom: "Context is lost in handoffs. People repeat mistakes because there's no proof of the original failure.",
-      diagnosis: "Technical memory is too expensive. No way to replay a failure for technical coaching.",
-      remedy: "Zero-loss memory with behavioral replay for tech teams."
+      symptom: "Context disappears in handoffs. Teams repeat mistakes because there's no record of the original failure.",
+      diagnosis: "Full memory is too costly. There's no way to play back a failure and use it for coaching.",
+      remedy: "Zero-loss memory with the ability to replay any call for technical coaching."
     }
   },
   media: {
     cto: {
-      symptom: "System triggers accidentally in noisy rooms. Background talk is mis-captured as a command.",
-      diagnosis: "Failure to separate the user from background noise. The streaming text shifts meaning mid-sentence.",
-      remedy: "Dual-layer verification that ignores the background."
+      symptom: "The system activates by accident in noisy rooms. Background conversation gets treated as a command.",
+      diagnosis: "The system can't separate the person from the background. Streaming transcription shifts meaning before a sentence is done.",
+      remedy: "Two-layer verification that filters out background noise before acting."
     },
     coo: {
-      symptom: "Subscription status conflicts across tools. Regional rules are stated confidently but incorrectly.",
-      diagnosis: "The system pulls from the wrong knowledge base. It can't handle regional logic variations.",
-      remedy: "Region-aware knowledge that stays in its lane."
+      symptom: "Subscription status conflicts across platforms. Regional rules get stated with confidence but turn out to be wrong.",
+      diagnosis: "The system retrieves from the wrong knowledge source. It can't handle regional differences in logic.",
+      remedy: "Region-specific knowledge that knows which rules apply where."
     },
     cfo: {
-      symptom: "Refund requests spike. Disputes rise because the answer shifts based on which system is 'winning'.",
-      diagnosis: "Fractured source of truth. Knowledge base updates aren't synchronized by region.",
-      remedy: "Single-source-of-truth logic with localized guardrails."
+      symptom: "Refund requests climb. Disputes multiply because the answer changes depending on which system responds first.",
+      diagnosis: "No consistent source of truth. Knowledge base updates don't sync across regions.",
+      remedy: "One source of truth with localized rules enforced at every touchpoint."
     },
     cco: {
-      symptom: "Status changes across systems. Access rules vary by region, leading to mixed guidance for users.",
-      diagnosis: "The listening UI is misaligned. Shifting text changes the intent before the user finishes.",
-      remedy: "Stabilized intent detection for fast-moving speech."
+      symptom: "Account status differs across platforms. Access rules vary by region, giving users conflicting information.",
+      diagnosis: "The transcription interface is out of sync. Text shifts before the user finishes speaking, changing the intent.",
+      remedy: "Stable intent detection that waits for the full thought before acting."
     },
     cro: {
-      symptom: "Rights and plan rules are confidently wrong. The buyer disputes what they were told by the system.",
-      diagnosis: "The system finds the wrong info for short questions. No traces to prove what was stated.",
-      remedy: "Fact-indexed knowledge for short-form voice."
+      symptom: "Rights and plan terms get communicated wrong. Buyers dispute what they were told.",
+      diagnosis: "The system returns the wrong result for short, specific questions. There's no record of what was actually stated.",
+      remedy: "Fact-indexed responses designed for short, precise voice queries."
     },
     chro: {
-      symptom: "Region rules shift and training lags behind. Wrong answers spread fast and go public on social media.",
-      diagnosis: "Knowledge base isn't synchronized. Hallucinations in voice create dangerous brand risk.",
-      remedy: "Brand-safe guardrails that prevent 'guessing' the rule."
+      symptom: "Regional rules change and training doesn't keep up. Incorrect answers spread fast and become public on social media.",
+      diagnosis: "The knowledge base isn't kept in sync. AI responses without verification are a brand liability.",
+      remedy: "Brand-safe guardrails that prevent the system from guessing when it doesn't know."
     }
   }
 }

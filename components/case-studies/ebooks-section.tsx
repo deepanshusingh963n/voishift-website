@@ -136,7 +136,7 @@ function EBookCover({ ebook }: { ebook: EBook }) {
 }
 
 export function EBooksSection() {
-    const [openId, setOpenId] = useState<string | null>(null)
+    const [openId, setOpenId] = useState<string | null>("1")
     const { openModal } = useModal()
 
     const toggle = (id: string) => {
@@ -349,7 +349,7 @@ export function EBooksSection() {
                                                             </p>
 
                                                             {/* CTA */}
-                                                            <button 
+                                                            <button
                                                                 onClick={() => openModal("resource", { name: ebook.title, type: "eBook" })}
                                                                 className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-warm-gray text-white rounded-xl text-xs font-black uppercase tracking-widest transition-all duration-300 hover:bg-gold hover:text-[#1a1a1a] hover:shadow-lg hover:shadow-gold/20 group/btn"
                                                             >

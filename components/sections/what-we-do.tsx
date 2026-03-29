@@ -244,7 +244,7 @@ export function WhatWeDo() {
                       <div className={`w-12 h-12 flex items-center justify-center rounded-md shrink-0 ${isActive ? "bg-gold/10 border border-gold/20" : ""
                         }`}>
                         <Icon className={`w-6 h-6 ${isActive ? "text-gold" : "text-warm-gray/40"
-                          }`} />
+                          }`} aria-hidden="true" />
                       </div>
 
                       <span className={`font-serif text-lg md:text-xl ${isActive ? "text-gold" : ""
@@ -280,7 +280,7 @@ export function WhatWeDo() {
                       <ul className="space-y-8">
                         {pillars[activePillar].examples.map((example, i) => (
                           <li key={i} className="flex items-start gap-4">
-                            <div className="mt-2 w-1.5 h-1.5 bg-gold/40 shrink-0 rotate-45" />
+                            <div className="mt-2 w-1.5 h-1.5 bg-gold/40 shrink-0 rotate-45" aria-hidden="true" />
                             <span className="text-base md:text-lg text-warm-gray leading-relaxed">
                               {example}
                             </span>
@@ -306,7 +306,7 @@ export function WhatWeDo() {
                       className="w-full flex items-center justify-between p-6 text-left"
                     >
                       <div className="flex items-center gap-4">
-                        <Icon className="w-6 h-6 text-gold" />
+                        <Icon className="w-6 h-6 text-gold" aria-hidden="true" />
                         <span className="font-serif text-lg text-warm-gray">
                           {pillar.title}
                         </span>
@@ -314,6 +314,7 @@ export function WhatWeDo() {
                       <ChevronDown
                         className={`w-5 h-5 text-gold transition-transform duration-300 ${isActive ? "rotate-180" : ""
                           }`}
+                        aria-hidden="true"
                       />
                     </button>
 

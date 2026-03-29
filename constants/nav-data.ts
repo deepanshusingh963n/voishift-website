@@ -46,10 +46,9 @@ export const navLinks: NavLink[] = [
     href: "/what-we-solve",
     sections: [
       { title: "Why Things Go Wrong", description: "The reality of Bot-in-a-Box failures.", icon: ShieldAlert, href: "/what-we-solve#challenges" },
-      { title: "Renting AI", description: "What \"renting AI\" looks like.", icon: Rocket, href: "/what-we-solve#renting" },
-      { title: "Building is Owning", description: "When you build, you own how it behaves.", icon: ShieldCheck, href: "/what-we-solve#owning" },
-      { title: "Built For Operations", description: "Engineering the Path of Veracity for real teams.", icon: Users, href: "/what-we-solve#teams" },
-      { title: "System Governance", description: "Controlled truth and designed refusal.", icon: ShieldCheck, href: "/what-we-solve#governance" },
+      { title: "Buy a Bot or Build a System?", description: "Borrowed logic vs. owned logic — the real choice.", icon: Rocket, href: "/what-we-solve#buy-vs-build" },
+      { title: "Built For Real-World Teams", description: "Engineering the Path of Veracity for teams where wrong actions cost more than slow answers.", icon: Users, href: "/what-we-solve#teams" },
+      { title: "System Governance", description: "VoiShift turns voice AI into a business system that holds up when conditions are not clean.", icon: ShieldCheck, href: "/what-we-solve#governance" },
     ],
     sidebarContent: {
       title: "Core Services",
@@ -84,7 +83,6 @@ export const navLinks: NavLink[] = [
       { title: "Phase 1: OppMap", description: "Opportunity Mapping + WSJF Prioritization.", icon: Map, href: "/how-it-works#phase-1" },
       { title: "Phase 2: Sandbox", description: "Edge-Case Testing + Guardrails Verified.", icon: Layout, href: "/how-it-works#phase-2" },
       { title: "Phase 3: Rollout", description: "Mini Rollout + Production Hardening + Drift Monitoring.", icon: Zap, href: "/how-it-works#phase-3" },
-      { title: "Decision Framework", description: "One question decides build vs buy.", icon: FileText, href: "/how-it-works#framework" },
       { title: "How We Get Paid", description: "Not for activity, but for evidence.", icon: CreditCard, href: "/how-it-works#pricing" },
     ],
     sidebarContent: {
@@ -127,7 +125,7 @@ export const navLinks: NavLink[] = [
     sections: [
       { title: "Case Studies", description: "An exposé of our work, including the parts we got wrong.", icon: Trophy, href: "/case-studies#studies" },
       { title: "eBooks", description: "Operator field manuals. Clear steps and examples.", icon: BookOpen, href: "/case-studies#ebooks" },
-      { title: "Whitepapers", description: "Peer-reviewed research practical takeaways.", icon: FileText, href: "/case-studies#whitepapers" },
+      { title: "Whitepapers", description: "Peer-reviewed research and practical takeaways.", icon: FileText, href: "/case-studies#whitepapers" },
     ],
     sidebarContent: {
       title: "Learning Center",
