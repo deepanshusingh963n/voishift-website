@@ -12,52 +12,57 @@ export default function DifferenceHero() {
   const { openModal } = useModal()
 
   return (
-    <section id="hero" className="relative pt-32 pb-20 lg:pt-30 lg:pb-28 overflow-hidden bg-cream-dark">
-      {/* Background HUD Decor */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gold/5 rounded-none blur-[150px] -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gold/5 rounded-none blur-[120px] translate-y-1/2 -translate-x-1/2" />
+    <section id="hero" className="relative overflow-hidden lg:min-h-[85vh] flex flex-col bg-[#111111]">
 
-        {/* Animated Lines */}
-        <svg className="absolute inset-0 w-full h-full opacity-[0.03]">
-          <pattern id="grid-hero" width="40" height="40" patternUnits="userSpaceOnUse">
-            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
-          </pattern>
-          <rect width="100%" height="100%" fill="url(#grid-hero)" />
-        </svg>
-      </div>
+      {/* SPLIT LAYOUT: Dark Left + Cream Right */}
+      <div className="flex flex-col lg:flex-row flex-1 lg:min-h-[85vh]">
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
+        {/* LEFT PANEL — Dark, authoritative */}
+        <div className="relative lg:w-[55%] bg-[#111111] flex items-center overflow-hidden">
 
-          <div className="max-w-4xl">
+          {/* Subtle blueprint grid on dark */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.04] pointer-events-none">
+            <pattern id="grid-dark" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#grid-dark)" />
+          </svg>
+
+          {/* Gold ambient glow top-right */}
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-gold/10 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/3 pointer-events-none" />
+
+          <div className="relative z-10 px-8 md:px-12 lg:px-16 pt-36 pb-16 lg:py-28 max-w-2xl">
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="flex items-center gap-3 mb-8"
+              className="mb-8"
             >
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-black uppercase tracking-[0.15em] text-gold">The VoiShift Difference</h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black uppercase tracking-[0.12em] text-white leading-[1.05]">
+                The VoiShift <span className="text-gold">Difference</span>
+              </h1>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-xl lg:text-2xl font-serif text-warm-gray leading-[1.25] tracking-tight mb-8"
+              className="text-xl lg:text-2xl font-serif text-white/80 leading-[1.35] tracking-tight mb-8"
             >
               We do not build voice agents. <br />
               <span className="italic text-gold/90">We build voice <span className="not-italic font-black uppercase tracking-[0.15rem]"> systems.</span></span><br />
               Edge-case first. Rule-governed. Measured in production.
             </motion.div>
 
+            {/* Gold left-border accent */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="space-y-6 mb-12"
+              className="border-l-2 border-gold pl-5 mb-10"
             >
-              <p className="text-lg lg:text-xl text-warm-gray-light font-serif italic leading-relaxed max-w-3xl">
+              <p className="text-lg lg:text-xl text-white/50 font-serif italic leading-relaxed">
                 Proven under edge cases. Governed by rules. Measurable over time.
               </p>
             </motion.div>
@@ -66,12 +71,12 @@ export default function DifferenceHero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col lg:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4"
             >
               <Button
                 variant="hero"
                 onClick={() => openModal()}
-                className="rounded-none px-8 py-7 text-lg group hover:bg-black hover:text-white transition-colors shadow-xl"
+                className="rounded-none px-8 py-7 text-lg group bg-gold text-black hover:bg-white hover:text-black transition-colors shadow-xl border-0"
               >
                 Request an Architecture Review
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -79,7 +84,7 @@ export default function DifferenceHero() {
               <Button
                 variant="heroSecondary"
                 asChild
-                className="rounded-none px-8 py-7 text-lg group hover:bg-gold hover:text-white border-2 shadow-xl"
+                className="rounded-none px-8 py-7 text-lg group border-2 border-white/20 text-white hover:border-gold hover:text-gold transition-colors bg-transparent shadow-xl"
               >
                 <a href="/case-studies">
                   View Case Studies
@@ -88,14 +93,33 @@ export default function DifferenceHero() {
             </motion.div>
           </div>
 
+          {/* Vertical gold divider (desktop only) */}
+          <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-gold/40 to-transparent" />
+        </div>
+
+
+        {/* RIGHT PANEL — Cream, pipeline visual */}
+        <div className="hidden lg:flex relative lg:w-[45%] bg-cream-dark items-center justify-center overflow-hidden">
+
+          {/* Subtle warm grid */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.03] pointer-events-none">
+            <pattern id="grid-cream" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="1" />
+            </pattern>
+            <rect width="100%" height="100%" fill="url(#grid-cream)" />
+          </svg>
+
+          {/* Gold ambient glow */}
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gold/5 rounded-full blur-[130px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
+
           {/* Voice System Pipeline Illustration */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex justify-center items-center relative w-full"
+            className="relative z-10 w-full flex justify-center items-center px-8 md:px-12 lg:px-10 py-16 lg:py-28"
           >
-            <div className="relative w-full max-w-[420px]">
+            <div className="relative w-full max-w-[380px]">
 
               {/* Voice Input Node */}
               <motion.div
@@ -199,7 +223,7 @@ export default function DifferenceHero() {
                 </div>
               </div>
 
-              {/* Layer 3 — Edge-Case Testing */}
+              {/* Layer 3 — Proof-Gated Actions */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -233,7 +257,7 @@ export default function DifferenceHero() {
                 </div>
               </div>
 
-              {/* Layer 4 — Long-tail Coverage */}
+              {/* Layer 4 — Replayable Audit Trail */}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -284,17 +308,10 @@ export default function DifferenceHero() {
                 </div>
               </motion.div>
 
-              {/* Side rule labels */}
-              <div className="absolute -left-3 top-0 bottom-0 flex flex-col justify-center pointer-events-none">
-                <div className="w-px flex-1 bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
-              </div>
-              <div className="absolute -right-3 top-0 bottom-0 flex flex-col justify-center pointer-events-none">
-                <div className="w-px flex-1 bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
-              </div>
-
             </div>
           </motion.div>
         </div>
+
       </div>
 
       {/* Sharp HUD Bottom Detail */}

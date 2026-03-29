@@ -286,12 +286,27 @@ export function Threat() {
             </motion.div>
           </div>
         </div>
+        <div className="flex flex-wrap gap-x-8 items-center justify-center mt-4 gap-y-4">
+                {["Not with prompts.", "Not with demos.", "Not with automation spikes."].map((text, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 0.4 }}
+                    className="flex items-center gap-2"
+                  >
+                    <div className="w-1 h-1 rounded-full bg-warm-gray" />
+                    <span className="text-md text-gold-dark line-through decoration-gold">{text}</span>
+                  </motion.div>
+                ))}
+              </div>
 
-        {/* Conclusion Final Impact */}
+        {/*
+
+        
 
 
         <div className="relative py-20 px-8 lg:px-12 bg-[#1a1a1a] rounded-[0rem] text-center overflow-hidden shadow-2xl mb-12 mt-16">
-          {/* Matrix Background */}
+          
           <div className="absolute inset-0 opacity-10 pointer-events-none">
             <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px]" />
             <motion.div
@@ -331,7 +346,7 @@ export function Threat() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

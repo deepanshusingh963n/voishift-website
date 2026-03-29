@@ -8,6 +8,14 @@ import { Footer } from "@/components/sections/footer"
 export const metadata = {
   title: "The Difference | VoiShift",
   description: "Learn what makes VoiShift different: systems instead of agents, proven edge cases, and governed by rules.",
+  openGraph: {
+    title: "The Difference | VoiShift",
+    description: "Learn what makes VoiShift different: systems instead of agents, proven edge cases, and governed by rules.",
+  },
+  twitter: {
+    title: "The Difference | VoiShift",
+    description: "Learn what makes VoiShift different: systems instead of agents, proven edge cases, and governed by rules.",
+  },
 }
 
 export default function DifferencePage() {

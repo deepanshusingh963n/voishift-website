@@ -21,10 +21,11 @@ export default function RentingAI() {
 
       <div className="text-center w-full mb-10 space-y-4">
         <div className="p-6 text-center bg-gold border border-gold/20 ">
-          <p className="text-2xl lg:text-3xl text-black font-serif leading-relaxed mx-auto max-w-7xl text-center">
-            <span className="font-black">If you are deciding this, you are not really deciding “software”.</span>
+          <p className="text-xl lg:text-2xl text-black font-serif font-bold leading-relaxed mx-auto max-w-7xl text-center">
+            {/*<span className="font-black">If you are deciding this, you are not really deciding “software”.</span>
             You are deciding whether the AI that speaks for your business
-            will be rented or owned.
+            will be rented or owned.*/}
+            “You are not making a software choice. You are deciding whether the logic that governs your business voice will be yours, or borrowed from a vendor who does not know your exceptions.”
           </p>
         </div>
       </div>
@@ -34,9 +35,9 @@ export default function RentingAI() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
 
-          <div className="space-y-10 order-2 lg:order-1">
+          <div className="space-y-10 order-1 lg:order-1">
             <div className="p-8 border-2 border-sand bg-cream-dark/30 rounded-none relative">
-              <h2 className="text-2xl font-serif text-gold mb-8 uppercase">What “renting AI” looks like</h2>
+              <h2 className="text-2xl lg:text-5xl font-serif text-warm-gray mb-8 uppercase">What <span className="text-gold">“renting AI”</span> looks like</h2>
 
               <div className="space-y-6">
                 {points.map((point, i) => (
@@ -52,17 +53,13 @@ export default function RentingAI() {
                   </motion.div>
                 ))}
               </div>
+              <h3 className="text-xl font-serif text-gold mt-8 uppercase">And every time reality doesn't match their assumptions, the gap widens. Silently.</h3>
             </div>
 
-            <div className="flex gap-6 p-5 bg-warm-gray text-white rounded-none border-b-4 border-gold">
-              <Unlock className="w-10 h-10 text-gold shrink-0" />
-              <p className="font-serif italic text-md leading-relaxed">
-                "And when something important needs to change, you wait on the owner."
-              </p>
-            </div>
+            
           </div>
 
-          <div className="space-y-12 order-1 lg:order-2">
+          <div className="space-y-10 order-2 lg:order-2">
             <div className="relative">
               <h3 className="text-4xl lg:text-5xl font-serif text-warm-gray leading-tight">
                 Like <span className="italic text-gold">renting a house.</span>
@@ -84,11 +81,12 @@ export default function RentingAI() {
                 </div>
               ))}
 
-              <div className="p-8 bg-destructive/5 border-2 border-destructive/20 rounded-none mt-6">
-                <p className="text-xl font-serif text-warm-gray font-bold italic text-center">
-                  "But you cannot change the foundation."
-                </p>
-              </div>
+              <div className="flex gap-6 p-5 bg-warm-gray text-white rounded-none border-b-4 border-gold">
+              <Unlock className="w-10 h-10 text-gold shrink-0" />
+              <p className="font-serif italic text-md leading-relaxed">
+                "And when something important needs to change, you wait on the owner."
+              </p>
+            </div>
             </div>
           </div>
 

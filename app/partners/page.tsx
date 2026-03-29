@@ -9,6 +9,14 @@ import { PartnerCTASection } from '@/components/partners/PartnerCTASection';
 export const metadata: Metadata = {
     title: 'Partners | VoiShift',
     description: 'Join the VoiShift Partner Network to deliver generative voice AI solutions that drive growth for your clients and your business.',
+    openGraph: {
+        title: 'Partners | VoiShift',
+        description: 'Join the VoiShift Partner Network to deliver generative voice AI solutions that drive growth for your clients and your business.',
+    },
+    twitter: {
+        title: 'Partners | VoiShift',
+        description: 'Join the VoiShift Partner Network to deliver generative voice AI solutions that drive growth for your clients and your business.',
+    },
 };
 
 export default function PartnersPage() {

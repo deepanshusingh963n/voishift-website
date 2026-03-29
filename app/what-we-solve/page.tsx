@@ -11,6 +11,14 @@ import { BuiltForTeams } from "@/components/what-we-solve/built-for-teams"
 export const metadata: Metadata = {
   title: 'What We Solve | VoiShift',
   description: 'Explore the specific voice AI challenges VoiShift solves: from revenue recovery to operational efficiency and system safety.',
+  openGraph: {
+    title: 'What We Solve | VoiShift',
+    description: 'Explore the specific voice AI challenges VoiShift solves: from revenue recovery to operational efficiency and system safety.',
+  },
+  twitter: {
+    title: 'What We Solve | VoiShift',
+    description: 'Explore the specific voice AI challenges VoiShift solves: from revenue recovery to operational efficiency and system safety.',
+  },
 }
 
 export default function WhatWeSolve() {

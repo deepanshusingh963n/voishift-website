@@ -16,8 +16,6 @@ export default function DecisionFramework() {
 
           <div className="space-y-10">
             <div className="space-y-6">
-              <span className="bg-black border border-gold/20 px-4 py-2 rounded-2xl text-[15px] font-black text-gold uppercase tracking-[0.5em]">The Conclusion</span>
-
               <h2 className="text-4xl lg:text-6xl font-serif text-gold font-black leading-tight mt-10">
                 One question decides <br />
                 <span className="text-gold italic">build vs buy.</span>

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, CheckCircle, Target, Users } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useModal } from "@/context/modal-context";
@@ -32,7 +33,7 @@ export const Navbar = () => {
 
   const bgColor = isScrolled 
   ? "bg-cream/80" 
-  : (isHomePage ? "bg-black/50" : "bg-white/50");
+  : (isHomePage ? "bg-black/50" : "bg-white/80");
 
   const textColor = isScrolled
     ? "text-warm-gray"
@@ -53,7 +54,7 @@ export const Navbar = () => {
       <div className="w-full px-6 md:px-10">
         <nav className="relative flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/logo2.png"
               alt="VoiShift Voice AI Platform Logo"
@@ -62,7 +63,7 @@ export const Navbar = () => {
               className="h-12 w-auto"
               priority
             />
-          </a>
+          </Link>
 
           {/* Centered Mobile Title */}
           <div className="absolute left-1/2 -translate-x-1/2 lg:hidden">
@@ -78,14 +79,14 @@ export const Navbar = () => {
                 onMouseEnter={() => setActiveHover(link.label)}
                 onMouseLeave={() => setActiveHover(null)}
               >
-                <a
+                <Link
                   href={link.href}
                   className="text-md md:text-sm lg:text-md font-medium hover:text-gold transition-colors text-center justify-center duration-200 flex items-center gap-1"
                   suppressHydrationWarning
                 >
                   {link.label}
                   {/* {link.sections && <ChevronDown size={14} className={`transition-transform duration-200 ${activeHover === link.label ? 'rotate-180' : ''}`} />} */}
-                </a>
+                </Link>
 
                 {/* Mega Menu */}
                 {link.sections && (
@@ -122,13 +123,13 @@ export const Navbar = () => {
                                         <span className="font-semibold text-sm group-hover/link:underline">{link.sidebarContent.secondaryLink.label}</span>
                                       </button>
                                     ) : (
-                                      <a
+                                      <Link
                                         href={link.sidebarContent.secondaryLink.href}
                                         className="flex items-center gap-3 text-gold hover:text-black transition-colors group/link"
                                       >
                                         <link.sidebarContent.secondaryLink.icon size={18} />
                                         <span className="font-semibold text-sm group-hover/link:underline">{link.sidebarContent.secondaryLink.label}</span>
-                                      </a>
+                                      </Link>
                                     )}
                                   </div>
                                 )}
@@ -139,7 +140,7 @@ export const Navbar = () => {
                           {/* Links Grid */}
                           <div className={`${link.sidebarContent ? 'w-2/3' : 'w-full'} p-6 grid grid-cols-1 gap-4`}>
                             {link.sections.map((section) => (
-                              <a
+                              <Link
                                 key={section.href}
                                 href={section.href}
                                 className="group flex items-start gap-4 p-3 rounded-lg hover:bg-cream/50 transition-all duration-200"
@@ -155,7 +156,7 @@ export const Navbar = () => {
                                     {section.description}
                                   </div>
                                 </div>
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         </div>
@@ -164,9 +165,9 @@ export const Navbar = () => {
                         {link.sidebarContent && (
                           <div className="bg-cream/50 p-4 border-t border-border flex justify-between items-center">
                             <span className="text-[10px] text-warm-gray font-medium uppercase tracking-widest">{link.sidebarContent.footerText}</span>
-                            <a href={link.sidebarContent.footerLink} className="text-xs font-bold text-gold hover:underline flex items-center gap-1">
+                            <Link href={link.sidebarContent.footerLink} className="text-xs font-bold text-gold hover:underline flex items-center gap-1">
                               {link.sidebarContent.footerLabel} <ChevronDown size={12} className="-rotate-90" />
-                            </a>
+                            </Link>
                           </div>
                         )}
                       </motion.div>
@@ -183,6 +184,7 @@ export const Navbar = () => {
               variant="hero"
               size="sm"
               onClick={() => openModal()}
+              className="hover:bg-black hover:text-gold rounded-none"
             >
               Book Strategy Session
             </Button>
@@ -211,7 +213,7 @@ export const Navbar = () => {
               {navLinks.map((link) => {
                 const isContact = link.href === "/contact";
                 return (
-                  <a
+                  <Link
                     key={link.href}
                     href={isContact ? "#" : link.href}
                     onClick={(e) => {
@@ -224,7 +226,7 @@ export const Navbar = () => {
                     className="block py-2 text-base font-medium text-warm-gray hover:text-gold transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 );
               })}
               <div className="pt-4 space-y-3">

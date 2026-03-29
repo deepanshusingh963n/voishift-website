@@ -46,21 +46,27 @@ export default function BuildingIsOwning() {
 
               <div className="p-8 bg-gold text-warm-gray rounded-none mt-4 shadow-xl">
                 <p className="text-xl font-serif font-bold italic text-center">
-                  "You can fix the real problem, not just cover it up."
+                  {/*"You can fix the real problem, not just cover it up."*/}
+                  When you build, the system learns your world. Not the vendor's version of it.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="space-y-8">
-            <div className="p-8 lg:p-10 border-2 border-gold/30 bg-white rounded-none relative shadow-2xl overflow-hidden group">
+          <div className="flex flex-col gap-6">
+            <div className="order-2 lg:order-1 p-4 bg-black border-b-2 border-gold rounded-none shadow-2xl">
+              <p className="text-2xl font-serif text-gold font-bold text-center">
+                When you build, you own the behavior. You own the world.
+              </p>
+            </div>
+            <div className="order-1 lg:order-2 p-8 lg:p-10 border-2 border-gold/30 bg-white rounded-none relative shadow-2xl overflow-hidden group">
               <div className="absolute -bottom-10 -right-10 opacity-[0.05] group-hover:scale-110 transition-transform duration-700">
                 <Construction className="w-64 h-64 text-warm-gray" />
               </div>
 
               <div className="flex items-center gap-2 mb-8">
                 <ShieldCheck className="w-5 h-5 text-gold" />
-                <span className="text-[15px] font-black text-warm-gray uppercase tracking-widest">Ownership_Parameters</span>
+                <span className="text-[15px] font-black text-warm-gray uppercase tracking-widest">Ownership Parameters</span>
               </div>
 
               <div className="space-y-6">
@@ -79,10 +85,6 @@ export default function BuildingIsOwning() {
                   </motion.div>
                 ))}
               </div>
-            </div>
-
-            <div className="text-lg p-8 border border-sand bg-white/70 rounded-none text-center italic font-serif text-warm-gray-light">
-              "When you build, you own the behavior. You own the world."
             </div>
           </div>
 

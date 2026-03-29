@@ -29,6 +29,19 @@ const requirementOptions = [
     { label: "Software Outsourcing", value: "Software Outsourcing" },
 ]
 
+const jobTitleOptions = [
+    { label: "CEO / Founder", value: "CEO / Founder" },
+    { label: "CTO / VP Engineering", value: "CTO / VP Engineering" },
+    { label: "COO / VP Operations", value: "COO / VP Operations" },
+    { label: "Director of Operations", value: "Director of Operations" },
+    { label: "Product Manager", value: "Product Manager" },
+    { label: "Head of Customer Experience", value: "Head of Customer Experience" },
+    { label: "Engineer / Developer", value: "Engineer / Developer" },
+    { label: "Business Analyst", value: "Business Analyst" },
+    { label: "Consultant", value: "Consultant" },
+    { label: "Other", value: "Other" },
+]
+
 function FormSelect({ label, value, onChange, options, placeholder, required }: { label: string, value: string, onChange: (v: string) => void, options: {label: string, value: string}[], placeholder: string, required?: boolean }) {
     const [isOpen, setIsOpen] = useState(false)
     const containerRef = useRef<HTMLDivElement>(null)
@@ -269,17 +282,14 @@ export function CTAFormModal() {
                                                     </div>
 
                                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                                        <div className="space-y-2">
-                                                            <Label htmlFor="jobTitle" className="text-warm-gray">Job Title</Label>
-                                                            <Input
-                                                                id="jobTitle"
-                                                                placeholder="Director of Operations"
-                                                                required
-                                                                value={jobTitle}
-                                                                onChange={(e) => setJobTitle(e.target.value)}
-                                                                className="bg-transparent border-gold/20 focus:border-gold transition-all"
-                                                            />
-                                                        </div>
+                                                        <FormSelect
+                                                            label="Job Title"
+                                                            value={jobTitle}
+                                                            onChange={setJobTitle}
+                                                            options={jobTitleOptions}
+                                                            placeholder="Select your job title"
+                                                            required
+                                                        />
 
                                                         <FormSelect
                                                             label="Requirement"

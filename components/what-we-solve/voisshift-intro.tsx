@@ -67,6 +67,8 @@ export function VoiShiftIntro() {
             >
               <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-black text-warm-gray leading-[1.1] text-balance">
                 VoiShift turns voice AI from a speaking layer into a <span className="text-gold italic font-black">business system that holds up when conditions are not clean.</span>
+                {/*Fluency is the symptom. Structural failure is the problem. <span className="text-gold italic font-black">VoiShift builds the system that closes the gap.</span>*/}
+
               </h2>
 
               <div className="gap-4">
@@ -75,20 +77,6 @@ export function VoiShiftIntro() {
                     You can rent a voice, but you cannot rent ownership of what is true.
                   </p>
                 </div>
-              </div>
-
-              <div className="flex flex-wrap gap-x-8 gap-y-4">
-                {["Not with prompts.", "Not with demos.", "Not with automation spikes."].map((text, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.4 }}
-                    className="flex items-center gap-2"
-                  >
-                    <div className="w-1 h-1 rounded-full bg-warm-gray" />
-                    <span className="text-md text-gold-dark line-through decoration-gold">{text}</span>
-                  </motion.div>
-                ))}
               </div>
             </motion.div>
 
@@ -222,7 +210,7 @@ export function VoiShiftIntro() {
                   <div className="space-y-4 relative z-10">
                     <div className="flex justify-between items-end">
                       <span className="text-[9px] font-bold text-warm-gray/40 uppercase tracking-widest">Ownership Matrix</span>
-                      <span className="text-[9px] font-bold text-gold">100%_SYNC</span>
+                      <span className="text-[9px] font-bold text-gold">100% SYNC</span>
                     </div>
                     <div className="h-1.5 w-full bg-sand/30 rounded-full overflow-hidden">
                       <motion.div

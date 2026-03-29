@@ -3,16 +3,8 @@ import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
 
 const teamMembers = [
-  {
+    {
     id: 1,
-    name: "Neil Roy",
-    role: "VP Sales",
-    image: "/team/Neil.png",
-    linkedin: "https://www.linkedin.com/in/klyrr/",
-    bio: "Heading VoiShift’s global service delivery, managing strategic client partnerships to transform high-stakes voice automation from a concept into a reliable operational service.",
-  },
-  {
-    id: 2,
     name: "Vivek Rungta",
     role: "Principal Consultant",
     image: "/team/Vivek.png",
@@ -20,36 +12,44 @@ const teamMembers = [
     bio: "Leading the engineering of bespoke technical solutions, ensuring our service delivery translates complex AI capabilities into high-pressure operational reality for every client.",
   },
   {
-    id: 3,
+    id: 2,
     name: "Pankaj T.",
     role: "Full Stack Developer",
     image: "/team/Pankaj.png",
     linkedin: "https://www.linkedin.com/in/iampankajt/",
     bio: "Crafting custom-built interfaces and transparency tools that allow clients to monitor and manage their bespoke AI voice services with precision.",
   },
-  {
-    id: 4,
-    name: "Varsha Goel",
-    role: "Business Operations",
-    image: "/team/Varsha Goel.png",
-    linkedin: "https://www.linkedin.com/in/varsha-goel-47635bb1/",
-    bio: "Directing VoiShift’s service operations, ensuring that every client engagement is backed by seamless execution, quality assurance, and scalable delivery workflows.",
-  },
-  {
-    id: 5,
+    {
+    id: 3,
     name: "Harshveer Singh",
-    role: "AI Engineer",
+    role: "Conversational AI Developer",
     image: "/team/Harshveer.png",
     linkedin: "https://www.linkedin.com/in/harshveer-singh-1a6912205/",
     bio: "Adapting and fine-tuning AI logic lattices to meet specific client needs, ensuring our delivered services remain high-precision across diverse real-world environments.",
   },
   {
-    id: 6,
+    id: 4,
     name: "Deepanshu Singh",
-    role: "AI Engineer",
+    role: "AI Developer",
     image: "/team/Deepanshu.png",
     linkedin: "https://www.linkedin.com/in/deepanshu-singh-ab0249148/",
     bio: "Managing the integrity and ethical alignment of our AI service deployments, ensuring every delivered voice interaction meets rigorous enterprise standards.",
+  },
+  {
+    id: 5,
+    name: "Pintu Kumar",
+    role: "Full Stack Developer",
+    image: "/team/Pintu Kumar.png",
+    linkedin: "https://www.linkedin.com/in/pintu-kumar-627128121/",
+    bio: "Specializing in the deployment of robust, cross-platform technical architectures that power VoiShift’s bespoke service implementations for modern enterprises.",
+  },
+  {
+    id: 6,
+    name: "Neil Roy",
+    role: "VP Sales",
+    image: "/team/Neil.png",
+    linkedin: "https://www.linkedin.com/in/klyrr/",
+    bio: "Heading VoiShift’s global service delivery, managing strategic client partnerships to transform high-stakes voice automation from a concept into a reliable operational service.",
   },
   {
     id: 7,
@@ -61,11 +61,11 @@ const teamMembers = [
   },
   {
     id: 8,
-    name: "Pintu Kumar",
-    role: "Full Stack Developer",
-    image: "/team/Pintu Kumar.png",
-    linkedin: "https://www.linkedin.com/in/pintu-kumar-627128121/",
-    bio: "Specializing in the deployment of robust, cross-platform technical architectures that power VoiShift’s bespoke service implementations for modern enterprises.",
+    name: "Varsha Goel",
+    role: "Business Operations",
+    image: "/team/Varsha Goel.png",
+    linkedin: "https://www.linkedin.com/in/varsha-goel-47635bb1/",
+    bio: "Directing VoiShift’s service operations, ensuring that every client engagement is backed by seamless execution, quality assurance, and scalable delivery workflows.",
   },
 ];
 

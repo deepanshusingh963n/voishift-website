@@ -78,10 +78,6 @@ export function BuiltForTeams() {
                         transition={{ duration: 0.8 }}
                         viewport={{ once: true }}
                     >
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-black border border-gold/10 rounded-full mb-6">
-                            <Activity className="w-3.5 h-3.5 text-gold" />
-                            <span className="text-[15px] font-black tracking-widest text-gold uppercase">Operations Engineering</span>
-                        </div>
                         <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-gold font-black leading-[1.1] mb-8 text-balance">
                             We build for real-world teams
                         </h2>
@@ -156,13 +152,14 @@ export function BuiltForTeams() {
                             transition={{ duration: 0.8 }}
                             viewport={{ once: true }}
                         >
-                            <h3 className="text-3xl lg:text-4xl font-serif text-warm-gray mb-4">
+                            <h3 className="text-2xl lg:text-3xl font-serif text-gold mb-4">
                                 We walk the workflow end to end
                             </h3>
                             <p className="text-xl text-warm-gray-light font-serif italic mb-8">
                                 With the people inside it.
                             </p>
 
+                            {/*
                             <div className="p-8 bg-[#2a2a2a] rounded-xl border border-white/5 shadow-2xl relative overflow-hidden group">
                                 <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl group-hover:bg-gold/20 transition-colors" />
 
@@ -174,6 +171,7 @@ export function BuiltForTeams() {
                                     Those are the moments voice AI will copy, at speed.
                                 </p>
                             </div>
+                            */}
 
                             {/* Question Card - Integrated more tightly */}
                             <motion.div

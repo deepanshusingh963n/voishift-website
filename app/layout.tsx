@@ -20,9 +20,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/voishift.png',
   },
-  alternates: {
-    canonical: '/',
-  },
+
   openGraph: {
     title: 'VoiShift | Voice AI That Holds Up When Reality Gets Messy',
     description: 'VoiShift turns voice AI from a speaking layer into a business system that holds up when conditions are not clean.',

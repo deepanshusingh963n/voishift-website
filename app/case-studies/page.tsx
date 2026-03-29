@@ -16,6 +16,14 @@ export const metadata: Metadata = {
     "enterprise outcomes",
     "customer success stories",
   ],
+  openGraph: {
+    title: "Case Studies | VoiShift | Real Voice AI Outcomes",
+    description: "See how teams transformed their voice AI with VoiShift. Real case studies, real metrics, real confidence.",
+  },
+  twitter: {
+    title: "Case Studies | VoiShift | Real Voice AI Outcomes",
+    description: "See how teams transformed their voice AI with VoiShift. Real case studies, real metrics, real confidence.",
+  },
 }
 
 export default function CaseStudiesPage() {

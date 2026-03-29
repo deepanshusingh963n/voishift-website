@@ -11,6 +11,14 @@ import { Footer } from "@/components/sections/footer"
 export const metadata = {
   title: "How It Works | VoiShift",
   description: "Learn about the VoiShift three-phase process: Opportunity Mapping, Validation Sandbox, and Proof Gated Rollout.",
+  openGraph: {
+    title: "How It Works | VoiShift",
+    description: "Learn about the VoiShift three-phase process: Opportunity Mapping, Validation Sandbox, and Proof Gated Rollout.",
+  },
+  twitter: {
+    title: "How It Works | VoiShift",
+    description: "Learn about the VoiShift three-phase process: Opportunity Mapping, Validation Sandbox, and Proof Gated Rollout.",
+  },
 }
 
 export default function HowItWorksPage() {

@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: "About VoiShift | The Team Behind Reliable Voice AI",
     description: "Learn why VoiShift was built for teams who need voice AI that works in the real world. Meet the team shifting the industry toward reliability.",
     keywords: ["VoiShift team", "voice AI mission", "about VoiShift", "reliable AI systems"],
+    openGraph: {
+        title: "About VoiShift | The Team Behind Reliable Voice AI",
+        description: "Learn why VoiShift was built for teams who need voice AI that works in the real world. Meet the team shifting the industry toward reliability.",
+    },
+    twitter: {
+        title: "About VoiShift | The Team Behind Reliable Voice AI",
+        description: "Learn why VoiShift was built for teams who need voice AI that works in the real world. Meet the team shifting the industry toward reliability.",
+    },
 };
 
 export default function AboutPage() {

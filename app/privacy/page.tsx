@@ -7,6 +7,14 @@ export const metadata: Metadata = {
     title: "Privacy & Data Protocol | VoiShift",
     description: "VoiShift Privacy Policy & Data Protocol. Global compliance notice.",
     keywords: ["Privacy Policy", "Data Protocol", "VoiShift Privacy", "Compliance"],
+    openGraph: {
+        title: "Privacy & Data Protocol | VoiShift",
+        description: "VoiShift Privacy Policy & Data Protocol. Global compliance notice.",
+    },
+    twitter: {
+        title: "Privacy & Data Protocol | VoiShift",
+        description: "VoiShift Privacy Policy & Data Protocol. Global compliance notice.",
+    },
 };
 
 export default function PrivacyPage() {

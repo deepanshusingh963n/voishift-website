@@ -46,6 +46,8 @@ export const navLinks: NavLink[] = [
     href: "/what-we-solve",
     sections: [
       { title: "Why Things Go Wrong", description: "The reality of Bot-in-a-Box failures.", icon: ShieldAlert, href: "/what-we-solve#challenges" },
+      { title: "Renting AI", description: "What \"renting AI\" looks like.", icon: Rocket, href: "/what-we-solve#renting" },
+      { title: "Building is Owning", description: "When you build, you own how it behaves.", icon: ShieldCheck, href: "/what-we-solve#owning" },
       { title: "Built For Operations", description: "Engineering the Path of Veracity for real teams.", icon: Users, href: "/what-we-solve#teams" },
       { title: "System Governance", description: "Controlled truth and designed refusal.", icon: ShieldCheck, href: "/what-we-solve#governance" },
     ],
@@ -82,6 +84,7 @@ export const navLinks: NavLink[] = [
       { title: "Phase 1: OppMap", description: "Opportunity Mapping + WSJF Prioritization.", icon: Map, href: "/how-it-works#phase-1" },
       { title: "Phase 2: Sandbox", description: "Edge-Case Testing + Guardrails Verified.", icon: Layout, href: "/how-it-works#phase-2" },
       { title: "Phase 3: Rollout", description: "Mini Rollout + Production Hardening + Drift Monitoring.", icon: Zap, href: "/how-it-works#phase-3" },
+      { title: "Decision Framework", description: "One question decides build vs buy.", icon: FileText, href: "/how-it-works#framework" },
       { title: "How We Get Paid", description: "Not for activity, but for evidence.", icon: CreditCard, href: "/how-it-works#pricing" },
     ],
     sidebarContent: {
@@ -93,47 +96,12 @@ export const navLinks: NavLink[] = [
       footerLabel: "Go to Page"
     }
   },
-  /*
-  {
-    label: "Who It's For",
-    href: "/who-is-this-for",
-    sections: [
-      { title: "Who This Hits", description: "Different roles. Same structural fragility.", icon: Filter, href: "/who-is-this-for#operators" },
-      { title: "Decision Criteria", description: "Voice AI as a system of record, not an interface.", icon: Target, href: "/who-is-this-for#criteria" },
-    ],
-    sidebarContent: {
-      title: "Strategic Fit",
-      icon: Filter,
-      description: "Our solutions are designed for teams that need outcomes, not just answers.",
-      footerText: "For professionals only",
-      footerLink: "/who-is-this-for",
-      footerLabel: "Check Fit"
-    }
-  },
-  {
-    label: "Build Vs Buy",
-    href: "/build-vs-buy",
-    sections: [
-      { title: "Renting AI", description: "What renting AI looks like.", icon: Rocket, href: "/build-vs-buy#renting" },
-      { title: "Building is Owning", description: "When you build, you own how it behaves.", icon: ShieldCheck, href: "/build-vs-buy#owning" },
-      { title: "The Turning Point", description: "The moment renting starts to hurt.", icon: ShieldAlert, href: "/build-vs-buy#pain-points" },
-      { title: "Decision Framework", description: "One question decides build vs buy.", icon: FileText, href: "/build-vs-buy#framework" },
-    ],
-    sidebarContent: {
-      title: "Case Analysis",
-      icon: Rocket,
-      description: "Understand why building internal assets is the only way to scale voice AI reliably.",
-      footerText: "Ownership over rental",
-      footerLink: "/build-vs-buy",
-      footerLabel: "Visit Page"
-    }
-  },
-  */
+
   {
     label: "About Us",
     href: "/about",
     sections: [
-      { title: "Who We Are", description: "Replacing guesswork with structure.", icon: Users, href: "/about#who-we-are" },
+      { title: "Who We Are", description: "We are a system-first voice AI team.", icon: Users, href: "/about#who-we-are" },
       { title: "Our Mission", description: "Replacing guesswork with structure.", icon: Info, href: "/about#why-we-exist" },
       { title: "Our Leadership", description: "Systems holding up under pressure.", icon: Users, href: "/about#leadership" },
       { title: "Careers", description: "Torchbearers with skin in.", icon: Briefcase, href: "/about#careers" },
@@ -157,10 +125,9 @@ export const navLinks: NavLink[] = [
     label: "Resources",
     href: "/case-studies",
     sections: [
-      { title: "Voices That Build Clarity", description: "Real outcomes. Real challenges. Real solutions.", icon: BarChart, href: "/case-studies#hero" },
+      { title: "Case Studies", description: "An exposé of our work, including the parts we got wrong.", icon: Trophy, href: "/case-studies#studies" },
       { title: "eBooks", description: "Operator field manuals. Clear steps and examples.", icon: BookOpen, href: "/case-studies#ebooks" },
       { title: "Whitepapers", description: "Peer-reviewed research practical takeaways.", icon: FileText, href: "/case-studies#whitepapers" },
-      { title: "Case Studies", description: "An exposé of our work, including the parts we got wrong.", icon: Trophy, href: "/case-studies#studies" },
     ],
     sidebarContent: {
       title: "Learning Center",
